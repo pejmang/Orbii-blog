@@ -1,0 +1,17 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <div class="container">
+    <h1>Pejman</h1>
+    <nav class="mono extended">
+      <ul>
+        {% if page.url != '/' %}<li><a href="/">home</a></li>{% endif %}
+        <li><a href="/about" class="{% if page.url == '/about/' %}active{% endif %}">about</a></li>
+        <li><a href="/videos" class="{% if page.url == '/videos/' %}active{% endif %}">videos</a></li>
+        <li><a href="/sponsors" class="{% if page.url == '/sponsors/' %}active{% endif %}">sponsors</a></li>
+      </ul>
+    </nav>
+
+    {% block site_content %}{% endblock %}
+  </div>
+{% endblock %}
