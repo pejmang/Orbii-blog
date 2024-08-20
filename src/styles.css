@@ -80,6 +80,9 @@ body {
   .container {
     max-width: 720px;
   }
+
+  .extended, h1 {margin: 0 -100px; }
+  .extended2 {margin: 0 -200px; }  
 }
 
 @media (min-width: 1200px) {
@@ -135,16 +138,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'EB Garamond', serif;
 }
 
-.extended, h1 {
-  margin: 0 -100px;
-}
-
 h2 {
   margin-top: 20px;
-}
-
-.extended2 {
-  margin: 0 -200px;
 }
 
 .extended img{

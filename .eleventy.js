@@ -2,7 +2,9 @@ const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/*.md");
+    return collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
+      return a.date - b.date;
+    });
   });
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/fonts");
