@@ -6,14 +6,13 @@ tags:
   - AI
   - RAG
   - LLm
-Autor: Pejman GOHARI
+Authors: "Pejman"
 ---
 
 # {{ title }}
 
-# L'IA Générative et les LLM: une adoption  grâce au RAG
 
-Dans le paysage en constante évolution de l’IA et l’IA Générative, notamment des modèles LLM ("langage de grande taille", si on devait traduire), comme GPT d’OpenAI, Claude d’Anthropic ou encore les modèles de Mistral, la génération de contenu automatisée suscite un vif intérêt auprès des entreprises. Bien que performants pour reformuler du texte ou accomplir des tâches créatives, ces LLM classiques présentent des **limites majeures pour une adoption dans le contexte professionnel** (face aux clients ou même dans les usages internes). Leur déconnexion du monde réel de l’entreprise les rend sujets aux **hallucinations**, c’est-à-dire à la génération d’informations fausses ou erronées, souvent énoncées avec une assurance digne d’un consultant. 
+Dans le paysage en constante évolution de l’IA et l’IA Générative, notamment des modèles LLM ("langage de grande taille"), comme GPT d’OpenAI, Claude d’Anthropic ou encore les modèles de Mistral, la génération de contenu automatisée suscite un vif intérêt auprès des entreprises. Bien que performants pour reformuler du texte ou accomplir des tâches créatives, ces LLM classiques présentent des **limites majeures pour une adoption dans le contexte professionnel** (face aux clients ou même dans les usages internes). Leur déconnexion du monde réel de l’entreprise les rend sujets aux **hallucinations**, c’est-à-dire à la génération d’informations fausses ou erronées, souvent énoncées avec une assurance digne d’un consultant. 
 
 Mais pas de surprise ici : on demande aux modèles LLM de générer du texte, alors ils font le job demandé.
 
