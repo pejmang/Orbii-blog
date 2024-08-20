@@ -4,8 +4,19 @@
 
 {% block content %}
   <div class="container">
-    <div class="extended"><a href="/">Home</a></div>
+    <div class="extended">
+      {% if lang == "en" %}
+        <a href="/en/">Articles & Reflections</a>
+      {% else %}
+        <a href="/">Articles & Reflexions</a>
+      {% endif %}
+    </div>
     <main id="article">
+      <h1>{{ title }}</h1>
+      {% if authors %}
+        <div class="extended">Auteur : {{ authors }}</div>
+      {% endif %}
+
       {{ content | safe }}
     </main>
   </div>

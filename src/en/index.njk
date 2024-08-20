@@ -1,0 +1,16 @@
+{% extends "sitebase.njk" %}
+
+{% block title %}Welcome to Pejman{% endblock %}
+
+{% block site_content %}
+  <p class="mono">Thoughts & Reflections &mdash;</p>
+  
+  <div class="mono">
+  {% for post in collections.en_posts %}
+    <div class="post-list">
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <div class="teaser">{{ post.data.teaser }}</div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}
