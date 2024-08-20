@@ -6,7 +6,7 @@ tags:
   - AI
   - RAG
   - LLm
-Write by: "@Pejman GOHARI"
+Autor: Pejman GOHARI
 ---
 
 # {{ title }}
