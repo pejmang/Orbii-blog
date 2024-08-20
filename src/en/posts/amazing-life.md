@@ -2,6 +2,7 @@
 title: "Amazing life is only possible with one method"
 teaser: "There is only one way to achieve the amazing life and that is to withness the sunset in Spain during the final days of August before September kicks in."
 date: 2022-03-26
+pillar: "strategie"
 ---
 
 Interview réalisée par Estelle Raffin de Nouamane Cherkaoui

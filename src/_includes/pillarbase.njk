@@ -1,0 +1,33 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <div class="container">
+    <div class="extended">
+      {% if lang == "en" %}
+        <a href="/en/9pillars/">Back to 9 Pillars</a>
+      {% elif lang == "fr" %}
+        <a href="/9pillars/">Retour aux 9 Piliers</a>
+      {% endif %}
+    </div>
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    showing articles for {{ pillar }}
+    <div class="mono">
+
+  {% if lang == "en" %}
+    {% set posts = collections.en_posts %}
+  {% elif lang == "fr" %}
+    {% set posts = collections.fr_posts %}
+  {% endif %}
+
+    {% for post in posts %}
+        {% if post.data.pillar == pillar %}
+            <div class="post-list">
+                <a href="{{ post.url }}">{{ post.data.title }}</a>
+                <div class="teaser">{{ post.data.teaser }}</div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+{% endblock %}

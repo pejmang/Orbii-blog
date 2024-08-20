@@ -6,6 +6,7 @@ tags:
   - transformation
   - Management
 authors: Pejman Gohari
+pillar: strategie
 ---
 
 J’avais eu plaisir de publier mon premier livre, _Le nouvel horizon de la transformation digitale, les 9 piliers pour développer une stratégie Data Driven_, en février 2022, avec :
