@@ -6,11 +6,11 @@ tags:
   - AI
   - RAG
   - LLm
-Authors: Pejman GOHARI
+authors: Pejman GOHARI
 ---
 
 # {{ title }}
-_Auteur : {{ authors }}_
+Auteur : {{ authors }}_
 
 
 Dans le paysage en constante évolution de l’IA et l’IA Générative, notamment des modèles LLM ("langage de grande taille"), comme GPT d’OpenAI, Claude d’Anthropic ou encore les modèles de Mistral, la génération de contenu automatisée suscite un vif intérêt auprès des entreprises. Bien que performants pour reformuler du texte ou accomplir des tâches créatives, ces LLM classiques présentent des **limites majeures pour une adoption dans le contexte professionnel** (face aux clients ou même dans les usages internes). Leur déconnexion du monde réel de l’entreprise les rend sujets aux **hallucinations**, c’est-à-dire à la génération d’informations fausses ou erronées, souvent énoncées avec une assurance digne d’un consultant. 
