@@ -1,15 +1,15 @@
-title: "# Gérer l’Énergie Organisationnelle : Un impératif stratégique dans un monde en constante transformation"
+---
+title: "Gérer l’Énergie Organisationnelle : Un impératif stratégique dans un monde en constante transformation"
 teaser: "Dans un environnement en constante évolution, l'énergie organisationnelle est cruciale pour aligner les équipes et stimuler l'innovation. Découvrez comment optimiser cette ressource clé pour assurer la transformation et la performance de votre organisation."
 date: 2024-04-24
 tags:
   - transformation
   - Management
-Authors: Pejman GOHARI
+authors: Pejman Gohari
 ---
 
 # {{ title }}
 _Auteur : {{ authors }}_
-# Gérer l'Énergie Organisationnelle : Impératif dans un Environnement en Transformation Perpétuelle
 
 J’avais eu plaisir de publier mon premier livre, _Le nouvel horizon de la transformation digitale, les 9 piliers pour développer une stratégie Data Driven_, en février 2022, avec :
 
