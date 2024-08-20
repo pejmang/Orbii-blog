@@ -7,6 +7,7 @@ tags:
   - RAG
   - LLm
 authors: Pejman GOHARI
+pillar: strategie
 ---
 
 

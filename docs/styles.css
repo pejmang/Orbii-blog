@@ -185,3 +185,11 @@ nav ul li a:hover {
   border-radius: 7px;
 }
 
+
+.pillar-sect {
+  margin-top: 50px;
+}
+
+.pillar-sect p {
+  margin-top: 0px;
+}
