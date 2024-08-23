@@ -3,6 +3,7 @@ title: "Réussir sa transformation digitale : 9 piliers indispensables"
 teaser: "Quels défis pour la transformation digitale des entreprises ? Vision stratégique, pénurie de talents, résistance au changement. Découvrez les enjeux pour adopter une culture data-driven sur le blog BDM."
 date: 2022-03-26
 pillar: culture
+type: news
 ---
 
 Interview réalisée par Estelle Raffin de Nouamane Cherkaoui

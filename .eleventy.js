@@ -15,6 +15,13 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // Video Collection (French and English)
+  eleventyConfig.addCollection("videos", function(collectionApi) {
+    return collectionApi.getAll().filter(function(item) {
+      return item.data.type === "video";
+    });
+  });
+
   // Passthrough copy for static assets
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/fonts");
@@ -27,8 +34,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/en/posts/**/*.jpg");
 
   // Date filter for formatting
-  eleventyConfig.addFilter("dt", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat("MMMM dd, yyyy");
+  eleventyConfig.addFilter("date", (dateObj, format = "MMMM dd, yyyy") => {
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(format);
   });
 
   return {
