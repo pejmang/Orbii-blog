@@ -63,12 +63,43 @@ body {
   padding-right: 15px;
   padding-left: 15px;
 }
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
+.author {
+  margin-bottom: 30px;
 }
+
+.author h2 {
+  font-size: 1.5em;
+  color: #e74c3c;
+  margin-bottom: 10px;
+}
+
+.author p {
+  margin: 0;
+  font-size: 1em;
+  text-align: justify;
+}
+
+.author p span {
+  font-weight: bold;
+  color: #34495e;
+}
+
+.linkedin-icon {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.linkedin-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #3498db;
+  transition: fill 0.3s;
+}
+
+.linkedin-icon:hover svg {
+  fill: #2980b9;
+}
+
 
 @media (min-width: 768px) {
   .container {

@@ -3,6 +3,8 @@ title: "Investissements Tech en Afrique : Vers la New African Valley"
 teaser: "Explorez l'extension du livre : transformation digitale, données, IA. Découvrez articles, avis, et commandez le livre. Contactez-nous pour un accompagnement vers le futur tech en Afrique."
 date: 2022-04-12
 pillar: culture
+type: article
+
 ---
 
 – Les grandes entreprises technologiques du monde sont prêtes à croître sur le marché hautement prometteur de l’Afrique. Beaucoup de pays africains sont en train de faire émerger de nouveaux champions tech locaux, de s’ouvrir à l’innovation tech, à la formation et à la recherche en attirant de plus en plus de capitaux et en capitalisent sur la demande croissante de services numériques.

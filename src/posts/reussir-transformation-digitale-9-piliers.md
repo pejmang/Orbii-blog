@@ -3,6 +3,7 @@ title: "Interview Alliancy – les 9 piliers de la transformation digitale"
 teaser: "Les 9 piliers clés de la transformation digitale selon Alliancy : stratégies pour booster innovation et compétitivité."
 date: 2022-04-12
 pillar: culture
+type: video
 ---
 
 <div class="extended">

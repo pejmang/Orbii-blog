@@ -8,6 +8,8 @@ tags:
   - LLm
 authors: Pejman GOHARI
 pillar: strategie
+type: article
+
 ---
 
 

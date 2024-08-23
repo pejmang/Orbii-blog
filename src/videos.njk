@@ -3,7 +3,43 @@
 {% block title %}Videos{% endblock %}
 
 {% block site_content %}
-  <h2>Videos</h2>
-  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+  <h2>Vidéos & Podcasts</h2>
+  <p>
+    Bienvenue dans l’espace dédié aux vidéos, podcasts et interviews autour de notre livre. Plongez au cœur des idées qui façonnent les entreprises ultra-performantes de demain. Que vous soyez à la recherche de réflexions approfondies sur la transformation digitale, l'intelligence artificielle, ou les neuf piliers qui structurent le succès des organisations modernes, cette page vous offre une immersion complète dans les discussions et les analyses qui prolongent et enrichissent la lecture de notre ouvrage.
+  </p>
+  <p>
+    Découvrez des interviews exclusives avec les auteurs, des conversations inspirantes avec des leaders d'opinion, ainsi que des podcasts captivants qui décryptent les stratégies des entreprises qui dominent et réinventent leur marché. Chacune de ces ressources a été soigneusement sélectionnée pour offrir des perspectives nouvelles et des retours d’expérience concrets, allant au-delà des pages du livre pour approfondir la compréhension des dynamiques en jeu dans la révolution numérique et l’ère de l’IA.
+  </p>
+
+  {% if lang == "en" %}
+    {% set posts = collections.en_posts %}
+  {% elif lang == "fr" %}
+    {% set posts = collections.fr_posts %}
+  {% endif %}
+
+  <div class="post-list">
+    {% for post in posts %}
+      {% if post.data.type == "video" %}
+        <div class="post">
+          <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+          <p class="teaser">{{ post.data.teaser }}</p>
+          <p class="date">{{ post.date | date("yyyy-MM-dd") }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="post-list">
+  {% for post in collections.videos %}
+    <div class="post">
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <p class="teaser">{{ post.data.teaser }}</p>
+      <p class="date">{{ post.date | date("yyyy-MM-dd") }}</p>
+      <div class="video">
+        {{ post.templateContent | safe }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
 
 {% endblock %}
