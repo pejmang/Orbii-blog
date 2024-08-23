@@ -1,0 +1,181 @@
+{% extends "sitebase.njk" %}
+
+{% block title %}Graphique des 9 Piliers{% endblock %}
+
+{% block site_content %}
+<h2>Graphique Dynamique des 9 Piliers de la Transformation Digitale</h2>
+
+<svg width="800" height="800"></svg>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script>
+  // Définir les données : noeuds
+  const nodes = [
+    { id: "Culture", group: 1 },
+    { id: "Stratégie", group: 2 },
+    { id: "Makers", group: 3 },
+    { id: "Talents", group: 4 },
+    { id: "Clients", group: 5 },
+    { id: "Data & IA", group: 6 },
+    { id: "Tech", group: 7 },
+    { id: "Décisions", group: 8 },
+    { id: "Vélocité", group: 9 },
+  ];
+
+  // Schéma de couleurs pour les bulles
+  const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+  // Récupérer des informations utilisateur
+  const userAgent = navigator.userAgent;
+  const language = navigator.language;
+  const platform = navigator.platform;
+
+  console.log("User Agent:", userAgent);
+  console.log("Langue:", language);
+  console.log("Plateforme:", platform);
+
+  // Exemple de règle de liaisons dynamiques en fonction des informations utilisateur
+  function generateLinksBasedOnUserInfo() {
+    let links = [];
+
+    // Liens en fonction du type de navigateur
+    if (userAgent.includes("Chrome")) {
+      links.push({ source: "Tech", target: "Data & IA", value: 1 });
+      links.push({ source: "Data & IA", target: "Décisions", value: 1 });
+    } else if (userAgent.includes("Firefox")) {
+      links.push({ source: "Culture", target: "Stratégie", value: 1 });
+      links.push({ source: "Makers", target: "Tech", value: 1 });
+    }
+
+    // Liens en fonction de la langue
+    if (language.includes("fr")) {
+      links.push({ source: "Clients", target: "Talents", value: 1 });
+      links.push({ source: "Stratégie", target: "Clients", value: 1 });
+    } else {
+      links.push({ source: "Vélocité", target: "Culture", value: 1 });
+      links.push({ source: "Décisions", target: "Tech", value: 1 });
+    }
+
+    // Liens en fonction du système d'exploitation (OS)
+    if (platform.includes("Win")) {
+      links.push({ source: "Talents", target: "Culture", value: 1 });
+      links.push({ source: "Stratégie", target: "Décisions", value: 1 });
+    } else if (platform.includes("Mac")) {
+      links.push({ source: "Makers", target: "Vélocité", value: 1 });
+      links.push({ source: "Clients", target: "Data & IA", value: 1 });
+    }
+
+    // Ajouter des connexions supplémentaires pour garantir que tous les nœuds sont connectés
+    for (let i = 0; i < nodes.length - 1; i++) {
+      if (!links.some(link => link.source === nodes[i].id && link.target === nodes[i + 1].id)) {
+        links.push({ source: nodes[i].id, target: nodes[i + 1].id, value: 1 });
+      }
+    }
+
+    return links;
+  }
+
+  let links = generateLinksBasedOnUserInfo();
+
+  const svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
+
+  // Initialiser la simulation de force-directed graph
+  const simulation = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).id(d => d.id).distance(120))
+      .force("charge", d3.forceManyBody().strength(-300))
+      .force("center", d3.forceCenter(width / 2, height / 2))
+      .force("x", d3.forceX(width / 2).strength(0.05))
+      .force("y", d3.forceY(height / 2).strength(0.05));
+
+  const linkGroup = svg.append("g")
+      .attr("class", "links");
+
+  const nodeGroup = svg.append("g")
+      .attr("class", "nodes");
+
+  const labelGroup = svg.append("g")
+      .attr("class", "labels");
+
+  function renderGraph() {
+    const link = linkGroup.selectAll("line")
+      .data(links)
+      .join("line")
+      .attr("class", "link")
+      .style("stroke", "#999")
+      .style("stroke-opacity", 0.6)
+      .style("stroke-width", 2);
+
+    const node = nodeGroup.selectAll("circle")
+      .data(nodes)
+      .join("circle")
+      .attr("class", "node")
+      .attr("r", 20)
+      .style("fill", d => color(d.group))
+      .style("stroke", "#fff")
+      .style("stroke-width", 1.5)
+      .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+
+    const label = labelGroup.selectAll("text")
+      .data(nodes)
+      .join("text")
+      .attr("dy", -25)
+      .attr("dx", -20)
+      .text(d => d.id)
+      .style("font-size", "12px")
+      .style("fill", "#000");
+
+    simulation.on("tick", () => {
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      node
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+
+      label
+        .attr("x", d => d.x)
+        .attr("y", d => d.y);
+    });
+  }
+
+  // Appel de la fonction pour afficher le graphe
+  renderGraph();
+
+  // Fonction pour mettre à jour les liens et redessiner le graphe
+  function updateGraph() {
+    links = generateLinksBasedOnUserInfo();  // Régénérer les liaisons basées sur les infos utilisateur
+    simulation.force("link").links(links);  // Mettre à jour la simulation avec les nouveaux liens
+    simulation.alpha(1).restart();  // Redémarrer la simulation pour qu'elle continue après chaque mise à jour
+    renderGraph();  // Réafficher le graphe avec les nouvelles liaisons
+  }
+
+  // Appeler la fonction toutes les 2 secondes
+  setInterval(updateGraph, 2000);  // Intervalle réglé à 2 secondes (2000 ms)
+
+  // Fonctions de gestion du drag des noeuds
+  function dragstarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+
+  function dragended(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+</script>
+{% endblock %}

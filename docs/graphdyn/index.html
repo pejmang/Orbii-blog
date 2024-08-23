@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>les 9 piliers</title>
+  <title>Graphique Dynamique des 9 Piliers pour une Startup</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
       
       <ul>
         <li><a href="/" class="">Articles</a></li>
-        <li><a href="/9pillars" class="active">Les 9 piliers</a></li>
+        <li><a href="/9pillars" class="">Les 9 piliers</a></li>
         <li><a href="/videos" class="">Videos & Podcasts</a></li>
         <li><a href="/about" class="">Nous contacter</a></li>
       </ul>
@@ -28,39 +28,10 @@
     </nav>
 
     
-  <h2>9 piliers de la transformation digitale</h2>
-  <p>Depuis 2022, neuf piliers essentiels se révèlent indispensables aux organisations performantes, qu'elles soient nativement numériques ou en pleine transformation. Dans un monde redéfini par l'intelligence artificielle (IA), ces piliers sont cruciaux pour les entreprises cherchant à prospérer.</p>
+<h2>Graphique Dynamique des 9 Piliers de la Transformation Digitale pour une Startup</h2>
 
-  <p>La transformation digitale, amplifiée par l'IA, bouleverse la création, la délivrance et la capture de valeur. Les entreprises qui réussissent utilisent l'IA comme catalyseur, intégrant chaque pilier pour assurer robustesse et adaptabilité face aux évolutions rapides du marché.</p>
+<svg width="800" height="800"></svg>
 
-  <h2>L'importance des 9 piliers</h2>
-  <p>À l'ère de l'IA, chaque pilier doit être optimisé pour intégrer ses capacités. Le succès repose sur une approche holistique, où technologies interconnectées amplifient les capacités décisionnelles, optimisent les opérations et améliorent l'expérience client. Cette synergie permet aux entreprises de s'adapter rapidement tout en minimisant les risques.</p>
-
-  <!-- Utilisation d'une mise en page en colonnes -->
-  <div class="flex-container">
-    <!-- Colonne gauche pour la liste des 9 piliers -->
-    <div class="column-left">
-      <ul>
-        <li><strong>Culture :</strong> ADN de l'innovation continue</li>
-        <li><strong>Stratégie :</strong> Une stratégie d'innovation disruptive</li>
-        <li><strong>Makers :</strong> Des leaders visionnaires et expérimentés</li>
-        <li><strong>Talents :</strong> Les architectes de la transformation</li>
-        <li><strong>Clients :</strong> Obsession de la centricité client</li>
-        <li><strong>Data & IA :</strong> Le cerveau de l'entreprise</li>
-        <li><strong>Tech :</strong> Technologie au service de la transformation</li>
-        <li><strong>Décisions :</strong> Des décisions éclairées par l'IA</li>
-        <li><strong>Vélocité :</strong> Agilité d'exécution à l'ère de l'IA</li>
-      </ul>
-    </div>
-
-    <!-- Colonne droite pour inclure le graphique dynamique -->
-    <div class="column-right">
-      
-
-
-<svg width="350" height="350" viewBox="0 0 350 350" preserveAspectRatio="xMidYMid meet"></svg>
-<!-- Div pour afficher le nom de l'entreprise -->
-<div id="company-name"></div>
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script>
   // Définir les données : noeuds
@@ -74,19 +45,6 @@
     { id: "Tech", group: 7 },
     { id: "Décisions", group: 8 },
     { id: "Vélocité", group: 9 },
-  ];
-
-  // Liste d'entreprises fictives
-  const companies = [
-    "Entreprise Beta", 
-    "Startup BC", 
-    "Société Alpha", 
-    "Tech Dynamics", 
-    "Innovate Inc.", 
-    "Future Ventures", 
-    "DataFlow Corp", 
-    "Quantum Start", 
-    "Pionniers Digitaux"
   ];
 
   // Schéma de couleurs pour les bulles
@@ -155,12 +113,12 @@
         height = +svg.attr("height");
 
   // Initialiser la simulation de force-directed graph
- const simulation = d3.forceSimulation(nodes)
-  .force("link", d3.forceLink(links).id(d => d.id).distance(200)) // Réduit la distance entre les liens
-  .force("charge", d3.forceManyBody().strength(-50)) // Réduit la répulsion des nœuds pour les garder plus proches
-  .force("center", d3.forceCenter(175, 175)) // Centre le graphique dans le SVG de 350x350
-  .force("x", d3.forceX(175).strength(0.05)) // Renforce la force d'attraction vers le centre X
-  .force("y", d3.forceY(175).strength(0.05)); // Renforce la force d'attraction vers le centre Y
+  const simulation = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).id(d => d.id).distance(d => 200 / d.value))  // Ajustement dynamique de la distance des liens
+      .force("charge", d3.forceManyBody().strength(-300))
+      .force("center", d3.forceCenter(width / 2, height / 2))
+      .force("x", d3.forceX(width / 2).strength(0.05))
+      .force("y", d3.forceY(height / 2).strength(0.05));
 
   const linkGroup = svg.append("g")
       .attr("class", "links");
@@ -228,13 +186,9 @@
     simulation.force("link").links(links);  // Mettre à jour la simulation avec les nouveaux liens
     simulation.alpha(1).restart();  // Redémarrer la simulation pour qu'elle continue après chaque mise à jour
     renderGraph();  // Réafficher le graphe avec les nouvelles liaisons
-
-    // Choisir une entreprise fictive aléatoire et l'afficher
-    const randomCompany = companies[Math.floor(Math.random() * companies.length)];
-    document.getElementById("company-name").textContent = "Simulation pour l'entreprise: " + randomCompany;
   }
 
-  // Appeler la fonction toutes les 2 secondes pour rafraîchir les scores, les connexions et le nom de l'entreprise
+  // Appeler la fonction toutes les 2 secondes pour rafraîchir les scores et les connexions
   setInterval(() => {
     // Mettre à jour les scores aléatoirement
     scores.techMaturity = Math.floor(Math.random() * 100);
@@ -264,76 +218,6 @@
     d.fy = null;
   }
 </script>
-
-
-    </div>
-  </div>
-
-<div class="pillar-sect">
-  <h2><a href="/pillar/culture/">Culture</a></h2>
-  <p>
-    La culture d'une organisation performante est l'ADN de l'innovation et de la résilience. Elle favorise l'agilité et la flexibilité cognitive, en intégrant rapidement les nouvelles technologies...
-  </p>
-</div>
-
-<div class="pillar-sect">
-  <h2><a href="/pillar/strategie/">Stratégie</a></h2>
-  <p>
-    Les organisations performantes anticipent les tendances, façonnent l'innovation et redéfinissent les règles du jeu. Elles intègrent l'IA pour maximiser les performances et rester agiles face aux opportunités...
-  </p>
-</div>
-
-<div class="pillar-sect">
-  <h2><a href="/pillar/makers/">Makers</a></h2>
-  <p>
-    Les "makers" sont des leaders qui allient vision stratégique et innovation. Leur compréhension du marché et des technologies façonne un environnement propice à l'expérimentation et à l'exécution rapide...
-  </p>
-</div>
-
-<div class="pillar-sect">
-  <h2><a href="/pillar/talents/">Talents</a></h2>
-  <p>
-    Les talents sont essentiels à la transformation. Ces entreprises attirent et forment des talents capables de maîtriser les technologies de pointe tout en favorisant l'apprentissage et l'innovation...
-  </p>
-</div>
-
-<div class="pillar-sect">
-  <h2><a href="/pillar/clients/">Clients</a></h2>
-  <p>
-    Les entreprises performantes placent le client au cœur de leur stratégie. Grâce aux données et à l'IA, elles anticipent les besoins, personnalisent les interactions et surpassent constamment les attentes...
-  </p>
-</div>
-
-<div class="pillar-sect">
-  <h2><a href="/pillar/data/">Data & IA</a></h2>
-  <p>
-    La maîtrise des données et de l'IA transforme les informations en actions concrètes. Les entreprises innovent plus rapidement, optimisent les processus et prennent des décisions éclairées...
-  </p>
-</div>
-
-<div class="pillar-sect">
-  <h2><a href="/pillar/tech/">Tech</a></h2>
-  <p>
-    La technologie est le levier central qui permet l'agilité et l'innovation. Les entreprises adoptent des infrastructures flexibles et renforcent leur cybersécurité pour protéger leurs données stratégiques...
-  </p>
-</div>
-
-<div class="pillar-sect">
-  <h2><a href="/pillar/decisions/">Décisions</a></h2>
-  <p>
-    Les décisions éclairées par l'IA permettent aux entreprises de réagir rapidement aux changements et d'anticiper les opportunités. Cela améliore leur capacité à naviguer dans des environnements complexes...
-  </p>
-</div>
-
-<div class="pillar-sect">
-  <h2><a href="/pillar/velocite/">Vélocité</a></h2>
-  <p>
-    La vélocité est essentielle pour innover rapidement et s'adapter aux crises. Les entreprises performantes développent des produits plus vite et restent en avance grâce à la synergie des autres piliers...
-  </p>
-</div>
-
-
-
 
   </div>
 

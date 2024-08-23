@@ -48,9 +48,3 @@ Pour mesurer le succès de la transformation digitale et data, il est important 
 En conclusion, pour assurer la réussite de la transformation digitale et data, il est essentiel de faire pivoter l’organisation vers une culture data-driven ancrée dans le quotidien. Cela implique de comprendre les enjeux, de mettre en place une stratégie adaptée et d’impliquer l’ensemble de l’organisation. Il est également important de prendre en compte les sources d’échec et de mettre en place les actions nécessaires pour les éviter.
 
 
-| Cost   | Population |
-| ------ | ---------- |
-| 10,000 | $1000      |
-| 10,000 | $2000      |
-
-

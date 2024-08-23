@@ -1,6 +1,8 @@
 const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
+
+
   // French Collection
   eleventyConfig.addCollection("fr_posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
