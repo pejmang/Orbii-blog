@@ -33,12 +33,14 @@
   src: url('fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
 }
 
+/* Reset margins and paddings for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Main body styling */
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
@@ -47,22 +49,20 @@ body {
   padding: 20px;
 }
 
+/* Monospace font for code blocks */
 .mono {
   font-family: 'Inconsolata', monospace;
 }
 
+/* Center content container with padding */
 .container {
   max-width: 800px;
   margin: 0 auto;
-}
-
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
 }
+
+/* Author section styling */
 .author {
   margin-bottom: 30px;
 }
@@ -84,6 +84,7 @@ body {
   color: #34495e;
 }
 
+/* LinkedIn icon styling */
 .linkedin-icon {
   display: inline-block;
   text-decoration: none;
@@ -100,7 +101,7 @@ body {
   fill: #2980b9;
 }
 
-
+/* Responsive container styling for larger screens */
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
@@ -112,8 +113,8 @@ body {
     max-width: 720px;
   }
 
-  .extended, h1 {margin: 0 -100px; }
-  .extended2 {margin: 0 -200px; }  
+  .extended, h1 { margin: 0 -100px; }
+  .extended2 { margin: 0 -200px; }  
 }
 
 @media (min-width: 1200px) {
@@ -128,6 +129,7 @@ body {
   }
 }
 
+/* General paragraph and list styling */
 ol, ul, p {
   margin-top: 25px;
   font-size: 20px;
@@ -146,6 +148,7 @@ ol li::marker {
   font-weight: bold;
 }
 
+/* Link styling */
 a {
   color: black;
   text-decoration: none;
@@ -154,18 +157,17 @@ a {
 
 a:hover {
   border-bottom: 3px solid red;
-}
-
-a:hover {
   background-color: red;
   color: white;
   outline: 3px solid red;
 }
 
-.post-list{
+/* Post list margin */
+.post-list {
   margin-top: 25px;
 }
 
+/* Heading font styling */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'EB Garamond', serif;
 }
@@ -174,15 +176,17 @@ h2 {
   margin-top: 20px;
 }
 
-.extended img{
+/* Image extension styling */
+.extended img {
   width: 100%;
 }
 
+/* Blockquote styling */
 blockquote {
   border-left: 10px solid black;
 }
 
-
+/* Navigation menu styling */
 nav ul {
   list-style: none;
   padding: 0;
@@ -216,11 +220,136 @@ nav ul li a:hover {
   border-radius: 7px;
 }
 
-
+/* Pillar section styling */
 .pillar-sect {
   margin-top: 50px;
 }
 
 .pillar-sect p {
   margin-top: 0px;
+}
+
+/* Flexbox layout for pillar section */
+.flex-container {
+  display: flex;
+  align-items: flex-start; /* Ensure columns start at the same height */
+  gap: 40px; /* Increase space between columns */
+  margin-top: 20px; /* Space from previous content */
+}
+
+.column-left {
+  width: 55%; /* Increase the width of the text column */
+}
+
+.column-right {
+  width: 35%; /* Reduce the width of the graphic column */
+  text-align: center;
+}
+
+.column-right svg {
+  margin-top: 0; /* Align the graphic closer to the top */
+}
+
+/* Styling for company name below the graphic */
+#company-name {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Vertical title styling for pillars */
+.pillar-title {
+  writing-mode: vertical-rl; /* Display the text vertically, right to left */
+  transform: rotate(180deg); /* Rotate text for proper reading direction */
+  font-size: 24px; /* Font size for the vertical title */
+  margin-right: 20px; /* Space between the vertical title and the content */
+  font-family: 'EB Garamond', serif; /* Apply the Garamond font */
+}
+/* General styles remain unchanged, skipping to the relevant section */
+
+/* Container for pillar sections */
+.pillar-container {
+  display: flex;
+  align-items: flex-start; /* Align the title and content at the top */
+  gap: 20px; /* Space between title and content */
+  margin-top: 20px; /* Margin for spacing from previous elements */
+}
+
+.pillar-title {
+  writing-mode: vertical-rl; /* Vertical layout, right to left */
+  transform: rotate(180deg); /* Rotate 180 degrees for top-to-bottom reading */
+  font-size: 56px; /* Adjust font size */
+  margin-right: 20px; /* Margin to space it from the content */
+  font-family: 'EB Garamond', serif; /* Font style */
+  white-space: nowrap; /* Prevent wrapping */
+}
+.pillar-title::first-letter {
+  color: #0dc0f5; /* Bleu  */
+  font-size: 1.5em; /* Agrandit la première lettre pour un effet stylisé */
+  font-weight: bold; /* Optionnel : Met en gras la première lettre */
+}
+.pillar-content {
+  max-width: 90%; /* Adjust content width */
+  flex-grow: 1; /* Allow content to expand flexibly */
+}
+
+/* Style général du footer */
+.footer {
+  background-color: #f9f9f9; /* Couleur de fond légère */
+  padding: 40px 20px; /* Espacement pour aérer le contenu */
+  font-size: 14px;
+  color: #333;
+}
+
+/* Container du footer */
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Distribution égale des colonnes */
+  align-items: center; /* Centrer verticalement les éléments */
+  max-width: 1000px; /* Limite de largeur similaire à Medium */
+  margin: 0 auto; /* Centrer le contenu */
+}
+
+/* Style pour les liens du footer */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px; /* Espacement entre les liens */
+}
+
+.footer-links ul li {
+  margin: 0;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #333; /* Couleur des liens */
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.footer-links ul li a:hover {
+  color: #000080; /* Changement de couleur au survol (bleu marine) */
+}
+
+/* Style pour la section des informations */
+.footer-info {
+  font-size: 14px;
+  color: #333;
+  text-align: right;
+}
+
+/* Responsivité pour les écrans plus petits */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Aligne les colonnes verticalement sur petits écrans */
+    text-align: center;
+  }
+
+  .footer-info {
+    margin-top: 20px; /* Ajoute de l'espace entre les éléments */
+    text-align: center;
+  }
 }

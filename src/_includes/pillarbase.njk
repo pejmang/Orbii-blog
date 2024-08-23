@@ -2,32 +2,54 @@
 
 {% block content %}
   <div class="container">
+    <!-- Add the new H1 heading -->
+    <h1>Horizon: Digital Transformation & AI</h1>
+
+    <!-- Navigation Menu -->
     <div class="extended">
       {% if lang == "en" %}
-        <a href="/en/9pillars/">Back to 9 Pillars</a>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/9pillars/">The other Pillars</a></li>
+          <!-- Add other menu items here -->
+        </ul>
+      </nav>
       {% elif lang == "fr" %}
-        <a href="/9pillars/">Retour aux 9 Piliers</a>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/9pillars/">Les autres Piliers</a></li>
+          <!-- Add other menu items here -->
+        </ul>
+      </nav>
       {% endif %}
     </div>
-    <h1>{{ title }}</h1>
-    <p>{{ description }}</p>
-     articles  {{ pillar }} :
-    <div class="mono">
 
-  {% if lang == "en" %}
-    {% set posts = collections.en_posts %}
-  {% elif lang == "fr" %}
-    {% set posts = collections.fr_posts %}
-  {% endif %}
+    <!-- Pillar Layout with Vertical Title -->
+    <div class="pillar-container">
+      <h2 class="pillar-title">{{ title }}</h2>
+      <div class="pillar-content">
+        <p>{{ description }}</p>
 
-    {% for post in posts %}
-        {% if post.data.pillar == pillar %}
-            <div class="post-list">
+        <!-- List of articles related to the current pillar -->
+        <div class="mono">
+          {% if lang == "en" %}
+            {% set posts = collections.en_posts %}
+          {% elif lang == "fr" %}
+            {% set posts = collections.fr_posts %}
+          {% endif %}
+
+          {% for post in posts %}
+            {% if post.data.pillar == pillar %}
+              <div class="post-list">
                 <a href="{{ post.url }}">{{ post.data.title }}</a>
                 <div class="teaser">{{ post.data.teaser }}</div>
-            </div>
-        {% endif %}
-    {% endfor %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
     </div>
-
+  </div>
 {% endblock %}
