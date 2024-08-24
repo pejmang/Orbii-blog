@@ -5,6 +5,8 @@ Built on top of the 11ty (Eleventy) static site generator, Orbii Blog offers an 
 
 Project Overview
 Orbii Blog was created to solve the need for a straightforward blogging platform that allows users to focus on sharing knowledge without the complexities of traditional content management systems. The goal is to make content creation, management, and publishing accessible to everyone, from developers to knowledge sharers, with minimal setup and maximum flexibility.
+go to https://www.orbii.fr to see a demo
+
 
 With Version 1.0, Orbii Blog is officially launched and ready for use by the community. Whether you're looking to publish technical articles, thought leadership pieces, or personal blogs, Orbii Blog provides the foundation to do so efficiently and effectively.
 
