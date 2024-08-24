@@ -37,5 +37,5 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}          # Serveur FTP
         username: ${{ secrets.FTP_USERNAME }}      # Nom d'utilisateur FTP
         password: ${{ secrets.FTP_PASSWORD }}      # Mot de passe FTP
-        local-dir: _site/                          # Dossier local généré par Eleventy
+        local-dir: docs/                          # Dossier local généré par Eleventy
         server-dir: /public_html/lab/              # Répertoire sur le serveur, se termine par "/"
