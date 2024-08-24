@@ -1,0 +1,34 @@
+name: Deploy Orbii-blog to FTP
+
+on:
+  push:
+    branches:
+      - main  # Déclenchement sur la branche 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Vérifiez que c'est la bonne version pour votre projet
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the site with Eleventy
+      run: npx eleventy
+
+    - name: Deploy to FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: _site/   # Le dossier généré par Eleventy
+        server-dir: /public_html/lab  # Répertoire de destination sur Hostinger pour votre sous-domaine
