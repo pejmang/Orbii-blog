@@ -47,6 +47,9 @@ body {
   color: #333;
   background-color: #f9f9f9;
   padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Monospace font for code blocks */
@@ -60,6 +63,7 @@ body {
   margin: 0 auto;
   padding-right: 15px;
   padding-left: 15px;
+  flex-grow: 1;
 }
 
 /* Author section styling */
@@ -113,8 +117,13 @@ body {
     max-width: 720px;
   }
 
-  .extended, h1 { margin: 0 -100px; }
-  .extended2 { margin: 0 -200px; }  
+  .extended, h1 {
+    margin: 0 -100px;
+  }
+
+  .extended2 {
+    margin: 0 -200px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -162,6 +171,23 @@ a:hover {
   outline: 3px solid red;
 }
 
+/* Désactiver l'effet de survol pour les liens avec la classe 'no-hover-effect' */
+
+.no-hover-effect {
+  border-bottom: none;
+  background-color: transparent;
+  color: inherit;
+  outline: none; /* Supprime l'outline */
+}
+
+.no-hover-effect:hover {
+  border-bottom: none;
+  background-color: transparent;
+  color: inherit;
+  outline: none; /* Assurez-vous que l'outline ne s'affiche pas */
+}
+
+
 /* Post list margin */
 .post-list {
   margin-top: 25px;
@@ -179,6 +205,11 @@ h2 {
 /* Image extension styling */
 .extended img {
   width: 100%;
+}
+
+.small-text {
+  font-size: 0.650em; /* Taille réduite, 87.5% de la taille normale */
+  line-height: 1.4;
 }
 
 /* Blockquote styling */
@@ -232,22 +263,22 @@ nav ul li a:hover {
 /* Flexbox layout for pillar section */
 .flex-container {
   display: flex;
-  align-items: flex-start; /* Ensure columns start at the same height */
-  gap: 40px; /* Increase space between columns */
-  margin-top: 20px; /* Space from previous content */
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 20px;
 }
 
 .column-left {
-  width: 55%; /* Increase the width of the text column */
+  width: 55%;
 }
 
 .column-right {
-  width: 35%; /* Reduce the width of the graphic column */
+  width: 35%;
   text-align: center;
 }
 
 .column-right svg {
-  margin-top: 0; /* Align the graphic closer to the top */
+  margin-top: 0;
 }
 
 /* Styling for company name below the graphic */
@@ -259,64 +290,65 @@ nav ul li a:hover {
 
 /* Vertical title styling for pillars */
 .pillar-title {
-  writing-mode: vertical-rl; /* Display the text vertically, right to left */
-  transform: rotate(180deg); /* Rotate text for proper reading direction */
-  font-size: 24px; /* Font size for the vertical title */
-  margin-right: 20px; /* Space between the vertical title and the content */
-  font-family: 'EB Garamond', serif; /* Apply the Garamond font */
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 24px;
+  margin-right: 20px;
+  font-family: 'EB Garamond', serif;
 }
-/* General styles remain unchanged, skipping to the relevant section */
 
 /* Container for pillar sections */
 .pillar-container {
   display: flex;
-  align-items: flex-start; /* Align the title and content at the top */
-  gap: 20px; /* Space between title and content */
-  margin-top: 20px; /* Margin for spacing from previous elements */
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .pillar-title {
-  writing-mode: vertical-rl; /* Vertical layout, right to left */
-  transform: rotate(180deg); /* Rotate 180 degrees for top-to-bottom reading */
-  font-size: 56px; /* Adjust font size */
-  margin-right: 20px; /* Margin to space it from the content */
-  font-family: 'EB Garamond', serif; /* Font style */
-  white-space: nowrap; /* Prevent wrapping */
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 36px;
+  margin-right: 20px;
+  font-family: 'EB Garamond', serif;
+  white-space: nowrap;
 }
+
 .pillar-title::first-letter {
-  color: #0dc0f5; /* Bleu  */
-  font-size: 1.5em; /* Agrandit la première lettre pour un effet stylisé */
-  font-weight: bold; /* Optionnel : Met en gras la première lettre */
+  color: #0dc0f5;
+  font-size: 1.5em;
+  font-weight: bold;
 }
+
 .pillar-content {
-  max-width: 90%; /* Adjust content width */
-  flex-grow: 1; /* Allow content to expand flexibly */
+  max-width: 90%;
+  flex-grow: 1;
 }
 
-/* Style général du footer */
+/* Footer styles */
 .footer {
-  background-color: #f9f9f9; /* Couleur de fond légère */
-  padding: 40px 20px; /* Espacement pour aérer le contenu */
+  background-color: #f9f9f9;
+  padding: 40px 20px;
   font-size: 14px;
-  color: #333;
+  color: #0c0101d8;
+  width: 100%;
 }
 
-/* Container du footer */
 .footer-container {
   display: flex;
-  justify-content: space-between; /* Distribution égale des colonnes */
-  align-items: center; /* Centrer verticalement les éléments */
-  max-width: 1000px; /* Limite de largeur similaire à Medium */
-  margin: 0 auto; /* Centrer le contenu */
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Style pour les liens du footer */
+/* Footer links */
 .footer-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 20px; /* Espacement entre les liens */
+  gap: 20px;
 }
 
 .footer-links ul li {
@@ -325,31 +357,98 @@ nav ul li a:hover {
 
 .footer-links ul li a {
   text-decoration: none;
-  color: #333; /* Couleur des liens */
+  color: #333;
   font-weight: bold;
   font-size: 14px;
 }
 
 .footer-links ul li a:hover {
-  color: #000080; /* Changement de couleur au survol (bleu marine) */
+  color: #000080;
 }
 
-/* Style pour la section des informations */
+/* Footer information text */
 .footer-info {
   font-size: 14px;
   color: #333;
   text-align: center;
 }
 
-/* Responsivité pour les écrans plus petits */
+/* Responsive footer for smaller screens */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column; /* Aligne les colonnes verticalement sur petits écrans */
+    flex-direction: column;
     text-align: center;
   }
 
   .footer-info {
-    margin-top: 20px; /* Ajoute de l'espace entre les éléments */
+    margin-top: 20px;
     text-align: center;
   }
+}
+
+/* General styles for icons */
+.icon {
+  margin-left: 8px;
+  margin-right: 8px;
+  vertical-align: middle;
+  color: red;
+}
+
+/* Icon hover effect */
+.icon-link:hover .icon {
+  color: blue;
+}
+
+/* Link hover effect for icon links */
+.icon-link:hover {
+  text-decoration: none;
+}
+
+/* No hover effect for special links */
+.no-hover-effect:hover .icon {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* Styling for emoji */
+.emoji {
+  font-size: 24px;
+  margin-left: 8px;
+}
+
+/* Styling for Google icons */
+.icon-google-smart {
+  font-size: 28px;
+  color: #00bcd4;
+  vertical-align: middle;
+  margin-left: 8px;
+  transition: transform 0.5s ease, color 0.3s ease;
+}
+
+.icon-google-smart:hover {
+  color: #0dc0f5;
+  transform: scale(1.2);
+}
+
+/* Rotate animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-google-smart:hover {
+  animation: rotate 1s linear infinite;
+}
+/* Désactiver l'outline pour les icônes */
+.no-hover-effect .icon-google-smart {
+  outline: none; /* Supprime l'outline de l'icône */
+}
+
+.no-hover-effect:hover .icon-google-smart {
+  outline: none; /* Supprime également l'outline au survol */
+  box-shadow: none; /* Supprime tout effet de boîte */
 }

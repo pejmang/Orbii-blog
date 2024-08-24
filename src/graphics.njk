@@ -1,12 +1,11 @@
 {% block site_content %}
 
-
 <svg width="350" height="350" viewBox="0 0 350 350" preserveAspectRatio="xMidYMid meet"></svg>
-<!-- Div pour afficher le nom de l'entreprise -->
-<div id="company-name"></div>
+<!-- Div to display the company name -->
+<div id="company-name" style="font-size: 20px; font-weight: bold; margin-top: 10px;"></div>
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script>
-  // Définir les données : noeuds
+  // Define the data: nodes (pillars)
   const nodes = [
     { id: "Culture", group: 1 },
     { id: "Stratégie", group: 2 },
@@ -19,7 +18,7 @@
     { id: "Vélocité", group: 9 },
   ];
 
-  // Liste d'entreprises fictives
+  // List of fictitious companies
   const companies = [
     "Entreprise Beta", 
     "Startup BC", 
@@ -32,97 +31,91 @@
     "Pionniers Digitaux"
   ];
 
-  // Schéma de couleurs pour les bulles
+  // Color scheme for the bubbles
   const color = d3.scaleOrdinal(d3.schemeCategory10);
 
-  // Simuler des scores pour une startup
-  const scores = {
-    techMaturity: Math.floor(Math.random() * 100),      // Maturité technologique
-    talentGrowth: Math.floor(Math.random() * 100),      // Croissance des talents
-    clientAcquisition: Math.floor(Math.random() * 100), // Acquisition de clients
-    strategicInnovation: Math.floor(Math.random() * 100),// Innovation stratégique
-  };
-
-  console.log("Scores de la startup :", scores);
-
-  // Fonction pour générer des liaisons basées sur les scores de la startup
-  function generateLinksBasedOnScores() {
+  // Function to generate random weights and number of links
+  function generateRandomLinks() {
     let links = [];
+    const maxLinks = 6; // Maximum of 6 random links
 
-    // Connexions basées sur la maturité technologique
-    if (scores.techMaturity > 50) {
-      links.push({ source: "Tech", target: "Data & IA", value: scores.techMaturity / 100 });
-      links.push({ source: "Tech", target: "Décisions", value: scores.techMaturity / 100 });
-    } else {
-      links.push({ source: "Culture", target: "Tech", value: 1 });
-    }
+    // Generate random links
+    for (let i = 0; i < maxLinks; i++) {
+      // Pick two random nodes
+      const sourceNode = nodes[Math.floor(Math.random() * nodes.length)];
+      const targetNode = nodes[Math.floor(Math.random() * nodes.length)];
 
-    // Connexions basées sur la croissance des talents
-    if (scores.talentGrowth > 50) {
-      links.push({ source: "Talents", target: "Clients", value: scores.talentGrowth / 100 });
-      links.push({ source: "Makers", target: "Talents", value: scores.talentGrowth / 100 });
-    } else {
-      links.push({ source: "Talents", target: "Culture", value: 1 });
-    }
+      // Ensure the source and target are not the same
+      if (sourceNode !== targetNode) {
+        // Generate a random weight between 1 and 9
+        const randomWeight = Math.floor(Math.random() * 9) + 1;
 
-    // Connexions basées sur l'acquisition de clients
-    if (scores.clientAcquisition > 50) {
-      links.push({ source: "Clients", target: "Vélocité", value: scores.clientAcquisition / 100 });
-      links.push({ source: "Clients", target: "Stratégie", value: scores.clientAcquisition / 100 });
-    } else {
-      links.push({ source: "Clients", target: "Décisions", value: 1 });
-    }
-
-    // Connexions basées sur l'innovation stratégique
-    if (scores.strategicInnovation > 50) {
-      links.push({ source: "Stratégie", target: "Data & IA", value: scores.strategicInnovation / 100 });
-      links.push({ source: "Stratégie", target: "Tech", value: scores.strategicInnovation / 100 });
-    } else {
-      links.push({ source: "Stratégie", target: "Culture", value: 1 });
-    }
-
-    // Ajouter des connexions supplémentaires pour garantir que tous les nœuds sont connectés
-    for (let i = 0; i < nodes.length - 1; i++) {
-      if (!links.some(link => link.source === nodes[i].id && link.target === nodes[i + 1].id)) {
-        links.push({ source: nodes[i].id, target: nodes[i + 1].id, value: 1 });
+        // Create the link with a random weight
+        links.push({
+          source: sourceNode.id,
+          target: targetNode.id,
+          value: randomWeight,
+        });
       }
     }
+
+    // Ensure all nodes are indirectly connected (spanning tree logic)
+    const connectedNodes = new Set();
+    connectedNodes.add(nodes[0].id); // Start with the first node connected
+
+    // Create a tree structure to ensure all nodes are connected
+    nodes.forEach((node, index) => {
+      if (!connectedNodes.has(node.id)) {
+        const connectedNode = nodes[Math.floor(Math.random() * connectedNodes.size)];
+        const randomWeight = Math.floor(Math.random() * 9) + 1;
+
+        // Add a link to connect the unconnected node to the connected set
+        links.push({
+          source: node.id,
+          target: connectedNode.id,
+          value: randomWeight,
+        });
+        connectedNodes.add(node.id);
+      }
+    });
 
     return links;
   }
 
-  let links = generateLinksBasedOnScores();
+  // Initial setup
+  let links = generateRandomLinks();
 
   const svg = d3.select("svg"),
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
-  // Initialiser la simulation de force-directed graph
- const simulation = d3.forceSimulation(nodes)
-  .force("link", d3.forceLink(links).id(d => d.id).distance(200)) // Réduit la distance entre les liens
-  .force("charge", d3.forceManyBody().strength(-50)) // Réduit la répulsion des nœuds pour les garder plus proches
-  .force("center", d3.forceCenter(175, 175)) // Centre le graphique dans le SVG de 350x350
-  .force("x", d3.forceX(175).strength(0.05)) // Renforce la force d'attraction vers le centre X
-  .force("y", d3.forceY(175).strength(0.05)); // Renforce la force d'attraction vers le centre Y
+  // Initialize the force-directed graph simulation
+  const simulation = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(links).id(d => d.id).distance(200))
+    .force("charge", d3.forceManyBody().strength(-50))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("x", d3.forceX(width / 2).strength(0.05))
+    .force("y", d3.forceY(height / 2).strength(0.05));
 
-  const linkGroup = svg.append("g")
-      .attr("class", "links");
-
-  const nodeGroup = svg.append("g")
-      .attr("class", "nodes");
-
-  const labelGroup = svg.append("g")
-      .attr("class", "labels");
+  const linkGroup = svg.append("g").attr("class", "links");
+  const nodeGroup = svg.append("g").attr("class", "nodes");
+  const labelGroup = svg.append("g").attr("class", "labels");
 
   function renderGraph() {
+    // Clear old links
+    linkGroup.selectAll("line").remove();
+
+    // Render links
     const link = linkGroup.selectAll("line")
       .data(links)
-      .join("line")
+      .enter()
+      .append("line")
       .attr("class", "link")
       .style("stroke", "#999")
       .style("stroke-opacity", 0.6)
-      .style("stroke-width", 2);
+      .style("stroke-width", d => d.value); // Set stroke width based on weight
 
+    // Render nodes
     const node = nodeGroup.selectAll("circle")
       .data(nodes)
       .join("circle")
@@ -136,6 +129,7 @@
         .on("drag", dragged)
         .on("end", dragended));
 
+    // Render labels
     const label = labelGroup.selectAll("text")
       .data(nodes)
       .join("text")
@@ -162,34 +156,32 @@
     });
   }
 
-  // Appel de la fonction pour afficher le graphe
+  // Initial render
   renderGraph();
 
-  // Fonction pour mettre à jour les liens et redessiner le graphe
-  function updateGraph() {
-    links = generateLinksBasedOnScores();  // Régénérer les liaisons basées sur les scores
-    simulation.force("link").links(links);  // Mettre à jour la simulation avec les nouveaux liens
-    simulation.alpha(1).restart();  // Redémarrer la simulation pour qu'elle continue après chaque mise à jour
-    renderGraph();  // Réafficher le graphe avec les nouvelles liaisons
+  // Function to reset all links and re-render the graph every 4 seconds
+  function resetLinksAndGraph() {
+    // Generate new links with random weights
+    links = generateRandomLinks();
 
-    // Choisir une entreprise fictive aléatoire et l'afficher
+    // Update the simulation with the new links
+    simulation.force("link").links(links);
+
+    // Restart the simulation
+    simulation.alpha(1).restart();
+
+    // Re-render the graph with the new links
+    renderGraph();
+
+    // Pick a new company name to display
     const randomCompany = companies[Math.floor(Math.random() * companies.length)];
-    document.getElementById("company-name").textContent = "Simulation pour l'entreprise: " + randomCompany;
+    document.getElementById("company-name").textContent = "Simulation for: " + randomCompany;
   }
 
-  // Appeler la fonction toutes les 2 secondes pour rafraîchir les scores, les connexions et le nom de l'entreprise
-  setInterval(() => {
-    // Mettre à jour les scores aléatoirement
-    scores.techMaturity = Math.floor(Math.random() * 100);
-    scores.talentGrowth = Math.floor(Math.random() * 100);
-    scores.clientAcquisition = Math.floor(Math.random() * 100);
-    scores.strategicInnovation = Math.floor(Math.random() * 100);
+  // Set interval to reset all links and graph every 4 seconds
+  setInterval(resetLinksAndGraph, 4000);
 
-    console.log("Nouveaux scores :", scores);
-    updateGraph();
-  }, 2000);
-
-  // Fonctions de gestion du drag des noeuds
+  // Drag functions to control node behavior during drag events
   function dragstarted(event, d) {
     if (!event.active) simulation.alphaTarget(0.3).restart();
     d.fx = d.x;
@@ -207,4 +199,5 @@
     d.fy = null;
   }
 </script>
+
 {% endblock %}
