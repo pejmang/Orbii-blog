@@ -1,30 +1,43 @@
 ---
-title: "Amazing life is only possible with one method"
-teaser: "There is only one way to achieve the amazing life and that is to withness the sunset in Spain during the final days of August before September kicks in."
-date: 2022-03-26
-pillar: "strategie"
+title: "Managing Organizational Energy: A Strategic Imperative in a Constantly Evolving World"
+teaser: "In a rapidly changing environment, organizational energy is crucial to aligning teams and driving innovation. Learn how to optimize this key resource to ensure your organization’s transformation and performance."
+date: 2024-04-24
+tags: transformation,Management
+authors: Pejman Gohari
+pillar: strategy
+type: article
 ---
 
-Interview réalisée par Estelle Raffin de Nouamane Cherkaoui
+I had the pleasure of publishing my first book, _The New Horizon of Digital Transformation: The 9 Pillars for Developing a Data-Driven Strategy_, in February 2022, with:
 
-Lorsqu’on parle de « transformation digitale », quelles sont les problématiques actuelles que rencontrent les entreprises ?
+**Jean Barrère, Nouamane Cherkaoui**
 
-La transformation digitale impacte toutes les industries du monde. Alors que les entreprises se remettent de la pandémie de Covid-19 et font face à la flambée des prix de l’énergie à cause de la guerre en Ukraine, cette transformation devra jouer un rôle clé pour ouvrir la voie à plus d’efficacité, de résilience et de durabilité.
+Over the past two years (2022 – 2024), during our interactions with executives and managers, a recurring theme has emerged: **team exhaustion**. Faced with rapid changes in consumer preferences, technological advancements, environmental challenges, economic fluctuations, and geopolitical disruptions, organizations are forced to constantly reinvent themselves. These disruptions demand continuous adjustments, disturbing established routines and causing fatigue, and in severe cases, marked professional burnout.
 
-Les problématiques que rencontrent les entreprises qu’elles soient publiques ou privées, TPE/PME ou grands groupes sont d’ordre structurelles, organisationnelles et comportementales.
+**Organizational energy**, crucial to the dynamism and resilience of a company, manifests itself through the ability to mobilize, deploy, and renew resources to achieve its goals and effectively adapt to changing challenges. Optimizing this energy is key, particularly by focusing on two aspects of the nine pillars: _the Maker’s Signature_ and _corporate culture_.
 
-Pour moi, les 5 principaux défis majeurs que rencontrent les entreprises sont :
+## A) The Maker’s Signature and Understanding Limits
 
-1. Le manque de vision stratégique à moyen et long termes
-2. La pénurie de talents et de compétences pour mener les transformations
-3. L’évolution en continu des besoins des clients et de leur volatilité
-4. Le silotage des organisations et la résistance au changement
-5. La capacité à transformer le capital en données en valeur économique
+Inspirational leaders, the _Makers_, play a crucial role in modulating organizational energy, with their approaches either revitalizing or depleting human resources. You likely have a Maker in mind who inspired and propelled you forward, and another who pushed you to your limits, but ultimately drained you.
 
-Selon vous, les entreprises doivent faire pivoter leur organisation vers une « culture data-driven ». Concrètement, qu’est-ce que cela signifie ?
+Makers must:
 
-Depuis que nous sommes entrés dans cette ère du numérique, les entreprises disposent de volumes de données et de capacités d’analyse sans précédent. Le Big Data et le Machine Learning leur ouvrent par exemple accès à des gisements de données non structurées qui échappaient totalement aux traitements informatisés.
+- **Identify individual and team capacities**: Recognizing the thresholds for innovation and change is essential to maintaining a healthy and evolving work environment. This requires establishing continuous feedback systems and regular evaluations to adjust workloads and expectations accordingly.
 
-La suite sur le Blog de notre Partenaire : BDM
+- **Foster an environment conducive to continuous innovation**: Promote a culture where learning and failure are integrated as essential components of success. This can be achieved by creating spaces dedicated to experimentation and by valuing attempts, whether successful or not, as fundamental to organizational learning.
 
-[https://www.blogdumoderateur.com/transformation-digitale-9-piliers-indispensables/](https://www.blogdumoderateur.com/transformation-digitale-9-piliers-indispensables/)
+## B) Cultivating a Positive Corporate Culture
+
+A **strong corporate culture** is directly linked to dynamic organizational energy. To achieve this, leaders must:
+
+- **Promote shared values**: Actively involve employees in defining and embodying organizational values to ensure that these are truly integrated into daily practices.
+
+- **Maintain transparent communication**: Establish formal and informal channels to facilitate open and continuous dialogue, thereby enhancing employee trust and engagement.
+
+- **Implement an effective recognition system**: Develop recognition programs that meet the needs and preferences of employees, combining financial and non-financial rewards to motivate and retain talent.
+
+---
+
+We have highlighted _the Maker’s Signature_ and _corporate culture_ as key components of managing organizational energy, but it is essential not to overlook the other pillars that also contribute to energizing and supporting change.
+
+And you, **what is your experience and perspective** on this important topic of digital transformation?
