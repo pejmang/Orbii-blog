@@ -1,57 +1,163 @@
 {% extends "sitebase.njk" %}
 
-{% block title %}les 9 piliers{% endblock %}
+{% block title %}The 9 Pillars{% endblock %}
 
 {% block site_content %}
-  <h2>9 pillars of digital transformation</h2>
-  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+  <h2>The 9 Pillars of Digital Transformation</h2>
+  <p>Since 2022, nine essential pillars have emerged as crucial for high-performing organizations, whether they are digitally native or undergoing transformation. In a world redefined by artificial intelligence (AI), these pillars are vital for companies seeking to thrive.</p>
 
+  <p>Digital transformation, amplified by AI, is reshaping how value is created, delivered, and captured. Successful companies use AI as a catalyst, integrating each pillar to ensure resilience and adaptability in the face of rapid market shifts.</p>
 
-<div class="pillar-sect">
-  <h2>Culture</h2>
-  <p>Building a culture that embraces digital transformation is essential for fostering innovation and agility within an organization. This mindset drives collaboration, continuous learning, and adaptability in a rapidly changing environment.</p>
-  <a href="/en/pillar/culture/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Strategie</h2>
-  <p>A robust strategy ensures that technological advancements are tightly aligned with your business objectives. This alignment paves the way for sustainable growth and ensures that digital initiatives deliver real value.</p>
-  <a href="/en/pillar/strategie/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Makers</h2>
-  <p>The makers—your engineers, designers, and innovators—are the driving force behind digital transformation. Empowering them with the right tools and environment enables breakthrough innovations that push your business forward.</p>
-  <a href="/en/pillar/makers/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Talents</h2>
-  <p>Attracting, nurturing, and retaining top talent is more important than ever in today’s competitive tech landscape. Your talent strategy will define how well you can adapt, grow, and stay ahead of disruption.</p>
-  <a href="/en/pillar/talents/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Clients</h2>
-  <p>Clients are at the heart of any transformation. Understanding and responding to their evolving needs through technology is critical to building loyalty and delivering exceptional experiences.</p>
-  <a href="/en/pillar/clients/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Data & IA</h2>
-  <p>Data and AI are powerful tools that drive insights, automation, and smarter decision-making. Leveraging these technologies effectively can significantly enhance business performance and innovation.</p>
-  <a href="/en/pillar/data/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Tech</h2>
-  <p>Technology is the backbone of digital transformation, from cloud infrastructure to cutting-edge tools. Staying on top of tech trends allows your organization to innovate faster and operate more efficiently.</p>
-  <a href="/en/pillar/tech/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Decisions</h2>
-  <p>Data-driven decisions are key to thriving in a fast-paced digital landscape. Integrating advanced analytics and automation into decision-making processes can unlock faster, more accurate insights.</p>
-  <a href="/en/pillar/decisions/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Vélocité</h2>
-  <p>Speed is a competitive advantage in the digital era. Increasing your organization’s velocity—from innovation cycles to time-to-market—helps you stay ahead of the curve and seize new opportunities.</p>
-  <a href="/en/pillar/velocite/">View Articles</a>
-</div>
+  <h2>The Importance of the 9 Pillars</h2>
+  <p>In the AI era, each pillar must be optimized to leverage its capabilities. Success depends on a holistic approach, where interconnected technologies enhance decision-making, streamline operations, and improve customer experience. This synergy enables companies to quickly adapt while minimizing risks.</p>
 
+  <!-- Layout in columns -->
+  <div class="flex-container">
+    <!-- Left column for the list of 9 pillars -->
+    <div class="column-left">
+      <ul>
+        <li><strong>Culture:</strong> <span class="small-text">The DNA of continuous innovation</span></li>
+        <li><strong>Strategy:</strong> <span class="small-text">A strategy rooted in disruptive innovation</span></li>
+        <li><strong>Makers:</strong> <span class="small-text">Visionary and experienced leaders</span></li>
+        <li><strong>Talent:</strong> <span class="small-text">The architects of transformation</span></li>
+        <li><strong>Customers:</strong> <span class="small-text">Obsessed with customer centricity</span></li>
+        <li><strong>Data & AI:</strong> <span class="small-text">The brain of the company</span></li>
+        <li><strong>Tech:</strong> <span class="small-text">Technology driving transformation</span></li>
+        <li><strong>Decisions:</strong> <span class="small-text">AI-powered decision-making</span></li>
+        <li><strong>Velocity:</strong> <span class="small-text">Agility in execution in the AI era</span></li>
+      </ul>
+    </div>
+
+    <!-- Right column to include dynamic graphic -->
+    <div class="column-right">
+      {% include "src/graphics.njk" %}
+    </div>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/en/pillar/culture/">Culture</a>
+      <a href="/en/pillar/culture/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      A high-performing organization's culture is the DNA of innovation and resilience. It fosters agility and cognitive flexibility, rapidly integrating new technologies...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/strategy/">Strategy</a>
+      <a href="/pillar/strategy/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      Successful organizations anticipate trends, shape innovation, and redefine the rules of the game. They integrate AI to maximize performance and remain agile in the face of emerging opportunities...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/makers/">Makers</a>
+      <a href="/pillar/makers/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      "Makers" are leaders who combine strategic vision with innovation. Their deep understanding of the market and technologies creates an environment conducive to experimentation and rapid execution...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/talent/">Talent</a>
+      <a href="/pillar/talent/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      Talent is essential to transformation. These companies attract and develop individuals who can master cutting-edge technologies while fostering a culture of learning and innovation...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/customers/">Customers</a>
+      <a href="/pillar/customers/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      High-performing companies place the customer at the heart of their strategy. Leveraging data and AI, they anticipate needs, personalize interactions, and consistently exceed expectations...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/data/">Data & AI</a>
+      <a href="/pillar/data/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      Mastery of data and AI turns insights into actionable outcomes. Companies innovate faster, streamline processes, and make more informed decisions...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/tech/">Tech</a>
+      <a href="/pillar/tech/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      Technology is the central lever that enables agility and innovation. Companies adopt flexible infrastructures and strengthen their cybersecurity to protect strategic data...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/decisions/">Decisions</a>
+      <a href="/pillar/decisions/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      AI-powered decisions enable companies to respond quickly to changes and seize opportunities. This enhances their ability to navigate complex environments...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/velocity/">Velocity</a>
+      <a href="/pillar/velocity/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      Velocity is critical to innovating rapidly and adapting to crises. High-performing companies develop products faster and stay ahead by leveraging the synergy of the other pillars...
+    </p>
+  </div>
 
 {% endblock %}

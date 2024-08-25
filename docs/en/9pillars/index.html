@@ -3,16 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>les 9 piliers</title>
+
+  
+    <title>Orbii: Knowledge Architects of Digital and AI Transformation</title>
+    <meta name="description" content="Orbii brings you insights from the forefront of digital transformation and AI. Our Knowledge Architects deliver thought leadership on the 9 pillars of successful organizational transformation.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Orbii: Knowledge Architects of Digital and AI Transformation">
+    <meta property="og:description" content="Explore Orbii for expert insights on digital transformation, AI, and organizational success. Learn from leaders shaping the future of technology and business.">
+    <meta property="og:url" content="https://www.orbii.fr">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orbii: Knowledge Architects of Digital and AI Transformation">
+    <meta name="twitter:description" content="Discover Orbii's expert insights on digital transformation, AI, and the strategies that are reshaping industries.">
+
+  
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.orbii.fr">
+
+  <!-- Favicon and Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/styles.css">
+  <!-- Only one version of Font Awesome to avoid conflicts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  
 </head>
 
-</head>
 <body>
 
   
+
+
   <div class="container">
     <h1>Horizon : Digital Transformation & AI</h1>
     <nav class="mono extended">
@@ -23,65 +55,374 @@
 
       
       <ul>
-        <li><a href="/en/" class="">Articles</a></li>
+        <li><a href="/en/" class="">Insights</a></li>
         <li><a href="/en/9pillars" class="active">9 Pillars</a></li>
-        <li><a href="/en/videos" class="">Videos & Podcasts</a></li>
-        <li><a href="/en/about" class="">About</a></li>
+        <li><a href="/en/videos" class="">Echoes</a></li>
+        <li><a href="/en/about" class="">Knowledge Architects</a></li>
       </ul>
       
     </nav>
 
     
-  <h2>9 pillars of digital transformation</h2>
-  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+  <h2>The 9 Pillars of Digital Transformation</h2>
+  <p>Since 2022, nine essential pillars have emerged as crucial for high-performing organizations, whether they are digitally native or undergoing transformation. In a world redefined by artificial intelligence (AI), these pillars are vital for companies seeking to thrive.</p>
+
+  <p>Digital transformation, amplified by AI, is reshaping how value is created, delivered, and captured. Successful companies use AI as a catalyst, integrating each pillar to ensure resilience and adaptability in the face of rapid market shifts.</p>
+
+  <h2>The Importance of the 9 Pillars</h2>
+  <p>In the AI era, each pillar must be optimized to leverage its capabilities. Success depends on a holistic approach, where interconnected technologies enhance decision-making, streamline operations, and improve customer experience. This synergy enables companies to quickly adapt while minimizing risks.</p>
+
+  <!-- Layout in columns -->
+  <div class="flex-container">
+    <!-- Left column for the list of 9 pillars -->
+    <div class="column-left">
+      <ul>
+        <li><strong>Culture:</strong> <span class="small-text">The DNA of continuous innovation</span></li>
+        <li><strong>Strategy:</strong> <span class="small-text">A strategy rooted in disruptive innovation</span></li>
+        <li><strong>Makers:</strong> <span class="small-text">Visionary and experienced leaders</span></li>
+        <li><strong>Talent:</strong> <span class="small-text">The architects of transformation</span></li>
+        <li><strong>Customers:</strong> <span class="small-text">Obsessed with customer centricity</span></li>
+        <li><strong>Data & AI:</strong> <span class="small-text">The brain of the company</span></li>
+        <li><strong>Tech:</strong> <span class="small-text">Technology driving transformation</span></li>
+        <li><strong>Decisions:</strong> <span class="small-text">AI-powered decision-making</span></li>
+        <li><strong>Velocity:</strong> <span class="small-text">Agility in execution in the AI era</span></li>
+      </ul>
+    </div>
+
+    <!-- Right column to include dynamic graphic -->
+    <div class="column-right">
+      
+
+<svg width="350" height="350" viewBox="0 0 350 350" preserveAspectRatio="xMidYMid meet"></svg>
+<!-- Div to display the company name -->
+<div id="company-name" style="font-size: 20px; font-weight: bold; margin-top: 10px;"></div>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script>
+  // Define the data: nodes (pillars)
+  const nodes = [
+    { id: "Culture", group: 1 },
+    { id: "Stratégie", group: 2 },
+    { id: "Makers", group: 3 },
+    { id: "Talents", group: 4 },
+    { id: "Clients", group: 5 },
+    { id: "Data & IA", group: 6 },
+    { id: "Tech", group: 7 },
+    { id: "Décisions", group: 8 },
+    { id: "Vélocité", group: 9 },
+  ];
+
+  // List of fictitious companies
+  const companies = [
+    "Entreprise Beta", 
+    "Startup BC", 
+    "Société Alpha", 
+    "Tech Dynamics", 
+    "Innovate Inc.", 
+    "Future Ventures", 
+    "DataFlow Corp", 
+    "Quantum Start", 
+    "Pionniers Digitaux"
+  ];
+
+  // Color scheme for the bubbles
+  const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+  // Function to generate random weights and number of links
+  function generateRandomLinks() {
+    let links = [];
+    const maxLinks = 6; // Maximum of 6 random links
+
+    // Generate random links
+    for (let i = 0; i < maxLinks; i++) {
+      // Pick two random nodes
+      const sourceNode = nodes[Math.floor(Math.random() * nodes.length)];
+      const targetNode = nodes[Math.floor(Math.random() * nodes.length)];
+
+      // Ensure the source and target are not the same
+      if (sourceNode !== targetNode) {
+        // Generate a random weight between 1 and 9
+        const randomWeight = Math.floor(Math.random() * 9) + 1;
+
+        // Create the link with a random weight
+        links.push({
+          source: sourceNode.id,
+          target: targetNode.id,
+          value: randomWeight,
+        });
+      }
+    }
+
+    // Ensure all nodes are indirectly connected (spanning tree logic)
+    const connectedNodes = new Set();
+    connectedNodes.add(nodes[0].id); // Start with the first node connected
+
+    // Create a tree structure to ensure all nodes are connected
+    nodes.forEach((node, index) => {
+      if (!connectedNodes.has(node.id)) {
+        const connectedNode = nodes[Math.floor(Math.random() * connectedNodes.size)];
+        const randomWeight = Math.floor(Math.random() * 9) + 1;
+
+        // Add a link to connect the unconnected node to the connected set
+        links.push({
+          source: node.id,
+          target: connectedNode.id,
+          value: randomWeight,
+        });
+        connectedNodes.add(node.id);
+      }
+    });
+
+    return links;
+  }
+
+  // Initial setup
+  let links = generateRandomLinks();
+
+  const svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
+
+  // Initialize the force-directed graph simulation
+  const simulation = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(links).id(d => d.id).distance(200))
+    .force("charge", d3.forceManyBody().strength(-50))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("x", d3.forceX(width / 2).strength(0.05))
+    .force("y", d3.forceY(height / 2).strength(0.05));
+
+  const linkGroup = svg.append("g").attr("class", "links");
+  const nodeGroup = svg.append("g").attr("class", "nodes");
+  const labelGroup = svg.append("g").attr("class", "labels");
+
+  function renderGraph() {
+    // Clear old links
+    linkGroup.selectAll("line").remove();
+
+    // Render links
+    const link = linkGroup.selectAll("line")
+      .data(links)
+      .enter()
+      .append("line")
+      .attr("class", "link")
+      .style("stroke", "#999")
+      .style("stroke-opacity", 0.6)
+      .style("stroke-width", d => d.value); // Set stroke width based on weight
+
+    // Render nodes
+    const node = nodeGroup.selectAll("circle")
+      .data(nodes)
+      .join("circle")
+      .attr("class", "node")
+      .attr("r", 20)
+      .style("fill", d => color(d.group))
+      .style("stroke", "#fff")
+      .style("stroke-width", 1.5)
+      .call(d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended));
+
+    // Render labels
+    const label = labelGroup.selectAll("text")
+      .data(nodes)
+      .join("text")
+      .attr("dy", -25)
+      .attr("dx", -20)
+      .text(d => d.id)
+      .style("font-size", "12px")
+      .style("fill", "#000");
+
+    simulation.on("tick", () => {
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      node
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+
+      label
+        .attr("x", d => d.x)
+        .attr("y", d => d.y);
+    });
+  }
+
+  // Initial render
+  renderGraph();
+
+  // Function to reset all links and re-render the graph every 4 seconds
+  function resetLinksAndGraph() {
+    // Generate new links with random weights
+    links = generateRandomLinks();
+
+    // Update the simulation with the new links
+    simulation.force("link").links(links);
+
+    // Restart the simulation
+    simulation.alpha(1).restart();
+
+    // Re-render the graph with the new links
+    renderGraph();
+
+    // Pick a new company name to display
+    const randomCompany = companies[Math.floor(Math.random() * companies.length)];
+    document.getElementById("company-name").textContent = "Simulation for: " + randomCompany;
+  }
+
+  // Set interval to reset all links and graph every 4 seconds
+  setInterval(resetLinksAndGraph, 4000);
+
+  // Drag functions to control node behavior during drag events
+  function dragstarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+
+  function dragended(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+</script>
 
 
-<div class="pillar-sect">
-  <h2>Culture</h2>
-  <p>Building a culture that embraces digital transformation is essential for fostering innovation and agility within an organization. This mindset drives collaboration, continuous learning, and adaptability in a rapidly changing environment.</p>
-  <a href="/en/pillar/culture/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Strategie</h2>
-  <p>A robust strategy ensures that technological advancements are tightly aligned with your business objectives. This alignment paves the way for sustainable growth and ensures that digital initiatives deliver real value.</p>
-  <a href="/en/pillar/strategie/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Makers</h2>
-  <p>The makers—your engineers, designers, and innovators—are the driving force behind digital transformation. Empowering them with the right tools and environment enables breakthrough innovations that push your business forward.</p>
-  <a href="/en/pillar/makers/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Talents</h2>
-  <p>Attracting, nurturing, and retaining top talent is more important than ever in today’s competitive tech landscape. Your talent strategy will define how well you can adapt, grow, and stay ahead of disruption.</p>
-  <a href="/en/pillar/talents/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Clients</h2>
-  <p>Clients are at the heart of any transformation. Understanding and responding to their evolving needs through technology is critical to building loyalty and delivering exceptional experiences.</p>
-  <a href="/en/pillar/clients/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Data & IA</h2>
-  <p>Data and AI are powerful tools that drive insights, automation, and smarter decision-making. Leveraging these technologies effectively can significantly enhance business performance and innovation.</p>
-  <a href="/en/pillar/data/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Tech</h2>
-  <p>Technology is the backbone of digital transformation, from cloud infrastructure to cutting-edge tools. Staying on top of tech trends allows your organization to innovate faster and operate more efficiently.</p>
-  <a href="/en/pillar/tech/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Decisions</h2>
-  <p>Data-driven decisions are key to thriving in a fast-paced digital landscape. Integrating advanced analytics and automation into decision-making processes can unlock faster, more accurate insights.</p>
-  <a href="/en/pillar/decisions/">View Articles</a>
-</div>
-<div class="pillar-sect">
-  <h2>Vélocité</h2>
-  <p>Speed is a competitive advantage in the digital era. Increasing your organization’s velocity—from innovation cycles to time-to-market—helps you stay ahead of the curve and seize new opportunities.</p>
-  <a href="/en/pillar/velocite/">View Articles</a>
-</div>
 
+    </div>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/en/pillar/culture/">Culture</a>
+      <a href="/en/pillar/culture/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      A high-performing organization's culture is the DNA of innovation and resilience. It fosters agility and cognitive flexibility, rapidly integrating new technologies...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/strategy/">Strategy</a>
+      <a href="/pillar/strategy/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      Successful organizations anticipate trends, shape innovation, and redefine the rules of the game. They integrate AI to maximize performance and remain agile in the face of emerging opportunities...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/makers/">Makers</a>
+      <a href="/pillar/makers/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      "Makers" are leaders who combine strategic vision with innovation. Their deep understanding of the market and technologies creates an environment conducive to experimentation and rapid execution...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/talent/">Talent</a>
+      <a href="/pillar/talent/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      Talent is essential to transformation. These companies attract and develop individuals who can master cutting-edge technologies while fostering a culture of learning and innovation...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/customers/">Customers</a>
+      <a href="/pillar/customers/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      High-performing companies place the customer at the heart of their strategy. Leveraging data and AI, they anticipate needs, personalize interactions, and consistently exceed expectations...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/data/">Data & AI</a>
+      <a href="/pillar/data/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      Mastery of data and AI turns insights into actionable outcomes. Companies innovate faster, streamline processes, and make more informed decisions...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/tech/">Tech</a>
+      <a href="/pillar/tech/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      Technology is the central lever that enables agility and innovation. Companies adopt flexible infrastructures and strengthen their cybersecurity to protect strategic data...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/decisions/">Decisions</a>
+      <a href="/pillar/decisions/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      AI-powered decisions enable companies to respond quickly to changes and seize opportunities. This enhances their ability to navigate complex environments...
+    </p>
+  </div>
+
+  <div class="pillar-sect">
+    <h2 class="pillar-header">
+      <a href="/pillar/velocity/">Velocity</a>
+      <a href="/pillar/velocity/" class="no-hover-effect">
+        <span class="material-icons icon-google-smart">
+          play_circle_outline
+        </span>
+      </a>
+    </h2>
+    <p>
+      Velocity is critical to innovating rapidly and adapting to crises. High-performing companies develop products faster and stay ahead by leveraging the synergy of the other pillars...
+    </p>
+  </div>
 
 
   </div>
@@ -92,9 +433,9 @@
       <div class="footer-container">
         <div class="footer-links">
           <ul>
-            <li><a href="#">Droits</a></li>
-            <li><a href="#">Publier des articles</a></li>
-            <li><a href="#">Blog Opensource</a></li>
+            <li><a href="privacy/">Privacy</a></li>
+            <li><a href="publish">Publish</a></li>
+            <li><a href="OrbiiKnowledge/">Orbii Knowledge</a></li>
           </ul>
         </div>
         <div class="footer-info">
@@ -108,7 +449,5 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-   
- </body>
+</body>
 </html>
-

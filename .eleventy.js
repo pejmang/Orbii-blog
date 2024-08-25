@@ -1,8 +1,6 @@
 const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
-
-
   // French Collection
   eleventyConfig.addCollection("fr_posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
@@ -40,6 +38,12 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(format);
   });
 
+  // Ajouter un filtre personnalisé pour l'encodage des URL
+  eleventyConfig.addFilter("url_encode", function(value) {
+    return encodeURIComponent(value);
+  });
+
+  // Configuration générale
   return {
     dir: {
       input: "src",
