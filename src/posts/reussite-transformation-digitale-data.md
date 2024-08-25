@@ -4,7 +4,7 @@ teaser: "Les clés pour réussir la transformation digitale : culture data-drive
 date: 2024-04-12
 pillar: culture
 type: article
-
+authors: Pejman GOHARI
 ---
 
 ## Comment assurer la réussite de la transformation digitale et data ?

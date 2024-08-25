@@ -4,7 +4,7 @@ teaser: "Découvrez dans cette vidéo exclusive les coulisses de l’innovation 
 date: 2022-04-12
 pillar: strategie
 type: video
-
+authors: Microsoft France
 ---
 
 <div class="extended">

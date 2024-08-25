@@ -4,6 +4,7 @@ teaser: "Explorez l'extension du livre : transformation digitale, données, IA. 
 date: 2022-04-12
 pillar: culture
 type: article
+authors: Nouamane Cherkaoui
 
 ---
 

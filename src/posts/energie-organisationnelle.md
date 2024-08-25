@@ -2,9 +2,7 @@
 title: "Gérer l’Énergie Organisationnelle : Un impératif stratégique dans un monde en constante transformation"
 teaser: "Dans un environnement en constante évolution, l'énergie organisationnelle est cruciale pour aligner les équipes et stimuler l'innovation. Découvrez comment optimiser cette ressource clé pour assurer la transformation et la performance de votre organisation."
 date: 2024-04-24
-tags:
-  - transformation
-  - Management
+tags: transformation,Management
 authors: Pejman Gohari
 pillar: strategie
 type: article

@@ -2,10 +2,7 @@
 title: "L'IA Générative et les LLM: une adoption  grâce au RAG"
 teaser: "IA générative et RAG : une alliance puissante pour des contenus fiables et contextualisés en entreprise. Mais est-ce la solution idéale pour vous ? Découvrez les avantages et enjeux dans cet article."
 date: 2024-04-24
-tags:
-  - AI
-  - RAG
-  - LLm
+tags: AI, RAG, LLm
 authors: Pejman GOHARI
 pillar: strategie
 type: article
