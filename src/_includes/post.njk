@@ -13,13 +13,20 @@
     </div>
     <main id="article">
       <h1>{{ title }}</h1>
-      {% if authors %}
-        <div class="extended">Auteur : {{ authors }}</div>
+  {% if authors %}
+        <div class="extended">Auteur : {{ authors }}
+         <a href="/about/" class="no-hover-effect">
+      <span class="material-icons icon-google-smart">
+        play_circle_outline
+      </span>
+    </a>
+        </div>
       {% endif %}
+
 
       {{ content | safe }}
 
-       <div class="share-container">
+      <div class="share-container">
           <h3>Partagez cet article :</h3>
 
           <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
@@ -30,9 +37,6 @@
           </a>
       </div>
 
-      </div>
-      
     </main>
   </div>
 {% endblock %}
-
