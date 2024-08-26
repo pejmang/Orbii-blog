@@ -3,7 +3,7 @@ title: "Investissements Tech en Afrique : Vers la New African Valley"
 teaser: "Explorez l'extension du livre : transformation digitale, données, IA. Découvrez articles, avis, et commandez le livre. Contactez-nous pour un accompagnement vers le futur tech en Afrique."
 date: 2022-04-12
 pillar: culture
-type: article
+type: strategy
 authors: Nouamane Cherkaoui
 
 ---

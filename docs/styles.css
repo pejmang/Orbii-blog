@@ -136,6 +136,13 @@ body {
 .linkedin-icon:hover svg {
   fill: #2980b9;
 }
+.linkedin-icon:hover {
+  border-bottom: none;
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+}
+
 
 /* Media Queries for Larger Screens */
 @media (min-width: 768px) {
@@ -615,3 +622,13 @@ img {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
 }
+.flag-icon {
+  width: 20px;  /* Ajustez la taille de l'icône ou de l'image */
+  height: auto;
+  margin-left: 8px;  /* Espace entre le titre et l'icône */
+  vertical-align: middle;  /* Aligne l'icône avec le texte */
+}
+.small-book-image {
+  max-width: 100px;
+  height: auto;
+  margin-right: 

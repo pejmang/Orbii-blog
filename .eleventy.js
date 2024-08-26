@@ -4,14 +4,14 @@ module.exports = function(eleventyConfig) {
   // French Collection
   eleventyConfig.addCollection("fr_posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
-      return a.date - b.date;
+      return b.date - a.date;
     });
   });
 
   // English Collection
   eleventyConfig.addCollection("en_posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/en/posts/*.md").sort((a, b) => {
-      return a.date - b.date;
+      return b.date - a.date;
     });
   });
 
