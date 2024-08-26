@@ -1,3 +1,4 @@
+/* Font Definitions */
 @font-face {
   font-family: 'Montserrat';
   src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
@@ -33,12 +34,14 @@
   src: url('fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
 }
 
+/* Universal Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Basic Body Styling */
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
@@ -54,6 +57,7 @@ body {
   font-family: 'Inconsolata', monospace;
 }
 
+/* Container Styling */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -62,6 +66,7 @@ body {
   flex-grow: 1;
 }
 
+/* Author Section */
 .author {
   margin-bottom: 30px;
 }
@@ -83,6 +88,7 @@ body {
   color: #34495e;
 }
 
+/* Call to Action Box */
 .call-to-action {
   background-color: #f4f4f4;
   padding: 20px;
@@ -114,6 +120,7 @@ body {
   text-decoration: underline;
 }
 
+/* LinkedIn Icon Styling */
 .linkedin-icon {
   display: inline-block;
   text-decoration: none;
@@ -130,6 +137,7 @@ body {
   fill: #2980b9;
 }
 
+/* Media Queries for Larger Screens */
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
@@ -140,9 +148,11 @@ body {
   .container {
     max-width: 720px;
   }
+
   .extended, h1 {
     margin: 0 -100px;
   }
+
   .extended2 {
     margin: 0 -200px;
   }
@@ -160,6 +170,7 @@ body {
   }
 }
 
+/* Default Text Styling */
 ol, ul, p {
   margin-top: 25px;
   font-size: 20px;
@@ -178,6 +189,7 @@ ol li::marker {
   font-weight: bold;
 }
 
+/* Link Styling */
 a {
   color: black;
   text-decoration: none;
@@ -205,12 +217,14 @@ a:hover {
   outline: none;
 }
 
+/* Post List Styling */
 .post-list {
   margin-top: 25px;
   padding-left: 0;
   text-align: left;
 }
 
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'EB Garamond', serif;
 }
@@ -219,19 +233,23 @@ h2 {
   margin-top: 20px;
 }
 
+/* Extended Image Styling */
 .extended img {
   width: 100%;
 }
 
+/* Small Text */
 .small-text {
   font-size: 0.650em;
   line-height: 1.4;
 }
 
+/* Blockquotes */
 blockquote {
   border-left: 10px solid black;
 }
 
+/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
@@ -265,6 +283,7 @@ nav ul li a:hover {
   border-radius: 7px;
 }
 
+/* Pillar Section */
 .pillar-sect {
   margin-top: 50px;
 }
@@ -273,6 +292,7 @@ nav ul li a:hover {
   margin-top: 0px;
 }
 
+/* Flexbox for Columns */
 .flex-container {
   display: flex;
   align-items: flex-start;
@@ -289,16 +309,14 @@ nav ul li a:hover {
   text-align: center;
 }
 
-.column-right svg {
-  margin-top: 0;
-}
-
+/* Company Name Styling */
 #company-name {
   margin-top: 10px;
   font-size: 16px;
   font-weight: bold;
 }
 
+/* Pillar Title */
 .pillar-title {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -314,6 +332,7 @@ nav ul li a:hover {
   font-weight: bold;
 }
 
+/* Pillar Container and Content */
 .pillar-container {
   display: flex;
   align-items: flex-start;
@@ -330,17 +349,12 @@ nav ul li a:hover {
   padding-left: 10px;
 }
 
-.post-list {
-  padding-left: 0;
-  text-align: left;
-  margin-bottom: 20px;
-}
-
+/* Full-width Columns for Mobile */
 .column-left, .column-right {
   width: 100%;
 }
 
-/* Responsive for small screens */
+/* Responsive for Small Screens */
 @media (max-width: 768px) {
   .pillar-container {
     padding: 0 5px;
@@ -393,6 +407,7 @@ nav ul li a:hover {
   }
 }
 
+/* Footer Styling */
 .footer {
   background-color: #f9f9f9;
   padding: 40px 20px;
@@ -409,6 +424,7 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
+/* Footer Links */
 .footer-links ul {
   list-style: none;
   padding: 0;
@@ -438,11 +454,13 @@ nav ul li a:hover {
   text-align: center;
 }
 
+/* Image Styling */
 img {
   max-width: 100%;
   height: auto;
 }
 
+/* Icon Styling */
 .icon {
   margin-left: 8px;
   margin-right: 8px;
@@ -463,11 +481,13 @@ img {
   text-decoration: none;
 }
 
+/* Emoji Styling */
 .emoji {
   font-size: 24px;
   margin-left: 8px;
 }
 
+/* Google Smart Icon */
 .icon-google-smart {
   font-size: 28px;
   color: #00bcd4;
@@ -503,6 +523,7 @@ img {
   box-shadow: none;
 }
 
+/* Share Buttons */
 .share-buttons {
   margin-top: 20px;
 }
