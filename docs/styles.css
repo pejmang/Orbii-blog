@@ -82,35 +82,36 @@ body {
   font-weight: bold;
   color: #34495e;
 }
+
 .call-to-action {
-  background-color: #f4f4f4; /* Un fond léger pour la différencier */
-  padding: 20px; /* Espacement pour aérer le contenu */
-  border-radius: 8px; /* Coins légèrement arrondis pour un design moderne */
-  margin-top: 30px; /* Espacement par rapport aux autres sections */
-  text-align: center; /* Centrer le texte pour donner un effet d'appel */
-  font-family: 'Arial', sans-serif; /* Harmonisé avec le reste du site */
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
 }
 
 .call-to-action h2 {
-  font-size: 24px; /* Taille de police pour le titre */
-  color: #333; /* Couleur du texte principale */
-  margin-bottom: 15px; /* Espacement sous le titre */
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
 }
 
 .call-to-action p {
-  font-size: 18px; /* Taille de police légèrement réduite pour le texte */
-  color: #555; /* Couleur subtile pour le texte */
-  margin-bottom: 20px; /* Espacement sous le texte */
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
 }
 
 .call-to-action a {
-  color: #007BFF; /* Couleur bleue pour l'appel à l'action */
-  text-decoration: none; /* Supprime la décoration de lien */
-  font-weight: bold; /* Accentue le lien */
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .call-to-action a:hover {
-  text-decoration: underline; /* Ajout d'un soulignement au survol */
+  text-decoration: underline;
 }
 
 .linkedin-icon {
@@ -206,6 +207,8 @@ a:hover {
 
 .post-list {
   margin-top: 25px;
+  padding-left: 0;
+  text-align: left;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -299,30 +302,6 @@ nav ul li a:hover {
 .pillar-title {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: 24px;
-  margin-right: 20px;
-  font-family: 'EB Garamond', serif;
-}
-
-.pillar-container {
-  display: flex;
-  align-items: flex-start;
-  margin-left: -20px; /* Push the container to the left */
-  margin-top: 20px;
-  max-width: 100%; /* Ensure the container takes up full width */
-  padding-left: 0; /* Remove padding from the left side */
-}
-
-.column-left, .column-right {
-  width: 100%; /* Make sure both columns take up the full width */
-}
-
-
-
-
-.pillar-title {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
   font-size: 36px;
   margin-right: 20px;
   font-family: 'EB Garamond', serif;
@@ -335,11 +314,83 @@ nav ul li a:hover {
   font-weight: bold;
 }
 
+.pillar-container {
+  display: flex;
+  align-items: flex-start;
+  margin-left: -20px;
+  margin-top: 20px;
+  max-width: 100%;
+  padding-left: 0;
+}
+
 .pillar-content {
   max-width: 90%;
   flex-grow: 1;
   margin-left: 0;
   padding-left: 10px;
+}
+
+.post-list {
+  padding-left: 0;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.column-left, .column-right {
+  width: 100%;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .pillar-container {
+    padding: 0 5px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pillar-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 24px;
+    margin-right: 0;
+  }
+
+  .pillar-content {
+    padding: 0;
+  }
+
+  .post-list {
+    padding-left: 0;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .extended, .extended2 {
+    margin: 0;
+  }
+
+  .pillar-content, .column-left, .column-right {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .column-left, .column-right {
+    width: 100%;
+  }
 }
 
 .footer {
@@ -385,76 +436,6 @@ nav ul li a:hover {
   font-size: 14px;
   color: #333;
   text-align: center;
-}
-
-@media (max-width: 767px) {
-  .container {
-    max-width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
-  body {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-size: 1.2em;
-  }
-
-  p, ul, ol {
-    font-size: 16px;
-  }
-
-  .author {
-    margin-bottom: 15px;
-  }
-
-  ol, ul, p {
-    margin-top: 15px;
-  }
-
-  .post-list {
-    margin-top: 15px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background: white;
-    width: 100%;
-  }
-
-  nav ul.show {
-    display: block;
-  }
-
-  nav .hamburger {
-    display: block;
-    cursor: pointer;
-  }
-
-  .extended, .extended2 {
-    margin: 0;
-  }
-
-  .pillar-content, .column-left, .column-right {
-    padding-left: 0;
-    margin-left: 0;
-  }
-
-  .footer-container, .flex-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .column-left, .column-right {
-    width: 100%;
-  }
 }
 
 img {
@@ -521,6 +502,7 @@ img {
   outline: none;
   box-shadow: none;
 }
+
 .share-buttons {
   margin-top: 20px;
 }
@@ -538,6 +520,7 @@ img {
   width: 32px;
   height: 32px;
 }
+
 /* Social Sharing Buttons */
 .share-container {
   display: flex;
@@ -577,11 +560,11 @@ img {
 
 .share-container a:hover {
   background-color: #f0f0f0;
-  color: #1da1f2; /* Twitter Blue */
+  color: #1da1f2;
 }
 
 .share-container .linkedin-icon:hover {
-  color: #0077b5; /* LinkedIn Blue */
+  color: #0077b5;
 }
 
 .share-container a:hover svg {
@@ -593,7 +576,6 @@ img {
   font-weight: 600;
 }
 
-/* Specific hover effects for the icons */
 .share-container a.twitter:hover {
   color: #1da1f2;
 }
@@ -602,7 +584,6 @@ img {
   color: #0077b5;
 }
 
-/* General button reset for smooth hover transitions */
 .share-container a {
   background-color: transparent;
   border: none;
