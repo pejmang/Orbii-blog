@@ -4,8 +4,8 @@ teaser: "IA générative et RAG : une alliance puissante pour des contenus fiabl
 date: 2024-04-24
 tags: AI, RAG, LLm
 authors: Pejman GOHARI
-pillar: strategie
-type: article
+pillar: strategy
+type: sharing
 
 ---
 

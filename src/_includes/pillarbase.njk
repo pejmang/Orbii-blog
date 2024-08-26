@@ -43,6 +43,13 @@
           {% for post in posts %}
             {% if post.data.pillar == pillar %}
               <div class="post-list">
+
+                <!-- Affichage de l'icône basé sur le type de post -->
+                {% if post.data.type %}
+                  <img src="/images/ic/i-{{ post.data.type }}.png" alt="{{ post.data.type }}" title="{{ post.data.type }}" style="width: 30px; height: auto; margin-right: 10px;">
+                {% endif %}
+
+                <!-- Lien vers l'article -->
                 <a href="{{ post.url }}">{{ post.data.title }}</a>
                 <div class="teaser">{{ post.data.teaser }}</div>
               </div>
