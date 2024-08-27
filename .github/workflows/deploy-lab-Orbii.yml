@@ -34,8 +34,8 @@ jobs:
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        server: ${{ secrets.FTP_SERVER }}          # Serveur FTP
-        username: ${{ secrets.FTP_USERNAME }}      # Nom d'utilisateur FTP
-        password: ${{ secrets.FTP_PASSWORD }}      # Mot de passe FTP
+        server: ${{ secrets.FTP_SERVER_LAB }}          # Serveur FTP
+        username: ${{ secrets.FTP_USERNAME_lAB }}      # Nom d'utilisateur FTP
+        password: ${{ secrets.FTP_PASSWORD_LAB }}      # Mot de passe FTP
         local-dir: docs/                          # Dossier local généré par Eleventy
-        server-dir: /lab/              # Répertoire sur le serveur, se termine par "/"
+        server-dir: /public_html/              # Répertoire sur le serveur, se termine par "/"
