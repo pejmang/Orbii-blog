@@ -41,4 +41,3 @@ jobs:
         server-dir: /public_html/             # Répertoire sur le serveur, se termine par "/"
 
     dangerous-clean-slate: false  # Ne pas supprimer les fichiers sur le serveur
-    method: noclean  # Empêche la suppression des fichiers avant le téléchargement
