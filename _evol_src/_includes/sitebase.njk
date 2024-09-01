@@ -1,0 +1,35 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+
+  <div class="container">
+    <h1>Horizon : Digital Transformation & AI</h1>
+    <nav class="mono extended">
+      <ul style="float: right;">
+        <li><a href="/en/" {% if lang == "en" %}class="active"{% endif %}>en</a></li>
+        <li><a href="/" {% if lang != "en" %}class="active"{% endif %}>fr</a></li>
+      </ul>
+
+      {% if lang == "en" %}
+      <ul>
+        <li><a href="/en/" class="{% if page.url == '/en/' %}active{% endif %}">Insights</a></li>
+        <li><a href="/en/9pillars" class="{% if page.url == '/en/9pillars/' %}active{% endif %}">9 Pillars</a></li>
+        <li><a href="/en/videos" class="{% if page.url == '/videos/' %}active{% endif %}">Echoes</a></li>
+        <li><a href="/en/book" class="{% if page.url == '/en/book/' %}active{% endif %}">Book</a></li>
+        <li><a href="/en/about" class="{% if page.url == '/en/about/' %}active{% endif %}">Knowledge Architects</a></li>
+      </ul>
+      {% else %}
+      <ul>
+        <li><a href="/" class="{% if page.url == '/' %}active{% endif %}">Insights</a></li>
+        <li><a href="/9pillars" class="{% if page.url == '/9pillars/' %}active{% endif %}"> 9 piliers</a></li>
+        <li><a href="/videos" class="{% if page.url == '/videos/' %}active{% endif %}">Echos</a></li>
+        <li><a href="/livre" class="{% if page.url == '/livre/' %}active{% endif %}">Le livre</a></li>
+        <li><a href="/about" class="{% if page.url == '/about/' %}active{% endif %}">Knowledge Architects</a></li>
+      </ul>
+      {% endif %}
+    </nav>
+
+    {% block site_content %}{% endblock %}
+  </div>
+{% endblock %}
