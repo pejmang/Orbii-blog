@@ -39,3 +39,5 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}      # Mot de passe FTP
         local-dir: docs/                          # Dossier local généré par Eleventy
         server-dir: /public_html/             # Répertoire sur le serveur, se termine par "/"
+        dangerous-clean-slate: false     # ne pas supprimer les fichier inexistants
+
