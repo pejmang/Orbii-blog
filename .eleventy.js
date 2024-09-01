@@ -33,6 +33,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/en/posts/**/*.gif");
   eleventyConfig.addPassthroughCopy("src/en/posts/**/*.jpg");
 
+  // Passthrough copy for JS and CSS
+  eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/css");
+
   // Date filter for formatting
   eleventyConfig.addFilter("date", (dateObj, format = "MMMM dd, yyyy") => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(format);

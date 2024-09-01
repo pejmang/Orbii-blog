@@ -1,0 +1,42 @@
+{% extends "base.njk" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="extended">
+      {% if lang == "en" %}
+        <a href="/en/">Insights</a>
+      {% else %}
+        <a href="/">Insights</a>
+      {% endif %}
+    </div>
+    
+    <main id="article">
+      <h1>{{ title }}</h1>
+      {% if authors %}
+        <div class="extended">Auteur : {{ authors }}
+          <a href="/about/" class="no-hover-effect">
+            <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
+          </a>
+          {% if date %}
+        <div class="article-date">
+        Publié le : {{ date | date("dd/MM/yyyy") }}
+        </div>
+      {% endif %}
+        </div>
+      {% endif %}
+      
+      {{ content | safe }}
+
+      <div class="share-container">
+          <h3>Partagez cet article :</h3>
+          <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
+            <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn" style="width: 30px; height: auto;">
+            <span>LinkedIn</span>
+          </a>
+      </div>
+
+    </main>
+  </div>
+{% endblock %}

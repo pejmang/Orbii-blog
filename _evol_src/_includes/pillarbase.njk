@@ -1,0 +1,62 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <div class="container">
+    <!-- Add the new H1 heading -->
+    <h1>Horizon: Digital Transformation & AI</h1>
+
+    <!-- Navigation Menu -->
+    <div class="extended">
+      {% if lang == "en" %}
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/9pillars/">The other Pillars</a></li>
+          <!-- Add other menu items here -->
+        </ul>
+      </nav>
+      {% elif lang == "fr" %}
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/9pillars/">Les autres Piliers</a></li>
+          <!-- Add other menu items here -->
+        </ul>
+      </nav>
+      {% endif %}
+    </div>
+
+    <!-- Pillar Layout with Vertical Title -->
+    <div class="pillar-container">
+      <h2 class="pillar-title">{{ title }}</h2>
+      <div class="pillar-content">
+        <p>{{ description }}</p>
+
+        <!-- List of articles related to the current pillar -->
+        <div class="mono">
+          {% if lang == "en" %}
+            {% set posts = collections.en_posts %}
+          {% elif lang == "fr" %}
+            {% set posts = collections.fr_posts %}
+          {% endif %}
+
+          {% for post in posts %}
+            {% if post.data.pillar == pillar %}
+              <div class="post-list">
+
+                <!-- Affichage de l'icône basé sur le type de post -->
+                {% if post.data.type %}
+                  <img src="/images/ic/i-{{ post.data.type }}.png" alt="{{ post.data.type }}" title="{{ post.data.type }}" style="width: 30px; height: auto; margin-right: 10px;">
+                {% endif %}
+
+                <!-- Lien vers l'article -->
+                <a href="{{ post.url }}">{{ post.data.title }}</a>
+                <div class="teaser">{{ post.data.teaser }}</div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
