@@ -53,6 +53,7 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
+  <link rel="stylesheet" href="/styles/style.css">
   <div class="container">
     <div class="extended">
       
@@ -63,18 +64,26 @@
     <main id="article">
       <h1>Des Makers aux Commandes. Mira Murati.</h1>
       
-        <div class="extended">Auteur : Nouamane Cherkaoui
+        <div class="extended">
+          Auteur : Nouamane Cherkaoui
           <a href="/about/" class="no-hover-effect">
             <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
           </a>
           
-        <div class="article-date">
-        Publié le : 02/08/2024
+            <div class="article-date">
+              Publié le : 02/08/2024
+            </div>
+            <div class="article-recommendation">
+              <span>Article recommandé :</span>
+              <button class="recommend-button" onclick="handleRecommendClick()">
+                <img src="/images/ic/i-value.png" alt="Networking Icon" title="Networking Icon" width="24" height="24">
+                <span class="recommend-count" id="recommend-count">0</span>
+              </button>
+            </div>
+          
         </div>
       
-        </div>
-      
-      
+
       <p><strong>Mira Murati</strong> est longtemps restée dans l'ombre d'un autre Maker, <strong>Sam Altman</strong>. En 2018, Murati, <strong>ingénieure en génie mécanique</strong> d'origine albanaise, a rejoint <strong>OpenAI</strong> en tant que <strong>vice-présidente de l'IA appliquée</strong>, travaillant notamment sur le développement de <strong>DALL-E</strong>. Elle a ensuite gravi les échelons pour devenir <strong>directrice de la technologie</strong> d'OpenAI, dirigeant les équipes responsables de <strong>ChatGPT</strong> en plus de DALL-E, devenant ainsi l'une des personnalités les plus influentes de la tech mondiale.</p>
 <p>Avant même qu'elle ne soit nommée à 35 ans comme <strong>CEO par intérim</strong> d'OpenAI après le départ de <strong>Sam Altman</strong> en novembre 2023, le magazine <em>Time</em> la présentait déjà, en février de la même année, comme « la créatrice de ChatGPT ». Son objectif est de s'assurer que les travaux de ses équipes autour de <strong>l'IA générative</strong> ne produisent pas des outils qui pourraient induire les utilisateurs en erreur, faire preuve de parti pris, ou menacer l'humanité. Elle considère également que <strong>ChatGPT</strong> représente une belle opportunité pour l'enseignement et le partage des connaissances.</p>
 <p>Forte de ses convictions, elle défend les tests auprès du grand public : « Vous pourriez réaliser des progrès technologiques dans le vide, sans contact avec le monde réel », explique-t-elle à <em>Fast Company</em>. « Mais alors la question est : allez-vous réellement dans la bonne direction ? ».</p>
@@ -86,17 +95,147 @@
 <a href="https://www.fastcompany.com">Fast Company</a><br>
 <a href="https://www.youtube.com">The Daily Show (YouTube) - Mira Murati: DALL·E 2 and the Power of AI</a></p>
 
+      <br>
 
-      <div class="share-container">
-          <h3>Partagez cet article :</h3>
-          <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
-            <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn" style="width: 30px; height: auto;">
-            <span>LinkedIn</span>
-          </a>
-      </div>
+<div class="article-recommendation">
+  <span class="recommendation-text">
+    Si l'article a été utile, recommandez-le :
+  </span>
+  <button class="recommend-button" onclick="handleRecommendClick()">
+    <img src="/images/ic/i-value.png" alt="Recommander" width="24" height="24">
+    <span class="recommend-count" id="recommend-count-bottom">0</span>
+  </button>
+</div>
 
-    </main>
-  </div>
+<div class="share-container">
+  <h3>Partagez cet article :</h3>
+  <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
+    <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn">
+    <span>LinkedIn</span>
+  </a>
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    const AIRTABLE_BASE_ID = 'apptQQHKxWhuvYfsD';
+    const AIRTABLE_API_KEY = 'pat0F0Jqq8tvmqwz6.d7e1dbf1b1b44c3709c67ef5a348d89be094e29132a9500010f71aa2a7bc23b3';
+    const AIRTABLE_TABLE_NAME = 'Orbii';
+    const articleID = '1000005'; // Make sure to pass this from your data
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetchRecommendationCount(articleID);
+        if (response) {
+          const totalRecommendations = response.fields.Recommendations || 0;
+          document.getElementById('recommend-count').textContent = totalRecommendations;
+          document.getElementById('recommend-count-bottom').textContent = totalRecommendations;
+        }
+      } catch (error) {
+        // Handle error silently
+      }
+    });
+
+    async function fetchRecommendationCount(articleID) {
+      const recordURL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
+      const filterFormula = `filterByFormula=articleID="${articleID}"`;
+      const url = `${recordURL}?${filterFormula}`;
+
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+        },
+      });
+
+      if (response.data.records.length > 0) {
+        return response.data.records[0];
+      } else {
+        return null;
+      }
+    }
+
+    function handleRecommendClick() {
+      const likedArticles = JSON.parse(localStorage.getItem('likedArticles')) || [];
+
+      if (likedArticles.includes(articleID)) {
+        return;
+      }
+
+      likedArticles.push(articleID);
+      localStorage.setItem('likedArticles', JSON.stringify(likedArticles));
+
+      const topCountElement = document.getElementById('recommend-count');
+      const bottomCountElement = document.getElementById('recommend-count-bottom');
+      let recommendCount = parseInt(topCountElement.textContent) + 1;
+
+      topCountElement.textContent = recommendCount;
+      bottomCountElement.textContent = recommendCount;
+
+      recommendArticle(articleID, recommendCount);
+    }
+
+    async function recommendArticle(articleID, recommendCount) {
+      const recordURL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
+      const filterFormula = `filterByFormula=articleID="${articleID}"`;
+      const url = `${recordURL}?${filterFormula}`;
+
+      try {
+        const response = await axios.get(url, {
+          headers: {
+            Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+          },
+        });
+
+        const dateNow = new Date().toISOString().split('T')[0];
+
+        if (response.data.records.length > 0) {
+          const recordId = response.data.records[0].id;
+          const currentRecommendations = response.data.records[0].fields.Recommendations || 0;
+
+          const updateData = {
+            fields: {
+              Recommendations: currentRecommendations + 1,
+              "Last-Recommended-By": "Un utilisateur unique",
+              "Date of Last Recommendation": dateNow,
+            },
+          };
+
+          await axios.patch(
+            `${recordURL}/${recordId}`,
+            updateData,
+            {
+              headers: {
+                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+              },
+            }
+          );
+        } else {
+          const postData = {
+            fields: {
+              articleID: articleID,
+              Recommendations: recommendCount,
+              "Last-Recommended-By": "Un utilisateur unique",
+              "Date of Last Recommendation": dateNow,
+            },
+          };
+
+          await axios.post(
+            recordURL,
+            postData,
+            {
+              headers: {
+                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+              },
+            }
+          );
+        }
+      } catch (error) {
+        // Handle error silently
+      }
+    }
+  </script>
 
 
 

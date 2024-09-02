@@ -53,6 +53,7 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
+  <link rel="stylesheet" href="/styles/style.css">
   <div class="container">
     <div class="extended">
       
@@ -63,18 +64,26 @@
     <main id="article">
       <h1>L&#39;un des premiers Makers de la Frenchtech : Xavier Niel.</h1>
       
-        <div class="extended">Auteur : Nouamane Cherkaoui
+        <div class="extended">
+          Auteur : Nouamane Cherkaoui
           <a href="/about/" class="no-hover-effect">
             <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
           </a>
           
-        <div class="article-date">
-        Publié le : 31/08/2024
+            <div class="article-date">
+              Publié le : 31/08/2024
+            </div>
+            <div class="article-recommendation">
+              <span>Article recommandé :</span>
+              <button class="recommend-button" onclick="handleRecommendClick()">
+                <img src="/images/ic/i-value.png" alt="Networking Icon" title="Networking Icon" width="24" height="24">
+                <span class="recommend-count" id="recommend-count">0</span>
+              </button>
+            </div>
+          
         </div>
       
-        </div>
-      
-      
+
       <p>Né en 1967, <strong>Xavier Niel</strong> est un homme d’affaires français dont le parcours, le flair et les ambitions n’ont rien à envier aux fondateurs des GAFA comme <strong>Steve Jobs, Bill Gates, Mark Zuckerberg</strong> ou <strong>Jeff Bezos</strong>.</p>
 <p>Geek, chiromancien, aventurier, visionnaire, <strong>Xavier Niel</strong> est tout cela à la fois. Il est le fondateur et actionnaire principal d'<strong>Iliad</strong>, groupe de télécommunications français, maison mère du fournisseur d'accès à Internet <strong>Free</strong>, de l'opérateur de téléphonie mobile <strong>Free Mobile</strong>, de l'annuaire téléphonique inversé, et de la banque de données <strong>Société.com</strong>. Il est également un investisseur dans plusieurs secteurs d'activités et médias et a fondé les établissements français d'autoformation en informatique <strong>42</strong>. En 2017, <strong>Xavier Niel</strong> a lancé <strong>Station F</strong>, le plus grand incubateur d’Europe, situé à Paris. Brillant et très doué en nouvelles technologies et informatique, <strong>Xavier Niel</strong> se détourne de ses études très tôt (classes préparatoires maths sup en 1987) pour se lancer dans l’aventure du <strong>Minitel Rose</strong>, investir dans l’exploitation de <strong>peep-shows et sex-shops</strong>, et même dans le <strong>piratage</strong> (les radiotéléphones de l’Élysée, la société <strong>Fermic Éditions</strong>, les Minitel de l’ANPE et du Crédit lyonnais). Ces activités lui ont valu quelques démêlés avec la justice, un passage en prison, mais aussi une petite fortune.</p>
 <p>Dans des propos rapportés par <em>Le Monde</em> à l’époque sur cette histoire de piratage à 20 ans des numéros de téléphone de voitures ministérielles ou présidentielles, il disait : « Il suffit d’un ordinateur à moins de 1 000 francs et d’un peu de patience, le temps d’essayer les multiples combinaisons qui sont censées protéger l’accès au réseau <strong>Transpac</strong> des <strong>PTT</strong> », montrant à la fois l’audace et la maîtrise de ce jeune intrépide devenu plus tard l’un des capitaines de l’industrie technologique en France.</p>
@@ -82,17 +91,147 @@
 <p>En 2002, il lance une offre <strong>« triple play »</strong> d'accès à Internet avec <strong>Free</strong>, incluant une offre de téléphonie fixe ainsi que la télévision via un boîtier électronique capable de tout gérer. C’est la naissance du concept innovant de la <strong>box</strong>. En 2012, il lance l’offre <strong>Free Mobile</strong> en collaboration avec <strong>Orange</strong>, basée sur des offres à prix cassés qui changent le paysage de la téléphonie mobile en France, notamment avec la fameuse offre à <strong>2 €</strong>. Bien que <strong>Free</strong> soit rapidement dépassée par la demande, l’offre <strong>Free Mobile</strong> tient bon.</p>
 <p>Le plus grand regret de <strong>Xavier Niel</strong> ? La joint-venture ratée avec <strong>Google</strong>. En effet, lorsque <strong>Xavier Niel</strong> était dans la <strong>Silicon Valley</strong> à la fin des années 2000, cherchant des partenaires pour construire la future <strong>Freebox</strong>, il rencontre <strong>Sergey Brin</strong> et <strong>Larry Page</strong>, les fondateurs d’une petite start-up nommée <strong>Google</strong>. Les protagonistes ne trouvent pas d'accord financier satisfaisant pour une joint-venture afin de développer le moteur de recherche en Europe. On connaît tous la capitalisation boursière de <strong>Google</strong> aujourd’hui, qui avoisine les <strong>1 000 milliards de dollars</strong> !</p>
 
+      <br>
 
-      <div class="share-container">
-          <h3>Partagez cet article :</h3>
-          <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
-            <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn" style="width: 30px; height: auto;">
-            <span>LinkedIn</span>
-          </a>
-      </div>
+<div class="article-recommendation">
+  <span class="recommendation-text">
+    Si l'article a été utile, recommandez-le :
+  </span>
+  <button class="recommend-button" onclick="handleRecommendClick()">
+    <img src="/images/ic/i-value.png" alt="Recommander" width="24" height="24">
+    <span class="recommend-count" id="recommend-count-bottom">0</span>
+  </button>
+</div>
 
-    </main>
-  </div>
+<div class="share-container">
+  <h3>Partagez cet article :</h3>
+  <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
+    <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn">
+    <span>LinkedIn</span>
+  </a>
+</div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    const AIRTABLE_BASE_ID = 'apptQQHKxWhuvYfsD';
+    const AIRTABLE_API_KEY = 'pat0F0Jqq8tvmqwz6.d7e1dbf1b1b44c3709c67ef5a348d89be094e29132a9500010f71aa2a7bc23b3';
+    const AIRTABLE_TABLE_NAME = 'Orbii';
+    const articleID = '1000001'; // Make sure to pass this from your data
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetchRecommendationCount(articleID);
+        if (response) {
+          const totalRecommendations = response.fields.Recommendations || 0;
+          document.getElementById('recommend-count').textContent = totalRecommendations;
+          document.getElementById('recommend-count-bottom').textContent = totalRecommendations;
+        }
+      } catch (error) {
+        // Handle error silently
+      }
+    });
+
+    async function fetchRecommendationCount(articleID) {
+      const recordURL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
+      const filterFormula = `filterByFormula=articleID="${articleID}"`;
+      const url = `${recordURL}?${filterFormula}`;
+
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+        },
+      });
+
+      if (response.data.records.length > 0) {
+        return response.data.records[0];
+      } else {
+        return null;
+      }
+    }
+
+    function handleRecommendClick() {
+      const likedArticles = JSON.parse(localStorage.getItem('likedArticles')) || [];
+
+      if (likedArticles.includes(articleID)) {
+        return;
+      }
+
+      likedArticles.push(articleID);
+      localStorage.setItem('likedArticles', JSON.stringify(likedArticles));
+
+      const topCountElement = document.getElementById('recommend-count');
+      const bottomCountElement = document.getElementById('recommend-count-bottom');
+      let recommendCount = parseInt(topCountElement.textContent) + 1;
+
+      topCountElement.textContent = recommendCount;
+      bottomCountElement.textContent = recommendCount;
+
+      recommendArticle(articleID, recommendCount);
+    }
+
+    async function recommendArticle(articleID, recommendCount) {
+      const recordURL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
+      const filterFormula = `filterByFormula=articleID="${articleID}"`;
+      const url = `${recordURL}?${filterFormula}`;
+
+      try {
+        const response = await axios.get(url, {
+          headers: {
+            Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+          },
+        });
+
+        const dateNow = new Date().toISOString().split('T')[0];
+
+        if (response.data.records.length > 0) {
+          const recordId = response.data.records[0].id;
+          const currentRecommendations = response.data.records[0].fields.Recommendations || 0;
+
+          const updateData = {
+            fields: {
+              Recommendations: currentRecommendations + 1,
+              "Last-Recommended-By": "Un utilisateur unique",
+              "Date of Last Recommendation": dateNow,
+            },
+          };
+
+          await axios.patch(
+            `${recordURL}/${recordId}`,
+            updateData,
+            {
+              headers: {
+                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+              },
+            }
+          );
+        } else {
+          const postData = {
+            fields: {
+              articleID: articleID,
+              Recommendations: recommendCount,
+              "Last-Recommended-By": "Un utilisateur unique",
+              "Date of Last Recommendation": dateNow,
+            },
+          };
+
+          await axios.post(
+            recordURL,
+            postData,
+            {
+              headers: {
+                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+              },
+            }
+          );
+        }
+      } catch (error) {
+        // Handle error silently
+      }
+    }
+  </script>
 
 
 

@@ -5,6 +5,8 @@ teaser: "Découvrez dans cette vidéo qui donne les cles pour une aaller vers un
 date: 2022-10-12
 pillar: strategie
 type: video
+articleID: "1000013"
+
 
 ---
 

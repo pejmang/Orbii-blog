@@ -1,41 +1,4 @@
-{% extends "sitebase.njk" %}
-
-{% block title %}Orbii, Digital Transformation, Innovation & AI{% endblock %}
-
-{% block site_content %}
-  <div class="container">
-    <h2 class="section-title">Les chroniques de l'Innovation</h2>
-
-    <div class="posts-grid">
-      {% for post in collections.fr_posts %}
-      <a href="{{ post.url }}" class="post-card-link">
-        <div class="post-card" data-post-id="{{ post.data.articleID }}">
-          {% if post.data.type %}
-          <div class="post-header">
-            <img src="/images/ic/i-{{ post.data.type }}.png" alt="{{ post.data.type }}" class="post-icon">
-            <button class="recommend-flag" onclick="event.preventDefault(); handleRecommend(this)">
-              <span class="recommend-count">0</span>
-              <img src="/images/ic/i-value.png" alt="Recommander" width="20" height="20">
-            </button>
-          </div>
-          {% endif %}
-
-          <div class="post-content">
-            <div class="post-title">{{ post.data.title }}</div>
-            <div class="post-teaser">{{ post.data.teaser }}</div>
-            <div class="post-meta">
-              <span class="post-author">{{ post.data.author }}</span>
-            </div>
-          </div>
-        </div>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  
-  <script>
+    // Injected Airtable credentials
     const AIRTABLE_BASE_ID = '{{ env.AIRTABLE_BASE_ID }}';
     const AIRTABLE_API_KEY = '{{ env.AIRTABLE_API_KEY }}';
     const AIRTABLE_TABLE_NAME = '{{ env.AIRTABLE_TABLE_NAME }}';
@@ -58,14 +21,17 @@
               button.classList.add('already-recommended');
             }
           } else {
-            recommendCountElement.textContent = '0';
+            console.warn(`No record found for articleID: ${articleID}`);
+            recommendCountElement.textContent = '0'; // Default to 0 if no record found
           }
         } catch (error) {
-          recommendCountElement.textContent = '0';
+          console.error('Error fetching recommendation count:', error);
+          recommendCountElement.textContent = '0'; // Default to 0 on error
         }
       }
     });
 
+    // Function to fetch the current recommendation count from Airtable
     async function fetchRecommendationCount(articleID) {
       const recordURL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
       const filterFormula = `filterByFormula=articleID="${articleID}"`;
@@ -80,21 +46,27 @@
       if (response.data.records.length > 0) {
         return response.data.records[0];
       } else {
-        return null;
+        console.warn(`No matching record found for articleID: ${articleID}`);
+        return null; // Return null if no record is found
       }
     }
 
+    // This function is called when the recommendation button is clicked
     function handleRecommend(button) {
       const postCard = button.closest('.post-card');
       const articleID = postCard.dataset.postId;
 
       if (!articleID) {
+        console.error('articleID is missing for this post.');
         return;
       }
 
       const likedArticles = JSON.parse(localStorage.getItem('likedArticles')) || [];
 
       if (likedArticles.includes(articleID)) {
+        const recommendCountElement = button.querySelector('.recommend-count');
+        let recommendCount = parseInt(recommendCountElement.textContent);
+        recommendCountElement.textContent = recommendCount;
         return;
       }
 
@@ -107,9 +79,12 @@
         localStorage.setItem('likedArticles', JSON.stringify(likedArticles));
 
         recommendArticle(articleID, recommendCount);
+      } else {
+        console.error('Recommend count element not found.');
       }
     }
 
+    // The function to send the recommendation to Airtable
     async function recommendArticle(articleID, recommendCount) {
       const recordURL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
       const filterFormula = `filterByFormula=articleID="${articleID}"`;
@@ -136,6 +111,8 @@
             },
           };
 
+          console.log("Updating record with data:", updateData);
+
           await axios.patch(
             `${recordURL}/${recordId}`,
             updateData,
@@ -155,6 +132,8 @@
             },
           };
 
+          console.log("Creating new record with data:", postData);
+
           await axios.post(
             recordURL,
             postData,
@@ -166,8 +145,11 @@
           );
         }
       } catch (error) {
-        // Handle error silently
+        console.error("Erreur lors de la mise à jour de la recommandation:", error.response ? error.response.data : error.message);
+        console.log("Full error details:", error);
+        if (error.response && error.response.data) {
+          console.log("Airtable response data:", error.response.data);
+        }
       }
     }
   </script>
-{% endblock %}

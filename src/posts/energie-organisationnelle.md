@@ -6,6 +6,7 @@ tags: transformation,Management
 authors: Pejman Gohari
 pillar: strategy
 type: strategy
+articleID: "1000009"
 
 ---
 

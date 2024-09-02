@@ -7,6 +7,7 @@ authors: Pejman GOHARI
 pillar: Data-AI, Tech, Strategie
 type: sharing
 lang: ["fr", "en"]
+articleID: "1000010"
 
 ---
 

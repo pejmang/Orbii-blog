@@ -6,6 +6,7 @@ tags: transformation,Management
 authors: Nouamane Cherkaoui
 pillar: makers
 type: makers
+articleID: "1000001"
 ---
 
 Né en 1967, **Xavier Niel** est un homme d’affaires français dont le parcours, le flair et les ambitions n’ont rien à envier aux fondateurs des GAFA comme **Steve Jobs, Bill Gates, Mark Zuckerberg** ou **Jeff Bezos**.

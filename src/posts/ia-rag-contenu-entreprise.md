@@ -6,6 +6,8 @@ tags: AI, RAG, LLm
 authors: Pejman GOHARI
 pillar: strategy
 type: sharing
+articleID: "1000008"
+
 
 ---
 

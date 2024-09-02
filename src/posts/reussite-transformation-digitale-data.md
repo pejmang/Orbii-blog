@@ -5,6 +5,8 @@ date: 2024-04-12
 pillar: culture
 type: sharing
 authors: Pejman GOHARI
+articleID: "1000003"
+
 ---
 
 ## Comment assurer la réussite de la transformation digitale et data ?

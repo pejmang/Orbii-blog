@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+require('dotenv').config(); // Charger les variables d'environnement
 
 module.exports = function(eleventyConfig) {
   // French Collection
@@ -46,6 +47,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("url_encode", function(value) {
     return encodeURIComponent(value);
   });
+
+  // Rendre les variables d'environnement disponibles dans les templates
+  eleventyConfig.addGlobalData("env", process.env);
 
   // Configuration générale
   return {
