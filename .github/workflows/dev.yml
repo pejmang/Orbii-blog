@@ -1,0 +1,41 @@
+name: Deploy Orbii-blog - dev to lab.orbii.fr
+
+# Déclencher l'action à chaque fois que des changements sont poussés sur la branche 'main'
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    # Utilise la dernière version stable d'Ubuntu pour exécuter l'action
+    runs-on: ubuntu-latest
+
+    steps:
+    # Étape 1 : Récupérer le code du dépôt
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # Étape 2 : Configurer Node.js avec la version 16 (ou autre selon vos besoins)
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    # Étape 3 : Installer les dépendances de votre projet (basé sur package.json)
+    - name: Install dependencies
+      run: npm install
+
+    # Étape 4 : Construire le site avec Eleventy
+    - name: Build the site with Eleventy
+      run: npx eleventy
+
+    # Étape 5 : Déployer les fichiers générés sur le serveur FTP
+    - name: Deploy to FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}          # Serveur FTP
+        username: ${{ secrets.FTP_USERNAME }}      # Nom d'utilisateur FTP
+        password: ${{ secrets.FTP_PASSWORD }}      # Mot de passe FTP
+        local-dir: docs/                          # Dossier local généré par Eleventy
+        server-dir: /public_html/             # Répertoire sur le serveur, se termine par "/"
