@@ -3,7 +3,7 @@ name: Deploy Orbii-blog - dev to lab.orbii.fr
 on:
   push:
     branches:
-      - dev
+      - Dev
 
 jobs:
   build:
