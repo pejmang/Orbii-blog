@@ -80,7 +80,7 @@ body {
 .author p {
   margin: 0;
   font-size: 1em;
-  text-align: justify;
+/*  text-align: justify;*/
 }
 
 .author p span {
@@ -95,7 +95,6 @@ body {
   border-radius: 8px;
   margin-top: 30px;
   text-align: center;
-  font-family: 'Arial', sans-serif;
 }
 
 .call-to-action h2 {
@@ -593,6 +592,11 @@ img {
   background-color: #f0f0f0;
   color: #1da1f2;
 }
+
+a.linkedin-icon {
+  border: 0px;
+}
+
 
 .share-container .linkedin-icon:hover {
   color: #0077b5;
