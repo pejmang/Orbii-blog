@@ -10,33 +10,46 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout repository
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    # Step 2: Set up Node.js with the required version
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+      # Step 2: Set up Node.js with the required version
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
 
-    # Step 3: Install project dependencies (including axios and dotenv)
-    - name: Install dependencies
-      run: |
-        npm install
-        npm install axios
-        npm install dotenv
+      # Step 3: Install project dependencies (including axios, dotenv, and mysql2)
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install axios
+          npm install dotenv
+          npm install mysql2
 
-    # Step 4: Build the site with Eleventy
-    - name: Build the site with Eleventy
-      run: npx eleventy
+      # Step 4: Build the site with Eleventy
+      - name: Build the site with Eleventy
+        run: npx eleventy
 
-    # Step 5: Deploy to FTP
-    - name: Deploy to FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
-      with:
-        server: ${{ secrets.FTP_SERVER_LAB }}
-        username: ${{ secrets.FTP_USERNAME_LAB }}
-        password: ${{ secrets.FTP_PASSWORD_LAB }}
-        local-dir: docs/
-        server-dir: /public_html/
+      # Step 5: Create or update .htaccess to secure .env
+      - name: Secure .env file with .htaccess
+        run: |
+          echo "<Files .env>" > docs/.htaccess
+          echo "    Order allow,deny" >> docs/.htaccess
+          echo "    Deny from all" >> docs/.htaccess
+          echo "</Files>" >> docs/.htaccess
+
+      # Step 6: Start the Express server
+      - name: Start Express server
+        run: node server.js
+
+      # Step 7: Deploy to FTP
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ${{ secrets.FTP_SERVER_LAB }}
+          username: ${{ secrets.FTP_USERNAME_LAB }}
+          password: ${{ secrets.FTP_PASSWORD_LAB }}
+          local-dir: docs/
+          server-dir: /public_html/
