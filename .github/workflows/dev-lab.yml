@@ -20,19 +20,15 @@ jobs:
         with:
           node-version: '16'
 
-      # Step 3: Install project dependencies via package.json
+      # Step 3: Install project dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Install PM2 globally to manage the Express server
-      - name: Install PM2 globally
-        run: npm install pm2 -g
-
-      # Step 5: Build the site with Eleventy
+      # Step 4: Build the site with Eleventy
       - name: Build the site with Eleventy
         run: npm run build
 
-      # Step 6: Create or update .htaccess to secure .env
+      # Step 5: Create or update .htaccess to secure .env
       - name: Secure .env file with .htaccess
         run: |
           echo "<Files .env>" > docs/.htaccess
@@ -40,11 +36,11 @@ jobs:
           echo "    Deny from all" >> docs/.htaccess
           echo "</Files>" >> docs/.htaccess
 
-      # Step 7: Start the Express server in the background using PM2
+      # Step 6: Start the Express server in the background using PM2
       - name: Start Express server with PM2
         run: npm run start
 
-      # Step 8: Deploy to FTP
+      # Step 7: Deploy to FTP
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
@@ -54,6 +50,6 @@ jobs:
           local-dir: docs/
           server-dir: /public_html/
 
-      # Step 9: Stop the PM2 process (optional)
+      # Step 8: Stop the PM2 process (optional)
       - name: Stop PM2 process
         run: pm2 stop Orbii-Express-Server
