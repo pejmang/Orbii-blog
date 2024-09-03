@@ -2,11 +2,11 @@
   "name": "pejman",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "build": "npx eleventy",
-    "start": "pm2 start src/server.js --name 'Orbii-Express-Server'",
-    "serve": "npx eleventy --serve"
-  },
+"scripts": {
+  "build": "npx eleventy",
+  "start": "pm2 start src/server.js --name 'Orbii-Express-Server'",
+  "serve": "npx eleventy --serve"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
