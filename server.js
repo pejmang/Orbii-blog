@@ -1,80 +1,66 @@
-require('dotenv').config();
 const express = require('express');
-const mysql = require('mysql2');
-const app = express();
-const port = process.env.PORT || 3000;
+const mysql = require('mysql2/promise');
+require('dotenv').config();
 
-const connection = mysql.createConnection({
+const app = express();
+app.use(express.json());
+
+const dbConfig = {
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  port: 3306, // Port MySQL
-});
+};
 
-connection.connect((err) => {
-  if (err) {
-    console.error('Erreur de connexion à MySQL:', err.stack);
-    return;
-  }
-  console.log('Connecté à MySQL en tant que ID ' + connection.threadId);
-});
+app.get('/api/recommendation', async (req, res) => {
+  const { articleID } = req.query;
 
-app.use(express.json());
+  try {
+    const connection = await mysql.createConnection(dbConfig);
+    const [rows] = await connection.execute('SELECT Recommendations FROM reco WHERE articleID = ?', [articleID]);
+    await connection.end();
 
-// Route pour récupérer le nombre de recommandations
-app.get('/api/recommendations/:articleID', (req, res) => {
-  const { articleID } = req.params;
-  connection.query(
-    'SELECT Recommendations FROM reco WHERE articleID = ?',
-    [articleID],
-    (error, results) => {
-      if (error) return res.status(500).json({ error });
-      if (results.length > 0) {
-        res.json({ recommendations: results[0].Recommendations });
-      } else {
-        res.status(404).json({ message: 'Article not found' });
-      }
+    if (rows.length > 0) {
+      res.json({ recommendations: rows[0].Recommendations });
+    } else {
+      res.json({ recommendations: 0 });
     }
-  );
+  } catch (error) {
+    console.error('Error fetching recommendation count:', error);
+    res.status(500).send('Server error');
+  }
 });
 
-// Route pour mettre à jour les recommandations
-app.post('/api/recommendations', (req, res) => {
-  const { articleID, recommendCount } = req.body;
+app.post('/api/recommendation', async (req, res) => {
+  const { articleID, recommendations } = req.body;
   const dateNow = new Date().toISOString().split('T')[0];
 
-  connection.query(
-    'SELECT * FROM reco WHERE articleID = ?',
-    [articleID],
-    (error, results) => {
-      if (error) return res.status(500).json({ error });
+  try {
+    const connection = await mysql.createConnection(dbConfig);
 
-      if (results.length > 0) {
-        // Update existing record
-        connection.query(
-          'UPDATE reco SET Recommendations = ?, `Last-Recommended-By` = ?, `Date of Last Recommendation` = ? WHERE articleID = ?',
-          [recommendCount, 'Un utilisateur unique', dateNow, articleID],
-          (updateError) => {
-            if (updateError) return res.status(500).json({ error: updateError });
-            res.json({ message: 'Recommendation updated' });
-          }
-        );
-      } else {
-        // Insert new record
-        connection.query(
-          'INSERT INTO reco (articleID, Recommendations, `Last-Recommended-By`, `Date of Last Recommendation`) VALUES (?, ?, ?, ?)',
-          [articleID, recommendCount, 'Un utilisateur unique', dateNow],
-          (insertError) => {
-            if (insertError) return res.status(500).json({ error: insertError });
-            res.json({ message: 'Recommendation created' });
-          }
-        );
-      }
+    const [rows] = await connection.execute('SELECT * FROM reco WHERE articleID = ?', [articleID]);
+
+    if (rows.length > 0) {
+      await connection.execute(
+        'UPDATE reco SET Recommendations = ?, `Last-Recommended-By` = ?, `Date of Last Recommendation` = ? WHERE articleID = ?',
+        [recommendations, 'Un utilisateur unique', dateNow, articleID]
+      );
+    } else {
+      await connection.execute(
+        'INSERT INTO reco (Recommendations, `Last-Recommended-By`, `Date of Last Recommendation`, articleID) VALUES (?, ?, ?, ?)',
+        [recommendations, 'Un utilisateur unique', dateNow, articleID]
+      );
     }
-  );
+
+    await connection.end();
+    res.status(200).send('Recommendation updated');
+  } catch (error) {
+    console.error('Error updating recommendation:', error);
+    res.status(500).send('Server error');
+  }
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

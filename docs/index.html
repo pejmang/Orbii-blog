@@ -383,7 +383,7 @@
 
         try {
           const response = await fetchRecommendationCount(articleID);
-          if (response) {
+          if (response && response.recommendations !== null) {
             const totalRecommendations = response.recommendations || 0;
             recommendCountElement.textContent = totalRecommendations;
             if (likedArticles.includes(articleID)) {
@@ -393,20 +393,15 @@
             recommendCountElement.textContent = '0';
           }
         } catch (error) {
-          console.error(`Error fetching recommendation count for articleID: ${articleID}`, error);
           recommendCountElement.textContent = '0';
         }
       }
     });
 
     async function fetchRecommendationCount(articleID) {
-      try {
-        const response = await axios.get(`http://localhost:3000/api/recommendations/${articleID}`);
-        return response.data;
-      } catch (error) {
-        console.error(`Error fetching recommendation count for articleID: ${articleID}`, error);
-        return null;
-      }
+      const url = `/api/recommendation?articleID=${articleID}`;
+      const response = await axios.get(url);
+      return response.data;
     }
 
     function handleRecommend(button) {
@@ -436,13 +431,14 @@
     }
 
     async function recommendArticle(articleID, recommendCount) {
+      const url = `/api/recommendation`;
       try {
-        await axios.post('http://localhost:3000/api/recommendations', {
+        await axios.post(url, {
           articleID: articleID,
-          recommendCount: recommendCount,
+          recommendations: recommendCount
         });
       } catch (error) {
-        console.error(`Error recommending articleID: ${articleID}`, error);
+        // Handle error silently
       }
     }
   </script>
