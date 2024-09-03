@@ -20,14 +20,9 @@ jobs:
         with:
           node-version: '16'
 
-      # Step 3: Install project dependencies (including express, axios, dotenv, and mysql2)
+      # Step 3: Install project dependencies via package.json
       - name: Install dependencies
-        run: |
-          npm install
-          npm install express
-          npm install axios
-          npm install dotenv
-          npm install mysql2
+        run: npm install
 
       # Step 4: Install PM2 globally to manage the Express server
       - name: Install PM2 globally
@@ -35,7 +30,7 @@ jobs:
 
       # Step 5: Build the site with Eleventy
       - name: Build the site with Eleventy
-        run: npx eleventy
+        run: npm run build
 
       # Step 6: Create or update .htaccess to secure .env
       - name: Secure .env file with .htaccess
@@ -47,7 +42,7 @@ jobs:
 
       # Step 7: Start the Express server in the background using PM2
       - name: Start Express server with PM2
-        run: pm2 start src/server.js --name "Orbii-Express-Server"
+        run: npm run start
 
       # Step 8: Deploy to FTP
       - name: Deploy to FTP
