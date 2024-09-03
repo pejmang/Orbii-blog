@@ -34,7 +34,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  
+
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       const likedArticles = JSON.parse(localStorage.getItem('likedArticles')) || [];
@@ -57,17 +57,20 @@
             recommendCountElement.textContent = '0';
           }
         } catch (error) {
+          console.error(`Error fetching recommendation count for articleID: ${articleID}`, error);
           recommendCountElement.textContent = '0';
         }
       }
     });
 
     async function fetchRecommendationCount(articleID) {
-      const url = `/api/recommendations/${articleID}`;
-
-      const response = await axios.get(url);
-
-      return response.data;
+      try {
+        const response = await axios.get(`http://localhost:3000/api/recommendations/${articleID}`);
+        return response.data;
+      } catch (error) {
+        console.error(`Error fetching recommendation count for articleID: ${articleID}`, error);
+        return null;
+      }
     }
 
     function handleRecommend(button) {
@@ -97,15 +100,13 @@
     }
 
     async function recommendArticle(articleID, recommendCount) {
-      const url = `/api/recommendations`;
-
       try {
-        await axios.post(url, {
+        await axios.post('http://localhost:3000/api/recommendations', {
           articleID: articleID,
           recommendCount: recommendCount,
         });
       } catch (error) {
-        // Handle error silently
+        console.error(`Error recommending articleID: ${articleID}`, error);
       }
     }
   </script>

@@ -9,6 +9,7 @@ const connection = mysql.createConnection({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
+  port: 3306, // Port MySQL
 });
 
 connection.connect((err) => {
@@ -29,7 +30,11 @@ app.get('/api/recommendations/:articleID', (req, res) => {
     [articleID],
     (error, results) => {
       if (error) return res.status(500).json({ error });
-      res.json({ recommendations: results.length > 0 ? results[0].Recommendations : 0 });
+      if (results.length > 0) {
+        res.json({ recommendations: results[0].Recommendations });
+      } else {
+        res.status(404).json({ message: 'Article not found' });
+      }
     }
   );
 });
