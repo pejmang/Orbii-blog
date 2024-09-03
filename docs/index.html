@@ -372,10 +372,6 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   
   <script>
-    const AIRTABLE_BASE_ID = 'apptQQHKxWhuvYfsD';
-    const AIRTABLE_API_KEY = 'pat0F0Jqq8tvmqwz6.d7e1dbf1b1b44c3709c67ef5a348d89be094e29132a9500010f71aa2a7bc23b3';
-    const AIRTABLE_TABLE_NAME = 'Orbii';
-
     document.addEventListener('DOMContentLoaded', async () => {
       const likedArticles = JSON.parse(localStorage.getItem('likedArticles')) || [];
       const postCards = document.querySelectorAll('.post-card');
@@ -388,7 +384,7 @@
         try {
           const response = await fetchRecommendationCount(articleID);
           if (response) {
-            const totalRecommendations = response.fields.Recommendations || 0;
+            const totalRecommendations = response.recommendations || 0;
             recommendCountElement.textContent = totalRecommendations;
             if (likedArticles.includes(articleID)) {
               button.classList.add('already-recommended');
@@ -403,21 +399,11 @@
     });
 
     async function fetchRecommendationCount(articleID) {
-      const recordURL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
-      const filterFormula = `filterByFormula=articleID="${articleID}"`;
-      const url = `${recordURL}?${filterFormula}`;
+      const url = `/api/recommendations/${articleID}`;
 
-      const response = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-        },
-      });
+      const response = await axios.get(url);
 
-      if (response.data.records.length > 0) {
-        return response.data.records[0];
-      } else {
-        return null;
-      }
+      return response.data;
     }
 
     function handleRecommend(button) {
@@ -447,60 +433,13 @@
     }
 
     async function recommendArticle(articleID, recommendCount) {
-      const recordURL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
-      const filterFormula = `filterByFormula=articleID="${articleID}"`;
-      const url = `${recordURL}?${filterFormula}`;
+      const url = `/api/recommendations`;
 
       try {
-        const response = await axios.get(url, {
-          headers: {
-            Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-          },
+        await axios.post(url, {
+          articleID: articleID,
+          recommendCount: recommendCount,
         });
-
-        const dateNow = new Date().toISOString().split('T')[0];
-
-        if (response.data.records.length > 0) {
-          const recordId = response.data.records[0].id;
-          const currentRecommendations = response.data.records[0].fields.Recommendations || 0;
-
-          const updateData = {
-            fields: {
-              Recommendations: currentRecommendations + 1,
-              "Last-Recommended-By": "Un utilisateur unique",
-              "Date of Last Recommendation": dateNow,
-            },
-          };
-
-          await axios.patch(
-            `${recordURL}/${recordId}`,
-            updateData,
-            {
-              headers: {
-                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-              },
-            }
-          );
-        } else {
-          const postData = {
-            fields: {
-              articleID: articleID,
-              Recommendations: recommendCount,
-              "Last-Recommended-By": "Un utilisateur unique",
-              "Date of Last Recommendation": dateNow,
-            },
-          };
-
-          await axios.post(
-            recordURL,
-            postData,
-            {
-              headers: {
-                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-              },
-            }
-          );
-        }
       } catch (error) {
         // Handle error silently
       }

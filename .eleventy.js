@@ -1,7 +1,17 @@
 const { DateTime } = require("luxon");
-require('dotenv').config(); // Charger les variables d'environnement
+require('dotenv').config();
 
 module.exports = function(eleventyConfig) {
+  // Expose environment variables as shortcodes
+  eleventyConfig.addShortcode("env", function(key) {
+    return process.env[key] || '';
+  });
+
+  // Filter to convert JavaScript objects to JSON strings
+  eleventyConfig.addFilter("jsonify", function(value) {
+    return JSON.stringify(value);
+  });
+
   // French Collection
   eleventyConfig.addCollection("fr_posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
@@ -48,16 +58,11 @@ module.exports = function(eleventyConfig) {
     return encodeURIComponent(value);
   });
 
-  // Rendre les variables d'environnement disponibles dans les templates
-  eleventyConfig.addGlobalData("env", process.env);
-
   // Configuration générale
   return {
     dir: {
       input: "src",
       output: "docs",
     },
-    // Set default language to French
-    // pathPrefix: "/fr/",
   };
 };

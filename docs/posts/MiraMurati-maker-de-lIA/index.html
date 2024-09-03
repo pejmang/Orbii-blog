@@ -97,145 +97,141 @@
 
       <br>
 
-<div class="article-recommendation">
-  <span class="recommendation-text">
-    Si l'article a été utile, recommandez-le :
-  </span>
-  <button class="recommend-button" onclick="handleRecommendClick()">
-    <img src="/images/ic/i-value.png" alt="Recommander" width="24" height="24">
-    <span class="recommend-count" id="recommend-count-bottom">0</span>
-  </button>
-</div>
+      <div class="article-recommendation">
+        <span class="recommendation-text">
+          Si l'article a été utile, recommandez-le :
+        </span>
+        <button class="recommend-button" onclick="handleRecommendClick()">
+          <img src="/images/ic/i-value.png" alt="Recommander" width="24" height="24">
+          <span class="recommend-count" id="recommend-count-bottom">0</span>
+        </button>
+      </div>
 
-<div class="share-container">
-  <h3>Partagez cet article :</h3>
-  <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
-    <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn">
-    <span>LinkedIn</span>
-  </a>
-</div>
+      <div class="share-container">
+        <h3>Partagez cet article :</h3>
+        <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
+          <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn">
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </main>
+  </div>
 
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/env.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-  <script>
-    const AIRTABLE_BASE_ID = 'apptQQHKxWhuvYfsD';
-    const AIRTABLE_API_KEY = 'pat0F0Jqq8tvmqwz6.d7e1dbf1b1b44c3709c67ef5a348d89be094e29132a9500010f71aa2a7bc23b3';
-    const AIRTABLE_TABLE_NAME = 'Orbii';
-    const articleID = '1000005'; // Make sure to pass this from your data
+<script>
+    const articleID = "1000005";
+    const title = "Des Makers aux Commandes. Mira Murati.";
 
     document.addEventListener('DOMContentLoaded', async () => {
-      try {
-        const response = await fetchRecommendationCount(articleID);
-        if (response) {
-          const totalRecommendations = response.fields.Recommendations || 0;
-          document.getElementById('recommend-count').textContent = totalRecommendations;
-          document.getElementById('recommend-count-bottom').textContent = totalRecommendations;
+        try {
+            const response = await fetchRecommendationCount(articleID);
+            if (response) {
+                const totalRecommendations = response.fields.Recommendations || 0;
+                updateRecommendationCount(totalRecommendations);
+            } else {
+                // Si l'enregistrement n'est pas trouvé, créer un nouvel enregistrement
+                await recommendArticle(articleID, title, 0);
+            }
+        } catch (error) {
+            console.error("Error fetching recommendation count:", error);
         }
-      } catch (error) {
-        // Handle error silently
-      }
     });
 
     async function fetchRecommendationCount(articleID) {
-      const recordURL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
-      const filterFormula = `filterByFormula=articleID="${articleID}"`;
-      const url = `${recordURL}?${filterFormula}`;
+        const url = buildAirtableUrl(articleID);
 
-      const response = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-        },
-      });
+        try {
+            const response = await axios.get(url, {
+                headers: {
+                    Authorization: `Bearer ${window.env.AIRTABLE_API_KEY}`,
+                },
+            });
 
-      if (response.data.records.length > 0) {
-        return response.data.records[0];
-      } else {
-        return null;
-      }
+            if (response.data.records.length > 0) {
+                return response.data.records[0];
+            } else {
+                console.warn('Record not found in Airtable. Creating a new record.');
+                return null;
+            }
+        } catch (error) {
+            if (error.response && error.response.status === 404) {
+                console.warn('Record not found in Airtable. Preparing to create a new record.');
+                return null;
+            } else {
+                throw error;
+            }
+        }
     }
 
     function handleRecommendClick() {
-      const likedArticles = JSON.parse(localStorage.getItem('likedArticles')) || [];
+        const likedArticles = JSON.parse(localStorage.getItem('likedArticles')) || [];
 
-      if (likedArticles.includes(articleID)) {
-        return;
-      }
-
-      likedArticles.push(articleID);
-      localStorage.setItem('likedArticles', JSON.stringify(likedArticles));
-
-      const topCountElement = document.getElementById('recommend-count');
-      const bottomCountElement = document.getElementById('recommend-count-bottom');
-      let recommendCount = parseInt(topCountElement.textContent) + 1;
-
-      topCountElement.textContent = recommendCount;
-      bottomCountElement.textContent = recommendCount;
-
-      recommendArticle(articleID, recommendCount);
-    }
-
-    async function recommendArticle(articleID, recommendCount) {
-      const recordURL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
-      const filterFormula = `filterByFormula=articleID="${articleID}"`;
-      const url = `${recordURL}?${filterFormula}`;
-
-      try {
-        const response = await axios.get(url, {
-          headers: {
-            Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-          },
-        });
-
-        const dateNow = new Date().toISOString().split('T')[0];
-
-        if (response.data.records.length > 0) {
-          const recordId = response.data.records[0].id;
-          const currentRecommendations = response.data.records[0].fields.Recommendations || 0;
-
-          const updateData = {
-            fields: {
-              Recommendations: currentRecommendations + 1,
-              "Last-Recommended-By": "Un utilisateur unique",
-              "Date of Last Recommendation": dateNow,
-            },
-          };
-
-          await axios.patch(
-            `${recordURL}/${recordId}`,
-            updateData,
-            {
-              headers: {
-                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-              },
-            }
-          );
-        } else {
-          const postData = {
-            fields: {
-              articleID: articleID,
-              Recommendations: recommendCount,
-              "Last-Recommended-By": "Un utilisateur unique",
-              "Date of Last Recommendation": dateNow,
-            },
-          };
-
-          await axios.post(
-            recordURL,
-            postData,
-            {
-              headers: {
-                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-              },
-            }
-          );
+        if (likedArticles.includes(articleID)) {
+            return;
         }
-      } catch (error) {
-        // Handle error silently
-      }
+
+        likedArticles.push(articleID);
+        localStorage.setItem('likedArticles', JSON.stringify(likedArticles));
+
+        const topCountElement = document.getElementById('recommend-count');
+        const bottomCountElement = document.getElementById('recommend-count-bottom');
+        let recommendCount = parseInt(topCountElement.textContent) + 1;
+
+        updateRecommendationCount(recommendCount);
+        recommendArticle(articleID, title, recommendCount);
     }
-  </script>
+
+    function updateRecommendationCount(count) {
+        const topCountElement = document.getElementById('recommend-count');
+        const bottomCountElement = document.getElementById('recommend-count-bottom');
+
+        if (topCountElement && bottomCountElement) {
+            topCountElement.textContent = count;
+            bottomCountElement.textContent = count;
+        }
+    }
+
+    async function recommendArticle(articleID, title, recommendCount) {
+        const recordURL = `https://api.airtable.com/v0/${window.env.AIRTABLE_BASE_ID}/${window.env.AIRTABLE_TABLE_NAME}`;
+
+        try {
+            const dateNow = new Date().toISOString().split('T')[0];
+
+            const postData = {
+                fields: {
+                    articleID: articleID,
+                    Title: title,
+                    Recommendations: recommendCount,
+                    "Last-Recommended-By": "Un utilisateur unique",
+                    "Date of Last Recommendation": dateNow,
+                },
+            };
+
+            await axios.post(
+                recordURL,
+                postData,
+                {
+                    headers: {
+                        Authorization: `Bearer ${window.env.AIRTABLE_API_KEY}`,
+                    },
+                }
+            );
+        } catch (error) {
+            console.error("Error recommending article:", error);
+        }
+    }
+
+    function buildAirtableUrl(articleID) {
+        const recordURL = `https://api.airtable.com/v0/${window.env.AIRTABLE_BASE_ID}/${window.env.AIRTABLE_TABLE_NAME}`;
+        const filterFormula = `filterByFormula=articleID="${articleID}"`;
+        return `${recordURL}?${filterFormula}`;
+    }
+</script>
+
+
 
 
 
