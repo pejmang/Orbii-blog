@@ -13,10 +13,6 @@
           {% if post.data.type %}
           <div class="post-header">
             <img src="/images/ic/i-{{ post.data.type }}.png" alt="{{ post.data.type }}" class="post-icon">
-            <button class="recommend-flag" onclick="event.preventDefault(); handleRecommend(this)">
-              <span class="recommend-count">0</span>
-              <img src="/images/ic/i-value.png" alt="Recommander" width="20" height="20">
-            </button>
           </div>
           {% endif %}
 
@@ -32,78 +28,4 @@
       {% endfor %}
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const likedArticles = JSON.parse(localStorage.getItem('likedArticles')) || [];
-      const postCards = document.querySelectorAll('.post-card');
-
-      for (const card of postCards) {
-        const articleID = card.dataset.postId;
-        const button = card.querySelector('.recommend-flag');
-        const recommendCountElement = button.querySelector('.recommend-count');
-
-        try {
-          const response = await fetchRecommendationCount(articleID);
-          if (response && response.recommendations !== null) {
-            const totalRecommendations = response.recommendations || 0;
-            recommendCountElement.textContent = totalRecommendations;
-            if (likedArticles.includes(articleID)) {
-              button.classList.add('already-recommended');
-            }
-          } else {
-            recommendCountElement.textContent = '0';
-          }
-        } catch (error) {
-          recommendCountElement.textContent = '0';
-        }
-      }
-    });
-
-    async function fetchRecommendationCount(articleID) {
-      const url = `/api/recommendation?articleID=${articleID}`;
-      const response = await axios.get(url);
-      return response.data;
-    }
-
-    function handleRecommend(button) {
-      const postCard = button.closest('.post-card');
-      const articleID = postCard.dataset.postId;
-
-      if (!articleID) {
-        return;
-      }
-
-      const likedArticles = JSON.parse(localStorage.getItem('likedArticles')) || [];
-
-      if (likedArticles.includes(articleID)) {
-        return;
-      }
-
-      const recommendCountElement = button.querySelector('.recommend-count');
-      if (recommendCountElement) {
-        let recommendCount = parseInt(recommendCountElement.textContent) + 1;
-        recommendCountElement.textContent = recommendCount;
-
-        likedArticles.push(articleID);
-        localStorage.setItem('likedArticles', JSON.stringify(likedArticles));
-
-        recommendArticle(articleID, recommendCount);
-      }
-    }
-
-    async function recommendArticle(articleID, recommendCount) {
-      const url = `/api/recommendation`;
-      try {
-        await axios.post(url, {
-          articleID: articleID,
-          recommendations: recommendCount
-        });
-      } catch (error) {
-        // Handle error silently
-      }
-    }
-  </script>
 {% endblock %}
