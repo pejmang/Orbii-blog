@@ -36,11 +36,8 @@ jobs:
           echo "    Deny from all" >> docs/.htaccess
           echo "</Files>" >> docs/.htaccess
 
-      # Step 6: Install PM2 globally (if needed)
-      - name: Install PM2 globally
-        run: npm install pm2 -g
 
-      # Step 7: Deploy to FTP
+      # Step 6: Deploy to FTP
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
@@ -49,6 +46,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD_LAB }}
           local-dir: docs/
           server-dir: /public_html/
-
-      # Optional: Step 8: Start the Express server with PM2 on the remote server
-      # This step is better handled manually or by another CI/CD tool like SSH commands if needed
