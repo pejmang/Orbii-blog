@@ -36,9 +36,9 @@ jobs:
           echo "    Deny from all" >> docs/.htaccess
           echo "</Files>" >> docs/.htaccess
 
-      # Step 6: Start the Express server in the background using PM2
-      - name: Start Express server with PM2
-        run: npm run start
+      # Step 6: Install PM2 globally (if needed)
+      - name: Install PM2 globally
+        run: npm install pm2 -g
 
       # Step 7: Deploy to FTP
       - name: Deploy to FTP
@@ -50,6 +50,5 @@ jobs:
           local-dir: docs/
           server-dir: /public_html/
 
-      # Step 8: Stop the PM2 process (optional)
-      - name: Stop PM2 process
-        run: pm2 stop Orbii-Express-Server
+      # Optional: Step 8: Start the Express server with PM2 on the remote server
+      # This step is better handled manually or by another CI/CD tool like SSH commands if needed
