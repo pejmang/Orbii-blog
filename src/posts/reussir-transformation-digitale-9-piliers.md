@@ -4,6 +4,8 @@ teaser: "Les 9 piliers clés de la transformation digitale selon Alliancy : stra
 date: 2022-04-12
 pillar: culture
 type: video
+articleID: "1000004"
+
 ---
 
 <div class="extended">

@@ -9,8 +9,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Orbii Blog - Version 1.0 Orbii Blog is a fully open-source platform, designed by Pejman Gohari, former Chief Data and Analytics Officer (CDAO), and CEO of ORBii, with a great help of Armin Kiany, CEO of EdClub https://www.edclub.com,  to provide a simple and effective solution for sharing knowledge through a simple plateform.  Built on top of the 11ty (Eleventy) static site generator, Orbii Blog offers an easy-to-use, customizable platform for publishing articles with a focus on simplicity, speed, and accessibility.",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "googleapis": "^144.0.0"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }

@@ -5,6 +5,8 @@ date: 2022-04-12
 pillar: strategie
 type: video
 authors: Microsoft France
+articleID: "1000011"
+
 ---
 
 <div class="extended">

@@ -4,8 +4,9 @@ teaser: "Dans un environnement en constante évolution, l'énergie organisationn
 date: 2024-08-16
 tags: transformation,Management
 authors: Pejman Gohari
-pillar: strategy
+pillar: strategie
 type: strategy
+articleID: "1000009"
 
 ---
 

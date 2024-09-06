@@ -39,7 +39,7 @@
 
 
 
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -53,6 +53,7 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
+  <link rel="stylesheet" href="/styles/style.css">
   <div class="container">
     <div class="extended">
       
@@ -61,20 +62,21 @@
     </div>
     
     <main id="article">
-      <h1>L&#39;IA Générative et les LLM: une adoption  grâce au RAG</h1>
+      <h1></h1>
       
-        <div class="extended">Auteur : Pejman GOHARI
+        <div class="extended">
+          Auteur : Pejman GOHARI
           <a href="/about/" class="no-hover-effect">
             <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
           </a>
           
-        <div class="article-date">
-        Publié le : 24/04/2024
+            <div class="article-date">
+              Publié le : 24/04/2024
+            </div>
+          
         </div>
       
-        </div>
-      
-      
+
       <p>Dans le paysage en constante évolution de l’IA et l’IA Générative, notamment des modèles LLM (&quot;langage de grande taille&quot;), comme GPT d’OpenAI, Claude d’Anthropic ou encore les modèles de Mistral, la génération de contenu automatisée suscite un vif intérêt auprès des entreprises. Bien que performants pour reformuler du texte ou accomplir des tâches créatives, ces LLM classiques présentent des <strong>limites majeures pour une adoption dans le contexte professionnel</strong> (face aux clients ou même dans les usages internes). Leur déconnexion du monde réel de l’entreprise les rend sujets aux <strong>hallucinations</strong>, c’est-à-dire à la génération d’informations fausses ou erronées, souvent énoncées avec une assurance digne d’un consultant.</p>
 <p>Mais pas de surprise ici : on demande aux modèles LLM de générer du texte, alors ils font le job demandé.</p>
 <p>Le problème vient du fait que leur entraînement a été fait sur des données <strong>publiques</strong>, et non sur des <strong>connaissances métiers spécifiques</strong>. C’est pour remédier à ces faiblesses intrinsèques qu’un nouveau jargon a vu le jour, et vous l’avez certainement déjà entendu dans vos réunions avec vos experts et consultants IA : le <strong>RAG</strong>, pour <em>Retrieval-Augmented Generation</em>. Le RAG s’impose comme un des outils clés dans votre architecture technologique Data, permettant d’exploiter pleinement le potentiel des LLM.</p>
@@ -107,29 +109,82 @@
 <h3>Collaboration avec les Acteurs du Secteur et les Régulateurs</h3>
 <p>Un des points les plus importants à initier (et pas uniquement au niveau institutionnel) est la <strong>collaboration</strong> avec les autres acteurs du secteur et les régulateurs. Des partenariats et des échanges d’expertise peuvent contribuer à l’élaboration de <strong>normes et bonnes pratiques</strong> communes, y compris sur le chapitre Open Source, dans le but de créer un <strong>écosystème favorable à l’innovation et à la croissance responsable</strong>.</p>
 
+      <br>
 
       <div class="share-container">
-          <h3>Partagez cet article :</h3>
-          <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
-            <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn" style="width: 30px; height: auto;">
-            <span>LinkedIn</span>
-          </a>
+        <h3>Partagez cet article :</h3>
+        <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="">
+          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+          <span>Partager sur LinkedIn</span>
+        </a>
       </div>
-
     </main>
   </div>
 
+  <script>
+    let startTime = Date.now();
+
+    // Calcul de la durée de lecture
+    window.addEventListener('beforeunload', function() {
+      let timeSpent = Date.now() - startTime; // Temps en millisecondes
+      let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+
+      // Envoi des données au serveur
+      fetch('/api/track-engagement', {
+        method: 'POST',
+        body: JSON.stringify({
+          articleId: '1000008',
+          timeSpent: timeSpent,
+          hasReachedEnd: hasReachedEnd
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    });
+
+    // Centrer le popup de partage
+    var popupCenter = function(url, title, width, height){
+        var popupWidth = width || 640;
+        var popupHeight = height || 320;
+        var windowLeft = window.screenLeft || window.screenX;
+        var windowTop = window.screenTop || window.screenY;
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+        popup.focus();
+        return true;
+    };
+
+    // Partage sur LinkedIn
+    document.querySelector('.share_linkedin').addEventListener('click', function(e){
+        e.preventDefault();
+        var url = this.getAttribute('data-url');  // Get the URL of the article
+        var articleTitle = encodeURIComponent('');  // Encode article title
+        var articleSummary = encodeURIComponent('IA générative et RAG : une alliance puissante pour des contenus fiables et contextualisés en entreprise. Mais est-ce la solution idéale pour vous ? Découvrez les avantages et enjeux dans cet article.');  // Encode article teaser
+
+        var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleSummary}`;
+
+        popupCenter(shareUrl, "Partager sur LinkedIn");
+    });
+
+  </script>
 
 
 
- <!-- Footer -->
+
+  <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-links">
           <ul>
-            <li><a href="/privacy/">Privacy</a></li>
-            <li><a href="/publish">Publish</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+            
+              <li><a href="/privacy/">Confidentialité</a></li>
+              <li><a href="/publish/">Publier</a></li>
+              <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+            
           </ul>
         </div>
         <div class="footer-info">

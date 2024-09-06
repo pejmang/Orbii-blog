@@ -39,7 +39,7 @@
 
 
 
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -53,6 +53,7 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
+  <link rel="stylesheet" href="/styles/style.css">
   <div class="container">
     <div class="extended">
       
@@ -61,20 +62,21 @@
     </div>
     
     <main id="article">
-      <h1>Réussir sa transformation digitale : 9 piliers indispensables</h1>
+      <h1></h1>
       
-        <div class="extended">Auteur : Nouamane Cherkaoui
+        <div class="extended">
+          Auteur : Nouamane Cherkaoui
           <a href="/about/" class="no-hover-effect">
             <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
           </a>
           
-        <div class="article-date">
-        Publié le : 26/03/2022
+            <div class="article-date">
+              Publié le : 26/03/2022
+            </div>
+          
         </div>
       
-        </div>
-      
-      
+
       <p>Interview réalisée par Estelle Raffin de Nouamane Cherkaoui</p>
 <p>Lorsqu’on parle de « transformation digitale », quelles sont les problématiques actuelles que rencontrent les entreprises ?</p>
 <p>La transformation digitale impacte toutes les industries du monde. Alors que les entreprises se remettent de la pandémie de Covid-19 et font face à la flambée des prix de l’énergie à cause de la guerre en Ukraine, cette transformation devra jouer un rôle clé pour ouvrir la voie à plus d’efficacité, de résilience et de durabilité.</p>
@@ -92,29 +94,82 @@
 <p>La suite sur le Blog de notre Partenaire : BDM</p>
 <p><a href="https://www.blogdumoderateur.com/transformation-digitale-9-piliers-indispensables/">https://www.blogdumoderateur.com/transformation-digitale-9-piliers-indispensables/</a></p>
 
+      <br>
 
       <div class="share-container">
-          <h3>Partagez cet article :</h3>
-          <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
-            <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn" style="width: 30px; height: auto;">
-            <span>LinkedIn</span>
-          </a>
+        <h3>Partagez cet article :</h3>
+        <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="">
+          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+          <span>Partager sur LinkedIn</span>
+        </a>
       </div>
-
     </main>
   </div>
 
+  <script>
+    let startTime = Date.now();
+
+    // Calcul de la durée de lecture
+    window.addEventListener('beforeunload', function() {
+      let timeSpent = Date.now() - startTime; // Temps en millisecondes
+      let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+
+      // Envoi des données au serveur
+      fetch('/api/track-engagement', {
+        method: 'POST',
+        body: JSON.stringify({
+          articleId: '1000014',
+          timeSpent: timeSpent,
+          hasReachedEnd: hasReachedEnd
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    });
+
+    // Centrer le popup de partage
+    var popupCenter = function(url, title, width, height){
+        var popupWidth = width || 640;
+        var popupHeight = height || 320;
+        var windowLeft = window.screenLeft || window.screenX;
+        var windowTop = window.screenTop || window.screenY;
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+        popup.focus();
+        return true;
+    };
+
+    // Partage sur LinkedIn
+    document.querySelector('.share_linkedin').addEventListener('click', function(e){
+        e.preventDefault();
+        var url = this.getAttribute('data-url');  // Get the URL of the article
+        var articleTitle = encodeURIComponent('');  // Encode article title
+        var articleSummary = encodeURIComponent('Quels défis pour la transformation digitale des entreprises ? Vision stratégique, pénurie de talents, résistance au changement. Découvrez les enjeux pour adopter une culture data-driven sur le blog BDM.');  // Encode article teaser
+
+        var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleSummary}`;
+
+        popupCenter(shareUrl, "Partager sur LinkedIn");
+    });
+
+  </script>
 
 
 
- <!-- Footer -->
+
+  <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-links">
           <ul>
-            <li><a href="/privacy/">Privacy</a></li>
-            <li><a href="/publish">Publish</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+            
+              <li><a href="/privacy/">Confidentialité</a></li>
+              <li><a href="/publish/">Publier</a></li>
+              <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+            
           </ul>
         </div>
         <div class="footer-info">

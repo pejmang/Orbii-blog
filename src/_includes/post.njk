@@ -1,8 +1,9 @@
 {% extends "base.njk" %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}{{ articleTitle }}{% endblock %}
 
 {% block content %}
+  <link rel="stylesheet" href="/styles/style.css">
   <div class="container">
     <div class="extended">
       {% if lang == "en" %}
@@ -13,30 +14,82 @@
     </div>
     
     <main id="article">
-      <h1>{{ title }}</h1>
+      <h1>{{ articleTitle }}</h1>
       {% if authors %}
-        <div class="extended">Auteur : {{ authors }}
+        <div class="extended">
+          Auteur : {{ authors }}
           <a href="/about/" class="no-hover-effect">
             <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
           </a>
           {% if date %}
-        <div class="article-date">
-        Publié le : {{ date | date("dd/MM/yyyy") }}
+            <div class="article-date">
+              Publié le : {{ date | date("dd/MM/yyyy") }}
+            </div>
+          {% endif %}
         </div>
       {% endif %}
-        </div>
-      {% endif %}
-      
+
       {{ content | safe }}
+      <br>
 
       <div class="share-container">
-          <h3>Partagez cet article :</h3>
-          <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
-            <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn" style="width: 30px; height: auto;">
-            <span>LinkedIn</span>
-          </a>
+        <h3>Partagez cet article :</h3>
+        <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="{{ articleUrl }}">
+          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+          <span>Partager sur LinkedIn</span>
+        </a>
       </div>
-
     </main>
   </div>
+
+  <script>
+    let startTime = Date.now();
+
+    // Calcul de la durée de lecture
+    window.addEventListener('beforeunload', function() {
+      let timeSpent = Date.now() - startTime; // Temps en millisecondes
+      let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+
+      // Envoi des données au serveur
+      fetch('/api/track-engagement', {
+        method: 'POST',
+        body: JSON.stringify({
+          articleId: '{{ articleID }}',
+          timeSpent: timeSpent,
+          hasReachedEnd: hasReachedEnd
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    });
+
+    // Centrer le popup de partage
+    var popupCenter = function(url, title, width, height){
+        var popupWidth = width || 640;
+        var popupHeight = height || 320;
+        var windowLeft = window.screenLeft || window.screenX;
+        var windowTop = window.screenTop || window.screenY;
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+        popup.focus();
+        return true;
+    };
+
+    // Partage sur LinkedIn
+    document.querySelector('.share_linkedin').addEventListener('click', function(e){
+        e.preventDefault();
+        var url = this.getAttribute('data-url');  // Get the URL of the article
+        var articleTitle = encodeURIComponent('{{ articleTitle }}');  // Encode article title
+        var articleSummary = encodeURIComponent('{{ teaser }}');  // Encode article teaser
+
+        var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleSummary}`;
+
+        popupCenter(shareUrl, "Partager sur LinkedIn");
+    });
+
+  </script>
 {% endblock %}

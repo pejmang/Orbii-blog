@@ -5,6 +5,7 @@ date: 2022-04-12
 pillar: culture
 type: strategy
 authors: Nouamane Cherkaoui
+articleID: "1000002"
 
 ---
 

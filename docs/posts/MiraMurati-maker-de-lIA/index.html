@@ -39,7 +39,7 @@
 
 
 
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -53,6 +53,7 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
+  <link rel="stylesheet" href="/styles/style.css">
   <div class="container">
     <div class="extended">
       
@@ -61,20 +62,21 @@
     </div>
     
     <main id="article">
-      <h1>Des Makers aux Commandes. Mira Murati.</h1>
+      <h1></h1>
       
-        <div class="extended">Auteur : Nouamane Cherkaoui
+        <div class="extended">
+          Auteur : Nouamane Cherkaoui
           <a href="/about/" class="no-hover-effect">
             <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
           </a>
           
-        <div class="article-date">
-        Publié le : 02/08/2024
+            <div class="article-date">
+              Publié le : 02/08/2024
+            </div>
+          
         </div>
       
-        </div>
-      
-      
+
       <p><strong>Mira Murati</strong> est longtemps restée dans l'ombre d'un autre Maker, <strong>Sam Altman</strong>. En 2018, Murati, <strong>ingénieure en génie mécanique</strong> d'origine albanaise, a rejoint <strong>OpenAI</strong> en tant que <strong>vice-présidente de l'IA appliquée</strong>, travaillant notamment sur le développement de <strong>DALL-E</strong>. Elle a ensuite gravi les échelons pour devenir <strong>directrice de la technologie</strong> d'OpenAI, dirigeant les équipes responsables de <strong>ChatGPT</strong> en plus de DALL-E, devenant ainsi l'une des personnalités les plus influentes de la tech mondiale.</p>
 <p>Avant même qu'elle ne soit nommée à 35 ans comme <strong>CEO par intérim</strong> d'OpenAI après le départ de <strong>Sam Altman</strong> en novembre 2023, le magazine <em>Time</em> la présentait déjà, en février de la même année, comme « la créatrice de ChatGPT ». Son objectif est de s'assurer que les travaux de ses équipes autour de <strong>l'IA générative</strong> ne produisent pas des outils qui pourraient induire les utilisateurs en erreur, faire preuve de parti pris, ou menacer l'humanité. Elle considère également que <strong>ChatGPT</strong> représente une belle opportunité pour l'enseignement et le partage des connaissances.</p>
 <p>Forte de ses convictions, elle défend les tests auprès du grand public : « Vous pourriez réaliser des progrès technologiques dans le vide, sans contact avec le monde réel », explique-t-elle à <em>Fast Company</em>. « Mais alors la question est : allez-vous réellement dans la bonne direction ? ».</p>
@@ -86,29 +88,82 @@
 <a href="https://www.fastcompany.com">Fast Company</a><br>
 <a href="https://www.youtube.com">The Daily Show (YouTube) - Mira Murati: DALL·E 2 and the Power of AI</a></p>
 
+      <br>
 
       <div class="share-container">
-          <h3>Partagez cet article :</h3>
-          <a href="https://www.linkedin.com/shareArticle?url={url}" target="_blank" class="linkedin linkedin-icon">
-            <img src="/images/ic/i-linkedin.png" alt="LinkedIn Icon" title="Partagez sur LinkedIn" style="width: 30px; height: auto;">
-            <span>LinkedIn</span>
-          </a>
+        <h3>Partagez cet article :</h3>
+        <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="">
+          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+          <span>Partager sur LinkedIn</span>
+        </a>
       </div>
-
     </main>
   </div>
 
+  <script>
+    let startTime = Date.now();
+
+    // Calcul de la durée de lecture
+    window.addEventListener('beforeunload', function() {
+      let timeSpent = Date.now() - startTime; // Temps en millisecondes
+      let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+
+      // Envoi des données au serveur
+      fetch('/api/track-engagement', {
+        method: 'POST',
+        body: JSON.stringify({
+          articleId: '1000005',
+          timeSpent: timeSpent,
+          hasReachedEnd: hasReachedEnd
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    });
+
+    // Centrer le popup de partage
+    var popupCenter = function(url, title, width, height){
+        var popupWidth = width || 640;
+        var popupHeight = height || 320;
+        var windowLeft = window.screenLeft || window.screenX;
+        var windowTop = window.screenTop || window.screenY;
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+        popup.focus();
+        return true;
+    };
+
+    // Partage sur LinkedIn
+    document.querySelector('.share_linkedin').addEventListener('click', function(e){
+        e.preventDefault();
+        var url = this.getAttribute('data-url');  // Get the URL of the article
+        var articleTitle = encodeURIComponent('');  // Encode article title
+        var articleSummary = encodeURIComponent('Mira Murati, l&#39;architecte secrète de l&#39;IA, a fait d&#39;OpenAI un leader mondial. Découvrez comment elle façonne l&#39;avenir tout en gardant une éthique inébranlable.');  // Encode article teaser
+
+        var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleSummary}`;
+
+        popupCenter(shareUrl, "Partager sur LinkedIn");
+    });
+
+  </script>
 
 
 
- <!-- Footer -->
+
+  <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-links">
           <ul>
-            <li><a href="/privacy/">Privacy</a></li>
-            <li><a href="/publish">Publish</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+            
+              <li><a href="/privacy/">Confidentialité</a></li>
+              <li><a href="/publish/">Publier</a></li>
+              <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+            
           </ul>
         </div>
         <div class="footer-info">
