@@ -1,0 +1,48 @@
+name: Deploy Orbii-blog - dev to www.orbii.fr
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js with the required version
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      # Step 3: Install project dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the site with Eleventy
+      - name: Build the site with Eleventy
+        run: npm run build
+
+      # Step 5: Create or update .htaccess to secure .env
+      - name: Secure .env file with .htaccess
+        run: |
+          echo "<Files .env>" > docs/.htaccess
+          echo "    Order allow,deny" >> docs/.htaccess
+          echo "    Deny from all" >> docs/.htaccess
+          echo "</Files>" >> docs/.htaccess
+
+
+      # Step 6: Deploy to FTP
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: docs/
+          server-dir: /public_html/
