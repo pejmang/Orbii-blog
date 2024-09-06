@@ -71,14 +71,20 @@
 
 
 
- <!-- Footer -->
+  <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-links">
           <ul>
-            <li><a href="/privacy/">Privacy</a></li>
-            <li><a href="/publish">Publish</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+            {% if lang == "en" %}
+              <li><a href="/en/privacy/">Privacy</a></li>
+              <li><a href="/en/publish/">Publish</a></li>
+              <li><a href="/en/OrbiiKnowledge/">Orbii Knowledge</a></li>
+            {% else %}
+              <li><a href="/privacy/">Confidentialité</a></li>
+              <li><a href="/publish/">Publier</a></li>
+              <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+            {% endif %}
           </ul>
         </div>
         <div class="footer-info">

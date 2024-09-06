@@ -5,7 +5,10 @@ date: 2024-04-24
 tags: transformation,Management
 authors: Pejman Gohari
 pillar: strategy
-type: article
+type: strategy
+lang: en
+articleID: "2000001"
+
 ---
 
 I had the pleasure of publishing my first book, _The New Horizon of Digital Transformation: The 9 Pillars for Developing a Data-Driven Strategy_, in February 2022, with:

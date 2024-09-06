@@ -1,5 +1,5 @@
 ---
-title: "Comment assurer la réussite de la transformation digitale et data ?"
+title: "La réussite de la transformation digitale et data ?"
 teaser: "Les clés pour réussir la transformation digitale : culture data-driven, stratégie claire, et engagement des équipes pour éviter les échecs courants."
 date: 2024-04-12
 pillar: culture

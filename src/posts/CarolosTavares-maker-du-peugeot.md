@@ -1,7 +1,7 @@
 ---
 title: " Des Makers aux Commandes: Carlos Tavares."
 teaser: " Ces nouveaux Makers en France : Une exception ? Carlos Tavares, le stratège inspiré et sauveur de Peugeot"
-date: 2024-08-21
+date: 2024-09-06
 tags: transformation,Management,Maker
 authors: Nouamane Cherkaoui
 pillar: makers
