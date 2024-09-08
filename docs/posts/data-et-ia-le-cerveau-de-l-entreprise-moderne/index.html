@@ -48,32 +48,34 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
-  <link rel="stylesheet" href="/styles/style.css">
-  <div class="container">
-    <div class="extended">
-      
-        <a href="/">Insights</a>
-        <a href="/"> ← Retour vers les autres articles</a>
-      
-    </div>
+<link rel="stylesheet" href="/styles/style.css">
+<div class="container">
+  <div class="extended">
+    
+      <a href="/">Insights</a>
+      <a href="/"> ← Retour vers les autres articles</a>
+    
+  </div>
 
-    <main id="article">
-      <h1>Data et IA : Le Cerveau de l&#39;Entreprise Moderne</h1>
-      
-        <div class="extended">
-          Auteur : Pejman GOHARI
-          <a href="/about/" class="no-hover-effect">
-            <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
-          </a>
-          
-            <div class="article-date">
-              Publié le : 08/09/2024
-            </div>
-          
-        </div>
-      
+  <main id="article">
+    <h1>Data et IA : Le Cerveau de l&#39;Entreprise Moderne</h1>
+    
+      <div class="extended">
+        Auteur : Pejman GOHARI
+        <a href="/about/" class="no-hover-effect">
+          <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
+        </a>
+        
+          <div class="article-date">
+            Publié le : 08/09/2024
+          </div>
+        
+      </div>
+    
 
-      <p>Dans l'univers effervescent de la transformation digitale, l'intelligence artificielle (IA) et la gestion des données se positionnent comme les fondations incontournables des entreprises modernes. Ces deux leviers constituent aujourd'hui le &quot;cerveau&quot; qui propulse la performance organisationnelle, influence la prise de décision et optimise l'ensemble des opérations. À travers cet article, nous explorerons comment le pilier &quot;Data &amp; IA&quot; se révèle essentiel dans la transformation digitale, tout en intégrant des perspectives issues de recherches académiques récentes. Cela nous permettra de démontrer comment la science nourrit les pratiques d'entreprise et ouvre des horizons novateurs.</p>
+   
+
+    <p>Dans l'univers effervescent de la transformation digitale, l'intelligence artificielle (IA) et la gestion des données se positionnent comme les fondations incontournables des entreprises modernes. Ces deux leviers constituent aujourd'hui le &quot;cerveau&quot; qui propulse la performance organisationnelle, influence la prise de décision et optimise l'ensemble des opérations. À travers cet article, nous explorerons comment le pilier &quot;Data &amp; IA&quot; se révèle essentiel dans la transformation digitale, tout en intégrant des perspectives issues de recherches académiques récentes. Cela nous permettra de démontrer comment la science nourrit les pratiques d'entreprise et ouvre des horizons novateurs.</p>
 <h3>L'IA et les Données : Duo Incontournable de l'Ère Numérique</h3>
 <p>L'intelligence artificielle et les données jouent un rôle central dans la création de nouvelles dynamiques organisationnelles. Les études académiques, notamment celles de Davenport et Ronanki (2018), montrent que l'IA ne se limite plus aux tâches isolées mais agit désormais comme un moteur central d’innovation en exploitant les capacités des systèmes de traitement du langage naturel, de vision par ordinateur, ou encore des réseaux neuronaux profonds.</p>
 <p>Les chercheurs soulignent l'importance de la collecte et de la gouvernance des données pour alimenter efficacement ces systèmes d'IA. Le concept de &quot;data-centric AI&quot;, introduit dans plusieurs études de doctorat récentes, suggère que la qualité des données est plus importante que la complexité des algorithmes eux-mêmes. Par exemple, une thèse menée par Rolnick et al. (2019) révèle que des systèmes d'IA bien entraînés sur des ensembles de données diversifiés et bien structurés surpassent souvent ceux qui dépendent uniquement d'algorithmes sophistiqués mais de données insuffisantes ou biaisées.</p>
@@ -110,69 +112,75 @@
 </li>
 </ol>
 
-      <br>
+    <br>
 
-      <div class="share-container">
-        <h3>Partagez cet article :</h3>
-        <!-- Utilisation de l'URL absolue -->
-        <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/data-et-ia-le-cerveau-de-l-entreprise-moderne/">
-          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-          <span>Partager sur LinkedIn</span>
-        </a>
-      </div>
-    </main>
-  </div>
+    <!-- Image based on language -->
+    <img 
+      src="/images/posts/fr/data-et-ia-le-cerveau-de-l-entreprise-moderne.png" 
+      alt="Article Image" />
 
-  <script>
-    let startTime = Date.now();
+    <div class="share-container">
+      <h3>Partagez cet article :</h3>
+      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
+      <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/data-et-ia-le-cerveau-de-l-entreprise-moderne/" data-teaser="Dans l&#39;univers effervescent de la transformation digitale, l&#39;intelligence artificielle (IA) et la gestion des données se positionnent comme les fondations incontournables des entreprises modernes." data-image="/images/posts/fr/data-et-ia-le-cerveau-de-l-entreprise-moderne.png">
+        <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+        <span>Partager sur LinkedIn</span>
+      </a>
+    </div>
+  </main>
+</div>
 
-    // Calcul de la durée de lecture
-    window.addEventListener('beforeunload', function() {
-      let timeSpent = Date.now() - startTime; // Temps en millisecondes
-      let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+<script>
+  let startTime = Date.now();
 
-      // Envoi des données au serveur
-      fetch('/api/track-engagement', {
-        method: 'POST',
-        body: JSON.stringify({
-          articleId: '1000020',
-          timeSpent: timeSpent,
-          hasReachedEnd: hasReachedEnd
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+  // Calcul de la durée de lecture
+  window.addEventListener('beforeunload', function() {
+    let timeSpent = Date.now() - startTime; // Temps en millisecondes
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+
+    // Envoi des données au serveur
+    fetch('/api/track-engagement', {
+      method: 'POST',
+      body: JSON.stringify({
+        articleId: '1000020',
+        timeSpent: timeSpent,
+        hasReachedEnd: hasReachedEnd
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
+  });
 
-    // Fonction pour centrer le popup de partage
-    var popupCenter = function(url, title, width, height){
-        var popupWidth = width || 640;
-        var popupHeight = height || 320;
-        var windowLeft = window.screenLeft || window.screenX;
-        var windowTop = window.screenTop || window.screenY;
-        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
-        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
-        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
-        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
-        popup.focus();
-        return true;
-    };
+  // Fonction pour centrer le popup de partage
+  var popupCenter = function(url, title, width, height){
+      var popupWidth = width || 640;
+      var popupHeight = height || 320;
+      var windowLeft = window.screenLeft || window.screenX;
+      var windowTop = window.screenTop || window.screenY;
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+      var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+      var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+      popup.focus();
+      return true;
+  };
 
-    // Partage sur LinkedIn avec URL absolue
-    document.querySelector('.share_linkedin').addEventListener('click', function(e){
-        e.preventDefault();
-        var url = this.getAttribute('data-url');  // Obtenir l'URL absolue de l'article
-        var articleTitle = encodeURIComponent('Data et IA : Le Cerveau de l&#39;Entreprise Moderne');  // Encoder le titre de l'article
-        var articleTeaser = encodeURIComponent('Dans l&#39;univers effervescent de la transformation digitale, l&#39;intelligence artificielle (IA) et la gestion des données se positionnent comme les fondations incontournables des entreprises modernes.');  // Encoder le teaser de l'article
+  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
+  document.querySelector('.share_linkedin').addEventListener('click', function(e){
+      e.preventDefault();
+      var url = this.getAttribute('data-url');
+      var articleTitle = encodeURIComponent('Data et IA : Le Cerveau de l&#39;Entreprise Moderne');
+      var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
+      var articleImage = encodeURIComponent(this.getAttribute('data-image'));
 
-        // Génération de l'URL de partage LinkedIn avec l'URL absolue de l'article
-        var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}`;
+      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
+      var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
 
-        popupCenter(shareUrl, "Partager sur LinkedIn");
-    });
-  </script>
+      popupCenter(shareUrl, "Partager sur LinkedIn");
+  });
+</script>
 
 
 

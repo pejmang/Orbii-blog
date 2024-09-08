@@ -48,32 +48,34 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
-  <link rel="stylesheet" href="/styles/style.css">
-  <div class="container">
-    <div class="extended">
-      
-        <a href="/en/">Insights</a>
-        <a href="/en/"> ← Go back...</a>
-      
-    </div>
+<link rel="stylesheet" href="/styles/style.css">
+<div class="container">
+  <div class="extended">
+    
+      <a href="/en/">Insights</a>
+      <a href="/en/"> ← Go back...</a>
+    
+  </div>
 
-    <main id="article">
-      <h1>Generative AI and LLMs: Adoption Through RAG</h1>
-      
-        <div class="extended">
-          Auteur : Pejman GOHARI
-          <a href="/about/" class="no-hover-effect">
-            <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
-          </a>
-          
-            <div class="article-date">
-              Publié le : 24/04/2024
-            </div>
-          
-        </div>
-      
+  <main id="article">
+    <h1>Generative AI and LLMs: Adoption Through RAG</h1>
+    
+      <div class="extended">
+        Auteur : Pejman GOHARI
+        <a href="/about/" class="no-hover-effect">
+          <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
+        </a>
+        
+          <div class="article-date">
+            Publié le : 24/04/2024
+          </div>
+        
+      </div>
+    
 
-      <p>In the ever-evolving landscape of AI and Generative AI, particularly Large Language Models (LLMs) like OpenAI's GPT, Anthropic’s Claude, or Mistral’s models, automated content generation is garnering strong interest from businesses. Although effective in rephrasing text or handling creative tasks, these traditional LLMs have <strong>major limitations for adoption in a professional context</strong> (whether client-facing or for internal use). Their disconnection from the real-world business environment makes them prone to <strong>hallucinations</strong>, meaning they generate false or erroneous information, often with the confidence of a seasoned consultant.</p>
+   
+
+    <p>In the ever-evolving landscape of AI and Generative AI, particularly Large Language Models (LLMs) like OpenAI's GPT, Anthropic’s Claude, or Mistral’s models, automated content generation is garnering strong interest from businesses. Although effective in rephrasing text or handling creative tasks, these traditional LLMs have <strong>major limitations for adoption in a professional context</strong> (whether client-facing or for internal use). Their disconnection from the real-world business environment makes them prone to <strong>hallucinations</strong>, meaning they generate false or erroneous information, often with the confidence of a seasoned consultant.</p>
 <p>But this is no surprise: LLMs are asked to generate text, so they perform the task as requested.</p>
 <p>The problem lies in the fact that their training was done on <strong>public data</strong>, not on <strong>specific business knowledge</strong>. To address these intrinsic weaknesses, a new term has emerged, one you have likely already heard in meetings with your AI experts and consultants: <strong>RAG</strong>, or <em>Retrieval-Augmented Generation</em>. RAG has become a key tool in your Data architecture, enabling the full potential of LLMs to be harnessed.</p>
 <h2>How RAG Works Technically</h2>
@@ -105,69 +107,75 @@
 <h3>Collaboration with Industry Stakeholders and Regulators</h3>
 <p>One of the most important steps to initiate (not only at the institutional level) is <strong>collaboration</strong> with other industry stakeholders and regulators. Partnerships and expertise exchanges can help develop <strong>common standards and best practices</strong>, including on the topic of Open Source, with the goal of creating a <strong>favorable ecosystem for responsible innovation and growth</strong>.</p>
 
-      <br>
+    <br>
 
-      <div class="share-container">
-        <h3>Partagez cet article :</h3>
-        <!-- Utilisation de l'URL absolue -->
-        <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/en/posts/IAGen-RAG-LLM/">
-          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-          <span>Partager sur LinkedIn</span>
-        </a>
-      </div>
-    </main>
-  </div>
+    <!-- Image based on language -->
+    <img 
+      src="/images/posts/en/IAGen-RAG-LLM.png" 
+      alt="Article Image" />
 
-  <script>
-    let startTime = Date.now();
+    <div class="share-container">
+      <h3>Partagez cet article :</h3>
+      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
+      <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/en/posts/IAGen-RAG-LLM/" data-teaser="Generative AI and RAG: A powerful alliance for reliable and contextualized content in business. But is it the ideal solution for you? Discover the benefits and challenges in this article." data-image="/images/posts/en/IAGen-RAG-LLM.png">
+        <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+        <span>Partager sur LinkedIn</span>
+      </a>
+    </div>
+  </main>
+</div>
 
-    // Calcul de la durée de lecture
-    window.addEventListener('beforeunload', function() {
-      let timeSpent = Date.now() - startTime; // Temps en millisecondes
-      let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+<script>
+  let startTime = Date.now();
 
-      // Envoi des données au serveur
-      fetch('/api/track-engagement', {
-        method: 'POST',
-        body: JSON.stringify({
-          articleId: '2000003',
-          timeSpent: timeSpent,
-          hasReachedEnd: hasReachedEnd
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+  // Calcul de la durée de lecture
+  window.addEventListener('beforeunload', function() {
+    let timeSpent = Date.now() - startTime; // Temps en millisecondes
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+
+    // Envoi des données au serveur
+    fetch('/api/track-engagement', {
+      method: 'POST',
+      body: JSON.stringify({
+        articleId: '2000003',
+        timeSpent: timeSpent,
+        hasReachedEnd: hasReachedEnd
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
+  });
 
-    // Fonction pour centrer le popup de partage
-    var popupCenter = function(url, title, width, height){
-        var popupWidth = width || 640;
-        var popupHeight = height || 320;
-        var windowLeft = window.screenLeft || window.screenX;
-        var windowTop = window.screenTop || window.screenY;
-        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
-        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
-        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
-        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
-        popup.focus();
-        return true;
-    };
+  // Fonction pour centrer le popup de partage
+  var popupCenter = function(url, title, width, height){
+      var popupWidth = width || 640;
+      var popupHeight = height || 320;
+      var windowLeft = window.screenLeft || window.screenX;
+      var windowTop = window.screenTop || window.screenY;
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+      var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+      var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+      popup.focus();
+      return true;
+  };
 
-    // Partage sur LinkedIn avec URL absolue
-    document.querySelector('.share_linkedin').addEventListener('click', function(e){
-        e.preventDefault();
-        var url = this.getAttribute('data-url');  // Obtenir l'URL absolue de l'article
-        var articleTitle = encodeURIComponent('Generative AI and LLMs: Adoption Through RAG');  // Encoder le titre de l'article
-        var articleTeaser = encodeURIComponent('Generative AI and RAG: A powerful alliance for reliable and contextualized content in business. But is it the ideal solution for you? Discover the benefits and challenges in this article.');  // Encoder le teaser de l'article
+  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
+  document.querySelector('.share_linkedin').addEventListener('click', function(e){
+      e.preventDefault();
+      var url = this.getAttribute('data-url');
+      var articleTitle = encodeURIComponent('Generative AI and LLMs: Adoption Through RAG');
+      var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
+      var articleImage = encodeURIComponent(this.getAttribute('data-image'));
 
-        // Génération de l'URL de partage LinkedIn avec l'URL absolue de l'article
-        var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}`;
+      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
+      var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
 
-        popupCenter(shareUrl, "Partager sur LinkedIn");
-    });
-  </script>
+      popupCenter(shareUrl, "Partager sur LinkedIn");
+  });
+</script>
 
 
 

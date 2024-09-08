@@ -867,4 +867,167 @@ img {
   background-color: #0056b3;
   transform: scale(1);
 }
+.teaser-box {
+  background: #f9f9f9;
+  border-left: 4px solid #007ACC; /* Accent color */
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  font-style: italic;
+  font-size: 0.95rem; /* Slightly smaller than the body */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
 
+
+.teaser-box p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .teaser-box {
+    font-size: 0.85rem;
+    padding: 15px;
+  }
+}
+
+
+
+.testimonial {
+  margin-bottom: 40px; /* Espace entre chaque témoignage */
+  padding: 20px;
+  border-bottom: 1px solid #ddd; /* Ligne de séparation entre les témoignages */
+}
+
+.testimonial h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #555;
+}
+
+.testimonial-source {
+  font-weight: bold;
+  margin-bottom: 10px; /* Ajoute de l'espace entre le nom de l'auteur et le témoignage */
+}
+
+.testimonial-quote {
+  margin-bottom: 20px; /* Ajoute de l'espace après chaque témoignage */
+}
+
+  }
+
+  .testimonial-awards-list,
+  .purchase-links ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .purchase-links ul li {
+    margin-bottom: 0.5em;
+  }
+
+  .purchase-links a {
+    color: #0073e6;
+    text-decoration: none;
+  }
+
+  .purchase-links a:hover {
+    text-decoration: underline;
+  }
+
+/* Styles du conteneur flottant */
+.floating-box {
+  position: fixed;
+  top: 100px; /* Position initiale par rapport au haut de la page */
+  right: 20px; /* Distance du côté droit de la page */
+  width: 250px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 0.9em;
+  overflow-y: auto;
+  max-height: 400px; /* Limite la hauteur si beaucoup de contenu */
+  z-index: 1000; /* S'assurer que l'élément est toujours au-dessus */
+}
+
+.floating-box h3 {
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.floating-box p {
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* Styles du Modal */
+.modal {
+  display: none; /* Masqué par défaut */
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup-btn {
+  background-color: #0073e6;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.popup-btn:hover {
+  background-color: #005bb5;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #0073e6;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #005bb5;
+}

@@ -48,32 +48,34 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
-  <link rel="stylesheet" href="/styles/style.css">
-  <div class="container">
-    <div class="extended">
-      
-        <a href="/">Insights</a>
-        <a href="/"> ← Retour vers les autres articles</a>
-      
-    </div>
+<link rel="stylesheet" href="/styles/style.css">
+<div class="container">
+  <div class="extended">
+    
+      <a href="/">Insights</a>
+      <a href="/"> ← Retour vers les autres articles</a>
+    
+  </div>
 
-    <main id="article">
-      <h1>Innovation &amp; Agility Through AI and Data: Empowering Organizations for Future Growth</h1>
-      
-        <div class="extended">
-          Auteur : Pejman GOHARI
-          <a href="/about/" class="no-hover-effect">
-            <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
-          </a>
-          
-            <div class="article-date">
-              Publié le : 06/09/2024
-            </div>
-          
-        </div>
-      
+  <main id="article">
+    <h1>Innovation &amp; Agility Through AI and Data: Empowering Organizations for Future Growth</h1>
+    
+      <div class="extended">
+        Auteur : Pejman GOHARI
+        <a href="/about/" class="no-hover-effect">
+          <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
+        </a>
+        
+          <div class="article-date">
+            Publié le : 06/09/2024
+          </div>
+        
+      </div>
+    
 
-      <h3><strong>Innovation &amp; Agility Through AI and Data: Empowering Organizations for Future Growth</strong></h3>
+   
+
+    <h3><strong>Innovation &amp; Agility Through AI and Data: Empowering Organizations for Future Growth</strong></h3>
 <p>In today’s fast-paced, digital-first environment, <strong>innovation and agility</strong> are no longer just competitive advantages; they are essential to survival. For CXOs, harnessing the full potential of <strong>artificial intelligence (AI)</strong> and <strong>data</strong> is crucial to driving innovation, fostering agility, and positioning the organization for future growth. Companies that successfully integrate AI and data into their operational and strategic frameworks can rapidly innovate, respond to market shifts, and outperform their competitors in a constantly evolving landscape.</p>
 <p>This point focuses on how organizations can leverage AI and data to build an <strong>innovation culture</strong>, create <strong>agile business models</strong>, and enable <strong>continuous learning</strong>. By adopting a data-driven approach to decision-making and embedding AI into every facet of the business, CXOs can ensure that their organizations are not just reactive to change but are driving it proactively.</p>
 <h4><strong>The Interplay Between Innovation and Agility</strong></h4>
@@ -150,69 +152,75 @@ CXOs must lead by example, demonstrating their commitment to innovation and agil
 <p>In a world where <strong>change is constant</strong>, organizations that leverage <strong>AI</strong> and <strong>data</strong> to drive innovation and agility will be best positioned for future growth. For CXOs, the challenge is to create a culture that encourages experimentation, embraces data-driven decision-making, and uses AI to accelerate innovation cycles. By embedding AI and data into the core of their operations, organizations can adapt quickly to new opportunities, outpace their competitors, and thrive in an increasingly dynamic business environment.</p>
 <p>In conclusion, CXOs who prioritize <strong>innovation and agility</strong> through AI and data are not only safeguarding their organizations against disruption but also unlocking new pathways for growth and success in the digital economy.</p>
 
-      <br>
+    <br>
 
-      <div class="share-container">
-        <h3>Partagez cet article :</h3>
-        <!-- Utilisation de l'URL absolue -->
-        <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/Innovation-based-on-AI/">
-          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-          <span>Partager sur LinkedIn</span>
-        </a>
-      </div>
-    </main>
-  </div>
+    <!-- Image based on language -->
+    <img 
+      src="/images/posts/fr/Innovation-based-on-AI.png" 
+      alt="Article Image" />
 
-  <script>
-    let startTime = Date.now();
+    <div class="share-container">
+      <h3>Partagez cet article :</h3>
+      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
+      <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/Innovation-based-on-AI/" data-teaser="How CXOs can harness the power of AI and data to drive innovation, foster agility, and position their organizations for future growth." data-image="/images/posts/fr/Innovation-based-on-AI.png">
+        <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+        <span>Partager sur LinkedIn</span>
+      </a>
+    </div>
+  </main>
+</div>
 
-    // Calcul de la durée de lecture
-    window.addEventListener('beforeunload', function() {
-      let timeSpent = Date.now() - startTime; // Temps en millisecondes
-      let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+<script>
+  let startTime = Date.now();
 
-      // Envoi des données au serveur
-      fetch('/api/track-engagement', {
-        method: 'POST',
-        body: JSON.stringify({
-          articleId: '2000008',
-          timeSpent: timeSpent,
-          hasReachedEnd: hasReachedEnd
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+  // Calcul de la durée de lecture
+  window.addEventListener('beforeunload', function() {
+    let timeSpent = Date.now() - startTime; // Temps en millisecondes
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+
+    // Envoi des données au serveur
+    fetch('/api/track-engagement', {
+      method: 'POST',
+      body: JSON.stringify({
+        articleId: '2000008',
+        timeSpent: timeSpent,
+        hasReachedEnd: hasReachedEnd
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
+  });
 
-    // Fonction pour centrer le popup de partage
-    var popupCenter = function(url, title, width, height){
-        var popupWidth = width || 640;
-        var popupHeight = height || 320;
-        var windowLeft = window.screenLeft || window.screenX;
-        var windowTop = window.screenTop || window.screenY;
-        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
-        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
-        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
-        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
-        popup.focus();
-        return true;
-    };
+  // Fonction pour centrer le popup de partage
+  var popupCenter = function(url, title, width, height){
+      var popupWidth = width || 640;
+      var popupHeight = height || 320;
+      var windowLeft = window.screenLeft || window.screenX;
+      var windowTop = window.screenTop || window.screenY;
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+      var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+      var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+      popup.focus();
+      return true;
+  };
 
-    // Partage sur LinkedIn avec URL absolue
-    document.querySelector('.share_linkedin').addEventListener('click', function(e){
-        e.preventDefault();
-        var url = this.getAttribute('data-url');  // Obtenir l'URL absolue de l'article
-        var articleTitle = encodeURIComponent('Innovation &amp; Agility Through AI and Data: Empowering Organizations for Future Growth');  // Encoder le titre de l'article
-        var articleTeaser = encodeURIComponent('How CXOs can harness the power of AI and data to drive innovation, foster agility, and position their organizations for future growth.');  // Encoder le teaser de l'article
+  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
+  document.querySelector('.share_linkedin').addEventListener('click', function(e){
+      e.preventDefault();
+      var url = this.getAttribute('data-url');
+      var articleTitle = encodeURIComponent('Innovation &amp; Agility Through AI and Data: Empowering Organizations for Future Growth');
+      var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
+      var articleImage = encodeURIComponent(this.getAttribute('data-image'));
 
-        // Génération de l'URL de partage LinkedIn avec l'URL absolue de l'article
-        var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}`;
+      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
+      var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
 
-        popupCenter(shareUrl, "Partager sur LinkedIn");
-    });
-  </script>
+      popupCenter(shareUrl, "Partager sur LinkedIn");
+  });
+</script>
 
 
 

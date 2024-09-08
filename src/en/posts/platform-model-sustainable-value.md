@@ -1,7 +1,7 @@
 ---
 title: "Platform Model enables to connect sustainable value"
 teaser: "Globalization, the merge of digital services, the explosion of data, and the need for **ATAWAD** mobility connection (which refers to the technological capability provided to users to access information *anytime, anywhere, on any device). GAMA and BATX have understood that the fusion of tech, data and mobility will open up the possibilities for them thanks to platforms."
-date: 2024-09-06
+date: 2024-09-08
 tags: platform, mobility, data
 authors: Nouamane Cherkaoui
 pillar: tech
@@ -10,6 +10,8 @@ language: en
 articleID: "2000014"
 slug: platform-model-sustainable-value
 ---
+
+Globalization, the merge of digital services, the explosion of data, and the need for **ATAWAD** mobility connection (which refers to the technological capability provided to users to access information *anytime, anywhere, on any device). GAMA and BATX have understood that the fusion of tech, data and mobility will open up the possibilities for them thanks to platforms.
 
 ### **New competition in an open and innovative world**
 

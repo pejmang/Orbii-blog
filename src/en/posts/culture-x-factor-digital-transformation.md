@@ -10,6 +10,7 @@ language: en
 articleID: "2000012"
 ---
 
+Culture is at the heart of an organization and your ability to succeed in your transformation depends on cultural alignment. What does a successful culture transformation strategy mean? Paolo Coelho said: 'The future is made to change… and he was more than right'.
 
 We live in a period of **successive crises** (politics, pandemics, armed tensions, etc.), which are no longer cyclical but **permanent** and affect individuals, companies, and economies. But paradoxically, these crises are also extraordinary moments, as they provide opportunities to advance **scientific research**, raise fundamental questions about **supply chain control**, food and digital sovereignty, and bring forward major technological innovations. The world says **VUCA**[1] is more current than ever.
 

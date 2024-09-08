@@ -1,5 +1,5 @@
 ---
-title: "AI-Driven Anomaly Detection: Proactively Safeguarding Data and Ensuring Compliance"
+title: "AI-Driven anomaly detection: proactively ensuring Compliance"
 teaser: "How AI-driven anomaly detection is transforming data security and compliance, enabling CXOs to proactively mitigate risks in an increasingly complex data environment."
 date: 2024-08-21
 tags: AI, Data Security, Compliance

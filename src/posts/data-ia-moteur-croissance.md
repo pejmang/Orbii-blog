@@ -10,6 +10,8 @@ language: fr
 articleID: "1000015"
 ---
 
+La tech, à travers les solutions data depuis quelques années et la cap actuel sur l’IA, connaît une ère faste où la variété de l'offre et la maîtrise des coûts ne sont plus un frein mais un moteur accessible à tous. C'est à la fois un défi mais aussi de nouvelles opportunités à condition qu’elles puissent répondre à de réels besoins de l’entreprise pour servir ses clients ou atteindre de nouveaux niveaux de performance.
+
 **La Data** et l’IA, tout comme la **tech**, ne sont pas un but en soi. Ce sont des moyens qui permettent à la fois de répondre à de réels besoins des **clients**, de pilotage, de **productivité** et d’innovation. Mais aussi pour ne pas décrocher par rapport aux concurrents, de suivre le rythme des évolutions qui inondent les marchés. Les investissements en data/IA, malgré le buzz, sont nécessaires pour répondre principalement à des usages et à des **demandes clients**. 
 
 La technologie dans une organisation dite **Data-IA-Driven** permet de mettre en place les bons socles et applications adaptés aux processus de l’entreprise, avec la bonne gestion des données internes et externes. Ces points sont les **fondamentaux** qui permettent de prendre des décisions plus éclairées et alignées sur la stratégie de l’entreprise.

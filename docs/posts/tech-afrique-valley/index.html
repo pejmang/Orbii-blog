@@ -48,32 +48,34 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
-  <link rel="stylesheet" href="/styles/style.css">
-  <div class="container">
-    <div class="extended">
-      
-        <a href="/">Insights</a>
-        <a href="/"> ← Retour vers les autres articles</a>
-      
-    </div>
+<link rel="stylesheet" href="/styles/style.css">
+<div class="container">
+  <div class="extended">
+    
+      <a href="/">Insights</a>
+      <a href="/"> ← Retour vers les autres articles</a>
+    
+  </div>
 
-    <main id="article">
-      <h1>Investissements Tech en Afrique : Vers la New African Valley</h1>
-      
-        <div class="extended">
-          Auteur : Nouamane Cherkaoui
-          <a href="/about/" class="no-hover-effect">
-            <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
-          </a>
-          
-            <div class="article-date">
-              Publié le : 12/04/2022
-            </div>
-          
-        </div>
-      
+  <main id="article">
+    <h1>Investissements Tech en Afrique : Vers la New African Valley</h1>
+    
+      <div class="extended">
+        Auteur : Nouamane Cherkaoui
+        <a href="/about/" class="no-hover-effect">
+          <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
+        </a>
+        
+          <div class="article-date">
+            Publié le : 12/04/2022
+          </div>
+        
+      </div>
+    
 
-      <p>– Les grandes entreprises technologiques du monde sont prêtes à croître sur le marché hautement prometteur de l’Afrique. Beaucoup de pays africains sont en train de faire émerger de nouveaux champions tech locaux, de s’ouvrir à l’innovation tech, à la formation et à la recherche en attirant de plus en plus de capitaux et en capitalisent sur la demande croissante de services numériques.</p>
+   
+
+    <p>– Les grandes entreprises technologiques du monde sont prêtes à croître sur le marché hautement prometteur de l’Afrique. Beaucoup de pays africains sont en train de faire émerger de nouveaux champions tech locaux, de s’ouvrir à l’innovation tech, à la formation et à la recherche en attirant de plus en plus de capitaux et en capitalisent sur la demande croissante de services numériques.</p>
 <p>Néanmoins, ces nouvelles entreprises Tech africaines sont aux prises avec une infrastructure TIC toujours insuffisante, une base étroite de fournisseurs et une fuite des cerveaux non maitrisée.</p>
 <p>Les services financiers, la santé, l’immobilier et l’agriculture sont ceux qui offrent les meilleures opportunités aux entreprises de technologie pour de nombreuses économies africaines. Le COVID-19 a apporté une plus grande confiance et une « normalisation » du travail à distance, ce qui profite encore plus à la proximité et à la délocalisation des services informatiques.</p>
 <p>La connectivité et les taux très élevés de la pénétration mobile continuent de stimuler la croissance des services tech, la transformation numérique et le développement socio-économique en Afrique. L’Afrique est l’économie mobile qui à la croissance la plus rapide encore aujourd’hui. Un tiers de tous les Africains étaient connectés à Internet fin 2023 et cette part atteindra près de 44 % d’ici 2025, lorsque l’on estime que le nombre de connexions 5G atteindra 40 millions<a href="https://orbii.fr/investissements-tech-en-afrique-vers-la-new-african-valley/#_ftn1">[1]</a> et selon GSM association « <em>La 5G devrait rapporter 11 milliards de dollars à l’économie de l’Afrique subsaharienne en 2030, soit plus de 6 % des retombées économiques globales de la téléphonie mobile</em> <a href="https://orbii.fr/investissements-tech-en-afrique-vers-la-new-african-valley/#_ftn2">[2]</a>».</p>
@@ -105,69 +107,75 @@
 </tbody>
 </table>
 </div>
-      <br>
+    <br>
 
-      <div class="share-container">
-        <h3>Partagez cet article :</h3>
-        <!-- Utilisation de l'URL absolue -->
-        <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/tech-afrique-valley/">
-          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-          <span>Partager sur LinkedIn</span>
-        </a>
-      </div>
-    </main>
-  </div>
+    <!-- Image based on language -->
+    <img 
+      src="/images/posts/fr/tech-afrique-valley.png" 
+      alt="Article Image" />
 
-  <script>
-    let startTime = Date.now();
+    <div class="share-container">
+      <h3>Partagez cet article :</h3>
+      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
+      <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/tech-afrique-valley/" data-teaser="Explorez l&#39;extension du livre : transformation digitale, données, IA. Découvrez articles, avis, et commandez le livre. Contactez-nous pour un accompagnement vers le futur tech en Afrique." data-image="/images/posts/fr/tech-afrique-valley.png">
+        <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+        <span>Partager sur LinkedIn</span>
+      </a>
+    </div>
+  </main>
+</div>
 
-    // Calcul de la durée de lecture
-    window.addEventListener('beforeunload', function() {
-      let timeSpent = Date.now() - startTime; // Temps en millisecondes
-      let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+<script>
+  let startTime = Date.now();
 
-      // Envoi des données au serveur
-      fetch('/api/track-engagement', {
-        method: 'POST',
-        body: JSON.stringify({
-          articleId: '1000002',
-          timeSpent: timeSpent,
-          hasReachedEnd: hasReachedEnd
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+  // Calcul de la durée de lecture
+  window.addEventListener('beforeunload', function() {
+    let timeSpent = Date.now() - startTime; // Temps en millisecondes
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+
+    // Envoi des données au serveur
+    fetch('/api/track-engagement', {
+      method: 'POST',
+      body: JSON.stringify({
+        articleId: '1000002',
+        timeSpent: timeSpent,
+        hasReachedEnd: hasReachedEnd
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
+  });
 
-    // Fonction pour centrer le popup de partage
-    var popupCenter = function(url, title, width, height){
-        var popupWidth = width || 640;
-        var popupHeight = height || 320;
-        var windowLeft = window.screenLeft || window.screenX;
-        var windowTop = window.screenTop || window.screenY;
-        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
-        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
-        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
-        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
-        popup.focus();
-        return true;
-    };
+  // Fonction pour centrer le popup de partage
+  var popupCenter = function(url, title, width, height){
+      var popupWidth = width || 640;
+      var popupHeight = height || 320;
+      var windowLeft = window.screenLeft || window.screenX;
+      var windowTop = window.screenTop || window.screenY;
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+      var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+      var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+      popup.focus();
+      return true;
+  };
 
-    // Partage sur LinkedIn avec URL absolue
-    document.querySelector('.share_linkedin').addEventListener('click', function(e){
-        e.preventDefault();
-        var url = this.getAttribute('data-url');  // Obtenir l'URL absolue de l'article
-        var articleTitle = encodeURIComponent('Investissements Tech en Afrique : Vers la New African Valley');  // Encoder le titre de l'article
-        var articleTeaser = encodeURIComponent('Explorez l&#39;extension du livre : transformation digitale, données, IA. Découvrez articles, avis, et commandez le livre. Contactez-nous pour un accompagnement vers le futur tech en Afrique.');  // Encoder le teaser de l'article
+  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
+  document.querySelector('.share_linkedin').addEventListener('click', function(e){
+      e.preventDefault();
+      var url = this.getAttribute('data-url');
+      var articleTitle = encodeURIComponent('Investissements Tech en Afrique : Vers la New African Valley');
+      var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
+      var articleImage = encodeURIComponent(this.getAttribute('data-image'));
 
-        // Génération de l'URL de partage LinkedIn avec l'URL absolue de l'article
-        var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}`;
+      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
+      var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
 
-        popupCenter(shareUrl, "Partager sur LinkedIn");
-    });
-  </script>
+      popupCenter(shareUrl, "Partager sur LinkedIn");
+  });
+</script>
 
 
 

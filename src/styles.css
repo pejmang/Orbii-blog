@@ -867,4 +867,27 @@ img {
   background-color: #0056b3;
   transform: scale(1);
 }
+.teaser-box {
+  background: #f9f9f9;
+  border-left: 4px solid #007ACC; /* Accent color */
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  font-style: italic;
+  font-size: 0.95rem; /* Slightly smaller than the body */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
 
+
+.teaser-box p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .teaser-box {
+    font-size: 0.85rem;
+    padding: 15px;
+  }
+}

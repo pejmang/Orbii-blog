@@ -103,8 +103,8 @@
       </p>
 
       <p>
-        Mais l'aventure ne s'est pas arrêtée là. Nous avons ensuite pris une drôle d'habitude. Pendant une dizaine de dimanches matin, dès 8h30, on se retrouvait religieusement au restaurant          <a href="https://g.co/kgs/EuBJDij"> Sir Winston </a> à l'Étoile. Pourquoi là ? Allez savoir... 
-        Peut-être que l'esprit de Churchill nous inspirait, en tout cas on etait les premiers clients pour un cafe, des croissants avant d'attaquer une nouvelle séance de brainstorming. C'était presque un rituel : croissants, café fumant, et discussions animées sur la meilleure façon de construire ces 9 piliers.
+        Mais l'aventure ne s'est pas arrêtée là. Nous avons ensuite pris une drôle d'habitude. Pendant une dizaine de dimanches matin, dès 8h30, on se retrouvait religieusement au restaurant <a href="https://g.co/kgs/EuBJDij">Sir Winston</a> à l'Étoile. Pourquoi là ? Allez savoir... 
+        Peut-être que l'esprit de Churchill nous inspirait, en tout cas on etait les premiers clients pour un café, des croissants avant d'attaquer une nouvelle séance de brainstorming. C'était presque un rituel : croissants, café fumant, et discussions animées sur la meilleure façon de construire ces 9 piliers.
       </p>
 
       <p>
@@ -128,6 +128,105 @@
         <a href="https://www.fnac.com/a16303879/Jean-Barrere-Le-nouvel-horizon-de-la-transformation-digitale" target="_blank">Fnac</a>, ou 
         <a href="https://www.cultura.com/p-le-nouvel-horizon-de-la-transformation-digitale-9-piliers-pour-developper-une-strategie-data-drive-9782100830787.html" target="_blank">Cultura</a>.
       </p>
+
+      <!-- Bouton pour ouvrir le popup -->
+      <div class="testimonials-popup">
+        <button id="open-popup" class="popup-btn">Lire les Témoignages</button>
+      </div>
+
+      <!-- Popup Modal -->
+      <div id="testimonialsModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Les Témoignages des Lecteurs</h3>
+          <p>Découvrez les avis et témoignages sur notre livre. Lisez ce que nos lecteurs ont à dire !</p>
+          <a href="/temoignages" class="btn">Voir les Témoignages</a>
+        </div>
+      </div>
+
+      <!-- JavaScript pour gérer l'ouverture et la fermeture du popup -->
+      <script>
+        var modal = document.getElementById("testimonialsModal");
+        var btn = document.getElementById("open-popup");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Ouvrir le modal
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+
+        // Fermer le modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+
+        // Fermer si on clique à l'extérieur du modal
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      </script>
+
+      <!-- Conteneur flottant pour afficher la liste des témoignages -->
+      <div id="floating-testimonials" class="floating-box">
+        <h3>Ce que disent nos lecteurs :</h3>
+        <div id="testimonials-content">
+          <!-- Témoignages seront chargés ici -->
+          Chargement des témoignages...
+        </div>
+      </div>
+
+      <!-- JavaScript pour charger dynamiquement les témoignages -->
+      <script>
+  // Simule le chargement de témoignages
+  const testimonials = [
+    {
+      name: 'Nicolas Bouzou',
+      text: 'Un livre qui est déjà un classique.'
+    },
+    {
+      name: 'David Brunat',
+      text: 'Des ouvrages sur la transformation digitale des entreprises, il en existe des tas. Mais celui-ci sort du lot. Par sa clarté, sa construction originale, sa portée pratique, son esprit positif, son bon sens... et ses réelles qualités d\'écriture.'
+    },
+    {
+      name: 'Patrick Chabannes',
+      text: 'Ce maître-livre (...) propose des concepts parfois originaux et toujours intelligibles, et multiplie les cas pratiques de mise en situation et d’application tirés d’expériences réelles permettant à chacun (...) d’appréhender la 4ème révolution industrielle.'
+    },
+    {
+      name: 'Cio-online.com',
+      text: 'Afficher la volonté d\'une transformation digitale, vouloir une vraie transformation digitale et réussir sa transformation digitale sont bien trois choses différentes. Beaucoup en sont encore au premier stade et auront donc bien l\'usage de cet ouvrage.'
+    },
+    {
+      name: 'Cyrenac',
+      text: 'Pas d’avenir sans transformation radicale. Cet appel des auteurs doit être aussi considéré sérieusement par les sociétés de conseil, les éditeurs et les intégrateurs (…), les éditeurs de logiciels métier ou les consultants qui conçoivent le monde en termes de processus verront leurs certitudes bousculées par l’irruption de la donnée et de l\'IA.'
+    },
+    {
+      name: 'Alliancy Le Mag',
+      text: 'En analysant les conditions et les étapes de la réussite, mais aussi les sources des échecs, ce livre propose une grille d’actions pour transformer les organisations de façon systémique et extraire de la technologie, de la data et de l’intelligence artificielle toute la valeur promise.'
+    },
+    {
+      name: 'e-marketing',
+      text: 'Les auteurs proposent une analyse des conditions et des étapes de la réussite, mais aussi une analyse des échecs, afin de proposer des solutions concrètes qui permettront aux entreprises d\'extraire de la valeur de la technologie, de la data et de l\'intelligence artificielle.'
+    }
+  ];
+
+  // Fonction pour charger les témoignages
+  function loadTestimonials() {
+    const testimonialsContainer = document.getElementById('testimonials-content');
+    testimonialsContainer.innerHTML = '';
+
+    testimonials.forEach((testimonial) => {
+      const testimonialElement = document.createElement('p');
+      testimonialElement.innerHTML = `<strong>${testimonial.name}</strong>: "${testimonial.text}"`;
+      testimonialsContainer.appendChild(testimonialElement);
+    });
+  }
+
+  // Charger les témoignages après le chargement de la page
+  window.onload = loadTestimonials;
+</script>
+
     </div>
 
     <!-- Ajout de la photo des trois écrivains -->

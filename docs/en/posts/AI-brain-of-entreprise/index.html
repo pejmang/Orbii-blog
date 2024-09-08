@@ -48,32 +48,34 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
-  <link rel="stylesheet" href="/styles/style.css">
-  <div class="container">
-    <div class="extended">
-      
-        <a href="/en/">Insights</a>
-        <a href="/en/"> ← Go back...</a>
-      
-    </div>
+<link rel="stylesheet" href="/styles/style.css">
+<div class="container">
+  <div class="extended">
+    
+      <a href="/en/">Insights</a>
+      <a href="/en/"> ← Go back...</a>
+    
+  </div>
 
-    <main id="article">
-      <h1>Data and AI: The Brain of the Modern Enterprise</h1>
-      
-        <div class="extended">
-          Auteur : Pejman GOHARI
-          <a href="/about/" class="no-hover-effect">
-            <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
-          </a>
-          
-            <div class="article-date">
-              Publié le : 08/09/2024
-            </div>
-          
-        </div>
-      
+  <main id="article">
+    <h1>Data and AI: The Brain of the Modern Enterprise</h1>
+    
+      <div class="extended">
+        Auteur : Pejman GOHARI
+        <a href="/about/" class="no-hover-effect">
+          <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
+        </a>
+        
+          <div class="article-date">
+            Publié le : 08/09/2024
+          </div>
+        
+      </div>
+    
 
-      <p>In the bustling world of digital transformation, artificial intelligence (AI) and data management have emerged as the essential foundations of modern enterprises. These two drivers now constitute the &quot;brain&quot; that propels organizational performance, influences decision-making, and optimizes operations. In this article, we will explore how the &quot;Data &amp; AI&quot; pillar is essential in digital transformation while incorporating insights from recent academic research. This will allow us to demonstrate how science fuels business practices and opens up innovative horizons.</p>
+   
+
+    <p>In the bustling world of digital transformation, artificial intelligence (AI) and data management have emerged as the essential foundations of modern enterprises. These two drivers now constitute the &quot;brain&quot; that propels organizational performance, influences decision-making, and optimizes operations. In this article, we will explore how the &quot;Data &amp; AI&quot; pillar is essential in digital transformation while incorporating insights from recent academic research. This will allow us to demonstrate how science fuels business practices and opens up innovative horizons.</p>
 <h3>AI and Data: The Inseparable Duo of the Digital Era</h3>
 <p>Artificial intelligence and data play a central role in creating new organizational dynamics. Academic studies, notably those by Davenport and Ronanki (2018), show that AI is no longer limited to isolated tasks but now acts as a central innovation engine by leveraging capabilities in natural language processing, computer vision, and deep neural networks.</p>
 <p>Researchers emphasize the importance of data collection and governance in effectively powering these AI systems. The concept of &quot;data-centric AI,&quot; introduced in several recent PhD studies, suggests that the quality of data is more critical than the complexity of the algorithms themselves. For instance, a thesis conducted on...</p>
@@ -98,69 +100,75 @@
 </li>
 </ol>
 
-      <br>
+    <br>
 
-      <div class="share-container">
-        <h3>Partagez cet article :</h3>
-        <!-- Utilisation de l'URL absolue -->
-        <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/en/posts/AI-brain-of-entreprise/">
-          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-          <span>Partager sur LinkedIn</span>
-        </a>
-      </div>
-    </main>
-  </div>
+    <!-- Image based on language -->
+    <img 
+      src="/images/posts/en/AI-brain-of-entreprise.png" 
+      alt="Article Image" />
 
-  <script>
-    let startTime = Date.now();
+    <div class="share-container">
+      <h3>Partagez cet article :</h3>
+      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
+      <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/en/posts/AI-brain-of-entreprise/" data-teaser="In the bustling world of digital transformation, artificial intelligence (AI) and data management are emerging as the essential foundations of modern enterprises." data-image="/images/posts/en/AI-brain-of-entreprise.png">
+        <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+        <span>Partager sur LinkedIn</span>
+      </a>
+    </div>
+  </main>
+</div>
 
-    // Calcul de la durée de lecture
-    window.addEventListener('beforeunload', function() {
-      let timeSpent = Date.now() - startTime; // Temps en millisecondes
-      let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+<script>
+  let startTime = Date.now();
 
-      // Envoi des données au serveur
-      fetch('/api/track-engagement', {
-        method: 'POST',
-        body: JSON.stringify({
-          articleId: '2000004',
-          timeSpent: timeSpent,
-          hasReachedEnd: hasReachedEnd
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+  // Calcul de la durée de lecture
+  window.addEventListener('beforeunload', function() {
+    let timeSpent = Date.now() - startTime; // Temps en millisecondes
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+
+    // Envoi des données au serveur
+    fetch('/api/track-engagement', {
+      method: 'POST',
+      body: JSON.stringify({
+        articleId: '2000004',
+        timeSpent: timeSpent,
+        hasReachedEnd: hasReachedEnd
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
+  });
 
-    // Fonction pour centrer le popup de partage
-    var popupCenter = function(url, title, width, height){
-        var popupWidth = width || 640;
-        var popupHeight = height || 320;
-        var windowLeft = window.screenLeft || window.screenX;
-        var windowTop = window.screenTop || window.screenY;
-        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
-        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
-        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
-        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
-        popup.focus();
-        return true;
-    };
+  // Fonction pour centrer le popup de partage
+  var popupCenter = function(url, title, width, height){
+      var popupWidth = width || 640;
+      var popupHeight = height || 320;
+      var windowLeft = window.screenLeft || window.screenX;
+      var windowTop = window.screenTop || window.screenY;
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+      var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+      var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+      popup.focus();
+      return true;
+  };
 
-    // Partage sur LinkedIn avec URL absolue
-    document.querySelector('.share_linkedin').addEventListener('click', function(e){
-        e.preventDefault();
-        var url = this.getAttribute('data-url');  // Obtenir l'URL absolue de l'article
-        var articleTitle = encodeURIComponent('Data and AI: The Brain of the Modern Enterprise');  // Encoder le titre de l'article
-        var articleTeaser = encodeURIComponent('In the bustling world of digital transformation, artificial intelligence (AI) and data management are emerging as the essential foundations of modern enterprises.');  // Encoder le teaser de l'article
+  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
+  document.querySelector('.share_linkedin').addEventListener('click', function(e){
+      e.preventDefault();
+      var url = this.getAttribute('data-url');
+      var articleTitle = encodeURIComponent('Data and AI: The Brain of the Modern Enterprise');
+      var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
+      var articleImage = encodeURIComponent(this.getAttribute('data-image'));
 
-        // Génération de l'URL de partage LinkedIn avec l'URL absolue de l'article
-        var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}`;
+      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
+      var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
 
-        popupCenter(shareUrl, "Partager sur LinkedIn");
-    });
-  </script>
+      popupCenter(shareUrl, "Partager sur LinkedIn");
+  });
+</script>
 
 
 

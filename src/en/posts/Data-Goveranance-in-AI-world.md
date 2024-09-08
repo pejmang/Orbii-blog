@@ -1,12 +1,12 @@
 ---
-title: "Transformational Data Governance Frameworks: A Strategic Imperative for CXOs"
+title: "Transformational Data Governance Frameworks: imperative for CXOs"
 teaser: "Data governance is evolving from a compliance function to a strategic business enabler. Learn how CXOs can leverage transformational frameworks to unlock the full potential of data assets."
 date: 2024-09-06
 tags: Data Governance, CXO Strategy, Digital Transformation
 authors: Pejman GOHARI
 pillar: strategy
 type: governance
-lang: en
+language: en
 articleID: "2000006"
 ---
 

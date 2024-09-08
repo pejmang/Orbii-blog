@@ -9,6 +9,8 @@ type: sharing
 language: en
 articleID: "2000015"
 ---
+The fintech hype of recent years once predicted an imminent disruption of traditional financial institutions worldwide. FinTechs were expected to transform the banking sector, offering consumers a new level of convenience and free services without the usual fees. Rapid growth in the fintech industry positioned it as the preferred provider for key financial services like crowdfunding platforms, online portfolio management, mobile payment solutions, lending, and payments.
+
 
 I recognize that I once held the view that **incumbent banks and insurers** were gradually catching up with a growing **technological gap**, one that had been widening since the rise of fintech’s. While new startups offered their young and tech-savvy clients the innovation they expected, the **shockwave of the COVID-19 crisis** affected both banks and fintech’s. However, the impact was more severe for many **startups**, leading to **slower commercial growth** and **funding challenges**.
 

@@ -11,6 +11,8 @@ articleID: "2000014"
 slug: platform-model-sustainable-value
 ---
 
+Globalization, the merge of digital services, the explosion of data, and the need for **ATAWAD** mobility connection (which refers to the technological capability provided to users to access information *anytime, anywhere, on any device). GAMA and BATX have understood that the fusion of tech, data and mobility will open up the possibilities for them thanks to platforms.
+
 ### **New competition in an open and innovative world**
 
 For many years, we have been witnessing the **emergence of new business models** like big tech, which are transforming many industries with new rules. **GAFA**, **NATU**, and **BATX** are reshaping the landscape with **AI**, **machine learning**, **blockchain**, and are driving drastically new business models. All these changes require a rethinking of B-To-B and B-To-C relationships around what we now call **Platforms**.

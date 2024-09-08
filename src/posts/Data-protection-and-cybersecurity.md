@@ -1,5 +1,5 @@
 ---
-title: "Cybersecurity and Data Protection: A Strategic Priority in the Age of Digital Transformation"
+title: "Cybersecurity and Data Protection: A strategic priority"
 teaser: "As digital transformation accelerates, cybersecurity and data protection are critical pillars for ensuring business continuity and safeguarding sensitive information."
 date: 2024-09-06
 tags: Cybersecurity, Data Protection, Digital Transformation

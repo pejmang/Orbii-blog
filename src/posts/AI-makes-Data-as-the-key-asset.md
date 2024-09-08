@@ -1,10 +1,10 @@
 ---
-title: "Operationalizing Data as a Strategic Asset: The Role of AI in Shaping the New Paradigm"
+title: "AI and Data: Shaping the New Paradigm"
 teaser: "How CXOs can leverage AI to transform data governance, enhance operations, and unlock the full potential of data as a strategic asset."
 date: 2024-09-02
 tags: Data Governance, AI, Strategy
 authors: Pejman GOHARI
-pillar: tech
+pillar: data_ia
 type: sharing
 language: en
 articleID: "2000007"

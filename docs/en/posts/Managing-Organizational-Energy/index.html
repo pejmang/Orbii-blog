@@ -48,32 +48,34 @@
 <!-- End Google Tag Manager (noscript) -->
 
   
-  <link rel="stylesheet" href="/styles/style.css">
-  <div class="container">
-    <div class="extended">
-      
-        <a href="/en/">Insights</a>
-        <a href="/en/"> ← Go back...</a>
-      
-    </div>
+<link rel="stylesheet" href="/styles/style.css">
+<div class="container">
+  <div class="extended">
+    
+      <a href="/en/">Insights</a>
+      <a href="/en/"> ← Go back...</a>
+    
+  </div>
 
-    <main id="article">
-      <h1>Managing Organizational Energy: A Strategic Imperative in a Constantly Evolving World</h1>
-      
-        <div class="extended">
-          Auteur : Pejman Gohari
-          <a href="/about/" class="no-hover-effect">
-            <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
-          </a>
-          
-            <div class="article-date">
-              Publié le : 24/04/2024
-            </div>
-          
-        </div>
-      
+  <main id="article">
+    <h1>Managing Organizational Energy: A Strategic Imperative in a Constantly Evolving World</h1>
+    
+      <div class="extended">
+        Auteur : Pejman Gohari
+        <a href="/about/" class="no-hover-effect">
+          <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
+        </a>
+        
+          <div class="article-date">
+            Publié le : 24/04/2024
+          </div>
+        
+      </div>
+    
 
-      <p>I had the pleasure of publishing my first book, <em>The New Horizon of Digital Transformation: The 9 Pillars for Developing a Data-Driven Strategy</em>, in February 2022, with:</p>
+   
+
+    <p>I had the pleasure of publishing my first book, <em>The New Horizon of Digital Transformation: The 9 Pillars for Developing a Data-Driven Strategy</em>, in February 2022, with:</p>
 <p><strong>Jean Barrère, Nouamane Cherkaoui</strong></p>
 <p>Over the past two years (2022 – 2024), during our interactions with executives and managers, a recurring theme has emerged: <strong>team exhaustion</strong>. Faced with rapid changes in consumer preferences, technological advancements, environmental challenges, economic fluctuations, and geopolitical disruptions, organizations are forced to constantly reinvent themselves. These disruptions demand continuous adjustments, disturbing established routines and causing fatigue, and in severe cases, marked professional burnout.</p>
 <p><strong>Organizational energy</strong>, crucial to the dynamism and resilience of a company, manifests itself through the ability to mobilize, deploy, and renew resources to achieve its goals and effectively adapt to changing challenges. Optimizing this energy is key, particularly by focusing on two aspects of the nine pillars: <em>the Maker’s Signature</em> and <em>corporate culture</em>.</p>
@@ -105,69 +107,75 @@
 <p>We have highlighted <em>the Maker’s Signature</em> and <em>corporate culture</em> as key components of managing organizational energy, but it is essential not to overlook the other pillars that also contribute to energizing and supporting change.</p>
 <p>And you, <strong>what is your experience and perspective</strong> on this important topic of digital transformation?</p>
 
-      <br>
+    <br>
 
-      <div class="share-container">
-        <h3>Partagez cet article :</h3>
-        <!-- Utilisation de l'URL absolue -->
-        <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/en/posts/Managing-Organizational-Energy/">
-          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-          <span>Partager sur LinkedIn</span>
-        </a>
-      </div>
-    </main>
-  </div>
+    <!-- Image based on language -->
+    <img 
+      src="/images/posts/en/Managing-Organizational-Energy.png" 
+      alt="Article Image" />
 
-  <script>
-    let startTime = Date.now();
+    <div class="share-container">
+      <h3>Partagez cet article :</h3>
+      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
+      <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/en/posts/Managing-Organizational-Energy/" data-teaser="In a rapidly changing environment, organizational energy is crucial to aligning teams and driving innovation. Learn how to optimize this key resource to ensure your organization’s transformation and performance." data-image="/images/posts/en/Managing-Organizational-Energy.png">
+        <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+        <span>Partager sur LinkedIn</span>
+      </a>
+    </div>
+  </main>
+</div>
 
-    // Calcul de la durée de lecture
-    window.addEventListener('beforeunload', function() {
-      let timeSpent = Date.now() - startTime; // Temps en millisecondes
-      let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+<script>
+  let startTime = Date.now();
 
-      // Envoi des données au serveur
-      fetch('/api/track-engagement', {
-        method: 'POST',
-        body: JSON.stringify({
-          articleId: '2000001',
-          timeSpent: timeSpent,
-          hasReachedEnd: hasReachedEnd
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+  // Calcul de la durée de lecture
+  window.addEventListener('beforeunload', function() {
+    let timeSpent = Date.now() - startTime; // Temps en millisecondes
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
+
+    // Envoi des données au serveur
+    fetch('/api/track-engagement', {
+      method: 'POST',
+      body: JSON.stringify({
+        articleId: '2000001',
+        timeSpent: timeSpent,
+        hasReachedEnd: hasReachedEnd
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
+  });
 
-    // Fonction pour centrer le popup de partage
-    var popupCenter = function(url, title, width, height){
-        var popupWidth = width || 640;
-        var popupHeight = height || 320;
-        var windowLeft = window.screenLeft || window.screenX;
-        var windowTop = window.screenTop || window.screenY;
-        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
-        var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
-        var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
-        var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
-        popup.focus();
-        return true;
-    };
+  // Fonction pour centrer le popup de partage
+  var popupCenter = function(url, title, width, height){
+      var popupWidth = width || 640;
+      var popupHeight = height || 320;
+      var windowLeft = window.screenLeft || window.screenX;
+      var windowTop = window.screenTop || window.screenY;
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      var popupLeft = windowLeft + windowWidth / 2 - popupWidth / 2;
+      var popupTop = windowTop + windowHeight / 2 - popupHeight / 2;
+      var popup = window.open(url, title, 'scrollbars=yes, width=' + popupWidth + ', height=' + popupHeight + ', top=' + popupTop + ', left=' + popupLeft);
+      popup.focus();
+      return true;
+  };
 
-    // Partage sur LinkedIn avec URL absolue
-    document.querySelector('.share_linkedin').addEventListener('click', function(e){
-        e.preventDefault();
-        var url = this.getAttribute('data-url');  // Obtenir l'URL absolue de l'article
-        var articleTitle = encodeURIComponent('Managing Organizational Energy: A Strategic Imperative in a Constantly Evolving World');  // Encoder le titre de l'article
-        var articleTeaser = encodeURIComponent('In a rapidly changing environment, organizational energy is crucial to aligning teams and driving innovation. Learn how to optimize this key resource to ensure your organization’s transformation and performance.');  // Encoder le teaser de l'article
+  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
+  document.querySelector('.share_linkedin').addEventListener('click', function(e){
+      e.preventDefault();
+      var url = this.getAttribute('data-url');
+      var articleTitle = encodeURIComponent('Managing Organizational Energy: A Strategic Imperative in a Constantly Evolving World');
+      var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
+      var articleImage = encodeURIComponent(this.getAttribute('data-image'));
 
-        // Génération de l'URL de partage LinkedIn avec l'URL absolue de l'article
-        var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}`;
+      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
+      var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
 
-        popupCenter(shareUrl, "Partager sur LinkedIn");
-    });
-  </script>
+      popupCenter(shareUrl, "Partager sur LinkedIn");
+  });
+</script>
 
 
 

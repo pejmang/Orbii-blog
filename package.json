@@ -16,7 +16,11 @@
   "dependencies": {
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
-    "googleapis": "^144.0.0"
+    "express": "^4.19.2",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "googleapis": "^144.0.0",
+    "sharp": "^0.33.5"
   },
   "directories": {
     "doc": "docs"
