@@ -4,7 +4,7 @@ teaser: "How AI-driven anomaly detection is transforming data security and compl
 date: 2024-08-21
 tags: AI, Data Security, Compliance
 authors: Pejman GOHARI
-pillar: strategie
+pillar: data_ia
 type: governance
 language: en
 articleID: "2000005"

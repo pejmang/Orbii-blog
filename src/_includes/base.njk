@@ -2,45 +2,32 @@
 <html lang="{{ lang }}">
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2W7NLK4');</script>
-<!-- End Google Tag Manager -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2W7NLK4');</script>
+  <!-- End Google Tag Manager -->
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  {% if lang == "en" %}
-    <title>Orbii: Knowledge Architects of Digital and AI Transformation</title>
-    <meta name="description" content="Orbii brings you insights from the forefront of digital transformation and AI. Our Knowledge Architects deliver thought leadership on the 9 pillars of successful organizational transformation.">
+  <title>{{ title | safe }}</title>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Orbii: Knowledge Architects of Digital and AI Transformation">
-    <meta property="og:description" content="Explore Orbii for expert insights on digital transformation, AI, and organizational success. Learn from leaders shaping the future of technology and business.">
-    <meta property="og:url" content="https://www.orbii.fr">
-    <meta property="og:type" content="website">
+  <!-- Utiliser 'teaser' comme fallback pour 'description' -->
+  <meta name="description" content="{{ description or teaser | safe }}">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Orbii: Knowledge Architects of Digital and AI Transformation">
-    <meta name="twitter:description" content="Discover Orbii's expert insights on digital transformation, AI, and the strategies that are reshaping industries.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="{{ title | safe }}">
+  <meta property="og:description" content="{{ description or teaser | safe }}">
+  <meta property="og:image" content="{{ image | url }}">
+  <meta property="og:url" content="{{ page.url | url }}">
+  <meta property="og:type" content="article">
 
-  {% else %}
-    <title>Orbii : Architectes du Savoir en Transformation Digitale et IA</title>
-    <meta name="description" content="Orbii propose des idées novatrices sur la transformation digitale et l'intelligence artificielle. Nos Architectes du Savoir offrent un leadership éclairé sur les 9 piliers du succès organisationnel.">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Orbii : Architectes du Savoir en Transformation Digitale et IA">
-    <meta property="og:description" content="Découvrez les idées novatrices d'Orbii sur la transformation digitale, l'IA, et les stratégies qui redéfinissent les industries.">
-    <meta property="og:url" content="https://www.orbii.fr">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Orbii : Architectes du Savoir en Transformation Digitale et IA">
-    <meta name="twitter:description" content="Explorez Orbii pour des idées novatrices sur la transformation digitale, l'intelligence artificielle, et le futur des entreprises.">
-  {% endif %}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title | safe }}">
+  <meta name="twitter:description" content="{{ description or teaser | safe }}">
+  <meta name="twitter:image" content="{{ image | url }}">
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.orbii.fr">
+  <link rel="canonical" href="{{ page.url | url }}">
 
   <!-- Favicon and Icons -->
   <link rel="icon" href="/images/favicon/favicon.ico" type="image/x-icon">
@@ -49,13 +36,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
   <link rel="manifest" href="/images/favicon/site.webmanifest">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
-
-
-
   <link rel="stylesheet" href="/styles/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   {% block head %}{% endblock %}
@@ -63,40 +44,36 @@
 
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript>
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2W7NLK4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2W7NLK4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
   {% block content %}{% endblock %}
 
-
-
   <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-links">
-          <ul>
-            {% if lang == "en" %}
-              <li><a href="/en/privacy/">Privacy</a></li>
-              <li><a href="/en/publish/">Publish</a></li>
-              <li><a href="/en/OrbiiKnowledge/">Orbii Knowledge</a></li>
-            {% else %}
-              <li><a href="/privacy/">Confidentialité</a></li>
-              <li><a href="/publish/">Publier</a></li>
-              <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
-            {% endif %}
-          </ul>
-        </div>
-        <div class="footer-info">
-          © 2024 Orbii : Digital Transformation & AI
-        </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <ul>
+          {% if lang == "en" %}
+            <li><a href="/en/privacy/">Privacy</a></li>
+            <li><a href="/en/publish/">Publish</a></li>
+            <li><a href="/en/OrbiiKnowledge/">Orbii Knowledge</a></li>
+          {% else %}
+            <li><a href="/privacy/">Confidentialité</a></li>
+            <li><a href="/publish/">Publier</a></li>
+            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+          {% endif %}
+        </ul>
       </div>
-    </footer>
+      <div class="footer-info">
+        © 2024 Orbii : Digital Transformation & AI
+      </div>
+    </div>
+  </footer>
 
   <!-- Script pour définir l'année actuelle -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>

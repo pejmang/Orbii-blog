@@ -1,10 +1,10 @@
 ---
 title: "Data and AI: The Brain of the Modern Enterprise"
 teaser: "In the bustling world of digital transformation, artificial intelligence (AI) and data management are emerging as the essential foundations of modern enterprises."
-date: 2024-08-24
+date: 2024-09-08
 tags: [Data, AI, Digital Transformation]
 authors: Pejman GOHARI
-pillar: Data-AI
+pillar: data_ia
 type: AI
 lang: en
 articleID: "2000004"

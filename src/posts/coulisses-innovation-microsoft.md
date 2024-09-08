@@ -2,7 +2,7 @@
 title: "Les coulisses de l’innovation chez Microsoft"
 teaser: "Découvrez dans cette vidéo exclusive les coulisses de l’innovation chez Microsoft et le processus qui donne vie à leurs technologies révolutionnaires."
 date: 2022-04-12
-pillar: strategie
+pillar: strategy
 type: video
 authors: Microsoft France
 articleID: "1000011"

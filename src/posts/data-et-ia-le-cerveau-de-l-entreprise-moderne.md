@@ -1,13 +1,13 @@
 ---
 title: "Data et IA : Le Cerveau de l'Entreprise Moderne"
 teaser: "Dans l'univers effervescent de la transformation digitale, l'intelligence artificielle (IA) et la gestion des données se positionnent comme les fondations incontournables des entreprises modernes."
-date: 2024-08-24
+date: 2024-09-08
 tags: [Data, IA, Transformation Digitale]
 authors: Pejman GOHARI
-pillar: Data-AI, Tech, Strategie
+pillar: data_ia
 type: sharing
 lang: ["fr", "en"]
-articleID: "1000010"
+articleID: "1000020"
 
 ---
 

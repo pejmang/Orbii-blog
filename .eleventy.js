@@ -58,6 +58,12 @@ module.exports = function(eleventyConfig) {
     return encodeURIComponent(value);
   });
 
+  // Ajouter une variable globale pour le domaine du site
+  eleventyConfig.addGlobalData("siteUrl", function() {
+    // Remplacez l'URL ci-dessous par le domaine de votre site
+    return process.env.SITE_URL || "https://www.orbii.fr";
+  });
+
   // Configuration générale
   return {
     dir: {
