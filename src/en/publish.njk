@@ -1,4 +1,4 @@
- {% extends "sitebase.njk" %}
+{% extends "sitebase.njk" %}
 
 {% block title %}Become an Insight Builder{% endblock %}
 
@@ -8,8 +8,8 @@
     At Orbii, we believe that knowledge is meant to be shared, enriched, and passed on. If you are an expert in fields such as tech, digital, data, artificial intelligence, or cybersecurity, your insights have the potential to inspire and guide professionals around the world. By joining our community of **Insight Builders**, you contribute to creating a vibrant ecosystem of ideas and innovation.
   </p>
 
-<br>
- <div class="image-container">
+  <br>
+  <div class="image-container">
     <img src="/images/become-an-insight-builder.jpg" alt="Become an Insight Builder" style="width:100%; max-width:800px;">
   </div>
   <h2>Why Become an Insight Builder?</h2>
@@ -25,20 +25,20 @@
 
   <h2>Share Your Knowledge and Impact the Future</h2>
   <p>
-    Orbii Blog is designed to provide professionals with a simple and flexible platform to share their ideas, experiences, and thoughts. Whether you want to discuss AI use cases, data analysis, cybersecurity practices, or digital strategies, you can help raise the conversation and bring real value.
+    Orbii KM is designed to provide professionals with a simple and flexible platform to share their ideas, experiences, and thoughts. Whether you want to discuss AI use cases, data analysis, cybersecurity practices, or digital strategies, you can help raise the conversation and bring real value.
   </p>
   <p>
     It’s not about hype or buzzwords, but about sharing concrete experiences, without filters, to nurture a community of professionals and push real-world practices forward.
   </p>
 
-  <h2>Join Us and Help Shape the Future</h2>
-  <p>
-    To share your ideas and contribute to our community, send us an email at <a href="mailto:pejman.gohari@orbii.tech">pejman.gohari@orbii.tech</a>. Together, let’s shape the future of knowledge in the most dynamic and strategic sectors of the economy.
-  </p>
-
   <!-- Simple form for applying to become an Insight Builder -->
   <h2>Apply to Become an Insight Builder</h2>
-  <form action="/send_email.php" method="POST">
+  <p>
+    Become a key player in knowledge development and join passionate experts to build bridges between the Tech, Digital, Data, AI, Cybersecurity communities, and more.
+  </p>
+
+  
+  <form id="insight-builder-form" action="/send_email.php" method="POST">
     <label for="name">Full Name:</label><br>
     <input type="text" id="name" name="name" required><br><br>
 
@@ -54,8 +54,46 @@
     <input type="submit" value="Submit">
   </form>
   
-  <p>
-    Become a key player in knowledge development and join passionate experts to build bridges between the Tech, Digital, Data, AI, Cybersecurity communities, and more.
-  </p>
+
+
+  <!-- Success Message -->
+  <div class="success-message" id="success-message">
+    Thank you for applying! We will review your submission and get back to you soon.
+  </div>
+
+  <!-- Error Message -->
+  <div class="error-message" id="error-message">
+    Oops! Something went wrong. Please try again later.
+  </div>
+
+  <script>
+    document.getElementById("insight-builder-form").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent the form from submitting the default way
+      
+      var formData = new FormData(this); // Gather form data
+
+      fetch('/send_email.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        // Show success message on the same page
+        document.getElementById("success-message").style.display = "block";
+        
+        // Hide error message if it was displayed previously
+        document.getElementById("error-message").style.display = "none";
+
+        // Optionally, reset the form fields
+        document.getElementById("insight-builder-form").reset();
+      })
+      .catch(error => {
+        // Show error message
+        document.getElementById("error-message").style.display = "block";
+        document.getElementById("success-message").style.display = "none";
+        console.error("Error:", error);
+      });
+    });
+  </script>
 
 {% endblock %}

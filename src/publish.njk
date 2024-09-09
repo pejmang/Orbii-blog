@@ -3,15 +3,14 @@
 {% block title %}Devenez un Insight Builder{% endblock %}
 
 {% block site_content %}
-
-  <div class="image-container">
-    
   <h2>Le savoir, c'est du partage. Devenez un Insight Builder.</h2>
   <p>
     Chez Orbii, nous croyons que la connaissance doit être partagée, enrichie et transmise. Si vous êtes expert dans des domaines comme la tech, le digital, la data, l'intelligence artificielle ou la cybersécurité, votre savoir a le potentiel d’inspirer et de guider d'autres professionnels à travers le monde. En rejoignant notre communauté d'**Insight Builders**, vous contribuez à la création d'un écosystème vibrant d'idées et d'innovations.
   </p>
-<br>
-<img src="/images/become-an-insight-builder.jpg" alt="Become an Insight Builder" style="width:100%; max-width:800px;">
+  
+  <br>
+  <div class="image-container">
+    <img src="/images/become-an-insight-builder.jpg" alt="Devenir un Insight Builder" style="width:100%; max-width:800px;">
   </div>
 
   <h2>Pourquoi Devenir un Insight Builder ?</h2>
@@ -27,18 +26,74 @@
 
   <h2>Partagez vos Connaissances et Impactez l'Avenir</h2>
   <p>
-    Orbii Blog est conçu pour offrir aux professionnels une plateforme simple et flexible pour partager leurs idées, retours d’expérience et réflexions. Que vous souhaitiez parler de cas d'usage en IA, d'analyses de données, de pratiques en cybersécurité ou de stratégies digitales, vous pouvez contribuer à élever le niveau de la conversation et apporter une réelle valeur ajoutée.
+    Orbii KM est conçu pour offrir aux professionnels une plateforme simple et flexible pour partager leurs idées, retours d’expérience et réflexions. Que vous souhaitiez parler de cas d'usage en IA, d'analyses de données, de pratiques en cybersécurité ou de stratégies digitales, vous pouvez contribuer à élever le niveau de la conversation et apporter une réelle valeur ajoutée.
   </p>
   <p>
     Ce n’est pas une question de blabla ou de buzzwords, mais de partager des expériences concrètes, sans filtre, pour nourrir une communauté de professionnels et faire avancer les pratiques dans le monde réel.
   </p>
 
-  <h2>Rejoignez-nous et Façonnez l'Avenir</h2>
-  <p>
-    Pour partager vos idées et contribuer à notre communauté, envoyez-nous un email à <a href="mailto:pejman.gohari@orbii.tech">pejman.gohari@orbii.tech</a>. Ensemble, façonnons le futur du savoir dans les secteurs les plus dynamiques et stratégiques de l'économie.
-  </p>
+<!-- Simple form for applying to become an Insight Builder -->
+  <h2>Postulez pour Devenir un Insight Builder</h2>
+  
   <p>
     Devenez un acteur clé dans le développement des savoirs et rejoignez des experts passionnés pour construire des ponts entre les communautés Tech, Digital, Data, IA, Cybersécurité et bien plus encore.
   </p>
+
+  
+  <form id="insight-builder-form" action="/send_email.php" method="POST">
+    <label for="name">Nom complet :</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email :</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="expertise">Domaine d'expertise :</label><br>
+    <input type="text" id="expertise" name="expertise" required><br><br>
+
+    <label for="message">Pourquoi souhaitez-vous devenir un Insight Builder ?</label><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+    <input type="submit" value="Envoyer">
+  </form>
+
+  <!-- Success Message -->
+  <div class="success-message" id="success-message">
+    Merci pour votre candidature ! Nous examinerons votre demande et vous répondrons bientôt.
+  </div>
+
+  <!-- Error Message -->
+  <div class="error-message" id="error-message">
+    Oups ! Une erreur est survenue. Veuillez réessayer plus tard.
+  </div>
+
+  <script>
+    document.getElementById("insight-builder-form").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent the form from submitting the default way
+
+      var formData = new FormData(this); // Gather form data
+
+      fetch('/send_email.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        // Show success message on the same page
+        document.getElementById("success-message").style.display = "block";
+
+        // Hide error message if it was displayed previously
+        document.getElementById("error-message").style.display = "none";
+
+        // Optionally, reset the form fields
+        document.getElementById("insight-builder-form").reset();
+      })
+      .catch(error => {
+        // Show error message
+        document.getElementById("error-message").style.display = "block";
+        document.getElementById("success-message").style.display = "none";
+        console.error("Error:", error);
+      });
+    });
+  </script>
 
 {% endblock %}
