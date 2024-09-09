@@ -73,8 +73,6 @@
       </div>
     
 
-   
-
     <h3><strong>Cybersecurity and Data Protection: A Strategic Priority in the Age of Digital Transformation</strong></h3>
 <p>As organizations continue to accelerate their digital transformation efforts, <strong>cybersecurity</strong> and <strong>data protection</strong> have become critical pillars in ensuring business continuity and safeguarding sensitive information. With the increasing complexity of cyber threats and the growing regulatory landscape, CXOs are under immense pressure to build a <strong>resilient cybersecurity infrastructure</strong> that not only defends against external attacks but also ensures the <strong>integrity, confidentiality, and availability</strong> of data.</p>
 <p>This point focuses on how cybersecurity has evolved in the context of digital transformation, the rise of <strong>Zero Trust architectures</strong>, and the emerging role of <strong>AI and automation</strong> in enhancing data protection strategies. It also explores how CXOs can adopt proactive approaches to cybersecurity, addressing both technological and organizational challenges to protect their companies in an ever-connected and data-driven world.</p>
@@ -166,25 +164,34 @@ In the event of a security incident, AI can automate many of the routine tasks t
       alt="Article Image" />
 
     <div class="share-container">
-      <h3>Partagez cet article :</h3>
-      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
       <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/Data-protection-and-cybersecurity/" data-teaser="As digital transformation accelerates, cybersecurity and data protection are critical pillars for ensuring business continuity and safeguarding sensitive information." data-image="/images/posts/fr/Data-protection-and-cybersecurity.png">
         <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-        <span>Partager sur LinkedIn</span>
+        <span>Article utile? Partager le sur LinkedIn</span>
       </a>
     </div>
+
+
+    <p>
+    <h3>Vos réactions, remarques, idées ...</h3>
+    <!-- Ajout de Utterances pour les commentaires -->
+    <script src="https://utteranc.es/client.js"
+        repo="pejmang/Orbii-blog"
+        issue-term="url"
+        label="Orbii KM"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    <!-- Fin du bloc de commentaires -->
+
   </main>
 </div>
 
 <script>
   let startTime = Date.now();
-
-  // Calcul de la durée de lecture
   window.addEventListener('beforeunload', function() {
-    let timeSpent = Date.now() - startTime; // Temps en millisecondes
-    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
-
-    // Envoi des données au serveur
+    let timeSpent = Date.now() - startTime;
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight;
     fetch('/api/track-engagement', {
       method: 'POST',
       body: JSON.stringify({
@@ -198,7 +205,6 @@ In the event of a security incident, AI can automate many of the routine tasks t
     });
   });
 
-  // Fonction pour centrer le popup de partage
   var popupCenter = function(url, title, width, height){
       var popupWidth = width || 640;
       var popupHeight = height || 320;
@@ -213,44 +219,42 @@ In the event of a security incident, AI can automate many of the routine tasks t
       return true;
   };
 
-  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
   document.querySelector('.share_linkedin').addEventListener('click', function(e){
       e.preventDefault();
       var url = this.getAttribute('data-url');
       var articleTitle = encodeURIComponent('Cybersecurity and Data Protection: A strategic priority');
       var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
       var articleImage = encodeURIComponent(this.getAttribute('data-image'));
-
-      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
       var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
-
       popupCenter(shareUrl, "Partager sur LinkedIn");
   });
+
 </script>
 
 
 
   <!-- Footer -->
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-      <div class="footer-links">
-        <ul>
-          
-            <li><a href="/privacy/">Confidentialité</a></li>
-            <li><a href="/publish/">Publier</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          
-        </ul>
-      </div>
+        <div class="footer-links">
+            <ul>
+              
+                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/publish/">Publier</a></li>
+                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              
+            </ul>
+        </div>
+
+        <div class="footer-info">
       <div class="footer-info">
-        © 2024 Orbii : Digital Transformation & AI
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
       </div>
     </div>
   </footer>
 
-  <!-- Script pour définir l'année actuelle -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

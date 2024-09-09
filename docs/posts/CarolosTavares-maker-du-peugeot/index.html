@@ -73,8 +73,6 @@
       </div>
     
 
-   
-
     <p><strong>Carlos Tavares</strong>, d'origine portugaise, vit en France depuis l'âge de 17 ans. Français de cœur, il est une figure <strong>emblématique de l’industrie automobile française</strong>. Cet <strong>ingénieur centralien</strong>, passionné d'automobile, connaît parfaitement deux grandes maisons de l’automobile en France : <strong>Renault</strong> et <strong>Peugeot</strong>. Il s'est fait un nom mondialement en redressant <strong>PSA</strong> et <strong>Opel</strong>.</p>
 <p>À 23 ans, il rejoint <strong>Renault</strong> comme <strong>ingénieur d’essais</strong> et pilote la conception de la <strong>Mégane 2</strong> avant d’évoluer vers des fonctions opérationnelles et managériales au sein du groupe. En 2005, il atterrit chez <strong>Nissan</strong> comme <strong>patron de la zone Amériques</strong> et devient en 2011 <strong>directeur général délégué aux opérations de Renault</strong>, devenant le <strong>« numéro 2 » du groupe</strong> dirigé par Carlos Ghosn. Lorsque ce dernier prolonge son mandat en 2005, Tavares part chez le grand concurrent <strong>Peugeot</strong>, un fleuron industriel bicentenaire qu'il prend en charge en 2014.</p>
 <p>Ce fut un pari audacieux, car <strong>Peugeot</strong> était alors au bord de la faillite avec une <strong>perte historique de 5 milliards d'euros en 2012</strong>, suivie de <strong>2,3 milliards en 2013</strong>, tandis que le <strong>marché européen des voitures neuves chutait de 25 % en cinq ans</strong>. Grâce à un accord avec l'État français, une participation accrue dans le capital, l’entrée du constructeur chinois <strong>Dongfeng</strong>, et la stratégie de Carlos Tavares, le groupe est redressé en un temps record. Le plan stratégique, intitulé <strong>« Back in the Race »</strong>, comprend la <strong>rationalisation des chaînes de production</strong>, la <strong>suppression des modèles non rentables</strong> comme le <strong>coupé RCZ</strong>, la <strong>chasse au gaspillage</strong>, et la <strong>flexibilité de l’emploi</strong> pour maintenir les sites ouverts. <strong>Peugeot</strong>, riche en ingénieurs et technologies, manquait seulement d'une <strong>vision business</strong> ! En plus du rachat d’<strong>Opel</strong> à <strong>General Motors</strong>, rapidement ramené aux bénéfices après des années de déficit, il lance <strong>DS Automobiles</strong> en 2014, en tant que marque indépendante. Une fois le groupe stabilisé en deux ans, le retour sur la scène internationale se fait également via les courses automobiles, d’où le clin d’œil dans le nom du nouveau plan stratégique <strong>« Push to Pass »</strong>, un plan de croissance rentable et organique.</p>
@@ -89,25 +87,34 @@
       alt="Article Image" />
 
     <div class="share-container">
-      <h3>Partagez cet article :</h3>
-      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
       <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/CarolosTavares-maker-du-peugeot/" data-teaser=" Ces nouveaux Makers en France : Une exception ? Carlos Tavares, le stratège inspiré et sauveur de Peugeot" data-image="/images/posts/fr/CarolosTavares-maker-du-peugeot.png">
         <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-        <span>Partager sur LinkedIn</span>
+        <span>Article utile? Partager le sur LinkedIn</span>
       </a>
     </div>
+
+
+    <p>
+    <h3>Vos réactions, remarques, idées ...</h3>
+    <!-- Ajout de Utterances pour les commentaires -->
+    <script src="https://utteranc.es/client.js"
+        repo="pejmang/Orbii-blog"
+        issue-term="url"
+        label="Orbii KM"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    <!-- Fin du bloc de commentaires -->
+
   </main>
 </div>
 
 <script>
   let startTime = Date.now();
-
-  // Calcul de la durée de lecture
   window.addEventListener('beforeunload', function() {
-    let timeSpent = Date.now() - startTime; // Temps en millisecondes
-    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
-
-    // Envoi des données au serveur
+    let timeSpent = Date.now() - startTime;
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight;
     fetch('/api/track-engagement', {
       method: 'POST',
       body: JSON.stringify({
@@ -121,7 +128,6 @@
     });
   });
 
-  // Fonction pour centrer le popup de partage
   var popupCenter = function(url, title, width, height){
       var popupWidth = width || 640;
       var popupHeight = height || 320;
@@ -136,44 +142,42 @@
       return true;
   };
 
-  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
   document.querySelector('.share_linkedin').addEventListener('click', function(e){
       e.preventDefault();
       var url = this.getAttribute('data-url');
       var articleTitle = encodeURIComponent(' Des Makers aux Commandes: Carlos Tavares.');
       var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
       var articleImage = encodeURIComponent(this.getAttribute('data-image'));
-
-      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
       var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
-
       popupCenter(shareUrl, "Partager sur LinkedIn");
   });
+
 </script>
 
 
 
   <!-- Footer -->
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-      <div class="footer-links">
-        <ul>
-          
-            <li><a href="/privacy/">Confidentialité</a></li>
-            <li><a href="/publish/">Publier</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          
-        </ul>
-      </div>
+        <div class="footer-links">
+            <ul>
+              
+                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/publish/">Publier</a></li>
+                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              
+            </ul>
+        </div>
+
+        <div class="footer-info">
       <div class="footer-info">
-        © 2024 Orbii : Digital Transformation & AI
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
       </div>
     </div>
   </footer>
 
-  <!-- Script pour définir l'année actuelle -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

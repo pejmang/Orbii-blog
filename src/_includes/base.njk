@@ -50,30 +50,31 @@
   {% block content %}{% endblock %}
 
   <!-- Footer -->
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-      <div class="footer-links">
-        <ul>
-          {% if lang == "en" %}
-            <li><a href="/en/privacy/">Privacy</a></li>
-            <li><a href="/en/publish/">Publish</a></li>
-            <li><a href="/en/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          {% else %}
-            <li><a href="/privacy/">Confidentialité</a></li>
-            <li><a href="/publish/">Publier</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          {% endif %}
-        </ul>
-      </div>
+        <div class="footer-links">
+            <ul>
+              {% if lang == "en" %}
+                <li><a href="/en/privacy/">Privacy</a></li>
+                <li><a href="/en/publish/">Publish</a></li>
+                <li><a href="/en/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              {% else %}
+                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/publish/">Publier</a></li>
+                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              {% endif %}
+            </ul>
+        </div>
+
+        <div class="footer-info">
       <div class="footer-info">
-        © 2024 Orbii : Digital Transformation & AI
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
       </div>
     </div>
   </footer>
 
-  <!-- Script pour définir l'année actuelle -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

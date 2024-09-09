@@ -73,8 +73,6 @@
       </div>
     
 
-   
-
     <p>Né en 1967, <strong>Xavier Niel</strong> est un homme d’affaires français dont le parcours, le flair et les ambitions n’ont rien à envier aux fondateurs des GAFA comme <strong>Steve Jobs, Bill Gates, Mark Zuckerberg</strong> ou <strong>Jeff Bezos</strong>.</p>
 <p>Geek, chiromancien, aventurier, visionnaire, <strong>Xavier Niel</strong> est tout cela à la fois. Il est le fondateur et actionnaire principal d'<strong>Iliad</strong>, groupe de télécommunications français, maison mère du fournisseur d'accès à Internet <strong>Free</strong>, de l'opérateur de téléphonie mobile <strong>Free Mobile</strong>, de l'annuaire téléphonique inversé, et de la banque de données <strong>Société.com</strong>. Il est également un investisseur dans plusieurs secteurs d'activités et médias et a fondé les établissements français d'autoformation en informatique <strong>42</strong>. En 2017, <strong>Xavier Niel</strong> a lancé <strong>Station F</strong>, le plus grand incubateur d’Europe, situé à Paris. Brillant et très doué en nouvelles technologies et informatique, <strong>Xavier Niel</strong> se détourne de ses études très tôt (classes préparatoires maths sup en 1987) pour se lancer dans l’aventure du <strong>Minitel Rose</strong>, investir dans l’exploitation de <strong>peep-shows et sex-shops</strong>, et même dans le <strong>piratage</strong> (les radiotéléphones de l’Élysée, la société <strong>Fermic Éditions</strong>, les Minitel de l’ANPE et du Crédit lyonnais). Ces activités lui ont valu quelques démêlés avec la justice, un passage en prison, mais aussi une petite fortune.</p>
 <p>Dans des propos rapportés par <em>Le Monde</em> à l’époque sur cette histoire de piratage à 20 ans des numéros de téléphone de voitures ministérielles ou présidentielles, il disait : « Il suffit d’un ordinateur à moins de 1 000 francs et d’un peu de patience, le temps d’essayer les multiples combinaisons qui sont censées protéger l’accès au réseau <strong>Transpac</strong> des <strong>PTT</strong> », montrant à la fois l’audace et la maîtrise de ce jeune intrépide devenu plus tard l’un des capitaines de l’industrie technologique en France.</p>
@@ -90,25 +88,34 @@
       alt="Article Image" />
 
     <div class="share-container">
-      <h3>Partagez cet article :</h3>
-      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
       <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/XavierNiel-maker-FrenchTech/" data-teaser="Xavier Niel, pionnier de la revolution téléco &amp; mobile en France. Son parcours audacieux, de l&#39;internet à l&#39;incubation de start-ups, en fait l&#39;un des entrepreneurs les plus influents de l&#39;Europe." data-image="/images/posts/fr/XavierNiel-maker-FrenchTech.png">
         <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-        <span>Partager sur LinkedIn</span>
+        <span>Article utile? Partager le sur LinkedIn</span>
       </a>
     </div>
+
+
+    <p>
+    <h3>Vos réactions, remarques, idées ...</h3>
+    <!-- Ajout de Utterances pour les commentaires -->
+    <script src="https://utteranc.es/client.js"
+        repo="pejmang/Orbii-blog"
+        issue-term="url"
+        label="Orbii KM"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    <!-- Fin du bloc de commentaires -->
+
   </main>
 </div>
 
 <script>
   let startTime = Date.now();
-
-  // Calcul de la durée de lecture
   window.addEventListener('beforeunload', function() {
-    let timeSpent = Date.now() - startTime; // Temps en millisecondes
-    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
-
-    // Envoi des données au serveur
+    let timeSpent = Date.now() - startTime;
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight;
     fetch('/api/track-engagement', {
       method: 'POST',
       body: JSON.stringify({
@@ -122,7 +129,6 @@
     });
   });
 
-  // Fonction pour centrer le popup de partage
   var popupCenter = function(url, title, width, height){
       var popupWidth = width || 640;
       var popupHeight = height || 320;
@@ -137,44 +143,42 @@
       return true;
   };
 
-  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
   document.querySelector('.share_linkedin').addEventListener('click', function(e){
       e.preventDefault();
       var url = this.getAttribute('data-url');
       var articleTitle = encodeURIComponent('L&#39;un des premiers Makers de la Frenchtech : Xavier Niel.');
       var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
       var articleImage = encodeURIComponent(this.getAttribute('data-image'));
-
-      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
       var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
-
       popupCenter(shareUrl, "Partager sur LinkedIn");
   });
+
 </script>
 
 
 
   <!-- Footer -->
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-      <div class="footer-links">
-        <ul>
-          
-            <li><a href="/privacy/">Confidentialité</a></li>
-            <li><a href="/publish/">Publier</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          
-        </ul>
-      </div>
+        <div class="footer-links">
+            <ul>
+              
+                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/publish/">Publier</a></li>
+                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              
+            </ul>
+        </div>
+
+        <div class="footer-info">
       <div class="footer-info">
-        © 2024 Orbii : Digital Transformation & AI
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
       </div>
     </div>
   </footer>
 
-  <!-- Script pour définir l'année actuelle -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

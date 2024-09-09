@@ -73,8 +73,6 @@
       </div>
     
 
-   
-
     <h2><strong>The High Cost of Slow Decision-Making: How Political Paralysis and Inefficiency Erode Business Velocity</strong></h2>
 <p>In today’s hyper-competitive business environment, <strong>speed of decision-making</strong> has become a strategic imperative. Organizations that can adapt quickly to market changes, customer needs, and emerging trends have a distinct advantage. Yet, <strong>slow decision-making</strong>—often due to bureaucratic delays, political considerations, and over-analysis—undermines this potential. The consequences of indecision are far-reaching, from missed opportunities to eroded market relevance.</p>
 <p>This article explores the deep impact of sluggish decision-making on organizational performance, examines its root causes, particularly <strong>politically motivated decisions</strong>, and offers a roadmap for fostering a more <strong>agile, data-driven decision-making culture</strong>.</p>
@@ -151,25 +149,34 @@
       alt="Article Image" />
 
     <div class="share-container">
-      <h3>Partagez cet article :</h3>
-      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
       <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/en/posts/impact-of-slow-decisions-culture/" data-teaser="Understanding how political paralysis, bureaucratic inefficiencies, and slow decision-making can erode business velocity and reduce competitiveness." data-image="/images/posts/en/impact-of-slow-decisions-culture.png">
         <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-        <span>Partager sur LinkedIn</span>
+        <span>Article utile? Partager le sur LinkedIn</span>
       </a>
     </div>
+
+
+    <p>
+    <h3>Vos réactions, remarques, idées ...</h3>
+    <!-- Ajout de Utterances pour les commentaires -->
+    <script src="https://utteranc.es/client.js"
+        repo="pejmang/Orbii-blog"
+        issue-term="url"
+        label="Orbii KM"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    <!-- Fin du bloc de commentaires -->
+
   </main>
 </div>
 
 <script>
   let startTime = Date.now();
-
-  // Calcul de la durée de lecture
   window.addEventListener('beforeunload', function() {
-    let timeSpent = Date.now() - startTime; // Temps en millisecondes
-    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
-
-    // Envoi des données au serveur
+    let timeSpent = Date.now() - startTime;
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight;
     fetch('/api/track-engagement', {
       method: 'POST',
       body: JSON.stringify({
@@ -183,7 +190,6 @@
     });
   });
 
-  // Fonction pour centrer le popup de partage
   var popupCenter = function(url, title, width, height){
       var popupWidth = width || 640;
       var popupHeight = height || 320;
@@ -198,44 +204,42 @@
       return true;
   };
 
-  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
   document.querySelector('.share_linkedin').addEventListener('click', function(e){
       e.preventDefault();
       var url = this.getAttribute('data-url');
       var articleTitle = encodeURIComponent('The Impact of Slow Decision Processes on Organizational Success');
       var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
       var articleImage = encodeURIComponent(this.getAttribute('data-image'));
-
-      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
       var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
-
       popupCenter(shareUrl, "Partager sur LinkedIn");
   });
+
 </script>
 
 
 
   <!-- Footer -->
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-      <div class="footer-links">
-        <ul>
-          
-            <li><a href="/en/privacy/">Privacy</a></li>
-            <li><a href="/en/publish/">Publish</a></li>
-            <li><a href="/en/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          
-        </ul>
-      </div>
+        <div class="footer-links">
+            <ul>
+              
+                <li><a href="/en/privacy/">Privacy</a></li>
+                <li><a href="/en/publish/">Publish</a></li>
+                <li><a href="/en/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              
+            </ul>
+        </div>
+
+        <div class="footer-info">
       <div class="footer-info">
-        © 2024 Orbii : Digital Transformation & AI
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
       </div>
     </div>
   </footer>
 
-  <!-- Script pour définir l'année actuelle -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

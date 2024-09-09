@@ -73,8 +73,6 @@
       </div>
     
 
-   
-
     <p>Dans l'univers effervescent de la transformation digitale, l'intelligence artificielle (IA) et la gestion des données se positionnent comme les fondations incontournables des entreprises modernes. Ces deux leviers constituent aujourd'hui le &quot;cerveau&quot; qui propulse la performance organisationnelle, influence la prise de décision et optimise l'ensemble des opérations. À travers cet article, nous explorerons comment le pilier &quot;Data &amp; IA&quot; se révèle essentiel dans la transformation digitale, tout en intégrant des perspectives issues de recherches académiques récentes. Cela nous permettra de démontrer comment la science nourrit les pratiques d'entreprise et ouvre des horizons novateurs.</p>
 <h3>L'IA et les Données : Duo Incontournable de l'Ère Numérique</h3>
 <p>L'intelligence artificielle et les données jouent un rôle central dans la création de nouvelles dynamiques organisationnelles. Les études académiques, notamment celles de Davenport et Ronanki (2018), montrent que l'IA ne se limite plus aux tâches isolées mais agit désormais comme un moteur central d’innovation en exploitant les capacités des systèmes de traitement du langage naturel, de vision par ordinateur, ou encore des réseaux neuronaux profonds.</p>
@@ -120,25 +118,34 @@
       alt="Article Image" />
 
     <div class="share-container">
-      <h3>Partagez cet article :</h3>
-      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
       <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/data-et-ia-le-cerveau-de-l-entreprise-moderne/" data-teaser="Dans l&#39;univers effervescent de la transformation digitale, l&#39;intelligence artificielle (IA) et la gestion des données se positionnent comme les fondations incontournables des entreprises modernes." data-image="/images/posts/fr/data-et-ia-le-cerveau-de-l-entreprise-moderne.png">
         <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-        <span>Partager sur LinkedIn</span>
+        <span>Article utile? Partager le sur LinkedIn</span>
       </a>
     </div>
+
+
+    <p>
+    <h3>Vos réactions, remarques, idées ...</h3>
+    <!-- Ajout de Utterances pour les commentaires -->
+    <script src="https://utteranc.es/client.js"
+        repo="pejmang/Orbii-blog"
+        issue-term="url"
+        label="Orbii KM"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    <!-- Fin du bloc de commentaires -->
+
   </main>
 </div>
 
 <script>
   let startTime = Date.now();
-
-  // Calcul de la durée de lecture
   window.addEventListener('beforeunload', function() {
-    let timeSpent = Date.now() - startTime; // Temps en millisecondes
-    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
-
-    // Envoi des données au serveur
+    let timeSpent = Date.now() - startTime;
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight;
     fetch('/api/track-engagement', {
       method: 'POST',
       body: JSON.stringify({
@@ -152,7 +159,6 @@
     });
   });
 
-  // Fonction pour centrer le popup de partage
   var popupCenter = function(url, title, width, height){
       var popupWidth = width || 640;
       var popupHeight = height || 320;
@@ -167,44 +173,42 @@
       return true;
   };
 
-  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
   document.querySelector('.share_linkedin').addEventListener('click', function(e){
       e.preventDefault();
       var url = this.getAttribute('data-url');
       var articleTitle = encodeURIComponent('Data et IA : Le Cerveau de l&#39;Entreprise Moderne');
       var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
       var articleImage = encodeURIComponent(this.getAttribute('data-image'));
-
-      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
       var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
-
       popupCenter(shareUrl, "Partager sur LinkedIn");
   });
+
 </script>
 
 
 
   <!-- Footer -->
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-      <div class="footer-links">
-        <ul>
-          
-            <li><a href="/privacy/">Confidentialité</a></li>
-            <li><a href="/publish/">Publier</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          
-        </ul>
-      </div>
+        <div class="footer-links">
+            <ul>
+              
+                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/publish/">Publier</a></li>
+                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              
+            </ul>
+        </div>
+
+        <div class="footer-info">
       <div class="footer-info">
-        © 2024 Orbii : Digital Transformation & AI
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
       </div>
     </div>
   </footer>
 
-  <!-- Script pour définir l'année actuelle -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

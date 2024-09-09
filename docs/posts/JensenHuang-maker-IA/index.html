@@ -73,8 +73,6 @@
       </div>
     
 
-   
-
     <p>Né à Taïwan, passé par la Thaïlande à 5 ans, puis installé aux États-Unis à l’âge de 10 ans, <strong>Jensen Huang</strong> a connu un parcours impressionnant. De son premier emploi dans la restauration rapide chez Denny’s, il est devenu <strong>PDG et co-fondateur de Nvidia</strong>, une des entreprises les plus puissantes à l’avant-garde de la révolution de l’intelligence artificielle.</p>
 <p>Inspiré et pugnace, Jensen Huang a créé sa société spécialisée dans les <strong>unités de traitement graphique (GPU)</strong> pour fournir des outils de deep learning, jusqu’à l’élaboration d’un « superordinateur », le <strong>DGX-1</strong>, acquis par <strong>OpenAI</strong>. <strong>Nvidia</strong> est désormais un leader mondial de l'intelligence artificielle.</p>
 <p>Début 2024, les actions de la société ont grimpé de <strong>409 %</strong>, et la valeur de Nvidia a augmenté de <strong>250 milliards de dollars</strong> en une seule journée. Avec un <strong>chiffre d'affaires de 22,1 milliards de dollars</strong> au quatrième trimestre 2023, soit environ 1,7 milliard de dollars de plus que prévu, Nvidia est devenu un mastodonte de la tech. En février 2024, l’entreprise a été valorisée à <strong>2 000 milliards de dollars</strong>, surpassant ainsi <strong>Amazon</strong> et <strong>Google</strong>.</p>
@@ -95,25 +93,34 @@
       alt="Article Image" />
 
     <div class="share-container">
-      <h3>Partagez cet article :</h3>
-      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
       <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/JensenHuang-maker-IA/" data-teaser="Le Maker au cœur de la révolution de l&#39;IA (le prophète omniverse !)" data-image="/images/posts/fr/JensenHuang-maker-IA.png">
         <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-        <span>Partager sur LinkedIn</span>
+        <span>Article utile? Partager le sur LinkedIn</span>
       </a>
     </div>
+
+
+    <p>
+    <h3>Vos réactions, remarques, idées ...</h3>
+    <!-- Ajout de Utterances pour les commentaires -->
+    <script src="https://utteranc.es/client.js"
+        repo="pejmang/Orbii-blog"
+        issue-term="url"
+        label="Orbii KM"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    <!-- Fin du bloc de commentaires -->
+
   </main>
 </div>
 
 <script>
   let startTime = Date.now();
-
-  // Calcul de la durée de lecture
   window.addEventListener('beforeunload', function() {
-    let timeSpent = Date.now() - startTime; // Temps en millisecondes
-    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
-
-    // Envoi des données au serveur
+    let timeSpent = Date.now() - startTime;
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight;
     fetch('/api/track-engagement', {
       method: 'POST',
       body: JSON.stringify({
@@ -127,7 +134,6 @@
     });
   });
 
-  // Fonction pour centrer le popup de partage
   var popupCenter = function(url, title, width, height){
       var popupWidth = width || 640;
       var popupHeight = height || 320;
@@ -142,44 +148,42 @@
       return true;
   };
 
-  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
   document.querySelector('.share_linkedin').addEventListener('click', function(e){
       e.preventDefault();
       var url = this.getAttribute('data-url');
       var articleTitle = encodeURIComponent('Des Makers aux Commandes. Jensen Huang.');
       var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
       var articleImage = encodeURIComponent(this.getAttribute('data-image'));
-
-      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
       var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
-
       popupCenter(shareUrl, "Partager sur LinkedIn");
   });
+
 </script>
 
 
 
   <!-- Footer -->
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-      <div class="footer-links">
-        <ul>
-          
-            <li><a href="/privacy/">Confidentialité</a></li>
-            <li><a href="/publish/">Publier</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          
-        </ul>
-      </div>
+        <div class="footer-links">
+            <ul>
+              
+                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/publish/">Publier</a></li>
+                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              
+            </ul>
+        </div>
+
+        <div class="footer-info">
       <div class="footer-info">
-        © 2024 Orbii : Digital Transformation & AI
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
       </div>
     </div>
   </footer>
 
-  <!-- Script pour définir l'année actuelle -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

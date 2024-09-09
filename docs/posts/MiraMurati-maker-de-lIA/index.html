@@ -73,8 +73,6 @@
       </div>
     
 
-   
-
     <p><strong>Mira Murati</strong> est longtemps restée dans l'ombre d'un autre Maker, <strong>Sam Altman</strong>. En 2018, Murati, <strong>ingénieure en génie mécanique</strong> d'origine albanaise, a rejoint <strong>OpenAI</strong> en tant que <strong>vice-présidente de l'IA appliquée</strong>, travaillant notamment sur le développement de <strong>DALL-E</strong>. Elle a ensuite gravi les échelons pour devenir <strong>directrice de la technologie</strong> d'OpenAI, dirigeant les équipes responsables de <strong>ChatGPT</strong> en plus de DALL-E, devenant ainsi l'une des personnalités les plus influentes de la tech mondiale.</p>
 <p>Avant même qu'elle ne soit nommée à 35 ans comme <strong>CEO par intérim</strong> d'OpenAI après le départ de <strong>Sam Altman</strong> en novembre 2023, le magazine <em>Time</em> la présentait déjà, en février de la même année, comme « la créatrice de ChatGPT ». Son objectif est de s'assurer que les travaux de ses équipes autour de <strong>l'IA générative</strong> ne produisent pas des outils qui pourraient induire les utilisateurs en erreur, faire preuve de parti pris, ou menacer l'humanité. Elle considère également que <strong>ChatGPT</strong> représente une belle opportunité pour l'enseignement et le partage des connaissances.</p>
 <p>Forte de ses convictions, elle défend les tests auprès du grand public : « Vous pourriez réaliser des progrès technologiques dans le vide, sans contact avec le monde réel », explique-t-elle à <em>Fast Company</em>. « Mais alors la question est : allez-vous réellement dans la bonne direction ? ».</p>
@@ -94,25 +92,34 @@
       alt="Article Image" />
 
     <div class="share-container">
-      <h3>Partagez cet article :</h3>
-      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
       <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/MiraMurati-maker-de-lIA/" data-teaser="Mira Murati, l&#39;architecte secrète de l&#39;IA, a fait d&#39;OpenAI un leader mondial. Découvrez comment elle façonne l&#39;avenir tout en gardant une éthique inébranlable." data-image="/images/posts/fr/MiraMurati-maker-de-lIA.png">
         <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-        <span>Partager sur LinkedIn</span>
+        <span>Article utile? Partager le sur LinkedIn</span>
       </a>
     </div>
+
+
+    <p>
+    <h3>Vos réactions, remarques, idées ...</h3>
+    <!-- Ajout de Utterances pour les commentaires -->
+    <script src="https://utteranc.es/client.js"
+        repo="pejmang/Orbii-blog"
+        issue-term="url"
+        label="Orbii KM"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    <!-- Fin du bloc de commentaires -->
+
   </main>
 </div>
 
 <script>
   let startTime = Date.now();
-
-  // Calcul de la durée de lecture
   window.addEventListener('beforeunload', function() {
-    let timeSpent = Date.now() - startTime; // Temps en millisecondes
-    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
-
-    // Envoi des données au serveur
+    let timeSpent = Date.now() - startTime;
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight;
     fetch('/api/track-engagement', {
       method: 'POST',
       body: JSON.stringify({
@@ -126,7 +133,6 @@
     });
   });
 
-  // Fonction pour centrer le popup de partage
   var popupCenter = function(url, title, width, height){
       var popupWidth = width || 640;
       var popupHeight = height || 320;
@@ -141,44 +147,42 @@
       return true;
   };
 
-  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
   document.querySelector('.share_linkedin').addEventListener('click', function(e){
       e.preventDefault();
       var url = this.getAttribute('data-url');
       var articleTitle = encodeURIComponent('Des Makers aux Commandes. Mira Murati.');
       var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
       var articleImage = encodeURIComponent(this.getAttribute('data-image'));
-
-      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
       var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
-
       popupCenter(shareUrl, "Partager sur LinkedIn");
   });
+
 </script>
 
 
 
   <!-- Footer -->
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-      <div class="footer-links">
-        <ul>
-          
-            <li><a href="/privacy/">Confidentialité</a></li>
-            <li><a href="/publish/">Publier</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          
-        </ul>
-      </div>
+        <div class="footer-links">
+            <ul>
+              
+                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/publish/">Publier</a></li>
+                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              
+            </ul>
+        </div>
+
+        <div class="footer-info">
       <div class="footer-info">
-        © 2024 Orbii : Digital Transformation & AI
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
       </div>
     </div>
   </footer>
 
-  <!-- Script pour définir l'année actuelle -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

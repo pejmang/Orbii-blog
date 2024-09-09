@@ -73,8 +73,6 @@
       </div>
     
 
-   
-
     <p>La tech, à travers les solutions data depuis quelques années et la cap actuel sur l’IA, connaît une ère faste où la variété de l'offre et la maîtrise des coûts ne sont plus un frein mais un moteur accessible à tous. C'est à la fois un défi mais aussi de nouvelles opportunités à condition qu’elles puissent répondre à de réels besoins de l’entreprise pour servir ses clients ou atteindre de nouveaux niveaux de performance.</p>
 <p><strong>La Data</strong> et l’IA, tout comme la <strong>tech</strong>, ne sont pas un but en soi. Ce sont des moyens qui permettent à la fois de répondre à de réels besoins des <strong>clients</strong>, de pilotage, de <strong>productivité</strong> et d’innovation. Mais aussi pour ne pas décrocher par rapport aux concurrents, de suivre le rythme des évolutions qui inondent les marchés. Les investissements en data/IA, malgré le buzz, sont nécessaires pour répondre principalement à des usages et à des <strong>demandes clients</strong>.</p>
 <p>La technologie dans une organisation dite <strong>Data-IA-Driven</strong> permet de mettre en place les bons socles et applications adaptés aux processus de l’entreprise, avec la bonne gestion des données internes et externes. Ces points sont les <strong>fondamentaux</strong> qui permettent de prendre des décisions plus éclairées et alignées sur la stratégie de l’entreprise.</p>
@@ -97,25 +95,34 @@
       alt="Article Image" />
 
     <div class="share-container">
-      <h3>Partagez cet article :</h3>
-      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
       <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/posts/data-ia-moteur-croissance/" data-teaser="La tech, à travers les solutions data depuis quelques années et la cap actuel sur l’IA, connaît une ère faste où la variété de l&#39;offre et la maîtrise des coûts ne sont plus un frein mais un moteur accessible à tous. C&#39;est à la fois un défi mais aussi de nouvelles opportunités à condition qu’elles puissent répondre à de réels besoins de l’entreprise pour servir ses clients ou atteindre de nouveaux niveaux de performance." data-image="/images/posts/fr/data-ia-moteur-croissance.png">
         <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-        <span>Partager sur LinkedIn</span>
+        <span>Article utile? Partager le sur LinkedIn</span>
       </a>
     </div>
+
+
+    <p>
+    <h3>Vos réactions, remarques, idées ...</h3>
+    <!-- Ajout de Utterances pour les commentaires -->
+    <script src="https://utteranc.es/client.js"
+        repo="pejmang/Orbii-blog"
+        issue-term="url"
+        label="Orbii KM"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    <!-- Fin du bloc de commentaires -->
+
   </main>
 </div>
 
 <script>
   let startTime = Date.now();
-
-  // Calcul de la durée de lecture
   window.addEventListener('beforeunload', function() {
-    let timeSpent = Date.now() - startTime; // Temps en millisecondes
-    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
-
-    // Envoi des données au serveur
+    let timeSpent = Date.now() - startTime;
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight;
     fetch('/api/track-engagement', {
       method: 'POST',
       body: JSON.stringify({
@@ -129,7 +136,6 @@
     });
   });
 
-  // Fonction pour centrer le popup de partage
   var popupCenter = function(url, title, width, height){
       var popupWidth = width || 640;
       var popupHeight = height || 320;
@@ -144,44 +150,42 @@
       return true;
   };
 
-  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
   document.querySelector('.share_linkedin').addEventListener('click', function(e){
       e.preventDefault();
       var url = this.getAttribute('data-url');
       var articleTitle = encodeURIComponent('La Data-IA, moteurs de la croissance et catalyseurs de la valeur');
       var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
       var articleImage = encodeURIComponent(this.getAttribute('data-image'));
-
-      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
       var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
-
       popupCenter(shareUrl, "Partager sur LinkedIn");
   });
+
 </script>
 
 
 
   <!-- Footer -->
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-      <div class="footer-links">
-        <ul>
-          
-            <li><a href="/privacy/">Confidentialité</a></li>
-            <li><a href="/publish/">Publier</a></li>
-            <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          
-        </ul>
-      </div>
+        <div class="footer-links">
+            <ul>
+              
+                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/publish/">Publier</a></li>
+                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              
+            </ul>
+        </div>
+
+        <div class="footer-info">
       <div class="footer-info">
-        © 2024 Orbii : Digital Transformation & AI
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
       </div>
     </div>
   </footer>
 
-  <!-- Script pour définir l'année actuelle -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

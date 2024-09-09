@@ -73,8 +73,6 @@
       </div>
     
 
-   
-
     <p>Ce n'est un secret pour personne et quel que soit le secteur d’activité aux quatre coins du monde, on n’entend que ce mot, comme un leitmotiv : la « guerre des talents » !</p>
 <p>Derrière cette expression passe-partout se cachent de vraies <strong>difficultés de recrutement</strong> et de fidélisation pour les entreprises nationales et internationales. Dans la <strong>tech</strong>, cette pénurie pousse même à mettre en place des <strong>stratégies étatiques</strong> sans précédent pour attirer ces talents. Cette guerre fait rage en coulisses pour attirer des <strong>ingénieurs</strong>, des développeurs de logiciels et des chercheurs dans des domaines stratégiques comme la <strong>cybersécurité</strong>, l'intelligence artificielle, la <strong>blockchain</strong>, le <strong>cloud</strong> et la <strong>data</strong>.</p>
 <h3><strong>La pénurie de talents, ne date pas d’aujourd’hui !</strong></h3>
@@ -112,25 +110,34 @@
       alt="Article Image" />
 
     <div class="share-container">
-      <h3>Partagez cet article :</h3>
-      <!-- Utilisation de l'URL absolue et ajout de l'image et du teaser -->
       <a href="#" class="linkedin linkedin-icon share_linkedin" data-url="https://www.orbii.fr/en/posts/talents-tech-pivot-competivite/" data-teaser="Ce n&#39;est un secret pour personne et quel que soit le secteur d’activité aux quatre coins du monde, on n’entend que ce mot, comme un leitmotiv : la « guerre des talents » !" data-image="/images/posts/en/talents-tech-pivot-competivite.png">
         <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-        <span>Partager sur LinkedIn</span>
+        <span>Article utile? Partager le sur LinkedIn</span>
       </a>
     </div>
+
+
+    <p>
+    <h3>Vos réactions, remarques, idées ...</h3>
+    <!-- Ajout de Utterances pour les commentaires -->
+    <script src="https://utteranc.es/client.js"
+        repo="pejmang/Orbii-blog"
+        issue-term="url"
+        label="Orbii KM"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+    <!-- Fin du bloc de commentaires -->
+
   </main>
 </div>
 
 <script>
   let startTime = Date.now();
-
-  // Calcul de la durée de lecture
   window.addEventListener('beforeunload', function() {
-    let timeSpent = Date.now() - startTime; // Temps en millisecondes
-    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight; // Vérifie si l'utilisateur a scrollé jusqu'à la fin
-
-    // Envoi des données au serveur
+    let timeSpent = Date.now() - startTime;
+    let hasReachedEnd = (window.scrollY + window.innerHeight) >= document.body.scrollHeight;
     fetch('/api/track-engagement', {
       method: 'POST',
       body: JSON.stringify({
@@ -144,7 +151,6 @@
     });
   });
 
-  // Fonction pour centrer le popup de partage
   var popupCenter = function(url, title, width, height){
       var popupWidth = width || 640;
       var popupHeight = height || 320;
@@ -159,44 +165,42 @@
       return true;
   };
 
-  // Partage sur LinkedIn avec URL absolue et ajout du teaser et de l'image
   document.querySelector('.share_linkedin').addEventListener('click', function(e){
       e.preventDefault();
       var url = this.getAttribute('data-url');
       var articleTitle = encodeURIComponent('Tech accessible : les talents, clé de la compétitivité');
       var articleTeaser = encodeURIComponent(this.getAttribute('data-teaser'));
       var articleImage = encodeURIComponent(this.getAttribute('data-image'));
-
-      // Génération de l'URL de partage LinkedIn avec le teaser et l'image
       var shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${articleTitle}&summary=${articleTeaser}&source=www.orbii.fr&image=${articleImage}`;
-
       popupCenter(shareUrl, "Partager sur LinkedIn");
   });
+
 </script>
 
 
 
   <!-- Footer -->
-  <footer class="footer">
+<footer class="footer">
     <div class="footer-container">
-      <div class="footer-links">
-        <ul>
-          
-            <li><a href="/en/privacy/">Privacy</a></li>
-            <li><a href="/en/publish/">Publish</a></li>
-            <li><a href="/en/OrbiiKnowledge/">Orbii Knowledge</a></li>
-          
-        </ul>
-      </div>
+        <div class="footer-links">
+            <ul>
+              
+                <li><a href="/en/privacy/">Privacy</a></li>
+                <li><a href="/en/publish/">Publish</a></li>
+                <li><a href="/en/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              
+            </ul>
+        </div>
+
+        <div class="footer-info">
       <div class="footer-info">
-        © 2024 Orbii : Digital Transformation & AI
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
       </div>
     </div>
   </footer>
 
-  <!-- Script pour définir l'année actuelle -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
 </body>
 </html>

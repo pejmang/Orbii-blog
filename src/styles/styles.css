@@ -432,6 +432,21 @@ blockquote {
 }
 
 /* Footer Styling */
+
+
+.footer-info p {
+  margin: 0;
+}
+
+.footer-info .motto {
+  margin-top: 5px; /* Adjust as needed */
+  font-size: 12px;
+  font-style: italic;
+  color: #777; /* Adjust as per your design */
+}
+
+
+
 .footer {
   background-color: #f9f9f9;
   padding: 40px 20px;
@@ -477,6 +492,10 @@ blockquote {
   color: #333;
   text-align: center;
 }
+
+
+
+
 
 /* Image Styling */
 img {
