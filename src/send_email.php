@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars($_POST['message']);
     
     // Email configuration
-    $to = "your-email@example.com"; // Replace with your email
+    $to = "pejman.gohari@orbii.tech"; // Replace with your email
     $subject = "New Insight Builder Application";
     $headers = "From: " . $email . "\r\n";
     $headers .= "Reply-To: " . $email . "\r\n";
