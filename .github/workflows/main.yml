@@ -28,7 +28,12 @@ jobs:
       - name: Build the site with Eleventy
         run: npm run build
 
-      # Step 5: Create or update .htaccess to secure .env
+      # Step 5: Copy PHP files to docs/ directory (so they can be deployed)
+      - name: Copy PHP files to output folder
+        run: |
+          cp send_email.php docs/
+
+      # Step 6: Create or update .htaccess to secure .env
       - name: Secure .env file with .htaccess
         run: |
           echo "<Files .env>" > docs/.htaccess
@@ -36,8 +41,7 @@ jobs:
           echo "    Deny from all" >> docs/.htaccess
           echo "</Files>" >> docs/.htaccess
 
-
-      # Step 6: Deploy to FTP
+      # Step 7: Deploy to FTP
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
