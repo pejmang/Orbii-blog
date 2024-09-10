@@ -1,15 +1,29 @@
-<form action="https://formspree.io/f/mnnaooya" method="POST">
-  <label for="name">Nom:</label>
-  <input type="text" id="name" name="name" required>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Giscus</title>
+</head>
+<body>
+    <h1>Test Giscus Integration</h1>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
+    <!-- Giscus comments container -->
+    <div id="giscus-container"></div>
 
-  <label for="title">Titre de l'article:</label>
-  <input type="text" id="title" name="title" required>
-
-  <label for="content">Sujeyt et Contenu de l'article:</label>
-  <textarea id="content" name="content" rows="10" required></textarea>
-
-  <button type="submit">Soumettre</button>
-</form>
+    <!-- Giscus script -->
+    <script src="https://giscus.app/client.js"
+        data-repo="pejmang/Orbii-KM"
+        data-repo-id="R_kgDOMvej3A"
+        data-category="Ideas"
+        data-category-id="DIC_kwDOMvej3M4CiWQN"
+        data-mapping="url"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-theme="light"
+        data-lang="fr"
+        crossorigin="anonymous"
+        async>
+    </script>
+</body>
+</html>

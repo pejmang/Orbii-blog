@@ -86,42 +86,12 @@
   <h2>Proposez une Suggestion</h2>
   <p>Utilisez la section ci-dessous pour soumettre vos suggestions et partager vos idées avec la communauté.</p>
 
-  <!-- Giscus comments container -->
-  <div id="giscus-container"></div>
+  <!-- Commento comments container -->
+  <div id="commento"></div>
 
-  <!-- Giscus script with logging -->
-  <script>
-    console.log("Starting to load Giscus...");
+  <!-- Commento script -->
+  <script defer src="https://cdn.commento.io/js/commento.js"></script>
 
-    const giscusScript = document.createElement('script');
-    giscusScript.src = 'https://giscus.app/client.js';
-    giscusScript.setAttribute('data-repo', 'pejmang/Orbii-KM');
-    giscusScript.setAttribute('data-repo-id', 'R_kgDOMvej3A');
-    giscusScript.setAttribute('data-category', 'Ideas');
-    giscusScript.setAttribute('data-category-id', 'DIC_kwDOMvej3M4CiWQN');
-    giscusScript.setAttribute('data-mapping', 'title');
-    giscusScript.setAttribute('data-strict', '0');
-    giscusScript.setAttribute('data-reactions-enabled', '1');
-    giscusScript.setAttribute('data-emit-metadata', '1');
-    giscusScript.setAttribute('data-input-position', 'bottom');
-    giscusScript.setAttribute('data-theme', 'preferred_color_scheme');
-    giscusScript.setAttribute('data-lang', 'fr');
-    giscusScript.setAttribute('crossorigin', 'anonymous');
-    giscusScript.async = true;
-
-    giscusScript.onload = function () {
-      console.log("Giscus script loaded successfully.");
-    };
-
-    giscusScript.onerror = function () {
-      console.error("Failed to load Giscus script.");
-    };
-
-    // Append the script to the giscus-container
-    document.getElementById('giscus-container').appendChild(giscusScript);
-    console.log("Giscus script added to DOM.");
-
-  </script>
 
   </div>
 
