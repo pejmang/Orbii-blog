@@ -72,10 +72,11 @@
     </nav>
 
     
+
   <div class="container">
     <h2 class="section-title">Les chroniques de l'Innovation</h2>
 
-        <!-- Existing posts grid -->
+    <!-- Existing posts grid -->
     <div class="posts-grid">
       
       <a href="/posts/Transfo-Tech-focus-sur-le-poids-du-legacy/" class="post-card-link">
@@ -730,6 +731,19 @@
     </div>
   </div>
 
+  <!-- Sliding book section -->
+  <div id="book-slider" style="position: fixed; right: -300px; top: 50%; transform: translateY(-50%); width: 250px; transition: right 0.3s ease-in-out;">
+    <div class="book-content">
+      <a href="https://www.amazon.fr/nouvel-horizon-transformation-digitale-donn%C3%A9es/dp/2100869817" target="_blank">
+        <img src="/images/livre2.jpeg" alt="Book Cover" style="width: 100%;">
+      </a>
+      <div style="background-color: #f4f4f4; padding: 10px;">
+        <h3>Le Nouvel Horizon de la Transformation Digitale</h3>
+        <p>Découvrez les 9 piliers indispensables pour réussir votre transformation digitale. <a href="/book-link">En savoir plus</a></p>
+      </div>
+    </div>
+  </div>
+
   <!-- JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -737,19 +751,18 @@
 
       // Make the slider visible 1 second after the page loads
       setTimeout(function() {
-        bookSlider.classList.add('visible');
+        bookSlider.style.right = '0';
         console.log("Slider visible after 1 second!");
 
         // After 3 seconds, hide the slider again
         setTimeout(function() {
-          bookSlider.classList.remove('visible');
-          bookSlider.classList.add('hidden');
+          bookSlider.style.right = '-300px';
           console.log("Slider hidden after 3 seconds!");
         }, 3000);  // 3000 milliseconds = 3 seconds
-
       }, 1000);  // 1000 milliseconds = 1 second
     });
   </script>
+
 
   </div>
 
