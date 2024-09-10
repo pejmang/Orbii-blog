@@ -76,6 +76,41 @@
 
 <p>
 
+<div id="book-slider" class="book-slider">
+    <div class="book-content">
+      <!-- Make the image clickable by wrapping it in an <a> tag -->
+      <a href="https://www.amazon.fr/nouvel-horizon-transformation-digitale-donn%C3%A9es/dp/2100869817" target="_blank">
+        <img src="/images/livre2.jpeg" alt="Book Cover" class="book-cover">
+      </a>
+      <div class="book-info">
+        <h3>Le Nouvel Horizon de la Transformation Digitale</h3>
+        <p>Découvrez les 9 piliers indispensables pour réussir votre transformation digitale. <a href="/book-link">En savoir plus</a></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const bookSlider = document.getElementById('book-slider');
+
+      // Make the slider visible 1 second after the page loads
+      setTimeout(function() {
+        bookSlider.classList.add('visible');
+        console.log("Slider visible after 1 second!");
+
+        // After 3 seconds, hide the slider again
+        setTimeout(function() {
+          bookSlider.classList.remove('visible');
+          bookSlider.classList.add('hidden');
+          console.log("Slider hidden after 3 seconds!");
+        }, 3000);  // 3000 milliseconds = 3 seconds
+
+      }, 1000);  // 1000 milliseconds = 1 second
+    });
+  </script>
+
   <div class="container">
 
   <h3>Vos temoignages sur les 2 livres, comme ceux qui suivent, prenez votre plus belle plume  ...</h3>
