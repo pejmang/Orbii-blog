@@ -1,78 +1,153 @@
-<div class="container">
-  <h2>Proposez un Livre ou un Article à Lire</h2>
-  <p>Nous voulons connaître vos recommandations ! Si vous avez lu un livre ou un article qui vous a inspiré, partagez-le avec nous dans les commentaires ci-dessous.</p>
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2W7NLK4');</script>
+  <!-- End Google Tag Manager -->
 
-  <!-- Formulaire -->
-  <form action="submit_suggestion.php" method="POST">
-    <div class="form-group">
-      <label for="title">Titre du Livre ou de l'Article :</label>
-      <input type="text" id="title" name="title" placeholder="Titre du livre ou de l'article" required>
-    </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="form-group">
-      <label for="link">Lien vers l'article ou le livre :</label>
-      <input type="url" id="link" name="link" placeholder="https://exemple.com" required>
-    </div>
+  <title></title>
 
-    <div class="form-group">
-      <label for="review">Pourquoi recommandez-vous ce livre ou cet article ? :</label>
-      <textarea id="review" name="review" rows="4" placeholder="Expliquez brièvement pourquoi il vaut la peine de le lire..." required></textarea>
-    </div>
+  <!-- Utiliser 'teaser' comme fallback pour 'description' -->
+  <meta name="description" content="">
 
-    <button type="submit" class="submit-btn">Soumettre la Recommandation</button>
-  </form>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="https://orbii.fr/images/posts/fr/Suggestions.png">
+  <meta property="og:url" content="/Suggestions/">
+  <meta property="og:type" content="article">
 
-  <!-- Utterances comments section -->
-  <div id="comments">
-    <script src="https://utteranc.es/client.js"
-      repo="pejmang/Orbii-blog"
-      issue-term="url"
-      label="Orbii KM"
-      theme="github-light"
-      crossorigin="anonymous"
-      async>
-    </script>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content=".">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="/Suggestions/">
+
+  <!-- Favicon and Icons -->
+  <link rel="icon" href="/images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2W7NLK4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  
+
+
+  <div class="container">
+    <h1>Horizon : Digital Transformation & AI</h1> 
+    <h4> Outstanding Results Begin with Inspired Ideas </h4>
+<br>
+    <nav class="mono extended">
+      <ul style="float: right;">
+        <li><a href="/en/" >en</a></li>
+        <li><a href="/" class="active">fr</a></li>
+      </ul>
+
+      
+      <ul>
+        <li><a href="/" class="">Insights</a></li>
+        <li><a href="/9pillars" class=""> 9 piliers</a></li>
+        <li><a href="/videos" class="">Echos</a></li>
+        <li><a href="/livre" class="">Le livre</a></li>
+        <li><a href="/about" class="">Insight Builders</a></li>
+      </ul>
+      
+    </nav>
+
+    
+  <h2>Partagez vos Livres, Articles ou Vidéos avec la Communauté</h2>
+  <p>
+    Vous avez découvert un livre inspirant, une vidéo utile, ou un article pertinent que la communauté devrait connaître ? Proposez vos suggestions ci-dessous et aidez à enrichir notre communauté avec vos recommandations.
+  </p>
+
+  <!-- Image or Banner Section -->
+  <div class="image-container">
+    <img src="/images/become-an-insight-builder" alt="Partage de connaissances" class="suggestions-image">
   </div>
-</div>
 
-<!-- Custom CSS -->
-<style>
-  .form-container {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
+  <!-- Instructions -->
+  <h2>Proposez une Suggestion</h2>
+  <p>Utilisez la section ci-dessous pour soumettre vos suggestions et partager vos idées avec la communauté.</p>
 
-  .form-group {
-    margin-bottom: 15px;
-  }
+  <!-- Giscus comments container -->
+  <div id="giscus-container"></div>
 
-  .form-group label {
-    font-weight: bold;
-  }
+  <!-- Giscus script with logging -->
+  <script>
+    console.log("Starting to load Giscus...");
 
-  .form-group input, .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+    const giscusScript = document.createElement('script');
+    giscusScript.src = 'https://giscus.app/client.js';
+    giscusScript.setAttribute('data-repo', 'pejmang/Orbii-KM');
+    giscusScript.setAttribute('data-repo-id', 'R_kgDOMvej3A');
+    giscusScript.setAttribute('data-category', 'Ideas');
+    giscusScript.setAttribute('data-category-id', 'DIC_kwDOMvej3M4CiWQN');
+    giscusScript.setAttribute('data-mapping', 'title');
+    giscusScript.setAttribute('data-strict', '0');
+    giscusScript.setAttribute('data-reactions-enabled', '1');
+    giscusScript.setAttribute('data-emit-metadata', '1');
+    giscusScript.setAttribute('data-input-position', 'bottom');
+    giscusScript.setAttribute('data-theme', 'preferred_color_scheme');
+    giscusScript.setAttribute('data-lang', 'fr');
+    giscusScript.setAttribute('crossorigin', 'anonymous');
+    giscusScript.async = true;
 
-  .submit-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+    giscusScript.onload = function () {
+      console.log("Giscus script loaded successfully.");
+    };
 
-  .submit-btn:hover {
-    background-color: #45a049;
-  }
-</style>
+    giscusScript.onerror = function () {
+      console.error("Failed to load Giscus script.");
+    };
+
+    // Append the script to the giscus-container
+    document.getElementById('giscus-container').appendChild(giscusScript);
+    console.log("Giscus script added to DOM.");
+
+  </script>
+
+  </div>
+
+
+  <!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-links">
+            <ul>
+              
+                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/publish/">Publier</a></li>
+                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+              
+            </ul>
+        </div>
+
+        <div class="footer-info">
+      <div class="footer-info">
+        © 2024 ORBii : "Outstanding Results Begin with Inspired Ideas"
+ <br>
+        A knowledge hub of Digital Transformation & AI
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>

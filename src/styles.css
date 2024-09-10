@@ -1150,3 +1150,8 @@ input[type="submit"]:hover {
   background-color: #f4f4f4;
   padding: 10px;
 }
+.giscus-comments {
+  display: block;
+  min-height: 400px;
+  width: 100%;
+}

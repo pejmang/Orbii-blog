@@ -1,78 +1,56 @@
-<div class="container">
-  <h2>Proposez un Livre ou un Article à Lire</h2>
-  <p>Nous voulons connaître vos recommandations ! Si vous avez lu un livre ou un article qui vous a inspiré, partagez-le avec nous dans les commentaires ci-dessous.</p>
+{% extends "sitebase.njk" %}
 
-  <!-- Formulaire -->
-  <form action="submit_suggestion.php" method="POST">
-    <div class="form-group">
-      <label for="title">Titre du Livre ou de l'Article :</label>
-      <input type="text" id="title" name="title" placeholder="Titre du livre ou de l'article" required>
-    </div>
+{% block title %}Proposez des Livres, Articles ou Vidéos{% endblock %}
 
-    <div class="form-group">
-      <label for="link">Lien vers l'article ou le livre :</label>
-      <input type="url" id="link" name="link" placeholder="https://exemple.com" required>
-    </div>
+{% block site_content %}
+  <h2>Partagez vos Livres, Articles ou Vidéos avec la Communauté</h2>
+  <p>
+    Vous avez découvert un livre inspirant, une vidéo utile, ou un article pertinent que la communauté devrait connaître ? Proposez vos suggestions ci-dessous et aidez à enrichir notre communauté avec vos recommandations.
+  </p>
 
-    <div class="form-group">
-      <label for="review">Pourquoi recommandez-vous ce livre ou cet article ? :</label>
-      <textarea id="review" name="review" rows="4" placeholder="Expliquez brièvement pourquoi il vaut la peine de le lire..." required></textarea>
-    </div>
-
-    <button type="submit" class="submit-btn">Soumettre la Recommandation</button>
-  </form>
-
-  <!-- Utterances comments section -->
-  <div id="comments">
-    <script src="https://utteranc.es/client.js"
-      repo="pejmang/Orbii-blog"
-      issue-term="url"
-      label="Orbii KM"
-      theme="github-light"
-      crossorigin="anonymous"
-      async>
-    </script>
+  <!-- Image or Banner Section -->
+  <div class="image-container">
+    <img src="/images/become-an-insight-builder" alt="Partage de connaissances" class="suggestions-image">
   </div>
-</div>
 
-<!-- Custom CSS -->
-<style>
-  .form-container {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
+  <!-- Instructions -->
+  <h2>Proposez une Suggestion</h2>
+  <p>Utilisez la section ci-dessous pour soumettre vos suggestions et partager vos idées avec la communauté.</p>
 
-  .form-group {
-    margin-bottom: 15px;
-  }
+  <!-- Giscus comments container -->
+  <div id="giscus-container"></div>
 
-  .form-group label {
-    font-weight: bold;
-  }
+  <!-- Giscus script with logging -->
+  <script>
+    console.log("Starting to load Giscus...");
 
-  .form-group input, .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+    const giscusScript = document.createElement('script');
+    giscusScript.src = 'https://giscus.app/client.js';
+    giscusScript.setAttribute('data-repo', 'pejmang/Orbii-KM');
+    giscusScript.setAttribute('data-repo-id', 'R_kgDOMvej3A');
+    giscusScript.setAttribute('data-category', 'Ideas');
+    giscusScript.setAttribute('data-category-id', 'DIC_kwDOMvej3M4CiWQN');
+    giscusScript.setAttribute('data-mapping', 'title');
+    giscusScript.setAttribute('data-strict', '0');
+    giscusScript.setAttribute('data-reactions-enabled', '1');
+    giscusScript.setAttribute('data-emit-metadata', '1');
+    giscusScript.setAttribute('data-input-position', 'bottom');
+    giscusScript.setAttribute('data-theme', 'preferred_color_scheme');
+    giscusScript.setAttribute('data-lang', 'fr');
+    giscusScript.setAttribute('crossorigin', 'anonymous');
+    giscusScript.async = true;
 
-  .submit-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+    giscusScript.onload = function () {
+      console.log("Giscus script loaded successfully.");
+    };
 
-  .submit-btn:hover {
-    background-color: #45a049;
-  }
-</style>
+    giscusScript.onerror = function () {
+      console.error("Failed to load Giscus script.");
+    };
+
+    // Append the script to the giscus-container
+    document.getElementById('giscus-container').appendChild(giscusScript);
+    console.log("Giscus script added to DOM.");
+
+  </script>
+{% endblock %}
