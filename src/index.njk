@@ -6,21 +6,7 @@
   <div class="container">
     <h2 class="section-title">Les chroniques de l'Innovation</h2>
 
-    <!-- Book slider -->
-    <div id="book-slider" class="book-slider">
-      <div class="book-content">
-        <!-- Make the image clickable by wrapping it in an <a> tag -->
-        <a href="https://www.amazon.fr/nouvel-horizon-transformation-digitale-donn%C3%A9es/dp/2100869817" target="_blank">
-          <img src="/images/livre2.jpeg" alt="Book Cover" class="book-cover">
-        </a>
-        <div class="book-info">
-          <h3>Le Nouvel Horizon de la Transformation Digitale</h3>
-          <p>Découvrez les 9 piliers indispensables pour réussir votre transformation digitale. <a href="/book-link">En savoir plus</a></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Existing posts grid -->
+        <!-- Existing posts grid -->
     <div class="posts-grid">
       {% for post in collections.fr_posts %}
       <a href="{{ post.url }}" class="post-card-link">
