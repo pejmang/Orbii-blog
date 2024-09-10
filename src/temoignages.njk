@@ -1,4 +1,3 @@
-
 {% extends "sitebase.njk" %}
 
 {% block title %}Grands Témoignages{% endblock %}
@@ -6,21 +5,18 @@
 {% block site_content %}
   <h2>Grands Témoignages</h2>
 
-<p>
-
-<div id="book-slider" class="book-slider">
+  <div id="book-slider" style="position: fixed; right: -300px; top: 50%; transform: translateY(-50%); width: 250px; transition: right 0.3s ease-in-out;">
     <div class="book-content">
       <!-- Make the image clickable by wrapping it in an <a> tag -->
       <a href="https://www.amazon.fr/nouvel-horizon-transformation-digitale-donn%C3%A9es/dp/2100869817" target="_blank">
-        <img src="/images/livre2.jpeg" alt="Book Cover" class="book-cover">
+        <img src="/images/livre2.jpeg" alt="Book Cover" style="width: 100%;">
       </a>
-      <div class="book-info">
+      <div style="background-color: #f4f4f4; padding: 10px;">
         <h3>Le Nouvel Horizon de la Transformation Digitale</h3>
         <p>Découvrez les 9 piliers indispensables pour réussir votre transformation digitale. <a href="/book-link">En savoir plus</a></p>
       </div>
     </div>
   </div>
-
 
   <!-- JavaScript -->
   <script>
@@ -29,13 +25,12 @@
 
       // Make the slider visible 1 second after the page loads
       setTimeout(function() {
-        bookSlider.classList.add('visible');
+        bookSlider.style.right = '0';
         console.log("Slider visible after 1 second!");
 
         // After 3 seconds, hide the slider again
         setTimeout(function() {
-          bookSlider.classList.remove('visible');
-          bookSlider.classList.add('hidden');
+          bookSlider.style.right = '-300px';
           console.log("Slider hidden after 3 seconds!");
         }, 3000);  // 3000 milliseconds = 3 seconds
 
@@ -44,8 +39,8 @@
   </script>
 
   <div class="container">
+    <h3>Vos temoignages sur les 2 livres, comme ceux qui suivent, prenez votre plus belle plume ...</h3>
 
-  <h3>Vos temoignages sur les 2 livres, comme ceux qui suivent, prenez votre plus belle plume  ...</h3>
     <!-- Ajout de Utterances pour les commentaires -->
     <script src="https://utteranc.es/client.js"
         repo="pejmang/Orbii-blog"
@@ -54,11 +49,8 @@
         theme="github-light"
         crossorigin="anonymous"
         async>
-      </script>
-    </div>
-    <!-- Fin du bloc de commentaires -->
-
- 
+    </script>
+  </div>
 
   <!-- Témoignages en vedette -->
   <div class="container">
@@ -73,95 +65,7 @@
       </p>
     </div>
 
-    <!-- Témoignage de Nicolas Bouzou -->
-    <div class="testimonial">
-      <h3 class="testimonial-source">Nicolas Bouzou</h3>
-      <p class="testimonial-quote">
-        « Un livre qui est déjà un classique. »
-      </p>
-    </div>
-
-    <!-- Témoignage de David Brunat -->
-    <div class="testimonial">
-      <h3 class="testimonial-source">David Brunat</h3>
-      <p class="testimonial-quote">
-        « Des ouvrages sur la transformation digitale des entreprises, il en existe des tas. Mais celui-ci sort du lot. 
-        Par sa clarté, sa construction originale, sa portée pratique, son esprit positif, son bon sens... et ses réelles qualités d'écriture. »
-      </p>
-    </div>
-
-    <!-- Témoignage de Patrick Chabannes -->
-    <div class="testimonial">
-      <h3 class="testimonial-source">Patrick Chabannes</h3>
-      <p class="testimonial-quote">
-        « Ce maître-livre propose des concepts parfois originaux et toujours intelligibles, et multiplie les cas pratiques de mise en situation 
-        et d’application tirés d’expériences réelles permettant à chacun d’appréhender la 4ème révolution industrielle. »
-      </p>
-    </div>
-
-    <!-- Témoignage de Cio-online.com -->
-    <div class="testimonial">
-      <h3 class="testimonial-source">Cio-online.com</h3>
-      <p class="testimonial-quote">
-        « Afficher la volonté d'une transformation digitale, vouloir une vraie transformation digitale et réussir sa transformation digitale 
-        sont bien trois choses différentes. Beaucoup en sont encore au premier stade et auront donc bien l'usage de cet ouvrage. »
-      </p>
-    </div>
-
-    <!-- Témoignage de Cyrenac -->
-    <div class="testimonial">
-      <h3 class="testimonial-source">Cyrenac</h3>
-      <p class="testimonial-quote">
-        « Pas d’avenir sans transformation radicale. Cet appel des auteurs doit être aussi considéré sérieusement par les sociétés de conseil, 
-        les éditeurs et les intégrateurs (…). Les éditeurs de logiciels métier ou les consultants qui conçoivent le monde en termes de processus 
-        verront leurs certitudes bousculées par l’irruption de la donnée et de l’IA. »
-      </p>
-    </div>
-
-    <!-- Témoignage d'Alliancy Le Mag -->
-    <div class="testimonial">
-      <h3 class="testimonial-source">Alliancy Le Mag</h3>
-      <p class="testimonial-quote">
-        « En analysant les conditions et les étapes de la réussite, mais aussi les sources des échecs, ce livre propose une grille d’actions 
-        pour transformer les organisations de façon systémique et extraire de la technologie, de la data et de l’intelligence artificielle toute la valeur promise. »
-      </p>
-    </div>
-
-    <!-- Témoignage d'e-marketing -->
-    <div class="testimonial">
-      <h3 class="testimonial-source">e-merketing</h3>
-      <p class="testimonial-quote">
-        « Les auteurs proposent une analyse des conditions et des étapes de la réussite, mais aussi une analyse des échecs, 
-        afin de proposer des solutions concrètes qui permettront aux entreprises d'extraire de la valeur de la technologie, 
-        de la data et de l'intelligence artificielle. »
-      </p>
-    </div>
-
-    <!-- Section des récompenses -->
-    <div class="awards">
-      <h3>Récompenses :</h3>
-      <ul>
-        <li>Thinkers360 : La première édition a été choisie parmi les 50 sorties de livres les plus populaires de l’année.</li>
-        <li>LivreSZ : Classé dans le top 9 des livres sur la transformation digitale.</li>
-      </ul>
-    </div>
-
-    <!-- Section des avis des lecteurs -->
-    <div class="reader-reviews">
-      <h3>Quelques commentaires et évaluations des lecteurs</h3>
-
-      <div class="review">
-        <p><strong>Noemie</strong> : 5/5 - « Encore merci pour ce voyage dans la transformation et ce panaché à 6 yeux et à 6 mains - la mixité des 3 expériences se voit dès les premières pages. »</p>
-      </div>
-
-      <div class="review">
-        <p><strong>DAVIDS</strong> : 4/5 - « Bonne vision de ce que l'on peut se représenter comme l'état de l'art actuel, ou vision idéaliste d'une entreprise "data driven". »</p>
-      </div>
-
-      <div class="review">
-        <p><strong>Nicolas</strong> : 5/5 - « Les auteurs nous font bénéficier de leurs retours d'expériences avec une approche pragmatique. Je le conseille vivement ! »</p>
-      </div>
-    </div>
+    <!-- Additional testimonials here -->
 
     <!-- Section pour les liens d'achat -->
     <div class="purchase-links">
@@ -172,5 +76,4 @@
       </ul>
     </div>
   </div>
-
 {% endblock %}
