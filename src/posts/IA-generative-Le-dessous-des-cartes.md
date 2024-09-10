@@ -1,6 +1,6 @@
 ---
-title: "La réussite de la transformation digitale et data ?"
-teaser: "Les clés pour réussir la transformation digitale : culture data-driven, stratégie claire, et engagement des équipes pour éviter les échecs courants."
+title: "IA Générative : Le dessous des cartes"
+teaser: "Découvrez les coulisses de l'IA générative et son impact mondial : des puces aux matières premières, en passant par les enjeux géopolitiques et les stratégies des géants de la tech. Une plongée dans les défis et opportunités qui façonnent l'avenir technologique"
 date: 2024-09-10
 pillar: data_ia
 type: strategy
@@ -8,9 +8,6 @@ authors: Jean Barrere
 articleID: "1000018"
 ---
 
-## **IA Générative : Le dessous des cartes**
-
-**Auteur : Jean Barrere**
 
 L'émergence de l’IA générative constitue un enjeu mondial majeur, catalysant d'importants investissements de la part des grands acteurs publics et privés. Si les modèles de fondation comme OpenAI ou Mistral suscitent un vif enthousiasme auprès du public et des entreprises, Sundar Pichai, PDG de Google, souligne que « Les puces et l'infrastructure représentent l'infrastructure invisible de l'ère de l'IA, sur laquelle repose tout l'édifice technologique moderne. ». Ces paroles mettent en lumière l'importance cruciale de l'infrastructure sous-jacente, souvent occultée par les applications plus visibles de l'IA.
 
