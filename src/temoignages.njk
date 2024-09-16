@@ -38,19 +38,21 @@
     });
   </script>
 
-  <div class="container">
     <h3>Vos temoignages sur les 2 livres, comme ceux qui suivent, prenez votre plus belle plume ...</h3>
+    <!-- Ajout de Cusdis pour les commentaires -->
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="23d72bd6-8c5c-473b-a563-caa9d9328b84"
+      data-page-id="{{ page.fileSlug }}"
+      data-page-url="{{ siteUrl }}{{ page.url }}"
+      data-page-title="{{ title }}"
+      data-lang="fr">
+    </div>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"> </script>
+    
+    <!-- Fin du bloc de commentaires -->
 
-    <!-- Ajout de Utterances pour les commentaires -->
-    <script src="https://utteranc.es/client.js"
-        repo="pejmang/Orbii-blog"
-        issue-term="url"
-        label="Orbii KM"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-  </div>
+
 
   <!-- Témoignages en vedette -->
   <div class="container">
@@ -64,6 +66,51 @@
         de la data et de l’intelligence artificielle toute la valeur promise ! »
       </p>
     </div>
+
+    <!-- Témoignage de Nicolas Bouzou -->
+    <div class="testimonial">
+      <h3 class="testimonial-source">Nicolas Bouzou</h3>
+      <p class="testimonial-quote">
+        « Un livre qui est déjà un classique. »
+      </p>
+    </div>
+
+    <!-- Témoignage de David Brunat -->
+    <div class="testimonial">
+      <h3 class="testimonial-source">David Brunat</h3>
+      <p class="testimonial-quote">
+        « Des ouvrages sur la transformation digitale des entreprises, il en existe des tas. Mais celui-ci sort du lot. 
+        Par sa clarté, sa construction originale, sa portée pratique, son esprit positif, son bon sens... et ses réelles qualités d'écriture. »
+      </p>
+    </div>
+
+    <!-- Témoignage de Patrick Chabannes -->
+    <div class="testimonial">
+      <h3 class="testimonial-source">Patrick Chabannes</h3>
+      <p class="testimonial-quote">
+        « Ce maître-livre propose des concepts parfois originaux et toujours intelligibles, et multiplie les cas pratiques de mise en situation 
+        et d’application tirés d’expériences réelles permettant à chacun d’appréhender la 4ème révolution industrielle. »
+      </p>
+    </div>
+
+    <!-- Témoignage de Cio-online.com -->
+    <div class="testimonial">
+      <h3 class="testimonial-source">Cio-online.com</h3>
+      <p class="testimonial-quote">
+        « Afficher la volonté d'une transformation digitale, vouloir une vraie transformation digitale et réussir sa transformation digitale 
+        sont bien trois choses différentes. Beaucoup en sont encore au premier stade et auront donc bien l'usage de cet ouvrage. »
+      </p>
+    </div>
+     <!-- Témoignage la suite-->
+    <div class="testimonial">
+      <h3 class="testimonial-source">Les autres temoignages...</h3>
+      <p class="testimonial-quote">
+        <img src="/images/ic/i-temoignages.png" > 
+      <a href="/temoignages/" target="_blank">
+      Decouvrez les autres témoignages et, Vous aussi, donnez votre avis sur nos livres ...
+      </a>      </p>
+    </div>
+    
 
     <!-- Additional testimonials here -->
 
