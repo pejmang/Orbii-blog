@@ -6,7 +6,8 @@ authors: Nouamane Cherkaoui
 pillar: culture
 type: news
 articleID: "1000014"
-
+language: fr
+licence: MIT
 ---
 
 Interview réalisée par Estelle Raffin de Nouamane Cherkaoui

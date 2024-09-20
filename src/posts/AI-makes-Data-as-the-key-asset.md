@@ -8,6 +8,7 @@ pillar: data_ia
 type: sharing
 language: en
 articleID: "2000007"
+licence: MIT
 ---
 
 ## Operationalizing Data as a Strategic Asset: The Role of AI in Shaping the New Paradigm

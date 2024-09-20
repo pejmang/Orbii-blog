@@ -8,6 +8,7 @@ pillar: tech
 type: strategy
 language: fr
 articleID: "1000016"
+licence: MIT
 ---
 
 En effet, lorsque la transformation ou le changement sont évoqués dans n’importe quelle stratégie, on part naturellement de nos **assets** et d’une analyse de l’existant. Plus nos organisations sont anciennes, et **peu évoluées**, plus le poids du **« Legacy »** est important. Par « Legacy », on fait référence aux **systèmes d’information obsolescents** ou peu évolutifs, mais toujours présents en tant que « cœur du système ». 

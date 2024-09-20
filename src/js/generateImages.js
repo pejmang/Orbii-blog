@@ -4,7 +4,7 @@ const path = require('path');
 
 const postsDirectory = '/Users/admin/Desktop/Orbii-blog/src/posts';
 const outputDirectory = '/Users/admin/Desktop/Orbii-blog/src/images/posts/fr/';
-const defaultImagePath = '/Users/admin/Desktop/Orbii-blog/src/images/posts/Image-post-001.png';
+const defaultImagePath = '/Users/admin/Desktop/Orbii-blog/src/images/posts/Image-post-001.jpeg';
 
 // Assurez-vous que le répertoire de sortie existe
 fs.ensureDirSync(outputDirectory);
@@ -77,7 +77,7 @@ fs.readdir(postsDirectory, (err, files) => {
             const authors = authorsMatch ? authorsMatch[1] : '';
 
             const slug = path.basename(file, '.md');
-            const outputFile = path.join(outputDirectory, `${slug}.png`);
+            const outputFile = path.join(outputDirectory, `${slug}.jpeg`);
 
             await generateImage(title, authors, outputFile);
         } catch (error) {

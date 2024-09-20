@@ -8,6 +8,7 @@ pillar: velocite
 type: strategy
 language: en
 articleID: "2000013"
+licence: MIT
 ---
 
 The business world of the last 10 years has gone from evolution to revolution with a profound metamorphosis which demonstrates for some that our world has become even more VUCA than ever. Indeed, in this VUCA world, projects, priorities, strategies, markets, environments change quickly, and it is necessary, even vital, to be able to adapt quickly.

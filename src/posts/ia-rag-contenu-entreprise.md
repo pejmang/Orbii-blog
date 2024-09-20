@@ -7,8 +7,9 @@ authors: Pejman GOHARI
 pillar: strategie
 type: sharing
 articleID: "1000008"
+language: fr
 
-
+licence: MIT
 ---
 
 

@@ -6,8 +6,9 @@ date: 2022-10-12
 pillar: strategie
 type: video
 articleID: "1000013"
+language: fr
 
-
+licence: MIT
 ---
 
 <div class="extended">

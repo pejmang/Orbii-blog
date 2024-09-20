@@ -8,6 +8,7 @@ pillar: tech
 type: sharing
 language: en
 articleID: "2000015"
+licence: MIT
 ---
 The fintech hype of recent years once predicted an imminent disruption of traditional financial institutions worldwide. FinTechs were expected to transform the banking sector, offering consumers a new level of convenience and free services without the usual fees. Rapid growth in the fintech industry positioned it as the preferred provider for key financial services like crowdfunding platforms, online portfolio management, mobile payment solutions, lending, and payments.
 

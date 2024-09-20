@@ -8,6 +8,7 @@ pillar: data_ia
 type: governance
 language: en
 articleID: "2000005"
+licence: MIT
 ---
 
 ### **AI-Driven Anomaly Detection: Proactively Safeguarding Data and Ensuring Compliance**

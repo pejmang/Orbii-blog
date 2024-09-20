@@ -6,7 +6,9 @@ pillar: strategy
 type: video
 authors: Microsoft France
 articleID: "1000011"
+language: fr
 
+licence: MIT
 ---
 
 <div class="extended">

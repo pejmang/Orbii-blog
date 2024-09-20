@@ -9,6 +9,7 @@ type: strategy
 language: en
 articleID: "2000014"
 slug: platform-model-sustainable-value
+licence: MIT
 ---
 
 Globalization, the merge of digital services, the explosion of data, and the need for **ATAWAD** mobility connection (which refers to the technological capability provided to users to access information *anytime, anywhere, on any device). GAMA and BATX have understood that the fusion of tech, data and mobility will open up the possibilities for them thanks to platforms.

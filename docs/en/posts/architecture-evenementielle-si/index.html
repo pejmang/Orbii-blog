@@ -52,22 +52,29 @@
 <div class="container">
   <div class="extended">
     
-      <a href="/en/">Insights</a>
-      <a href="/en/"> ← Go back...</a>
+      <a href="/">Insights</a>
+      <a href="/"> ← Retour aux articles</a>
     
   </div>
 
   <main id="article">
     <h1>L’architecture événementielle pour des SI flexibles et réactifs</h1>
+
     
       <div class="extended">
-        Auteur : Nouamane Cherkaoui
-        <a href="/about/" class="no-hover-effect">
+        
+          <strong>Auteur :</strong> Nouamane Cherkaoui
+        
+        
+        <a href="/about/">
           <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
         </a>
+
         
           <div class="article-date">
-            Publié le : 09/09/2024
+            
+              Publié le : 09/09/2024
+            
           </div>
         
       </div>
@@ -92,26 +99,31 @@
 <p>Penser à une architecture qui gère l'événementiel via publication/abonnement, intégrant une <strong>plateforme data</strong> pour orchestrer les événements. Comme tout <strong>asset</strong>, la plateforme de streaming d'événements doit être <strong>gouvernée</strong>, avec des événements décrits et catalogués pour être réutilisés par de nouveaux producteurs et consommateurs.</p>
 <p>Au fur et à mesure que le catalogue d'événements se remplit, de <strong>nouvelles opportunités</strong> apparaîtront pour un traitement et des informations en <strong>temps réel</strong>.</p>
 
-    <br>
+
+    <div class="licence-info">
+      
+        
+          <p><strong>Licence :</strong> Conditions de licence non spécifiées.</p>
+        
+      
+    </div>
 
     <!-- Image based on language -->
     <img 
-      src="/images/posts/en/architecture-evenementielle-si.png" 
+      src="/images/posts/fr/architecture-evenementielle-si.jpeg" 
       alt="Article Image" />
 
+    <!-- LinkedIn Sharing -->
     <div class="share-container">
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fen%2Fposts%2Farchitecture-evenementielle-si%2F&title=Les%20entreprises%20et%20leurs%20SI%20doivent%20s%E2%80%99adapter%20rapidement%20%C3%A0%20des%20%C3%A9volutions%20n%C3%A9cessitant%20instantan%C3%A9it%C3%A9%2C%20haute%20disponibilit%C3%A9%2C%20scalabilit%C3%A9%20et%20ouverture.%20L%E2%80%99architecture%20%C2%AB%20Event-Driven%20%C2%BB%20est%20une%20solution%20cl%C3%A9%20pour%20int%C3%A9grer%20ces%20concepts%20dans%20les%20strat%C3%A9gies%20techniques%20et%20organisationnelles.&summary=&source=" target="_blank" class="linkedin linkedin-icon">
-  <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-  <span>Article utile? Partager le sur LinkedIn</span>
-</a>
-
-        <span>Article utile? Partager le sur LinkedIn</span>
-      </a>
+      
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fen%2Fposts%2Farchitecture-evenementielle-si%2F&title=Les%20entreprises%20et%20leurs%20SI%20doivent%20s%E2%80%99adapter%20rapidement%20%C3%A0%20des%20%C3%A9volutions%20n%C3%A9cessitant%20instantan%C3%A9it%C3%A9%2C%20haute%20disponibilit%C3%A9%2C%20scalabilit%C3%A9%20et%20ouverture.%20L%E2%80%99architecture%20%C2%AB%20Event-Driven%20%C2%BB%20est%20une%20solution%20cl%C3%A9%20pour%20int%C3%A9grer%20ces%20concepts%20dans%20les%20strat%C3%A9gies%20techniques%20et%20organisationnelles." target="_blank" class="linkedin">
+          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+          <span>Partager sur LinkedIn</span>
+        </a>
+      
     </div>
 
-    <p>
-    <h3>Vos réactions, remarques, idées ...</h3>
-    <!-- Ajout de Cusdis pour les commentaires -->
+    <!-- Cusdis Comments Section -->
     <div id="cusdis_thread"
       data-host="https://cusdis.com"
       data-app-id="23d72bd6-8c5c-473b-a563-caa9d9328b84"
@@ -120,12 +132,36 @@
       data-page-title="L’architecture événementielle pour des SI flexibles et réactifs"
       data-lang="fr">
     </div>
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"> </script>
-    
-    <!-- Fin du bloc de commentaires -->
-
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
   </main>
 </div>
+
+<!-- Sliding Book Section -->
+<div id="book-slider" style="position: fixed; right: -300px; top: 50%; transform: translateY(-50%); width: 250px; transition: right 0.3s ease-in-out;">
+  <div class="book-content">
+    <a href="https://www.amazon.fr/nouvel-horizon-transformation-digitale-donn%C3%A9es/dp/2100869817" target="_blank">
+      <img src="/images/livre2.png" alt="Book Cover" style="width: 90%;">
+    </a>
+    <div style="background-color: #f4f4f4; padding: 10px;">
+      <h3>Le Nouvel Horizon de la Transformation Digitale</h3>
+      <p>Découvrez les 9 piliers pour réussir votre transformation digitale. <a href="/book-link">En savoir plus</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Book Slider -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bookSlider = document.getElementById('book-slider');
+
+    setTimeout(function() {
+      bookSlider.style.right = '0';
+      setTimeout(function() {
+        bookSlider.style.right = '-300px';
+      }, 3000);
+    }, 1000);
+  });
+</script>
 
 
 
@@ -135,9 +171,9 @@
         <div class="footer-links">
             <ul>
               
-                <li><a href="/en/privacy/">Privacy</a></li>
+                <li><a href="/en/privacy/">Licences</a></li>
                 <li><a href="/en/publish/">Publish</a></li>
-                <li><a href="/en/OrbiiKnowledge/">Orbii Knowledge</a></li>
+                <li><a href="/en/Orbii/">Why ORBii </a></li>
               
             </ul>
         </div>

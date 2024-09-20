@@ -6,6 +6,8 @@ pillar: data_ia
 type: strategy
 authors: Jean Barrere
 articleID: "1000018"
+language: fr
+licence: MIT
 ---
 
 

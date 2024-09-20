@@ -7,14 +7,11 @@ authors: Pejman GOHARI
 pillar: strategy
 type: strategy
 language: en
-articleID: "20000020"
+licence: MIT
+articleID: "2000020"
 ---
 
 **When we wrote our book, we analyzed companies like Amazon in detail. But we didn't expect that just a week after its release, the CEO of Amazon would so vividly demonstrate our 9-pillar method. Whether one loves or dislikes Amazon isn't the point here. What's crucial is understanding how decisions are made and how Andy Jassy's email reflects a thought process aligned with their culture, strategy, and more. How does he propose to his collaborators to return to a full week at the office? Let's analyze.**
-
----
-
-## **Amazon's CEO Email: A Living Example of the 9 Pillars of Digital Transformation**
 
 In the rapidly evolving landscape of digital transformation, companies must navigate complex challenges to remain competitive. In our book, **"The New Horizon of Digital Transformation - 2nd ed.: Focus on Data, Heading Towards AI"**, we identified nine essential pillars that organizations must embrace to thrive in the age of artificial intelligence (AI). Just a week after our book's release, Andy Jassy, CEO of Amazon, sent an email to his employees that exemplifies these pillars in action.
 
@@ -74,8 +71,6 @@ Velocity is crucial for any organization aiming to innovate rapidly and adapt to
 
 This focus on speed doesn't come at the expense of thoughtful decision-making. Instead, it's about eliminating unnecessary obstacles that hinder progress. In a competitive landscape where timing can be a decisive factor, Amazon's emphasis on velocity ensures it remains ahead of the curve.
 
----
-
 ## **Returning to the Office: A Strategic Move Aligned with the Pillars**
 
 One of the most significant points in Jassy's email is the decision to return to office-based work. While this may seem counterintuitive in an era where remote work has become prevalent, Jassy provides compelling reasons that align with several of the pillars.
@@ -101,7 +96,6 @@ By bringing employees back to the office, Amazon aims to reinforce its unique cu
 
 The office environment provides opportunities for informal learning and professional development. It enables employees to observe and engage with peers and leaders directly, fostering talent growth and collaboration.
 
----
 
 ## **Conclusion: A Real-World Application of the 9 Pillars**
 
@@ -116,6 +110,5 @@ Andy Jassy's email serves as a real-world demonstration of how an organization c
 
 Whether one agrees with Amazon's policies or not, there's much to learn from how the company integrates these pillars into its strategic framework. For organizations seeking to thrive amidst rapid technological change, adopting similar principles can provide a roadmap for success.
 
----
 
 **Andy Jassy's message is not just an internal memo but a case study in effective leadership and strategic alignment. It highlights the importance of cohesive culture, strategic foresight, and operational agility—key elements that any organization can adopt to navigate the challenges of digital transformation successfully.**

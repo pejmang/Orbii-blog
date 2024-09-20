@@ -8,6 +8,7 @@ pillar: clients
 type: AI
 language: en
 articleID: "2000011"
+licence: MIT
 ---
 
 **Artificial intelligence (AI)** refers to machines capable of simulating human thinking and behavior. Key components of conversational AI, such as **chatbots**, rely on technologies like **natural language processing**, **machine learning**, and **cognitive computing**, all of which can significantly enhance your customer service strategies.

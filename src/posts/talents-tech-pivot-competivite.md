@@ -9,6 +9,7 @@ type: decision
 language: fr
 articleID: "1000017"
 slug: talents-technologie-competitivite
+licence: MIT
 ---
 
 Ce n'est un secret pour personne et quel que soit le secteur d’activité aux quatre coins du monde, on n’entend que ce mot, comme un leitmotiv : la « guerre des talents » !

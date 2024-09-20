@@ -8,6 +8,7 @@ pillar: data_ia
 type: sharing
 language: fr
 articleID: "1000015"
+licence: MIT
 ---
 
 La tech, à travers les solutions data depuis quelques années et la cap actuel sur l’IA, connaît une ère faste où la variété de l'offre et la maîtrise des coûts ne sont plus un frein mais un moteur accessible à tous. C'est à la fois un défi mais aussi de nouvelles opportunités à condition qu’elles puissent répondre à de réels besoins de l’entreprise pour servir ses clients ou atteindre de nouveaux niveaux de performance.

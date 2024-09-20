@@ -5,7 +5,8 @@ date: 2022-04-12
 pillar: culture
 type: video
 articleID: "1000004"
-
+language: fr
+licence: MIT
 ---
 
 <div class="extended">

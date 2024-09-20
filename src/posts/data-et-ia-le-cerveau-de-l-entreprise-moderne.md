@@ -6,9 +6,10 @@ tags: [Data, IA, Transformation Digitale]
 authors: Pejman GOHARI
 pillar: data_ia
 type: sharing
-lang: ["fr", "en"]
+language: fr
 articleID: "1000020"
 
+licence: MIT
 ---
 
 Dans l'univers effervescent de la transformation digitale, l'intelligence artificielle (IA) et la gestion des données se positionnent comme les fondations incontournables des entreprises modernes. Ces deux leviers constituent aujourd'hui le "cerveau" qui propulse la performance organisationnelle, influence la prise de décision et optimise l'ensemble des opérations. À travers cet article, nous explorerons comment le pilier "Data & IA" se révèle essentiel dans la transformation digitale, tout en intégrant des perspectives issues de recherches académiques récentes. Cela nous permettra de démontrer comment la science nourrit les pratiques d'entreprise et ouvre des horizons novateurs.

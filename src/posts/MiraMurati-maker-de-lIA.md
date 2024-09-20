@@ -7,6 +7,8 @@ authors: Nouamane Cherkaoui
 pillar: makers
 type: makers
 articleID: "1000005"
+language: fr
+licence: MIT
 ---
 
 **Mira Murati** est longtemps restée dans l'ombre d'un autre Maker, **Sam Altman**. En 2018, Murati, **ingénieure en génie mécanique** d'origine albanaise, a rejoint **OpenAI** en tant que **vice-présidente de l'IA appliquée**, travaillant notamment sur le développement de **DALL-E**. Elle a ensuite gravi les échelons pour devenir **directrice de la technologie** d'OpenAI, dirigeant les équipes responsables de **ChatGPT** en plus de DALL-E, devenant ainsi l'une des personnalités les plus influentes de la tech mondiale.

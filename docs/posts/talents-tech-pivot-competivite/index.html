@@ -53,21 +53,28 @@
   <div class="extended">
     
       <a href="/">Insights</a>
-      <a href="/"> ← Retour vers les autres articles</a>
+      <a href="/"> ← Retour aux articles</a>
     
   </div>
 
   <main id="article">
     <h1>Tech accessible : les talents, clé de la compétitivité</h1>
+
     
       <div class="extended">
-        Auteur : Nouamane Cherkaoui
-        <a href="/about/" class="no-hover-effect">
+        
+          <strong>Auteur :</strong> Nouamane Cherkaoui
+        
+        
+        <a href="/about/">
           <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
         </a>
+
         
           <div class="article-date">
-            Publié le : 20/02/2023
+            
+              Publié le : 20/02/2023
+            
           </div>
         
       </div>
@@ -102,26 +109,31 @@
 </ul>
 <p>Face aux nouvelles attentes des jeunes générations et à la transformation du monde du travail, il est impératif d’adapter nos stratégies pour <strong>attirer les talents</strong> de demain et garantir la croissance de nos entreprises.</p>
 
-    <br>
+
+    <div class="licence-info">
+      
+        
+          <p><strong>Licence :</strong> Cet article est publié sous la <a href="https://opensource.org/licenses/MIT" target="_blank">Licence MIT</a>.</p>
+        
+      
+    </div>
 
     <!-- Image based on language -->
     <img 
-      src="/images/posts/fr/talents-tech-pivot-competivite.png" 
+      src="/images/posts/fr/talents-tech-pivot-competivite.jpeg" 
       alt="Article Image" />
 
+    <!-- LinkedIn Sharing -->
     <div class="share-container">
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fposts%2Ftalents-tech-pivot-competivite%2F&title=Ce%20n&#39;est%20un%20secret%20pour%20personne%20et%20quel%20que%20soit%20le%20secteur%20d%E2%80%99activit%C3%A9%20aux%20quatre%20coins%20du%20monde%2C%20on%20n%E2%80%99entend%20que%20ce%20mot%2C%20comme%20un%20leitmotiv%20%3A%20la%20%C2%AB%20guerre%20des%20talents%20%C2%BB%20!&summary=&source=" target="_blank" class="linkedin linkedin-icon">
-  <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-  <span>Article utile? Partager le sur LinkedIn</span>
-</a>
-
-        <span>Article utile? Partager le sur LinkedIn</span>
-      </a>
+      
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fposts%2Ftalents-tech-pivot-competivite%2F&title=Ce%20n&#39;est%20un%20secret%20pour%20personne%20et%20quel%20que%20soit%20le%20secteur%20d%E2%80%99activit%C3%A9%20aux%20quatre%20coins%20du%20monde%2C%20on%20n%E2%80%99entend%20que%20ce%20mot%2C%20comme%20un%20leitmotiv%20%3A%20la%20%C2%AB%20guerre%20des%20talents%20%C2%BB%20!" target="_blank" class="linkedin">
+          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+          <span>Partager sur LinkedIn</span>
+        </a>
+      
     </div>
 
-    <p>
-    <h3>Vos réactions, remarques, idées ...</h3>
-    <!-- Ajout de Cusdis pour les commentaires -->
+    <!-- Cusdis Comments Section -->
     <div id="cusdis_thread"
       data-host="https://cusdis.com"
       data-app-id="23d72bd6-8c5c-473b-a563-caa9d9328b84"
@@ -130,12 +142,36 @@
       data-page-title="Tech accessible : les talents, clé de la compétitivité"
       data-lang="fr">
     </div>
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"> </script>
-    
-    <!-- Fin du bloc de commentaires -->
-
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
   </main>
 </div>
+
+<!-- Sliding Book Section -->
+<div id="book-slider" style="position: fixed; right: -300px; top: 50%; transform: translateY(-50%); width: 250px; transition: right 0.3s ease-in-out;">
+  <div class="book-content">
+    <a href="https://www.amazon.fr/nouvel-horizon-transformation-digitale-donn%C3%A9es/dp/2100869817" target="_blank">
+      <img src="/images/livre2.png" alt="Book Cover" style="width: 90%;">
+    </a>
+    <div style="background-color: #f4f4f4; padding: 10px;">
+      <h3>Le Nouvel Horizon de la Transformation Digitale</h3>
+      <p>Découvrez les 9 piliers pour réussir votre transformation digitale. <a href="/book-link">En savoir plus</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Book Slider -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bookSlider = document.getElementById('book-slider');
+
+    setTimeout(function() {
+      bookSlider.style.right = '0';
+      setTimeout(function() {
+        bookSlider.style.right = '-300px';
+      }, 3000);
+    }, 1000);
+  });
+</script>
 
 
 
@@ -145,9 +181,9 @@
         <div class="footer-links">
             <ul>
               
-                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/privacy/">Licences</a></li>
                 <li><a href="/publish/">Publier</a></li>
-                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+                <li><a href="/Orbii/">Pourquoi Orbii</a></li>
               
             </ul>
         </div>

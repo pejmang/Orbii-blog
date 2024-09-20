@@ -53,21 +53,28 @@
   <div class="extended">
     
       <a href="/">Insights</a>
-      <a href="/"> ← Retour vers les autres articles</a>
+      <a href="/"> ← Retour aux articles</a>
     
   </div>
 
   <main id="article">
     <h1>Réussir sa transformation digitale : 9 piliers indispensables</h1>
+
     
       <div class="extended">
-        Auteur : Nouamane Cherkaoui
-        <a href="/about/" class="no-hover-effect">
+        
+          <strong>Auteur :</strong> Nouamane Cherkaoui
+        
+        
+        <a href="/about/">
           <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
         </a>
+
         
           <div class="article-date">
-            Publié le : 26/03/2022
+            
+              Publié le : 26/03/2022
+            
           </div>
         
       </div>
@@ -90,26 +97,31 @@
 <p>La suite sur le Blog de notre Partenaire : BDM</p>
 <p><a href="https://www.blogdumoderateur.com/transformation-digitale-9-piliers-indispensables/">https://www.blogdumoderateur.com/transformation-digitale-9-piliers-indispensables/</a></p>
 
-    <br>
+
+    <div class="licence-info">
+      
+        
+          <p><strong>Licence :</strong> Cet article est publié sous la <a href="https://opensource.org/licenses/MIT" target="_blank">Licence MIT</a>.</p>
+        
+      
+    </div>
 
     <!-- Image based on language -->
     <img 
-      src="/images/posts/fr/alliancy-9-piliers-digital.png" 
+      src="/images/posts/fr/alliancy-9-piliers-digital.jpeg" 
       alt="Article Image" />
 
+    <!-- LinkedIn Sharing -->
     <div class="share-container">
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fposts%2Falliancy-9-piliers-digital%2F&title=Quels%20d%C3%A9fis%20pour%20la%20transformation%20digitale%20des%20entreprises%20%3F%20Vision%20strat%C3%A9gique%2C%20p%C3%A9nurie%20de%20talents%2C%20r%C3%A9sistance%20au%20changement.%20D%C3%A9couvrez%20les%20enjeux%20pour%20adopter%20une%20culture%20data-driven%20sur%20le%20blog%20BDM.&summary=&source=" target="_blank" class="linkedin linkedin-icon">
-  <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-  <span>Article utile? Partager le sur LinkedIn</span>
-</a>
-
-        <span>Article utile? Partager le sur LinkedIn</span>
-      </a>
+      
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fposts%2Falliancy-9-piliers-digital%2F&title=Quels%20d%C3%A9fis%20pour%20la%20transformation%20digitale%20des%20entreprises%20%3F%20Vision%20strat%C3%A9gique%2C%20p%C3%A9nurie%20de%20talents%2C%20r%C3%A9sistance%20au%20changement.%20D%C3%A9couvrez%20les%20enjeux%20pour%20adopter%20une%20culture%20data-driven%20sur%20le%20blog%20BDM." target="_blank" class="linkedin">
+          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+          <span>Partager sur LinkedIn</span>
+        </a>
+      
     </div>
 
-    <p>
-    <h3>Vos réactions, remarques, idées ...</h3>
-    <!-- Ajout de Cusdis pour les commentaires -->
+    <!-- Cusdis Comments Section -->
     <div id="cusdis_thread"
       data-host="https://cusdis.com"
       data-app-id="23d72bd6-8c5c-473b-a563-caa9d9328b84"
@@ -118,12 +130,36 @@
       data-page-title="Réussir sa transformation digitale : 9 piliers indispensables"
       data-lang="fr">
     </div>
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"> </script>
-    
-    <!-- Fin du bloc de commentaires -->
-
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
   </main>
 </div>
+
+<!-- Sliding Book Section -->
+<div id="book-slider" style="position: fixed; right: -300px; top: 50%; transform: translateY(-50%); width: 250px; transition: right 0.3s ease-in-out;">
+  <div class="book-content">
+    <a href="https://www.amazon.fr/nouvel-horizon-transformation-digitale-donn%C3%A9es/dp/2100869817" target="_blank">
+      <img src="/images/livre2.png" alt="Book Cover" style="width: 90%;">
+    </a>
+    <div style="background-color: #f4f4f4; padding: 10px;">
+      <h3>Le Nouvel Horizon de la Transformation Digitale</h3>
+      <p>Découvrez les 9 piliers pour réussir votre transformation digitale. <a href="/book-link">En savoir plus</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Book Slider -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bookSlider = document.getElementById('book-slider');
+
+    setTimeout(function() {
+      bookSlider.style.right = '0';
+      setTimeout(function() {
+        bookSlider.style.right = '-300px';
+      }, 3000);
+    }, 1000);
+  });
+</script>
 
 
 
@@ -133,9 +169,9 @@
         <div class="footer-links">
             <ul>
               
-                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/privacy/">Licences</a></li>
                 <li><a href="/publish/">Publier</a></li>
-                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+                <li><a href="/Orbii/">Pourquoi Orbii</a></li>
               
             </ul>
         </div>

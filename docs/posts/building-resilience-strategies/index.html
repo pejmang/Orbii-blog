@@ -52,22 +52,29 @@
 <div class="container">
   <div class="extended">
     
-      <a href="/">Insights</a>
-      <a href="/"> ← Retour vers les autres articles</a>
+      <a href="/en/">Insights</a>
+      <a href="/en/"> ← Go back</a>
     
   </div>
 
   <main id="article">
     <h1>Building Resilience in a Complex Business World</h1>
+
     
       <div class="extended">
-        Auteur : Nouamane Cherkaoui
-        <a href="/about/" class="no-hover-effect">
+        
+          <strong>Author:</strong> Nouamane Cherkaoui
+        
+        
+        <a href="/about/">
           <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
         </a>
+
         
           <div class="article-date">
-            Publié le : 07/09/2024
+            
+              Published at: 07 September 2024
+            
           </div>
         
       </div>
@@ -105,40 +112,69 @@
 <h3><strong>Building Resilience in a VUCA World</strong></h3>
 <p>Building resilience in a VUCA world requires a comprehensive strategy encompassing <strong>strategic flexibility</strong>, cultural strength, effective risk management, investment in technology, and a commitment to <strong>employee well-being</strong>. By adopting these approaches, organizations can more effectively navigate the complexities and uncertainties of today’s business landscape.</p>
 
-    <br>
+
+    <div class="licence-info">
+      
+        
+          <p><strong>Licence:</strong> This article is published under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT Licence</a>.</p>
+        
+      
+    </div>
 
     <!-- Image based on language -->
     <img 
-      src="/images/posts/fr/building-resilience-strategies.png" 
+      src="/images/posts/en/building-resilience-strategies.jpeg" 
       alt="Article Image" />
 
+    <!-- LinkedIn Sharing -->
     <div class="share-container">
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fposts%2Fbuilding-resilience-strategies%2F&title=The%20business%20world%20of%20the%20last%2010%20years%20has%20gone%20from%20evolution%20to%20revolution%20with%20a%20profound%20metamorphosis%20which%20demonstrates%20for%20some%20that%20our%20world%20has%20become%20even%20more%20VUCA%20than%20ever.%20Indeed%2C%20in%20this%20VUCA%20world%2C%20projects%2C%20priorities%2C%20strategies%2C%20markets%2C%20environments%20change%20quickly%2C%20and%20it%20is%20necessary%2C%20even%20vital%2C%20to%20be%20able%20to%20adapt%20quickly.&summary=&source=" target="_blank" class="linkedin linkedin-icon">
-  <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-  <span>Article utile? Partager le sur LinkedIn</span>
-</a>
-
-        <span>Article utile? Partager le sur LinkedIn</span>
-      </a>
+      
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fposts%2Fbuilding-resilience-strategies%2F&title=The%20business%20world%20of%20the%20last%2010%20years%20has%20gone%20from%20evolution%20to%20revolution%20with%20a%20profound%20metamorphosis%20which%20demonstrates%20for%20some%20that%20our%20world%20has%20become%20even%20more%20VUCA%20than%20ever.%20Indeed%2C%20in%20this%20VUCA%20world%2C%20projects%2C%20priorities%2C%20strategies%2C%20markets%2C%20environments%20change%20quickly%2C%20and%20it%20is%20necessary%2C%20even%20vital%2C%20to%20be%20able%20to%20adapt%20quickly." target="_blank" class="linkedin">
+          <img src="/images/ic/i-linkedin.png" alt="Share on LinkedIn">
+          <span>Share on LinkedIn</span>
+        </a>
+      
     </div>
 
-    <p>
-    <h3>Vos réactions, remarques, idées ...</h3>
-    <!-- Ajout de Cusdis pour les commentaires -->
+    <!-- Cusdis Comments Section -->
     <div id="cusdis_thread"
       data-host="https://cusdis.com"
       data-app-id="23d72bd6-8c5c-473b-a563-caa9d9328b84"
       data-page-id="building-resilience-strategies"
       data-page-url="https://www.orbii.fr/posts/building-resilience-strategies/"
       data-page-title="Building Resilience in a Complex Business World"
-      data-lang="fr">
+      data-lang="en">
     </div>
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"> </script>
-    
-    <!-- Fin du bloc de commentaires -->
-
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
   </main>
 </div>
+
+<!-- Sliding Book Section -->
+<div id="book-slider" style="position: fixed; right: -300px; top: 50%; transform: translateY(-50%); width: 250px; transition: right 0.3s ease-in-out;">
+  <div class="book-content">
+    <a href="https://www.amazon.fr/nouvel-horizon-transformation-digitale-donn%C3%A9es/dp/2100869817" target="_blank">
+      <img src="/images/livre2.png" alt="Book Cover" style="width: 90%;">
+    </a>
+    <div style="background-color: #f4f4f4; padding: 10px;">
+      <h3>Le Nouvel Horizon de la Transformation Digitale</h3>
+      <p>Découvrez les 9 piliers pour réussir votre transformation digitale. <a href="/book-link">En savoir plus</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Book Slider -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bookSlider = document.getElementById('book-slider');
+
+    setTimeout(function() {
+      bookSlider.style.right = '0';
+      setTimeout(function() {
+        bookSlider.style.right = '-300px';
+      }, 3000);
+    }, 1000);
+  });
+</script>
 
 
 
@@ -148,9 +184,9 @@
         <div class="footer-links">
             <ul>
               
-                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/privacy/">Licences</a></li>
                 <li><a href="/publish/">Publier</a></li>
-                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+                <li><a href="/Orbii/">Pourquoi Orbii</a></li>
               
             </ul>
         </div>

@@ -7,6 +7,8 @@ authors: Pejman Gohari
 pillar: data_ia
 type: sharing
 articleID: "1000021"
+language: fr
+licence: MIT
 ---
 
 🚀 **La gouvernance des données : frein à l'innovation ou clé du succès en IA ?**  

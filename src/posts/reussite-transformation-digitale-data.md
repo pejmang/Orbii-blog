@@ -6,7 +6,8 @@ pillar: culture
 type: sharing
 authors: Pejman GOHARI
 articleID: "1000003"
-
+language: fr
+licence: MIT
 ---
 
 ## Comment assurer la réussite de la transformation digitale et data ?

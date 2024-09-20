@@ -7,7 +7,9 @@ authors: Nouamane Cherkaoui
 pillar: makers
 type: makers
 articleID: "1000012"
+language: fr
 
+licence: MIT
 ---
 
 **Carlos Tavares**, d'origine portugaise, vit en France depuis l'âge de 17 ans. Français de cœur, il est une figure **emblématique de l’industrie automobile française**. Cet **ingénieur centralien**, passionné d'automobile, connaît parfaitement deux grandes maisons de l’automobile en France : **Renault** et **Peugeot**. Il s'est fait un nom mondialement en redressant **PSA** et **Opel**.

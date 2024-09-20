@@ -8,6 +8,7 @@ pillar: strategy
 type: AI
 language: en
 articleID: "2000008"
+licence: MIT
 ---
 
 ### **Innovation & Agility Through AI and Data: Empowering Organizations for Future Growth**

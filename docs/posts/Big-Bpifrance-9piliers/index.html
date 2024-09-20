@@ -53,38 +53,44 @@
   <div class="extended">
     
       <a href="/">Insights</a>
-      <a href="/"> ← Retour vers les autres articles</a>
+      <a href="/"> ← Retour aux articles</a>
     
   </div>
 
   <main id="article">
     <h1>Devenir une organisation Data Driven : les recettes du succès </h1>
+
     
 
     <div class="extended">
 <p><iframe width="1000" height="600" src="https://www.youtube.com/embed/pW7OH8VmDVk?si=dq8EtEXOdEFcU0aQ"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 </div>
 
-    <br>
+
+    <div class="licence-info">
+      
+        
+          <p><strong>Licence :</strong> Cet article est publié sous la <a href="https://opensource.org/licenses/MIT" target="_blank">Licence MIT</a>.</p>
+        
+      
+    </div>
 
     <!-- Image based on language -->
     <img 
-      src="/images/posts/fr/Big-Bpifrance-9piliers.png" 
+      src="/images/posts/fr/Big-Bpifrance-9piliers.jpeg" 
       alt="Article Image" />
 
+    <!-- LinkedIn Sharing -->
     <div class="share-container">
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fposts%2FBig-Bpifrance-9piliers%2F&title=D%C3%A9couvrez%20dans%20cette%20vid%C3%A9o%20qui%20donne%20les%20cles%20pour%20une%20aaller%20vers%20une%20organisation%20Data%20Driven%20(Pejman%20Gohari%20%26%20Nouamane%20Cherkaoui).&summary=&source=" target="_blank" class="linkedin linkedin-icon">
-  <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-  <span>Article utile? Partager le sur LinkedIn</span>
-</a>
-
-        <span>Article utile? Partager le sur LinkedIn</span>
-      </a>
+      
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fposts%2FBig-Bpifrance-9piliers%2F&title=D%C3%A9couvrez%20dans%20cette%20vid%C3%A9o%20qui%20donne%20les%20cles%20pour%20une%20aaller%20vers%20une%20organisation%20Data%20Driven%20(Pejman%20Gohari%20%26%20Nouamane%20Cherkaoui)." target="_blank" class="linkedin">
+          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+          <span>Partager sur LinkedIn</span>
+        </a>
+      
     </div>
 
-    <p>
-    <h3>Vos réactions, remarques, idées ...</h3>
-    <!-- Ajout de Cusdis pour les commentaires -->
+    <!-- Cusdis Comments Section -->
     <div id="cusdis_thread"
       data-host="https://cusdis.com"
       data-app-id="23d72bd6-8c5c-473b-a563-caa9d9328b84"
@@ -93,12 +99,36 @@
       data-page-title="Devenir une organisation Data Driven : les recettes du succès "
       data-lang="fr">
     </div>
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"> </script>
-    
-    <!-- Fin du bloc de commentaires -->
-
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
   </main>
 </div>
+
+<!-- Sliding Book Section -->
+<div id="book-slider" style="position: fixed; right: -300px; top: 50%; transform: translateY(-50%); width: 250px; transition: right 0.3s ease-in-out;">
+  <div class="book-content">
+    <a href="https://www.amazon.fr/nouvel-horizon-transformation-digitale-donn%C3%A9es/dp/2100869817" target="_blank">
+      <img src="/images/livre2.png" alt="Book Cover" style="width: 90%;">
+    </a>
+    <div style="background-color: #f4f4f4; padding: 10px;">
+      <h3>Le Nouvel Horizon de la Transformation Digitale</h3>
+      <p>Découvrez les 9 piliers pour réussir votre transformation digitale. <a href="/book-link">En savoir plus</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Book Slider -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bookSlider = document.getElementById('book-slider');
+
+    setTimeout(function() {
+      bookSlider.style.right = '0';
+      setTimeout(function() {
+        bookSlider.style.right = '-300px';
+      }, 3000);
+    }, 1000);
+  });
+</script>
 
 
 
@@ -108,9 +138,9 @@
         <div class="footer-links">
             <ul>
               
-                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/privacy/">Licences</a></li>
                 <li><a href="/publish/">Publier</a></li>
-                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+                <li><a href="/Orbii/">Pourquoi Orbii</a></li>
               
             </ul>
         </div>

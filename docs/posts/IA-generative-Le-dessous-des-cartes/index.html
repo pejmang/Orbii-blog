@@ -53,21 +53,28 @@
   <div class="extended">
     
       <a href="/">Insights</a>
-      <a href="/"> ← Retour vers les autres articles</a>
+      <a href="/"> ← Retour aux articles</a>
     
   </div>
 
   <main id="article">
     <h1>IA Générative : Le dessous des cartes</h1>
+
     
       <div class="extended">
-        Auteur : Jean Barrere
-        <a href="/about/" class="no-hover-effect">
+        
+          <strong>Auteur :</strong> Jean Barrere
+        
+        
+        <a href="/about/">
           <img src="/images/ic/i-networking.png" alt="Networking Icon" title="Networking Icon" style="width: 30px; height: auto;">
         </a>
+
         
           <div class="article-date">
-            Publié le : 10/09/2024
+            
+              Publié le : 10/09/2024
+            
           </div>
         
       </div>
@@ -94,26 +101,31 @@
 <h3><strong>Nouvelles dépendances, nouveaux défis</strong></h3>
 <p>La concentration du marché de l'IA générative dans les mains de quelques géants technologiques présente des défis majeurs pour les entreprises et les organisations mondiales. Pour encourager la concurrence, il devient impératif de développer des alternatives viables et de soutenir les infrastructures qui permettent une plus grande diversité dans le développement de l'IA générative.</p>
 
-    <br>
+
+    <div class="licence-info">
+      
+        
+          <p><strong>Licence :</strong> Cet article est publié sous la <a href="https://opensource.org/licenses/MIT" target="_blank">Licence MIT</a>.</p>
+        
+      
+    </div>
 
     <!-- Image based on language -->
     <img 
-      src="/images/posts/fr/IA-generative-Le-dessous-des-cartes.png" 
+      src="/images/posts/fr/IA-generative-Le-dessous-des-cartes.jpeg" 
       alt="Article Image" />
 
+    <!-- LinkedIn Sharing -->
     <div class="share-container">
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fposts%2FIA-generative-Le-dessous-des-cartes%2F&title=D%C3%A9couvrez%20les%20coulisses%20de%20l&#39;IA%20g%C3%A9n%C3%A9rative%20et%20son%20impact%20mondial%20%3A%20des%20puces%20aux%20mati%C3%A8res%20premi%C3%A8res%2C%20en%20passant%20par%20les%20enjeux%20g%C3%A9opolitiques%20et%20les%20strat%C3%A9gies%20des%20g%C3%A9ants%20de%20la%20tech.%20Une%20plong%C3%A9e%20dans%20les%20d%C3%A9fis%20et%20opportunit%C3%A9s%20qui%20fa%C3%A7onnent%20l&#39;avenir%20technologique&summary=&source=" target="_blank" class="linkedin linkedin-icon">
-  <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
-  <span>Article utile? Partager le sur LinkedIn</span>
-</a>
-
-        <span>Article utile? Partager le sur LinkedIn</span>
-      </a>
+      
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.orbii.fr%2Fposts%2FIA-generative-Le-dessous-des-cartes%2F&title=D%C3%A9couvrez%20les%20coulisses%20de%20l&#39;IA%20g%C3%A9n%C3%A9rative%20et%20son%20impact%20mondial%20%3A%20des%20puces%20aux%20mati%C3%A8res%20premi%C3%A8res%2C%20en%20passant%20par%20les%20enjeux%20g%C3%A9opolitiques%20et%20les%20strat%C3%A9gies%20des%20g%C3%A9ants%20de%20la%20tech.%20Une%20plong%C3%A9e%20dans%20les%20d%C3%A9fis%20et%20opportunit%C3%A9s%20qui%20fa%C3%A7onnent%20l&#39;avenir%20technologique" target="_blank" class="linkedin">
+          <img src="/images/ic/i-linkedin.png" alt="Partager sur LinkedIn">
+          <span>Partager sur LinkedIn</span>
+        </a>
+      
     </div>
 
-    <p>
-    <h3>Vos réactions, remarques, idées ...</h3>
-    <!-- Ajout de Cusdis pour les commentaires -->
+    <!-- Cusdis Comments Section -->
     <div id="cusdis_thread"
       data-host="https://cusdis.com"
       data-app-id="23d72bd6-8c5c-473b-a563-caa9d9328b84"
@@ -122,12 +134,36 @@
       data-page-title="IA Générative : Le dessous des cartes"
       data-lang="fr">
     </div>
-    <script async defer src="https://cusdis.com/js/cusdis.es.js"> </script>
-    
-    <!-- Fin du bloc de commentaires -->
-
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
   </main>
 </div>
+
+<!-- Sliding Book Section -->
+<div id="book-slider" style="position: fixed; right: -300px; top: 50%; transform: translateY(-50%); width: 250px; transition: right 0.3s ease-in-out;">
+  <div class="book-content">
+    <a href="https://www.amazon.fr/nouvel-horizon-transformation-digitale-donn%C3%A9es/dp/2100869817" target="_blank">
+      <img src="/images/livre2.png" alt="Book Cover" style="width: 90%;">
+    </a>
+    <div style="background-color: #f4f4f4; padding: 10px;">
+      <h3>Le Nouvel Horizon de la Transformation Digitale</h3>
+      <p>Découvrez les 9 piliers pour réussir votre transformation digitale. <a href="/book-link">En savoir plus</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Book Slider -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bookSlider = document.getElementById('book-slider');
+
+    setTimeout(function() {
+      bookSlider.style.right = '0';
+      setTimeout(function() {
+        bookSlider.style.right = '-300px';
+      }, 3000);
+    }, 1000);
+  });
+</script>
 
 
 
@@ -137,9 +173,9 @@
         <div class="footer-links">
             <ul>
               
-                <li><a href="/privacy/">Confidentialité</a></li>
+                <li><a href="/privacy/">Licences</a></li>
                 <li><a href="/publish/">Publier</a></li>
-                <li><a href="/OrbiiKnowledge/">Orbii Knowledge</a></li>
+                <li><a href="/Orbii/">Pourquoi Orbii</a></li>
               
             </ul>
         </div>

@@ -7,7 +7,8 @@ authors: Nouamane Cherkaoui
 pillar: makers
 type: makers
 articleID: "1000007 "
-
+language: fr
+licence: MIT
 ---
 
 Né à Taïwan, passé par la Thaïlande à 5 ans, puis installé aux États-Unis à l’âge de 10 ans, **Jensen Huang** a connu un parcours impressionnant. De son premier emploi dans la restauration rapide chez Denny’s, il est devenu **PDG et co-fondateur de Nvidia**, une des entreprises les plus puissantes à l’avant-garde de la révolution de l’intelligence artificielle.

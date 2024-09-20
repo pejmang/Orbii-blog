@@ -8,6 +8,7 @@ pillar: culture
 type: decision
 language: en
 articleID: "2000012"
+licence: MIT
 ---
 Culture is at the heart of an organization and your ability to succeed in your transformation depends on cultural alignment. What does a successful culture transformation strategy mean? Paolo Coelho said: 'The future is made to change… and he was more than right'.
 

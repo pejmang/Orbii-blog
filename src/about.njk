@@ -46,8 +46,65 @@
     <div class="call-to-action">
       <h2>Prêt à devenir un "Insight Builder"" ?</h2>
       <p>
-        Vous souhaitez devenir un <strong>Insight builder</strong> et partager vos idées, vos expériences et vos réflexions avec notre communauté grandissante ? Envoyez-nous un email à <a href="mailto:pejman.gohari@orbii.tech">pejman.gohari@orbii.tech</a> et rejoignez nos contributeurs passionnés pour façonner ensemble le futur du savoir.
+        Vous souhaitez devenir un <strong>Insight builder</strong> et partager vos idées, vos expériences et vos réflexions avec notre communauté grandissante ? rejoignez nos contributeurs passionnés pour façonner ensemble le futur du savoir.
       </p>
+
+  <form id="insight-builder-form" action="/send_email.php" method="POST">
+    <label for="name">Nom complet :</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email :</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="expertise">Domaine d'expertise :</label><br>
+    <input type="text" id="expertise" name="expertise" required><br><br>
+
+    <label for="message">Pourquoi souhaitez-vous devenir un Insight Builder ?</label><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+    <input type="submit" value="Envoyer">
+  </form>
+
+  <!-- Success Message -->
+  <div class="success-message" id="success-message">
+    Merci pour votre candidature ! Nous examinerons votre demande et vous répondrons bientôt.
+  </div>
+
+  <!-- Error Message -->
+  <div class="error-message" id="error-message">
+    Oups ! Une erreur est survenue. Veuillez réessayer plus tard.
+  </div>
+
+  <script>
+    document.getElementById("insight-builder-form").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent the form from submitting the default way
+
+      var formData = new FormData(this); // Gather form data
+
+      fetch('/send_email.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        // Show success message on the same page
+        document.getElementById("success-message").style.display = "block";
+
+        // Hide error message if it was displayed previously
+        document.getElementById("error-message").style.display = "none";
+
+        // Optionally, reset the form fields
+        document.getElementById("insight-builder-form").reset();
+      })
+      .catch(error => {
+        // Show error message
+        document.getElementById("error-message").style.display = "block";
+        document.getElementById("success-message").style.display = "none";
+        console.error("Error:", error);
+      });
+    });
+  </script>
+
     </div>
 
   </div>

@@ -8,6 +8,7 @@ pillar: strategy
 type: governance
 language: en
 articleID: "2000006"
+licence: MIT
 ---
 
 In today’s **AI transformation world**, data becomes more critical than before, and when we talk Data, we should discuss about **Data governance**. In this journay, Data Governance has evolved from a compliance-oriented function to a strategic business enabler. As organizations generate unprecedented amounts of data, CXOs must take the lead in establishing governance frameworks that not only ensure compliance but also unlock the full potential of their data assets. This requires a transformational approach—one that positions data governance as a key driver of business value, innovation, and competitive advantage.

@@ -8,6 +8,7 @@ pillar: tech
 type: tech
 language: fr
 articleID: "1000019"
+licence: MIT
 ---
 
 ### **L’architecture pilotée par les événements (EDA)**

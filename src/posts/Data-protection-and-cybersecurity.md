@@ -8,6 +8,7 @@ pillar: strategy
 type: governance
 language: en
 articleID: "2000009"
+licence: MIT
 ---
 
 ### **Cybersecurity and Data Protection: A Strategic Priority in the Age of Digital Transformation**

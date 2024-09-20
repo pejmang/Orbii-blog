@@ -8,6 +8,7 @@ pillar: decisions
 type: strategy
 language: en
 articleID: "2000010"
+licence: MIT
 ---
 
 ## **The High Cost of Slow Decision-Making: How Political Paralysis and Inefficiency Erode Business Velocity**
