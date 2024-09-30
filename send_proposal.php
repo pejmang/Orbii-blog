@@ -3,8 +3,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form data
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
-    $expertise = htmlspecialchars($_POST['expertise']);
-    $message = htmlspecialchars($_POST['message']);
+    $title = htmlspecialchars($_POST['title']);
+    $description = htmlspecialchars($_POST['description']);
+    $link = htmlspecialchars($_POST['link']);
     
     
     // Email configuration
@@ -24,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <h2>New Application for Insight Builder</h2>
       <p><strong>Name:</strong> {$name}</p>
       <p><strong>Email:</strong> {$email}</p>
+      <p><strong>Email:</strong> {$title}</p>
       <p><strong>Description:</strong> {$description}</p>
       <p><strong>Link:</strong> {$link}</p>
     </body>
