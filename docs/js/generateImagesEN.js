@@ -3,8 +3,8 @@ const sharp = require('sharp');
 const path = require('path');
 
 const postsDirectory = '/Users/admin/Desktop/Orbii-blog/src/en/posts';
-const outputDirectory = '/Users/admin/Desktop/Orbii-blog/src/images/posts/en/';
-const defaultImagePath = '/Users/admin/Desktop/Orbii-blog/src/images/posts/Image-post-001.jpeg';
+const outputDirectory = '/Users/admin/Desktop/Orbii-blog/src/images/posts/en2/';
+const defaultImagePath = '/Users/admin/Desktop/Orbii-blog/src/images/posts/Image-post-002.jpeg';
 
 // Assurez-vous que le répertoire de sortie existe
 fs.ensureDirSync(outputDirectory);

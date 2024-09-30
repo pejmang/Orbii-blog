@@ -1073,3 +1073,12 @@ input[type="submit"]:hover {
 .licence-info a:hover {
   text-decoration: underline;
 }
+table {
+  border: 2px solid rgb(10, 124, 230);
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid rgb(197, 190, 190);
+  padding: 8px;
+}

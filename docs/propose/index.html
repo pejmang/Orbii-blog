@@ -89,7 +89,7 @@
       Vous avez une idée d'article ou une ressource que vous souhaitez partager avec notre communauté ? Remplissez le formulaire ci-dessous et nous examinerons votre proposition.
     </p>
 
-    <form id="article-proposal-form" action="/send_proposal.php" method="POST">
+    <form id="article-proposal-form" action="/send_email.php" method="POST">
       <label for="name">Votre Nom :</label>
       <input type="text" id="name" name="name" required>
 
@@ -105,8 +105,8 @@
       <label for="link">Lien vers l'Article (si disponible) :</label>
       <input type="text" id="link" name="link">
 
-      <!-- Google reCAPTCHA -->
-      <div class="g-recaptcha" data-sitekey="6LexhUoqAAAAAJq5HFuo6kz3Rc35MNcTEByP0l3V"></div>
+      <!-- hCaptcha -->
+      <div class="h-captcha" data-sitekey="362afdf8-05fc-4f24-8e40-71c26012cd22"></div>
 
       <input type="submit" value="Soumettre">
     </form>
@@ -122,7 +122,8 @@
     </div>
   </div>
 
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- hCaptcha script -->
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 
   <script>
     document.getElementById("article-proposal-form").addEventListener("submit", function(e) {

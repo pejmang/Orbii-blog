@@ -1,0 +1,32 @@
+Conversation with Hostinger
+Started on August 28, 2024 at 10:47 PM Vilnius time EEST (GMT+0300)
+
+---
+
+10:47 PM | Pejman Gohari: Bonjour
+
+10:48 PM | Emily from Hostinger: Bonjour ! Comment puis-je vous aider aujourd'hui avec votre hébergement Hostinger ?
+
+10:48 PM | Pejman Gohari: je rencontre un probleme sur mon site https://www.orbii.fr
+
+10:48 PM | Pejman Gohari: le certificat SSL a un pb avec le sous domaine www.
+
+10:48 PM | Emily from Hostinger: Le cache CDN de votre site https://www.orbii.fr a été vidé, et votre site devrait maintenant fonctionner correctement. Vous pouvez en apprendre davantage sur la gestion du cache CDN en consultant cet article (https://support.hostinger.com/en/articles/8052370-advanced-cdn-header-management). Si vous avez d'autres questions ou si le problème persiste, n'hésitez pas à me le faire savoir !
+
+10:48 PM | Pejman Gohari: du coup mon site est bloque par beaucoup de hebergeur
+
+10:49 PM | Emily from Hostinger: Il semble que le sous-domaine www.orbii.fr ne soit pas encore ajouté à votre plan d'hébergement. Vous devez ajouter le nom de domaine (https://support.hostinger.com/en/articles/1583214-how-to-add-a-website) à votre compte, vous assurer que le domaine pointe vers Hostinger (https://support.hostinger.com/en/articles/1863967-how-to-point-a-domain-to-hostinger), et le SSL sera installé dans les 24 heures suivantes. Si vous avez besoin d'aide supplémentaire, je suis là pour vous aider !
+
+10:49 PM | Emily from Hostinger: Si votre site est bloqué, cela peut être dû à plusieurs raisons, comme des problèmes de configuration SSL, des problèmes de DNS ou des restrictions de sécurité de certains fournisseurs. Pour résoudre ce problème, assurez-vous que : 
+ 1. Votre SSL est correctement installé et configuré, y compris pour le sous-domaine www. 
+2. Votre domaine pointe correctement vers les serveurs DNS de Hostinger: ns1.dns-parking.com et ns2.dns-parking.com. 
+3. Vérifiez que votre site ne contient pas de contenu qui pourrait être contre les politiques des hébergeurs ou qui pourrait déclencher des alertes de sécurité. 
+ Si le problème persiste après ces vérifications, nous pouvons explorer d'autres solutions.
+
+10:50 PM | Pejman Gohari: il refuse de creer www. comme sous domaine. 
+et je n'ai aucun probleme sous mon autre domaine orbii.tech
+
+10:50 PM | Emily from Hostinger: Pour créer le sous-domaine www.orbii.fr, vous devez vous rendre dans la section Websites de votre panneau de contrôle Hostinger, cliquer sur Manage à côté du site concerné, et chercher l'option Subdomains dans la barre latérale. Vous trouverez un guide détaillé sur la création de sous-domaines ici : Comment créer et supprimer des sous-domaines (https://support.hostinger.com/en/articles/1583405-how-to-create-and-delete-subdomains). Si vous rencontrez des problèmes lors de cette procédure, n'hésitez pas à revenir vers moi pour plus d'assistance.
+
+---
+Exported from Hostinger on August 28, 2024 at 10:52 PM Vilnius time EEST (GMT+0300)
