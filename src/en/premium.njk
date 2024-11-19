@@ -1,0 +1,131 @@
+{% extends "sitebase.njk" %}
+
+{% block title %}ORBii Premium Insights: Empower Your Strategic Decisions{% endblock %}
+
+{% block site_content %}
+<h1>ORBii Premium Insights</h1>
+<p>Empower your strategic decisions with actionable intelligence tailored to your unique challenges. Choose the solution that best meets your needs and gain access to expertise that drives results.</p>
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; justify-content: center; align-items: stretch;">
+  <!-- Insight Express -->
+  <div style="border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 20px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+    <h3 style="background-color: #647AA3; color: white; padding: 10px; border-radius: 10px; margin-top: -20px;">Insight Express</h3>
+    <div style="flex-grow: 1;">
+      <p style="font-weight: bold;">Ideal for:</p>
+      <p>Urgent decisions, initial due diligence, market trends</p>
+      <p style="font-weight: bold;">Deliverables:</p>
+      <p>Comprehensive report (Exec Sum for CXO), quick technical analysis, market trend synthesis</p>
+      <p style="font-weight: bold;">Expert Consultation:</p>
+      <p>Not Included </p>
+    </div>
+    <a href="#register-form" style="background-color: #647AA3; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Register</a>
+  </div>
+
+  <!-- Insight Pro -->
+  <div style="border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 20px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+    <h3 style="background-color: #4C7160; color: white; padding: 10px; border-radius: 10px; margin-top: -20px;">Insight Pro</h3>
+    <div style="flex-grow: 1;">
+      <p style="font-weight: bold;">Ideal for:</p>
+      <p>Investment decisions, strategic roadmaps, in-depth evaluations</p>
+      <p style="font-weight: bold;">Deliverables:</p>
+      <p>Full strategic and technical report, detailed market trends analysis, actionable reco </p>
+      <p style="font-weight: bold;">Expert Consultation:</p>
+      <p>Included</p>
+    </div>
+    <a href="#register-form" style="background-color: #4C7160; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Register</a>
+  </div>
+
+  <!-- Continuity Pack -->
+  <div style="border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 20px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+    <h3 style="background-color: #6B728E; color: white; padding: 10px; border-radius: 10px; margin-top: -20px;">Continuity Pack</h3>
+    <div style="flex-grow: 1;">
+      <p style="font-weight: bold;">Ideal for:</p>
+      <p>Ongoing market monitoring, trend alerts, strategic alignment</p>
+      <p style="font-weight: bold;">Deliverables:</p>
+      <p>Initial detailed report updated, quarterly review, trend alerts, Maker Analysis</p>
+      <p style="font-weight: bold;">Expert Consultation:</p>
+      <p>Included (ongoing access)</p>
+    </div>
+    <a href="#register-form" style="background-color: #6B728E; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Register</a>
+  </div>
+
+  <!-- Custom Insights -->
+  <div style="border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 20px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+    <h3 style="background-color: #D1B894; color: white; padding: 10px; border-radius: 10px; margin-top: -20px;">Custom Insights</h3>
+    <div style="flex-grow: 1;">
+      <p style="font-weight: bold;">Ideal for:</p>
+      <p>Complex projects, tailored innovations, pre- and post-deal audits</p>
+      <p style="font-weight: bold;">Deliverables:</p>
+      <p>Bespoke analysis and reports, in-depth audits, technical workshops with Makers</p>
+      <p style="font-weight: bold;">Expert Consultation:</p>
+      <p>Fully customizable</p>
+    </div>
+    <a href="#register-form" style="background-color: #D1B894; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Register</a>
+  </div>
+</div>
+
+<!-- Contact Form -->
+<h2 id="register-form" style="text-align: center; margin-top: 40px;">Register Your Interest</h2>
+<div class="form-container" style="max-width: 700px; margin: 50px auto; padding: 30px; background: #f8f9fc; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
+  <h1 style="text-align: center; font-size: 24px; color: #003366; font-weight: bold;">Register Your Interest</h1>
+  <p style="text-align: center; color: #555;">Please fill out the form below, and we'll get in touch shortly.</p>
+  <form id="contact-form" action="/send_email.php" method="POST" style="margin-top: 20px;">
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+      <div>
+        <label for="firstName" style="font-weight: bold; color: #003366;">First Name</label>
+        <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+      </div>
+      <div>
+        <label for="lastName" style="font-weight: bold; color: #003366;">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+      </div>
+      <div>
+        <label for="email" style="font-weight: bold; color: #003366;">Business Email Address</label>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+      </div>
+      <div>
+        <label for="company" style="font-weight: bold; color: #003366;">Company</label>
+        <input type="text" id="company" name="company" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+      </div>
+      <div>
+        <label for="offer" style="font-weight: bold; color: #003366;">Offer of Interest</label>
+        <select id="offer" name="offer" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; appearance: none; background: #fff;">
+          <option value="" style="color: #aaa;">Select an Offer</option>
+          <option value="Insight Express">Insight Express</option>
+          <option value="Insight Pro">Insight Pro</option>
+          <option value="Continuity Pack">Continuity Pack</option>
+          <option value="Custom Insights">Custom Insights</option>
+        </select>
+      </div>
+      <div>
+        <label for="comments" style="font-weight: bold; color: #003366;">Additional Comments</label>
+        <textarea id="comments" name="comments" rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;"></textarea>
+      </div>
+      <div style="text-align: center;">
+        <input type="submit" value="Submit" style="background: #007bff; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+    var formData = new FormData(this);
+
+    fetch("/send_subscribe.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        alert("Thank you for your submission! We will contact you shortly.");
+        this.reset();
+      })
+      .catch((error) => {
+        alert("Oops! Something went wrong. Please try again.");
+        console.error("Error:", error);
+      });
+  });
+</script>
+{% endblock %}
