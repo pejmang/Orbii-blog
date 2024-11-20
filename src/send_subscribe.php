@@ -1,20 +1,22 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check and sanitize form data
-    $name = htmlspecialchars(trim($_POST['name'] ?? ''));
+    $firstName = htmlspecialchars(trim($_POST['firstName'] ?? ''));
+    $lastName = htmlspecialchars(trim($_POST['lastName'] ?? ''));
     $email = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
-    $expertise = htmlspecialchars(trim($_POST['expertise'] ?? ''));
-    $message = htmlspecialchars(trim($_POST['message'] ?? ''));
+    $company = htmlspecialchars(trim($_POST['company'] ?? ''));
+    $offer = htmlspecialchars(trim($_POST['offer'] ?? ''));
+    $comments = htmlspecialchars(trim($_POST['comments'] ?? ''));
 
     // Validate required fields
-    if (empty($name) || empty($email) || empty($expertise) || empty($message)) {
-        echo "All fields are required. Please complete the form.";
+    if (empty($firstName) || empty($lastName) || empty($email) || empty($offer)) {
+        echo "Tous les champs obligatoires doivent être remplis. Veuillez réessayer.";
         exit;
     }
 
     // Email configuration
     $to = "pejman.gohari@orbii.tech"; // Replace with your email
-    $subject = "New Insight Builder Application";
+    $subject = "Nouvelle inscription - " . $offer;
     $headers = "From: " . $email . "\r\n";
     $headers .= "Reply-To: " . $email . "\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
@@ -23,26 +25,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content = "
     <html>
     <head>
-      <title>New Insight Builder Application</title>
+      <title>Nouvelle inscription</title>
     </head>
     <body>
-      <h2>New Application for Insight Builder</h2>
-      <p><strong>Name:</strong> {$name}</p>
-      <p><strong>Email:</strong> {$email}</p>
-      <p><strong>Expertise:</strong> {$expertise}</p>
-      <p><strong>Message:</strong> {$message}</p>
+      <h2>Nouvelle inscription reçue</h2>
+      <p><strong>Prénom :</strong> {$firstName}</p>
+      <p><strong>Nom :</strong> {$lastName}</p>
+      <p><strong>Email :</strong> {$email}</p>
+      <p><strong>Entreprise :</strong> {$company}</p>
+      <p><strong>Offre d'intérêt :</strong> {$offer}</p>
+      <p><strong>Commentaires :</strong> {$comments}</p>
     </body>
     </html>
     ";
 
     // Send the email
     if (mail($to, $subject, $email_content, $headers)) {
-        echo "Thank you for applying. We will contact you soon!";
+        echo "Merci pour votre inscription ! Nous vous contacterons rapidement.";
     } else {
-        echo "Oops! Something went wrong, and we couldn't send your message.";
+        echo "Oups ! Une erreur est survenue et nous n'avons pas pu envoyer votre message.";
     }
 } else {
     // Handle invalid request methods
-    echo "Invalid request method. Please use the form to submit data.";
+    echo "Méthode de requête invalide. Veuillez soumettre le formulaire.";
 }
 ?>
