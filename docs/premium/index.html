@@ -98,7 +98,7 @@
       <p style="font-weight: bold;">Consultation avec un expert :</p>
       <p>Non incluse</p>
     </div>
-    <a href="#register-form" style="background-color: #647AA3; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">S'inscrire</a>
+    <a href="#register-form" style="background-color: #647AA3; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">S'informer plus</a>
   </div>
 
   <!-- Insight Pro -->
@@ -112,7 +112,7 @@
       <p style="font-weight: bold;">Consultation avec un expert :</p>
       <p>Incluse</p>
     </div>
-    <a href="#register-form" style="background-color: #4C7160; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">S'inscrire</a>
+    <a href="#register-form" style="background-color: #4C7160; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">S'informer plus</a>
   </div>
 
   <!-- Continuity Pack -->
@@ -126,7 +126,7 @@
       <p style="font-weight: bold;">Consultation avec un expert :</p>
       <p>Incluse (accès continu)</p>
     </div>
-    <a href="#register-form" style="background-color: #6B728E; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">S'inscrire</a>
+    <a href="#register-form" style="background-color: #6B728E; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">S'informer plus</a>
   </div>
 
   <!-- Custom Insights -->
@@ -140,16 +140,16 @@
       <p style="font-weight: bold;">Consultation avec un expert :</p>
       <p>Totalement personnalisable</p>
     </div>
-    <a href="#register-form" style="background-color: #D1B894; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">S'inscrire</a>
+    <a href="#register-form" style="background-color: #D1B894; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">S'informer plus</a>
   </div>
 </div>
 
-<!-- Formulaire d'inscription -->
+<!-- Form Section -->
 <h2 id="register-form" style="text-align: center; margin-top: 40px;">Inscrivez-vous</h2>
 <div class="form-container" style="max-width: 700px; margin: 50px auto; padding: 30px; background: #f8f9fc; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
   <h1 style="text-align: center; font-size: 24px; color: #003366; font-weight: bold;">Inscription</h1>
   <p style="text-align: center; color: #555;">Remplissez le formulaire ci-dessous, et nous vous contacterons rapidement.</p>
-  <form id="contact-form" action="/send_subscribe.php" method="POST" style="margin-top: 20px;">
+  <form id="contact-form" action="/send_subscribe.php" method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
     <div style="display: flex; flex-direction: column; gap: 15px;">
       <div>
         <label for="firstName" style="font-weight: bold; color: #003366;">Prénom</label>
@@ -158,6 +158,10 @@
       <div>
         <label for="lastName" style="font-weight: bold; color: #003366;">Nom</label>
         <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+      </div>
+      <div>
+        <label for="job" style="font-weight: bold; color: #003366;"> Votre titre </label>
+        <input type="job" id="email" name="job" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
       </div>
       <div>
         <label for="email" style="font-weight: bold; color: #003366;">Adresse email professionnelle</label>
@@ -186,49 +190,39 @@
       </div>
     </div>
   </form>
-</div>
-
-
-<!-- Success Message -->
-  <div class="success-message" id="success-message">
-    Merci pour votre candidature ! Nous examinerons votre demande et vous répondrons bientôt.
+  <!-- Success Message -->
+  <div class="success-message" id="success-message" style="display: none; margin-top: 20px; text-align: center; color: green; font-weight: bold;">
+    Merci pour votre demande d'information ! Nous vous contacterons bientôt.
   </div>
-
   <!-- Error Message -->
-  <div class="error-message" id="error-message">
+  <div class="error-message" id="error-message" style="display: none; margin-top: 20px; text-align: center; color: red; font-weight: bold;">
     Oups ! Une erreur est survenue. Veuillez réessayer plus tard.
   </div>
+</div>
 
-  <script>
-    document.getElementById("insight-builder-form").addEventListener("submit", function(e) {
-      e.preventDefault(); // Prevent the form from submitting the default way
-
-      var formData = new FormData(this); // Gather form data
-
-      fetch('/send_subscribe.php', {
-        method: 'POST',
-        body: formData
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form refresh
+    const formData = new FormData(this);
+    fetch("/send_subscribe.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          document.getElementById("success-message").style.display = "block";
+          document.getElementById("error-message").style.display = "none";
+          this.reset();
+        } else {
+          throw new Error("Network response was not ok.");
+        }
       })
-      .then(response => response.text())
-      .then(data => {
-        // Show success message on the same page
-        document.getElementById("success-message").style.display = "block";
-
-        // Hide error message if it was displayed previously
-        document.getElementById("error-message").style.display = "none";
-
-        // Optionally, reset the form fields
-        document.getElementById("insight-builder-form").reset();
-      })
-      .catch(error => {
-        // Show error message
-        document.getElementById("error-message").style.display = "block";
+      .catch(() => {
         document.getElementById("success-message").style.display = "none";
-        console.error("Error:", error);
+        document.getElementById("error-message").style.display = "block";
       });
-    });
-  </script>
-
+  });
+</script>
 
   </div>
 

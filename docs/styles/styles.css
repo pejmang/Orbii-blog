@@ -1082,3 +1082,274 @@ td, th {
   border: 1px solid rgb(197, 190, 190);
   padding: 8px;
 }
+
+/* Top Navigation Styling */
+.top-container {
+  background-color: white;
+  padding: 20px 40px;
+  border-bottom: 2px solid #f4f4f4;
+}
+
+.site-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.site-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.site-subtitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  color: #555;
+}
+
+.navigation-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  padding: 10px 15px;
+  font-weight: 500;
+}
+
+.navigation-menu ul li a.active {
+  background: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.navigation-menu ul li a:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.language-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-btn {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.lang-btn.active {
+  background: black;
+  color: white;
+}
+
+/* Whitepaper Section */
+.whitepaper-container {
+  max-width: 2000px;
+  margin: 20px auto;
+  padding: 40px;
+  background-color: #004F9E;
+  color: #fff;
+  border-radius: 8px;
+}
+
+/* Header Section */
+.whitepaper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.header-left {
+  flex: 1.6;
+}
+
+.header-right {
+  flex: 1;
+}
+
+.whitepaper-category {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.whitepaper-date {
+  font-size: 0.8rem;
+  color: #d1e4ff;
+  margin-bottom: 5px;
+}
+
+.whitepaper-title {
+  font-size: 2.0rem;
+  font-weight: bold;
+  line-height: 1.0;
+  margin: 20px 0;
+    color: #d1e4ff;
+
+}
+
+.whitepaper-description {
+  font-size: 1.0rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  
+}
+
+.download-btn {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+
+.header-right img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Media Links */
+.social-links {
+  margin-top: 30px;
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0056b3;
+  transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #003e7e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .whitepaper-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-right img {
+    margin-top: 20px;
+    max-width: 0%;
+  }
+}
+/* Styling for Contributors Box */
+.contributors-box {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #0e4b8c; /* Une couleur légèrement plus sombre que le fond principal */
+  border-radius: 8px;
+  color: #E8E8E8; /* Texte clair */
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contributors-box h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #f1f0f6; /* Contraste avec le fond sombre */
+}
+
+.contributors-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contributors-box li {
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+/* Styling for Tabs Container */
+.premium-insights-tabs {
+  margin: 30px auto;
+  max-width: 900px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Tabs Menu */
+.tabs-menu {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 0;
+  border-bottom: 2px solid #ddd;
+}
+
+.tabs-menu li {
+  font-size: 1rem;
+  color: #004F9E;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.tabs-menu li.active-tab {
+  background: #004F9E;
+  color: white;
+  border-radius: 8px;
+}
+
+.tabs-menu li:hover {
+  background: #003366;
+  color: white;
+}
+
+/* Content of Tabs */
+.tabs-content {
+  margin-top: 20px;
+}
+
+.tab-content {
+  display: none;
+  padding: 15px;
+  background: #0e4b8c;
+  border-radius: 8px;
+}
+
+.tab-content.active-content {
+  display: block;
+}

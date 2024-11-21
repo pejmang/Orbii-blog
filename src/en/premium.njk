@@ -18,7 +18,7 @@
       <p style="font-weight: bold;">Expert Consultation:</p>
       <p>Not Included </p>
     </div>
-    <a href="#register-form" style="background-color: #647AA3; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Register</a>
+    <a href="#register-form" style="background-color: #647AA3; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Request Info</a>
   </div>
 
   <!-- Insight Pro -->
@@ -32,7 +32,7 @@
       <p style="font-weight: bold;">Expert Consultation:</p>
       <p>Included</p>
     </div>
-    <a href="#register-form" style="background-color: #4C7160; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Register</a>
+    <a href="#register-form" style="background-color: #4C7160; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Request Info</a>
   </div>
 
   <!-- Continuity Pack -->
@@ -46,7 +46,7 @@
       <p style="font-weight: bold;">Expert Consultation:</p>
       <p>Included (ongoing access)</p>
     </div>
-    <a href="#register-form" style="background-color: #6B728E; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Register</a>
+    <a href="#register-form" style="background-color: #6B728E; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Request Info</a>
   </div>
 
   <!-- Custom Insights -->
@@ -60,27 +60,32 @@
       <p style="font-weight: bold;">Expert Consultation:</p>
       <p>Fully customizable</p>
     </div>
-    <a href="#register-form" style="background-color: #D1B894; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Register</a>
+    <a href="#register-form" style="background-color: #D1B894; color: white; text-decoration: none; padding: 10px 20px; display: inline-block; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;">Request Info</a>
   </div>
 </div>
 
-<!-- Contact Form -->
-<h2 id="register-form" style="text-align: center; margin-top: 40px;">Register Your Interest</h2>
+
+<!-- Form Section -->
+<h2 id="register-form" style="text-align: center; margin-top: 40px;">Contact ORBii Advisor Partner</h2>
 <div class="form-container" style="max-width: 700px; margin: 50px auto; padding: 30px; background: #f8f9fc; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
-  <h1 style="text-align: center; font-size: 24px; color: #003366; font-weight: bold;">Register Your Interest</h1>
-  <p style="text-align: center; color: #555;">Please fill out the form below, and we'll get in touch shortly.</p>
-  <form id="contact-form" action="/send_subscribe.php" method="POST" style="margin-top: 20px;">
+  <h1 style="text-align: center; font-size: 24px; color: #003366; font-weight: bold;">Getting more information</h1>
+  <p style="text-align: center; color: #555;">Fill out the form below, and we will contact you shortly.</p>
+  <form id="contact-form" action="/send_subscribe.php" method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
     <div style="display: flex; flex-direction: column; gap: 15px;">
       <div>
-        <label for="firstName" style="font-weight: bold; color: #003366;">First Name</label>
+        <label for="firstName" style="font-weight: bold; color: #003366;">Firstname</label>
         <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
       </div>
       <div>
-        <label for="lastName" style="font-weight: bold; color: #003366;">Last Name</label>
+        <label for="lastName" style="font-weight: bold; color: #003366;">Lastname</label>
         <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
       </div>
       <div>
-        <label for="email" style="font-weight: bold; color: #003366;">Business Email Address</label>
+        <label for="job" style="font-weight: bold; color: #003366;"> Job title </label>
+        <input type="job" id="email" name="job" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+      </div>
+      <div>
+        <label for="email" style="font-weight: bold; color: #003366;"> Email Pro</label>
         <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
       </div>
       <div>
@@ -88,9 +93,9 @@
         <input type="text" id="company" name="company" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
       </div>
       <div>
-        <label for="offer" style="font-weight: bold; color: #003366;">Offer of Interest</label>
+        <label for="offer" style="font-weight: bold; color: #003366;">Offer</label>
         <select id="offer" name="offer" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; appearance: none; background: #fff;">
-          <option value="" style="color: #aaa;">Select an Offer</option>
+          <option value="" style="color: #aaa;">Which offer ?</option>
           <option value="Insight Express">Insight Express</option>
           <option value="Insight Pro">Insight Pro</option>
           <option value="Continuity Pack">Continuity Pack</option>
@@ -98,7 +103,7 @@
         </select>
       </div>
       <div>
-        <label for="comments" style="font-weight: bold; color: #003366;">Additional Comments</label>
+        <label for="comments" style="font-weight: bold; color: #003366;">Additionnal Information</label>
         <textarea id="comments" name="comments" rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;"></textarea>
       </div>
       <div style="text-align: center;">
@@ -106,25 +111,36 @@
       </div>
     </div>
   </form>
+  <!-- Success Message -->
+  <div class="success-message" id="success-message" style="display: none; margin-top: 20px; text-align: center; color: green; font-weight: bold;">
+    Thanks you, We will contact you as soon as possible.
+  </div>
+  <!-- Error Message -->
+  <div class="error-message" id="error-message" style="display: none; margin-top: 20px; text-align: center; color: red; font-weight: bold;">
+    Oups ! A problem. please send a mail directly to info@orbii.tech.
+  </div>
 </div>
 
 <script>
   document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent default form submission
-    var formData = new FormData(this);
-
+    e.preventDefault(); // Prevent form refresh
+    const formData = new FormData(this);
     fetch("/send_subscribe.php", {
       method: "POST",
       body: formData,
     })
-      .then((response) => response.text())
-      .then((data) => {
-        alert("Thank you for your submission! We will contact you shortly.");
-        this.reset();
+      .then((response) => {
+        if (response.ok) {
+          document.getElementById("success-message").style.display = "block";
+          document.getElementById("error-message").style.display = "none";
+          this.reset();
+        } else {
+          throw new Error("Network response was not ok.");
+        }
       })
-      .catch((error) => {
-        alert("Oops! Something went wrong. Please try again.");
-        console.error("Error:", error);
+      .catch(() => {
+        document.getElementById("success-message").style.display = "none";
+        document.getElementById("error-message").style.display = "block";
       });
   });
 </script>
