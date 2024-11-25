@@ -195,11 +195,11 @@ Data has become the backbone of modern financial departments, transforming decis
         <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
       </div>
       <div>
-        <label for="job" style="font-weight: bold; color: #003366;"> Job title </label>
-        <input type="job" id="email" name="job" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+        <label for="job" style="font-weight: bold; color: #003366;">Job title</label>
+        <input type="text" id="job" name="job" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
       </div>
       <div>
-        <label for="email" style="font-weight: bold; color: #003366;"> Email Pro</label>
+        <label for="email" style="font-weight: bold; color: #003366;">Email Pro</label>
         <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
       </div>
       <div>
@@ -207,51 +207,62 @@ Data has become the backbone of modern financial departments, transforming decis
         <input type="text" id="company" name="company" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
       </div>
       
-               <input type="hidden" id="pageUrl" name="pageUrl" value="">
+      <input type="hidden" id="pageUrl" name="pageUrl" value="">
    
       <div style="text-align: center;">
         <input type="submit" value="Submit" style="background: #007bff; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
       </div>
     </div>
   </form>
-   <!-- Success Message -->
+
+  <!-- Success Message -->
   <div class="success-message" id="success-message" style="display: none; margin-top: 20px; text-align: center; color: green; font-weight: bold;">
-    Thanks you, We will contact you as soon as possible.
+    Thank you, we will contact you as soon as possible.
   </div>
+  
   <!-- Error Message -->
   <div class="error-message" id="error-message" style="display: none; margin-top: 20px; text-align: center; color: red; font-weight: bold;">
-    Oups ! A problem. please send a mail directly to info@orbii.tech.
+    Oops! There was an issue. Please send a mail directly to info@orbii.tech.
   </div>
 </div>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Capture the current page URL
     const currentUrl = window.location.href;
-
-    // Set the URL to the hidden input field
     const urlField = document.getElementById('pageUrl');
     if (urlField) {
       urlField.value = currentUrl;
+    } else {
+      console.error('Field pageUrl not found.');
     }
+  });
+
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    fetch(this.action, {
+      method: this.method,
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          document.getElementById("success-message").style.display = "block";
+          document.getElementById("error-message").style.display = "none";
+          this.reset();
+        } else {
+          throw new Error("Network response was not ok.");
+        }
+      })
+      .catch((error) => {
+        console.error("Submission error:", error);
+        document.getElementById("success-message").style.display = "none";
+        document.getElementById("error-message").style.display = "block";
+      });
   });
 </script>
 
-<script>
-  document.querySelectorAll('.tabs-menu li').forEach(tab => {
-    tab.addEventListener('click', () => {
-      // Remove active class from all tabs
-      document.querySelectorAll('.tabs-menu li').forEach(tab => tab.classList.remove('active-tab'));
-      // Add active class to clicked tab
-      tab.classList.add('active-tab');
-      
-      // Hide all tab contents
-      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active-content'));
-      // Show active tab content
-      const tabContentId = tab.getAttribute('data-tab');
-      document.getElementById(tabContentId).classList.add('active-content');
-    });
-  });
-</script>
+
 
   </div>
 

@@ -188,7 +188,7 @@ Data has become the backbone of modern financial departments, transforming decis
         <label for="company" style="font-weight: bold; color: #003366;">Company</label>
         <input type="text" id="company" name="company" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
       </div>
-                     <input type="hidden" id="pageUrl" name="pageUrl" value="">
+<input pageUrl="State of the Art of Generative AI">
 
       <div style="text-align: center;">
         <input type="submit" value="Submit" style="background: #007bff; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
@@ -207,17 +207,43 @@ Data has become the backbone of modern financial departments, transforming decis
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Capture the current page URL
+    // Ensure the DOM is fully loaded before capturing the URL
     const currentUrl = window.location.href;
 
     // Set the URL to the hidden input field
     const urlField = document.getElementById('pageUrl');
     if (urlField) {
       urlField.value = currentUrl;
+    } else {
+      console.error('pageUrl field not found.');
     }
   });
 </script>
 
+
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form refresh
+    const formData = new FormData(this);
+    fetch("/send_premium.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          document.getElementById("success-message").style.display = "block";
+          document.getElementById("error-message").style.display = "none";
+          this.reset();
+        } else {
+          throw new Error("Network response was not ok.");
+        }
+      })
+      .catch(() => {
+        document.getElementById("success-message").style.display = "none";
+        document.getElementById("error-message").style.display = "block";
+      });
+  });
+</script>
 
 <script>
   document.querySelectorAll('.tabs-menu li').forEach(tab => {
