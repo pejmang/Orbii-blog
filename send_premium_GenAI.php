@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Email is required.";
         exit;
     }
-
+x
     // Prepare email content
     $to = "pejman.gohari@orbii.tech";
     $subject = "New Registration Request";
