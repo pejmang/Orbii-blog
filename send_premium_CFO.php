@@ -1,5 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Log all POST data for debugging
+    error_log(print_r($_POST, true));
+
     // Collect and sanitize input
     $firstName = htmlspecialchars(trim($_POST['firstName'] ?? ''));
     $lastName = htmlspecialchars(trim($_POST['lastName'] ?? ''));
@@ -7,6 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
     $pageUrl = htmlspecialchars(trim($_POST['pageUrl'] ?? ''));
     $company = htmlspecialchars(trim($_POST['company'] ?? ''));
+
+    // Check if pageUrl is empty
+    if (empty($pageUrl)) {
+        error_log("Error: pageUrl is missing.");
+    } else {
+        error_log("Received pageUrl: " . $pageUrl);
+    }
 
     // Validate required fields
     if (empty($email)) {
@@ -26,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email_content = "
     <html>
     <body>
-        <h2>Nouvelle demande d'inscription</h2>
+        <h2>Nouvelle demande d'inscription CFO In</h2>
         <p><strong>Prénom:</strong> " . htmlspecialchars($firstName) . "</p>
         <p><strong>Nom:</strong> " . htmlspecialchars($lastName) . "</p>
         <p><strong>Email:</strong> " . htmlspecialchars($email) . "</p>

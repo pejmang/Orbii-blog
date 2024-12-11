@@ -15,7 +15,7 @@
         Abstract: 
         <br>
 This study explores the state of the art of Data usage for CFO. Data has become the backbone of modern financial departments, transforming decision-making and strategy execution. From streamlining financial reporting to enabling predictive analytics, effective data management drives accuracy, agility, and compliance. This whitepaper explores how advanced data strategies empower CFOs and finance teams to navigate challenges like regulatory demands, risk management, and cost optimization. Highlighting real-world use cases, it demonstrates how financial departments can harness AI, data automation, and advanced analytics to enhance forecasting, improve transparency, and unlock strategic value in a rapidly evolving economic landscape   </p>
-      <a href="#register-form"><button class="download-btn">Download PDF <span>&#8681;</span></button></a>
+      <a href="#register-form"><button class="download-btn">Pre-registration <span>&#8681;</span></button></a>
     </div>
     <div class="header-right">
       <img src="/images/PremiumInight_Review.png" alt="State of the Art Data CFO Whitepaper">
@@ -76,10 +76,10 @@ Data Governance is no longer optional—it's the strategic foundation for transf
 </div>
 
 <!-- Form Section -->
-<h2 id="register-form" style="text-align: center; margin-top: 40px;">Download a Premium Insight</h2>
+<h2 id="register-form" style="text-align: center; margin-top: 40px;">Pre-registration for this Insight</h2>
 <div class="form-container" style="max-width: 700px; margin: 50px auto; padding: 30px; background: #f8f9fc; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
-  <h1 style="text-align: center; font-size: 24px; color: #003366; font-weight: bold;">Access to Whitepaper</h1>
-  <form id="contact-form" action="/send_premium.php" method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
+  <h1 style="text-align: center; font-size: 24px; color: #003366; font-weight: bold;">Request Info for this Whitepaper</h1>
+  <form id="contact-form" action="/send_premium_CFO.php" method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
     <div style="display: flex; flex-direction: column; gap: 15px;">
       <div>
         <label for="firstName" style="font-weight: bold; color: #003366;">Firstname</label>
@@ -134,27 +134,31 @@ Data Governance is no longer optional—it's the strategic foundation for transf
 
 
 <script>
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent form refresh
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
     const formData = new FormData(this);
-    fetch("/send_premium.php", {
-      method: "POST",
-      body: formData,
+    formData.append("pageUrl", "DataCFO"); // Ensure pageUrl is explicitly added
+
+    fetch(this.action, {
+        method: this.method,
+        body: formData,
     })
-      .then((response) => {
-        if (response.ok) {
-          document.getElementById("success-message").style.display = "block";
-          document.getElementById("error-message").style.display = "none";
-          this.reset();
-        } else {
-          throw new Error("Network response was not ok.");
-        }
-      })
-      .catch(() => {
-        document.getElementById("success-message").style.display = "none";
-        document.getElementById("error-message").style.display = "block";
-      });
-  });
+        .then((response) => {
+            if (response.ok) {
+                document.getElementById("success-message").style.display = "block";
+                document.getElementById("error-message").style.display = "none";
+                this.reset();
+            } else {
+                throw new Error("Network response was not ok.");
+            }
+        })
+        .catch((error) => {
+            console.error("Submission error:", error);
+            document.getElementById("success-message").style.display = "none";
+            document.getElementById("error-message").style.display = "block";
+        });
+});
 </script>
 <script>
   document.querySelectorAll('.tabs-menu li').forEach(tab => {

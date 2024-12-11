@@ -118,7 +118,7 @@ effectively in an increasingly data-driven Landscape.
       <a href="#register-form"><button class="download-btn">Download PDF <span>&#8681;</span></button></a>
     </div>
     <div class="header-right">
-      <img src="/images/State_DataGov.png" alt="State of the Art of Data Governancer">
+      <img src="/images/State_DataGov.png" alt="State of the Art of Data Governance">
       <div class="contributors-box">
         <h4>Key Contributors</h4>
         <ul>
@@ -132,96 +132,88 @@ effectively in an increasingly data-driven Landscape.
   <!-- Social Media Links -->
   <div class="social-links">
     <!-- LinkedIn Icon -->
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://orbii.fr/en/premium/&title=State%20of%20the%20Art%20of%20Generative%20AI" 
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://orbii.fr/en/premium/&title=State%20of%20the%20Art%20of%20Generative%20AI&pageUrl=DataGouv" 
        target="_blank" 
        class="social-icon linkedin-icon">
       <img src="/images/ic/i-linkedin-96.png" alt="Share on LinkedIn">
     </a>
   </div>
 
+  <!-- Form Section -->
+  <h2 id="register-form" style="text-align: center; margin-top: 40px;">Download a Premium Insight</h2>
+  <div class="form-container" style="max-width: 700px; margin: 50px auto; padding: 30px; background: #f8f9fc; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
+    <h1 style="text-align: center; font-size: 24px; color: #003366; font-weight: bold;">Access to Whitepaper</h1>
+    <form id="contact-form" action="/send_premium_DataGouv.php" method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 15px;">
+        <div>
+          <label for="firstName" style="font-weight: bold; color: #003366;">Firstname</label>
+          <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+        </div>
+        <div>
+          <label for="lastName" style="font-weight: bold; color: #003366;">Lastname</label>
+          <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+        </div>
+        <div>
+          <label for="job" style="font-weight: bold; color: #003366;">Job title</label>
+          <input type="text" id="job" name="job" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+        </div>
+        <div>
+          <label for="email" style="font-weight: bold; color: #003366;">Email Pro</label>
+          <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+        </div>
+        <div>
+          <label for="company" style="font-weight: bold; color: #003366;">Company</label>
+          <input type="text" id="company" name="company" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+        </div>
+        
+        <!-- Hidden pageUrl field -->
+        <input type="hidden" id="pageUrl" name="pageUrl" value="DataGouv">
+     
+        <div style="text-align: center;">
+          <input type="submit" value="Submit" style="background: #007bff; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
+        </div>
+      </div>
+    </form>
 
-<!-- Form Section -->
-<h2 id="register-form" style="text-align: center; margin-top: 40px;">Download a Premium Insight</h2>
-<div class="form-container" style="max-width: 700px; margin: 50px auto; padding: 30px; background: #f8f9fc; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
-  <h1 style="text-align: center; font-size: 24px; color: #003366; font-weight: bold;">Access to Whitepaper</h1>
-  <form id="contact-form" action="/send_premium.php" method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
-    <div style="display: flex; flex-direction: column; gap: 15px;">
-      <div>
-        <label for="firstName" style="font-weight: bold; color: #003366;">Firstname</label>
-        <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
-      </div>
-      <div>
-        <label for="lastName" style="font-weight: bold; color: #003366;">Lastname</label>
-        <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
-      </div>
-      <div>
-        <label for="job" style="font-weight: bold; color: #003366;">Job title</label>
-        <input type="text" id="job" name="job" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
-      </div>
-      <div>
-        <label for="email" style="font-weight: bold; color: #003366;">Email Pro</label>
-        <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
-      </div>
-      <div>
-        <label for="company" style="font-weight: bold; color: #003366;">Company</label>
-        <input type="text" id="company" name="company" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
-      </div>
-      
-      <input type="hidden" id="pageUrl" name="pageUrl" value="DataGouv Paper">
-   
-      <div style="text-align: center;">
-        <input type="submit" value="Submit" style="background: #007bff; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
-      </div>
+    <!-- Success Message -->
+    <div class="success-message" id="success-message" style="display: none; margin-top: 20px; text-align: center; color: green; font-weight: bold;">
+      Thank you, we will contact you as soon as possible.
     </div>
-  </form>
+    
+    <!-- Error Message -->
+    <div class="error-message" id="error-message" style="display: none; margin-top: 20px; text-align: center; color: red; font-weight: bold;">
+      Oops! There was an issue. Please send a mail directly to info@orbii.tech.
+    </div>
+  </div>
 
-  <!-- Success Message -->
-  <div class="success-message" id="success-message" style="display: none; margin-top: 20px; text-align: center; color: green; font-weight: bold;">
-    Thank you, we will contact you as soon as possible.
-  </div>
-  
-  <!-- Error Message -->
-  <div class="error-message" id="error-message" style="display: none; margin-top: 20px; text-align: center; color: red; font-weight: bold;">
-    Oops! There was an issue. Please send a mail directly to info@orbii.tech.
-  </div>
-</div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const currentUrl = window.location.href;
-    const urlField = document.getElementById('pageUrl');
-    if (urlField) {
-      urlField.value = currentUrl;
-    } else {
-      console.error('Field pageUrl not found.');
-    }
-  });
-
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
+document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const formData = new FormData(this);
-    fetch(this.action, {
-      method: this.method,
-      body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          document.getElementById("success-message").style.display = "block";
-          document.getElementById("error-message").style.display = "none";
-          this.reset();
-        } else {
-          throw new Error("Network response was not ok.");
-        }
-      })
-      .catch((error) => {
-        console.error("Submission error:", error);
-        document.getElementById("success-message").style.display = "none";
-        document.getElementById("error-message").style.display = "block";
-      });
-  });
-</script>
+    formData.append("pageUrl", "GenAI"); // Ensure pageUrl is explicitly added
 
+    fetch(this.action, {
+        method: this.method,
+        body: formData,
+    })
+        .then((response) => {
+            if (response.ok) {
+                document.getElementById("success-message").style.display = "block";
+                document.getElementById("error-message").style.display = "none";
+                this.reset();
+            } else {
+                throw new Error("Network response was not ok.");
+            }
+        })
+        .catch((error) => {
+            console.error("Submission error:", error);
+            document.getElementById("success-message").style.display = "none";
+            document.getElementById("error-message").style.display = "block";
+        });
+});
+</script>
 
 
   </div>

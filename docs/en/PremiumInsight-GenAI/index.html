@@ -88,28 +88,28 @@
     <div class="header-left">
       <p class="whitepaper-category">Premium Insight</p>
       <h1 class="whitepaper-title">State of the Art of Generative AI: Technological Perspective and Pragmatic Insights</h1>
-      <p class="whitepaper-date">Published: Nov 2024</p>
+      <p class="whitepaper-date">Published: Dec 2024</p>
       <p class="whitepaper-description">
         Abstract: 
         <br>
-This study explores the forefront of Generative AI, focusing on the evolution and
-advancements of Large Language Models and their transformative impact on natural
-language processing. It examines Retrieval-Augmented Generation methodologies,
-including GraphRAG, which enhance AI accuracy by integrating external data sources.
-Technological innovations such as omni models, Mixture of Experts and
-advancements in video and voice models are highlighted for their role in optimizing
-multimodal data processing and computational efficiency. The analysis underscores
-the strategic importance of leveraging cloud-based AI infrastructure from major
-providers to balance scalability and cost. Additionally, it addresses essential AI
-development frameworks and robust data management strategies, including data
-collection, storage, governance, and bias mitigation. Maximizing model and data
-efficiency through data-centric AI, curriculum learning, and model distillation is
-discussed to promote sustainable AI solutions. Privacy and safety measures, including
-machine unlearning and toxicity mitigation, are emphasized as critical for ethical AI
-deployment. This comprehensive overview provides X-Tech companies with
-actionable insights to effectively harness Generative AI’s potential, optimize
-infrastructure and data strategies, and maintain a competitive edge in the rapidly
-evolving AI landscape.      </p>
+<div>
+    <p>
+        The world of <strong>Generative AI</strong> continues to evolve at an unprecedented pace, and ORBii’s latest report provides a comprehensive analysis of the key technologies and strategies shaping this dynamic field. Whether you’re a business leader, technologist, or strategist, this study is a must-read to stay ahead in the AI race.
+    </p>
+    <h3>📌 Key Highlights:</h3>
+    <ul>
+        <li><strong>Large Language Models (LLMs):</strong> The evolution from task-specific systems to powerful foundational models like GPT-4, Claude AI, and Mistral AI, including advances in model efficiency, fine-tuning, and ethical alignment.</li>
+        <li><strong>Technological Innovations:</strong> Pioneering methodologies such as Retrieval-Augmented Generation (RAG) and GraphRAG, leveraging external data sources to enhance AI contextuality and reduce hallucinations.</li>
+        <li><strong>Multimodal AI:</strong> Breakthroughs in <em>voice, video, and omni models</em> that expand Generative AI beyond text processing, optimizing performance across diverse data modalities.</li>
+        <li><strong>Infrastructure Strategies:</strong> The strategic role of <em>cloud-based AI platforms</em> (AWS, Azure, GCP) for scalability and cost-efficiency, contrasted with the challenges of on-premise deployments.</li>
+        <li><strong>Ethical AI:</strong> A deep dive into <em>privacy safeguards, machine unlearning</em>, and toxicity mitigation to ensure responsible deployment.</li>
+        <li><strong>Data-Centric AI:</strong> Innovative approaches like <em>curriculum learning, model distillation, and quantization</em> for sustainable AI development.</li>
+    </ul>
+    <p>
+        This report is a helpfull resource for <strong>C-suite executives, data leaders, AI practitioners, and policy makers</strong> looking to harness the transformative potential of Generative AI while maintaining ethical and strategic alignment.
+    </p>
+    <p>👉 Explore actionable insights and strategies for leveraging Generative AI to drive innovation and growth. </p>
+</div>
       <a href="#register-form"><button class="download-btn">Download PDF <span>&#8681;</span></button></a>
     </div>
     <div class="header-right">
@@ -166,7 +166,7 @@ Data has become the backbone of modern financial departments, transforming decis
 <h2 id="register-form" style="text-align: center; margin-top: 40px;">Download a Premium Insight</h2>
 <div class="form-container" style="max-width: 700px; margin: 50px auto; padding: 30px; background: #f8f9fc; border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
   <h1 style="text-align: center; font-size: 24px; color: #003366; font-weight: bold;">Access to Whitepaper</h1>
-  <form id="contact-form" action="/send_premium.php" method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
+  <form id="contact-form" action="/send_premium_GenAI.php" method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
     <div style="display: flex; flex-direction: column; gap: 15px;">
       <div>
         <label for="firstName" style="font-weight: bold; color: #003366;">Firstname</label>
@@ -222,27 +222,31 @@ Data has become the backbone of modern financial departments, transforming decis
 
 
 <script>
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent form refresh
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
     const formData = new FormData(this);
-    fetch("/send_premium.php", {
-      method: "POST",
-      body: formData,
+    formData.append("pageUrl", "DataGouv"); // Ensure pageUrl is explicitly added
+
+    fetch(this.action, {
+        method: this.method,
+        body: formData,
     })
-      .then((response) => {
-        if (response.ok) {
-          document.getElementById("success-message").style.display = "block";
-          document.getElementById("error-message").style.display = "none";
-          this.reset();
-        } else {
-          throw new Error("Network response was not ok.");
-        }
-      })
-      .catch(() => {
-        document.getElementById("success-message").style.display = "none";
-        document.getElementById("error-message").style.display = "block";
-      });
-  });
+        .then((response) => {
+            if (response.ok) {
+                document.getElementById("success-message").style.display = "block";
+                document.getElementById("error-message").style.display = "none";
+                this.reset();
+            } else {
+                throw new Error("Network response was not ok.");
+            }
+        })
+        .catch((error) => {
+            console.error("Submission error:", error);
+            document.getElementById("success-message").style.display = "none";
+            document.getElementById("error-message").style.display = "block";
+        });
+});
 </script>
 
 <script>
